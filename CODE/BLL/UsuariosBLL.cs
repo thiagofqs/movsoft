@@ -1,9 +1,9 @@
 ﻿using System.Data;
-using CRUD.CODE.DAL;
-using CRUD.CODE.DTO;
+using MovSoft.CODE.DAL;
+using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
 
-namespace CRUD.CODE.BLL
+namespace MovSoft.CODE.BLL
 {
     class UsuariosBLL
     {

@@ -59,10 +59,10 @@
             this.txtTitulo.AutoSize = true;
             this.txtTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtTitulo.Location = new System.Drawing.Point(182, 10);
+            this.txtTitulo.Location = new System.Drawing.Point(221, 30);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(337, 32);
-            this.txtTitulo.TabIndex = 118;
+            this.txtTitulo.TabIndex = 0;
             this.txtTitulo.Text = "Cadastrar Colaborador (1/2)";
             // 
             // inputNascimento
@@ -70,12 +70,12 @@
             this.inputNascimento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputNascimento.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputNascimento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputNascimento.Location = new System.Drawing.Point(409, 152);
+            this.inputNascimento.Location = new System.Drawing.Point(448, 172);
             this.inputNascimento.Mask = "00/00/0000";
             this.inputNascimento.Name = "inputNascimento";
             this.inputNascimento.PromptChar = ' ';
             this.inputNascimento.Size = new System.Drawing.Size(110, 23);
-            this.inputNascimento.TabIndex = 110;
+            this.inputNascimento.TabIndex = 4;
             this.inputNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.inputNascimento.ValidatingType = typeof(System.DateTime);
             // 
@@ -90,22 +90,22 @@
             "Masculino",
             "Feminino",
             "Outro"});
-            this.inputboxSexo.Location = new System.Drawing.Point(177, 152);
+            this.inputboxSexo.Location = new System.Drawing.Point(216, 172);
             this.inputboxSexo.Name = "inputboxSexo";
             this.inputboxSexo.Size = new System.Drawing.Size(92, 23);
-            this.inputboxSexo.TabIndex = 102;
+            this.inputboxSexo.TabIndex = 2;
             // 
             // inputCpf
             // 
             this.inputCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputCpf.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputCpf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputCpf.Location = new System.Drawing.Point(288, 152);
+            this.inputCpf.Location = new System.Drawing.Point(327, 172);
             this.inputCpf.Mask = "000,000,000-00";
             this.inputCpf.Name = "inputCpf";
             this.inputCpf.PromptChar = ' ';
             this.inputCpf.Size = new System.Drawing.Size(99, 23);
-            this.inputCpf.TabIndex = 105;
+            this.inputCpf.TabIndex = 3;
             this.inputCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // inputCelular
@@ -113,12 +113,12 @@
             this.inputCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputCelular.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputCelular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputCelular.Location = new System.Drawing.Point(409, 210);
+            this.inputCelular.Location = new System.Drawing.Point(448, 230);
             this.inputCelular.Mask = "(00) 00000-0000";
             this.inputCelular.Name = "inputCelular";
             this.inputCelular.PromptChar = ' ';
             this.inputCelular.Size = new System.Drawing.Size(110, 23);
-            this.inputCelular.TabIndex = 113;
+            this.inputCelular.TabIndex = 6;
             this.inputCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.inputCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputCelular_KeyPress);
             // 
@@ -127,10 +127,10 @@
             this.txtObr7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr7.AutoSize = true;
             this.txtObr7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr7.Location = new System.Drawing.Point(457, 192);
+            this.txtObr7.Location = new System.Drawing.Point(496, 212);
             this.txtObr7.Name = "txtObr7";
             this.txtObr7.Size = new System.Drawing.Size(12, 15);
-            this.txtObr7.TabIndex = 117;
+            this.txtObr7.TabIndex = 6;
             this.txtObr7.Text = "*";
             // 
             // label3
@@ -139,10 +139,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(409, 190);
+            this.label3.Location = new System.Drawing.Point(448, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 17);
-            this.label3.TabIndex = 116;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Celular";
             // 
             // txtObr6
@@ -150,10 +150,10 @@
             this.txtObr6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr6.AutoSize = true;
             this.txtObr6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr6.Location = new System.Drawing.Point(221, 192);
+            this.txtObr6.Location = new System.Drawing.Point(260, 212);
             this.txtObr6.Name = "txtObr6";
             this.txtObr6.Size = new System.Drawing.Size(12, 15);
-            this.txtObr6.TabIndex = 114;
+            this.txtObr6.TabIndex = 5;
             this.txtObr6.Text = "*";
             // 
             // txtEmail
@@ -162,10 +162,10 @@
             this.txtEmail.AutoSize = true;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtEmail.Location = new System.Drawing.Point(177, 190);
+            this.txtEmail.Location = new System.Drawing.Point(216, 210);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(47, 17);
-            this.txtEmail.TabIndex = 112;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "E-mail";
             // 
             // inputEmail
@@ -173,21 +173,21 @@
             this.inputEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputEmail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputEmail.Location = new System.Drawing.Point(177, 210);
+            this.inputEmail.Location = new System.Drawing.Point(216, 230);
             this.inputEmail.MaxLength = 255;
             this.inputEmail.Name = "inputEmail";
             this.inputEmail.Size = new System.Drawing.Size(154, 23);
-            this.inputEmail.TabIndex = 111;
+            this.inputEmail.TabIndex = 5;
             // 
             // txtObr5
             // 
             this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr5.AutoSize = true;
             this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(319, 134);
+            this.txtObr5.Location = new System.Drawing.Point(358, 154);
             this.txtObr5.Name = "txtObr5";
             this.txtObr5.Size = new System.Drawing.Size(12, 15);
-            this.txtObr5.TabIndex = 109;
+            this.txtObr5.TabIndex = 3;
             this.txtObr5.Text = "*";
             // 
             // txtCpf
@@ -196,10 +196,10 @@
             this.txtCpf.AutoSize = true;
             this.txtCpf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCpf.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCpf.Location = new System.Drawing.Point(288, 132);
+            this.txtCpf.Location = new System.Drawing.Point(327, 152);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(31, 17);
-            this.txtCpf.TabIndex = 108;
+            this.txtCpf.TabIndex = 3;
             this.txtCpf.Text = "CPF";
             // 
             // inputSobrenome
@@ -207,21 +207,21 @@
             this.inputSobrenome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputSobrenome.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputSobrenome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputSobrenome.Location = new System.Drawing.Point(365, 91);
+            this.inputSobrenome.Location = new System.Drawing.Point(404, 111);
             this.inputSobrenome.MaxLength = 255;
             this.inputSobrenome.Name = "inputSobrenome";
             this.inputSobrenome.Size = new System.Drawing.Size(154, 23);
-            this.inputSobrenome.TabIndex = 101;
+            this.inputSobrenome.TabIndex = 1;
             // 
             // txtObr4
             // 
             this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr4.AutoSize = true;
             this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(212, 136);
+            this.txtObr4.Location = new System.Drawing.Point(251, 156);
             this.txtObr4.Name = "txtObr4";
             this.txtObr4.Size = new System.Drawing.Size(12, 15);
-            this.txtObr4.TabIndex = 107;
+            this.txtObr4.TabIndex = 2;
             this.txtObr4.Text = "*";
             // 
             // txtObr3
@@ -229,10 +229,10 @@
             this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr3.AutoSize = true;
             this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(546, 136);
+            this.txtObr3.Location = new System.Drawing.Point(585, 156);
             this.txtObr3.Name = "txtObr3";
             this.txtObr3.Size = new System.Drawing.Size(12, 15);
-            this.txtObr3.TabIndex = 104;
+            this.txtObr3.TabIndex = 4;
             this.txtObr3.Text = "*";
             // 
             // txtObr2
@@ -240,10 +240,10 @@
             this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr2.AutoSize = true;
             this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(442, 73);
+            this.txtObr2.Location = new System.Drawing.Point(481, 93);
             this.txtObr2.Name = "txtObr2";
             this.txtObr2.Size = new System.Drawing.Size(12, 15);
-            this.txtObr2.TabIndex = 100;
+            this.txtObr2.TabIndex = 1;
             this.txtObr2.Text = "*";
             // 
             // txtObr1
@@ -251,10 +251,10 @@
             this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr1.AutoSize = true;
             this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr1.Location = new System.Drawing.Point(319, 73);
+            this.txtObr1.Location = new System.Drawing.Point(358, 93);
             this.txtObr1.Name = "txtObr1";
             this.txtObr1.Size = new System.Drawing.Size(12, 15);
-            this.txtObr1.TabIndex = 98;
+            this.txtObr1.TabIndex = 0;
             this.txtObr1.Text = "*";
             // 
             // txtConfirmarSenha
@@ -263,10 +263,10 @@
             this.txtConfirmarSenha.AutoSize = true;
             this.txtConfirmarSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmarSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(177, 134);
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(216, 154);
             this.txtConfirmarSenha.Name = "txtConfirmarSenha";
             this.txtConfirmarSenha.Size = new System.Drawing.Size(37, 17);
-            this.txtConfirmarSenha.TabIndex = 106;
+            this.txtConfirmarSenha.TabIndex = 2;
             this.txtConfirmarSenha.Text = "Sexo";
             // 
             // txtNascimento
@@ -275,10 +275,10 @@
             this.txtNascimento.AutoSize = true;
             this.txtNascimento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNascimento.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtNascimento.Location = new System.Drawing.Point(409, 132);
+            this.txtNascimento.Location = new System.Drawing.Point(448, 152);
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(131, 17);
-            this.txtNascimento.TabIndex = 103;
+            this.txtNascimento.TabIndex = 4;
             this.txtNascimento.Text = "Data de nascimento";
             // 
             // txtSobrenome
@@ -287,10 +287,10 @@
             this.txtSobrenome.AutoSize = true;
             this.txtSobrenome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSobrenome.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSobrenome.Location = new System.Drawing.Point(365, 71);
+            this.txtSobrenome.Location = new System.Drawing.Point(404, 91);
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.Size = new System.Drawing.Size(78, 17);
-            this.txtSobrenome.TabIndex = 99;
+            this.txtSobrenome.TabIndex = 1;
             this.txtSobrenome.Text = "Sobrenome";
             // 
             // txtNome
@@ -299,10 +299,10 @@
             this.txtNome.AutoSize = true;
             this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNome.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtNome.Location = new System.Drawing.Point(177, 71);
+            this.txtNome.Location = new System.Drawing.Point(216, 91);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(136, 17);
-            this.txtNome.TabIndex = 97;
+            this.txtNome.TabIndex = 0;
             this.txtNome.Text = "Nome / Nome Social";
             // 
             // btnProximo
@@ -314,10 +314,10 @@
             this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProximo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnProximo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnProximo.Location = new System.Drawing.Point(293, 265);
+            this.btnProximo.Location = new System.Drawing.Point(327, 274);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(115, 35);
-            this.btnProximo.TabIndex = 115;
+            this.btnProximo.TabIndex = 7;
             this.btnProximo.Text = "Próximo";
             this.btnProximo.UseVisualStyleBackColor = false;
             this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
@@ -327,18 +327,18 @@
             this.inputNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputNome.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputNome.Location = new System.Drawing.Point(177, 91);
+            this.inputNome.Location = new System.Drawing.Point(216, 111);
             this.inputNome.MaxLength = 100;
             this.inputNome.Name = "inputNome";
             this.inputNome.Size = new System.Drawing.Size(154, 23);
-            this.inputNome.TabIndex = 96;
+            this.inputNome.TabIndex = 0;
             // 
             // CadColaboradorPessoal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(734, 311);
+            this.ClientSize = new System.Drawing.Size(750, 350);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.inputNascimento);
             this.Controls.Add(this.inputboxSexo);
@@ -362,7 +362,10 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.inputNome);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CadColaboradorPessoal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Colaborador";
             this.TopMost = true;
             this.ResumeLayout(false);

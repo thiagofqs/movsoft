@@ -1,5 +1,5 @@
-﻿using CRUD.CODE.BLL;
-using CRUD.CODE.DTO;
+﻿using MovSoft.CODE.BLL;
+using MovSoft.CODE.DTO;
 
 namespace MovSoft
 {

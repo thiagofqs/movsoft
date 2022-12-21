@@ -1,7 +1,7 @@
 ﻿using System.Data;
-using CRUD.CODE.DAL;
+using MovSoft.CODE.DAL;
 
-namespace CRUD.CODE.BLL
+namespace MovSoft.CODE.BLL
 {
 
     class CargosBLL

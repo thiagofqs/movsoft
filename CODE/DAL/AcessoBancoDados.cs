@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace CRUD.CODE.DAL
+namespace MovSoft.CODE.DAL
 {
 	class AcessoBancoDados
 	{
@@ -13,7 +13,7 @@ namespace CRUD.CODE.DAL
 
 		private string server = "127.0.0.1";
 		private string user = "root";
-		private string database = "tcc_moveleira";
+		private string database = "movsoft";
 		private string port = "3306";
 		private string password = "root";
 

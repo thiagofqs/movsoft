@@ -1,8 +1,8 @@
 ﻿namespace MovSoft.CODE.DTO
 {
-    class ColaboradoresDTO
+    class ClientesDTO
     {
-        private int id_colaborador;
+        private int id_cliente;
         private string nome;
         private string sobrenome;
         private string data_nasc;
@@ -12,7 +12,7 @@
         private int id_sexo;
         private string id_endereco;
 
-        public int Id_colaborador { get => id_colaborador; set => id_colaborador = value; }
+        public int Id_cliente { get => id_cliente; set => id_cliente = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Sobrenome { get => sobrenome; set => sobrenome = value; }
         public string Data_nasc { get => data_nasc; set => data_nasc = value; }

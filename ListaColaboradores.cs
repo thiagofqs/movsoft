@@ -1,4 +1,4 @@
-﻿using CRUD.CODE.BLL;
+﻿using MovSoft.CODE.BLL;
 
 namespace MovSoft
 {
