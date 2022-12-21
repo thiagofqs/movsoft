@@ -13,7 +13,7 @@
             frm.ShowDialog();
         }
 
-        private void btnCadColaboradores_Click(object sender, EventArgs e)
+        private void btnCadFornecedores_Click(object sender, EventArgs e)
         {
             AbrirCadFornecedor();
         }

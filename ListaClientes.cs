@@ -1,18 +1,13 @@
-﻿using MovSoft.CODE.BLL;
-
-namespace MovSoft
+﻿namespace MovSoft
 {
     public partial class ListaClientes : Form
     {
-        private int idCliente;
-        DataGridViewRow rowData = new();
-        ColaboradoresBLL bll = new();
         public ListaClientes()
         {
             InitializeComponent();
         }
 
-        private void AbrirCadClientes()
+        private void AbrirCadCliente()
         {
             CadCliente frm = new();
             frm.ShowDialog();
@@ -20,7 +15,7 @@ namespace MovSoft
 
         private void btnCadClientes_Click(object sender, EventArgs e)
         {
-            AbrirCadClientes();
+            AbrirCadCliente();
         }
     }
 }

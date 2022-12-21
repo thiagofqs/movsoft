@@ -194,5 +194,19 @@ namespace MovSoft
                 OpenChildForm(frm);
             }
         }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool permitido = VerificarPermissao(1);
+            if (permitido == false)
+            {
+                MessageBox.Show($"O cargo {usuario.cargo} não tem permissão para acessar a tela Fornecedores");
+            }
+            else
+            {
+                ListaFornecedores frm = new();
+                OpenChildForm(frm);
+            }
+        }
     }
 }
