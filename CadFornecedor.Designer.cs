@@ -32,29 +32,29 @@
             this.inputCep = new System.Windows.Forms.MaskedTextBox();
             this.inputCpf = new System.Windows.Forms.MaskedTextBox();
             this.inputNumero = new System.Windows.Forms.TextBox();
-            this.txtObr3 = new System.Windows.Forms.Label();
             this.txtObr5 = new System.Windows.Forms.Label();
+            this.txtObr2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.Label();
+            this.txtCnpj = new System.Windows.Forms.Label();
             this.inputComplemento = new System.Windows.Forms.TextBox();
             this.txtObr1 = new System.Windows.Forms.Label();
             this.inputboxUf = new System.Windows.Forms.ComboBox();
-            this.txtNome = new System.Windows.Forms.Label();
-            this.txtObr6 = new System.Windows.Forms.Label();
+            this.txtRazao = new System.Windows.Forms.Label();
+            this.txtObr8 = new System.Windows.Forms.Label();
             this.btnProximo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.Label();
             this.inputNome = new System.Windows.Forms.TextBox();
             this.txtUf = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtObr7 = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.Label();
             this.inputCidade = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtObr3 = new System.Windows.Forms.Label();
             this.inputBairro = new System.Windows.Forms.TextBox();
-            this.txtObr2 = new System.Windows.Forms.Label();
             this.txtObr4 = new System.Windows.Forms.Label();
+            this.txtObr6 = new System.Windows.Forms.Label();
             this.inputLogradouro = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
@@ -69,29 +69,29 @@
             this.pnlMain.Controls.Add(this.inputCep);
             this.pnlMain.Controls.Add(this.inputCpf);
             this.pnlMain.Controls.Add(this.inputNumero);
-            this.pnlMain.Controls.Add(this.txtObr3);
             this.pnlMain.Controls.Add(this.txtObr5);
+            this.pnlMain.Controls.Add(this.txtObr2);
             this.pnlMain.Controls.Add(this.label4);
-            this.pnlMain.Controls.Add(this.txtCpf);
+            this.pnlMain.Controls.Add(this.txtCnpj);
             this.pnlMain.Controls.Add(this.inputComplemento);
             this.pnlMain.Controls.Add(this.txtObr1);
             this.pnlMain.Controls.Add(this.inputboxUf);
-            this.pnlMain.Controls.Add(this.txtNome);
-            this.pnlMain.Controls.Add(this.txtObr6);
+            this.pnlMain.Controls.Add(this.txtRazao);
+            this.pnlMain.Controls.Add(this.txtObr8);
             this.pnlMain.Controls.Add(this.btnProximo);
-            this.pnlMain.Controls.Add(this.label2);
+            this.pnlMain.Controls.Add(this.txtComplemento);
             this.pnlMain.Controls.Add(this.inputNome);
             this.pnlMain.Controls.Add(this.txtUf);
             this.pnlMain.Controls.Add(this.txtTitulo);
-            this.pnlMain.Controls.Add(this.label1);
+            this.pnlMain.Controls.Add(this.txtObr7);
             this.pnlMain.Controls.Add(this.txtCep);
             this.pnlMain.Controls.Add(this.txtCidade);
             this.pnlMain.Controls.Add(this.txtLogradouro);
             this.pnlMain.Controls.Add(this.inputCidade);
-            this.pnlMain.Controls.Add(this.label3);
+            this.pnlMain.Controls.Add(this.txtObr3);
             this.pnlMain.Controls.Add(this.inputBairro);
-            this.pnlMain.Controls.Add(this.txtObr2);
             this.pnlMain.Controls.Add(this.txtObr4);
+            this.pnlMain.Controls.Add(this.txtObr6);
             this.pnlMain.Controls.Add(this.inputLogradouro);
             this.pnlMain.Controls.Add(this.txtBairro);
             this.pnlMain.Location = new System.Drawing.Point(90, 65);
@@ -136,27 +136,27 @@
             this.inputNumero.Size = new System.Drawing.Size(76, 23);
             this.inputNumero.TabIndex = 4;
             // 
-            // txtObr3
-            // 
-            this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr3.AutoSize = true;
-            this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(444, 130);
-            this.txtObr3.Name = "txtObr3";
-            this.txtObr3.Size = new System.Drawing.Size(12, 15);
-            this.txtObr3.TabIndex = 4;
-            this.txtObr3.Text = "*";
-            // 
             // txtObr5
             // 
             this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr5.AutoSize = true;
             this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(425, 71);
+            this.txtObr5.Location = new System.Drawing.Point(444, 130);
             this.txtObr5.Name = "txtObr5";
             this.txtObr5.Size = new System.Drawing.Size(12, 15);
-            this.txtObr5.TabIndex = 1;
+            this.txtObr5.TabIndex = 4;
             this.txtObr5.Text = "*";
+            // 
+            // txtObr2
+            // 
+            this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr2.AutoSize = true;
+            this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr2.Location = new System.Drawing.Point(425, 71);
+            this.txtObr2.Name = "txtObr2";
+            this.txtObr2.Size = new System.Drawing.Size(12, 15);
+            this.txtObr2.TabIndex = 1;
+            this.txtObr2.Text = "*";
             // 
             // label4
             // 
@@ -170,17 +170,17 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Número";
             // 
-            // txtCpf
+            // txtCnpj
             // 
-            this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCpf.AutoSize = true;
-            this.txtCpf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCpf.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCpf.Location = new System.Drawing.Point(380, 69);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(39, 17);
-            this.txtCpf.TabIndex = 1;
-            this.txtCpf.Text = "CNPJ";
+            this.txtCnpj.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCnpj.AutoSize = true;
+            this.txtCnpj.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtCnpj.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCnpj.Location = new System.Drawing.Point(380, 69);
+            this.txtCnpj.Name = "txtCnpj";
+            this.txtCnpj.Size = new System.Drawing.Size(39, 17);
+            this.txtCnpj.TabIndex = 1;
+            this.txtCnpj.Text = "CNPJ";
             // 
             // inputComplemento
             // 
@@ -244,28 +244,28 @@
             this.inputboxUf.Size = new System.Drawing.Size(77, 23);
             this.inputboxUf.TabIndex = 8;
             // 
-            // txtNome
+            // txtRazao
             // 
-            this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNome.AutoSize = true;
-            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtNome.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtNome.Location = new System.Drawing.Point(208, 69);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(83, 17);
-            this.txtNome.TabIndex = 0;
-            this.txtNome.Text = "Razão social";
+            this.txtRazao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtRazao.AutoSize = true;
+            this.txtRazao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtRazao.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtRazao.Location = new System.Drawing.Point(208, 69);
+            this.txtRazao.Name = "txtRazao";
+            this.txtRazao.Size = new System.Drawing.Size(83, 17);
+            this.txtRazao.TabIndex = 0;
+            this.txtRazao.Text = "Razão social";
             // 
-            // txtObr6
+            // txtObr8
             // 
-            this.txtObr6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr6.AutoSize = true;
-            this.txtObr6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr6.Location = new System.Drawing.Point(509, 189);
-            this.txtObr6.Name = "txtObr6";
-            this.txtObr6.Size = new System.Drawing.Size(12, 15);
-            this.txtObr6.TabIndex = 8;
-            this.txtObr6.Text = "*";
+            this.txtObr8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr8.AutoSize = true;
+            this.txtObr8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr8.Location = new System.Drawing.Point(509, 189);
+            this.txtObr8.Name = "txtObr8";
+            this.txtObr8.Size = new System.Drawing.Size(12, 15);
+            this.txtObr8.TabIndex = 8;
+            this.txtObr8.Text = "*";
             // 
             // btnProximo
             // 
@@ -283,17 +283,17 @@
             this.btnProximo.Text = "Cadastrar";
             this.btnProximo.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // txtComplemento
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(480, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Complemento";
+            this.txtComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtComplemento.AutoSize = true;
+            this.txtComplemento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtComplemento.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtComplemento.Location = new System.Drawing.Point(480, 128);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(95, 17);
+            this.txtComplemento.TabIndex = 5;
+            this.txtComplemento.Text = "Complemento";
             // 
             // inputNome
             // 
@@ -330,16 +330,16 @@
             this.txtTitulo.TabIndex = 0;
             this.txtTitulo.Text = "Cadastrar Fornecedor";
             // 
-            // label1
+            // txtObr7
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.label1.Location = new System.Drawing.Point(353, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "*";
+            this.txtObr7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr7.AutoSize = true;
+            this.txtObr7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr7.Location = new System.Drawing.Point(353, 189);
+            this.txtObr7.Name = "txtObr7";
+            this.txtObr7.Size = new System.Drawing.Size(12, 15);
+            this.txtObr7.TabIndex = 7;
+            this.txtObr7.Text = "*";
             // 
             // txtCep
             // 
@@ -388,16 +388,16 @@
             this.inputCidade.Size = new System.Drawing.Size(154, 23);
             this.inputCidade.TabIndex = 7;
             // 
-            // label3
+            // txtObr3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.label3.Location = new System.Drawing.Point(123, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "*";
+            this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr3.AutoSize = true;
+            this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr3.Location = new System.Drawing.Point(123, 130);
+            this.txtObr3.Name = "txtObr3";
+            this.txtObr3.Size = new System.Drawing.Size(12, 15);
+            this.txtObr3.TabIndex = 2;
+            this.txtObr3.Text = "*";
             // 
             // inputBairro
             // 
@@ -410,27 +410,27 @@
             this.inputBairro.Size = new System.Drawing.Size(154, 23);
             this.inputBairro.TabIndex = 6;
             // 
-            // txtObr2
-            // 
-            this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr2.AutoSize = true;
-            this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(294, 130);
-            this.txtObr2.Name = "txtObr2";
-            this.txtObr2.Size = new System.Drawing.Size(12, 15);
-            this.txtObr2.TabIndex = 3;
-            this.txtObr2.Text = "*";
-            // 
             // txtObr4
             // 
             this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr4.AutoSize = true;
             this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(170, 189);
+            this.txtObr4.Location = new System.Drawing.Point(294, 130);
             this.txtObr4.Name = "txtObr4";
             this.txtObr4.Size = new System.Drawing.Size(12, 15);
-            this.txtObr4.TabIndex = 6;
+            this.txtObr4.TabIndex = 3;
             this.txtObr4.Text = "*";
+            // 
+            // txtObr6
+            // 
+            this.txtObr6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr6.AutoSize = true;
+            this.txtObr6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr6.Location = new System.Drawing.Point(170, 189);
+            this.txtObr6.Name = "txtObr6";
+            this.txtObr6.Size = new System.Drawing.Size(12, 15);
+            this.txtObr6.TabIndex = 6;
+            this.txtObr6.Text = "*";
             // 
             // inputLogradouro
             // 
@@ -478,30 +478,30 @@
         private Panel pnlMain;
         private Label txtTitulo;
         private MaskedTextBox inputCpf;
-        private Label txtObr5;
-        private Label txtCpf;
+        private Label txtObr2;
+        private Label txtCnpj;
         private Label txtObr1;
-        private Label txtNome;
+        private Label txtRazao;
         private Button btnProximo;
         private TextBox inputNome;
         private MaskedTextBox inputCep;
         private TextBox inputNumero;
-        private Label txtObr3;
+        private Label txtObr5;
         private Label label4;
         private TextBox inputComplemento;
         private ComboBox inputboxUf;
-        private Label txtObr6;
-        private Label label2;
+        private Label txtObr8;
+        private Label txtComplemento;
         private Label txtUf;
-        private Label label1;
+        private Label txtObr7;
         private Label txtCep;
         private Label txtCidade;
         private Label txtLogradouro;
         private TextBox inputCidade;
-        private Label label3;
+        private Label txtObr3;
         private TextBox inputBairro;
-        private Label txtObr2;
         private Label txtObr4;
+        private Label txtObr6;
         private TextBox inputLogradouro;
         private Label txtBairro;
     }

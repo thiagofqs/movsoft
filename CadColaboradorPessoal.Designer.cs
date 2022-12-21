@@ -34,18 +34,18 @@
             this.inputCpf = new System.Windows.Forms.MaskedTextBox();
             this.inputCelular = new System.Windows.Forms.MaskedTextBox();
             this.txtObr7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtCelular = new System.Windows.Forms.Label();
             this.txtObr6 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.Label();
             this.inputEmail = new System.Windows.Forms.TextBox();
-            this.txtObr5 = new System.Windows.Forms.Label();
+            this.txtObr4 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.Label();
             this.inputSobrenome = new System.Windows.Forms.TextBox();
-            this.txtObr4 = new System.Windows.Forms.Label();
             this.txtObr3 = new System.Windows.Forms.Label();
+            this.txtObr5 = new System.Windows.Forms.Label();
             this.txtObr2 = new System.Windows.Forms.Label();
             this.txtObr1 = new System.Windows.Forms.Label();
-            this.txtConfirmarSenha = new System.Windows.Forms.Label();
+            this.txtSexo = new System.Windows.Forms.Label();
             this.txtNascimento = new System.Windows.Forms.Label();
             this.txtSobrenome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.Label();
@@ -133,17 +133,17 @@
             this.txtObr7.TabIndex = 6;
             this.txtObr7.Text = "*";
             // 
-            // label3
+            // txtCelular
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(448, 210);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Celular";
+            this.txtCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCelular.AutoSize = true;
+            this.txtCelular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCelular.Location = new System.Drawing.Point(448, 210);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(51, 17);
+            this.txtCelular.TabIndex = 6;
+            this.txtCelular.Text = "Celular";
             // 
             // txtObr6
             // 
@@ -179,16 +179,16 @@
             this.inputEmail.Size = new System.Drawing.Size(154, 23);
             this.inputEmail.TabIndex = 5;
             // 
-            // txtObr5
+            // txtObr4
             // 
-            this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr5.AutoSize = true;
-            this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(358, 154);
-            this.txtObr5.Name = "txtObr5";
-            this.txtObr5.Size = new System.Drawing.Size(12, 15);
-            this.txtObr5.TabIndex = 3;
-            this.txtObr5.Text = "*";
+            this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr4.AutoSize = true;
+            this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr4.Location = new System.Drawing.Point(358, 154);
+            this.txtObr4.Name = "txtObr4";
+            this.txtObr4.Size = new System.Drawing.Size(12, 15);
+            this.txtObr4.TabIndex = 3;
+            this.txtObr4.Text = "*";
             // 
             // txtCpf
             // 
@@ -213,27 +213,27 @@
             this.inputSobrenome.Size = new System.Drawing.Size(154, 23);
             this.inputSobrenome.TabIndex = 1;
             // 
-            // txtObr4
-            // 
-            this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr4.AutoSize = true;
-            this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(251, 156);
-            this.txtObr4.Name = "txtObr4";
-            this.txtObr4.Size = new System.Drawing.Size(12, 15);
-            this.txtObr4.TabIndex = 2;
-            this.txtObr4.Text = "*";
-            // 
             // txtObr3
             // 
             this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr3.AutoSize = true;
             this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(585, 156);
+            this.txtObr3.Location = new System.Drawing.Point(251, 156);
             this.txtObr3.Name = "txtObr3";
             this.txtObr3.Size = new System.Drawing.Size(12, 15);
-            this.txtObr3.TabIndex = 4;
+            this.txtObr3.TabIndex = 2;
             this.txtObr3.Text = "*";
+            // 
+            // txtObr5
+            // 
+            this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObr5.AutoSize = true;
+            this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObr5.Location = new System.Drawing.Point(585, 156);
+            this.txtObr5.Name = "txtObr5";
+            this.txtObr5.Size = new System.Drawing.Size(12, 15);
+            this.txtObr5.TabIndex = 4;
+            this.txtObr5.Text = "*";
             // 
             // txtObr2
             // 
@@ -257,17 +257,17 @@
             this.txtObr1.TabIndex = 0;
             this.txtObr1.Text = "*";
             // 
-            // txtConfirmarSenha
+            // txtSexo
             // 
-            this.txtConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtConfirmarSenha.AutoSize = true;
-            this.txtConfirmarSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(216, 154);
-            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(37, 17);
-            this.txtConfirmarSenha.TabIndex = 2;
-            this.txtConfirmarSenha.Text = "Sexo";
+            this.txtSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSexo.AutoSize = true;
+            this.txtSexo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtSexo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSexo.Location = new System.Drawing.Point(216, 154);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(37, 17);
+            this.txtSexo.TabIndex = 2;
+            this.txtSexo.Text = "Sexo";
             // 
             // txtNascimento
             // 
@@ -345,18 +345,18 @@
             this.Controls.Add(this.inputCpf);
             this.Controls.Add(this.inputCelular);
             this.Controls.Add(this.txtObr7);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtObr6);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.inputEmail);
-            this.Controls.Add(this.txtObr5);
+            this.Controls.Add(this.txtObr4);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.inputSobrenome);
-            this.Controls.Add(this.txtObr4);
             this.Controls.Add(this.txtObr3);
+            this.Controls.Add(this.txtObr5);
             this.Controls.Add(this.txtObr2);
             this.Controls.Add(this.txtObr1);
-            this.Controls.Add(this.txtConfirmarSenha);
+            this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtNascimento);
             this.Controls.Add(this.txtSobrenome);
             this.Controls.Add(this.txtNome);
@@ -381,18 +381,18 @@
         private MaskedTextBox inputCpf;
         private MaskedTextBox inputCelular;
         private Label txtObr7;
-        private Label label3;
+        private Label txtCelular;
         private Label txtObr6;
         private Label txtEmail;
         private TextBox inputEmail;
-        private Label txtObr5;
+        private Label txtObr4;
         private Label txtCpf;
         private TextBox inputSobrenome;
-        private Label txtObr4;
         private Label txtObr3;
+        private Label txtObr5;
         private Label txtObr2;
         private Label txtObr1;
-        private Label txtConfirmarSenha;
+        private Label txtSexo;
         private Label txtNascimento;
         private Label txtSobrenome;
         private Label txtNome;

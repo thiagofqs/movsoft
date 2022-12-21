@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.botaoVoltar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.txtTitulo = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.inputCep = new System.Windows.Forms.MaskedTextBox();
             this.inputNumero = new System.Windows.Forms.TextBox();
             this.txtObr3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.Label();
             this.inputComplemento = new System.Windows.Forms.TextBox();
             this.inputboxUf = new System.Windows.Forms.ComboBox();
             this.txtObr6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.Label();
             this.txtUf = new System.Windows.Forms.Label();
             this.txtObr5 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.Label();
@@ -53,21 +53,21 @@
             this.txtCep = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // botaoVoltar
+            // btnVoltar
             // 
-            this.botaoVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.botaoVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.botaoVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botaoVoltar.FlatAppearance.BorderSize = 0;
-            this.botaoVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botaoVoltar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.botaoVoltar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.botaoVoltar.Location = new System.Drawing.Point(243, 275);
-            this.botaoVoltar.Name = "botaoVoltar";
-            this.botaoVoltar.Size = new System.Drawing.Size(115, 35);
-            this.botaoVoltar.TabIndex = 8;
-            this.botaoVoltar.Text = "Voltar";
-            this.botaoVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVoltar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVoltar.Location = new System.Drawing.Point(243, 275);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(115, 35);
+            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
             // 
             // txtTitulo
             // 
@@ -132,17 +132,17 @@
             this.txtObr3.TabIndex = 2;
             this.txtObr3.Text = "*";
             // 
-            // label4
+            // txtNumero
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(395, 121);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Número";
+            this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNumero.AutoSize = true;
+            this.txtNumero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtNumero.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNumero.Location = new System.Drawing.Point(395, 121);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(58, 17);
+            this.txtNumero.TabIndex = 2;
+            this.txtNumero.Text = "Número";
             // 
             // inputComplemento
             // 
@@ -206,17 +206,17 @@
             this.txtObr6.TabIndex = 6;
             this.txtObr6.Text = "*";
             // 
-            // label2
+            // txtComplemento
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(495, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Complemento";
+            this.txtComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtComplemento.AutoSize = true;
+            this.txtComplemento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtComplemento.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtComplemento.Location = new System.Drawing.Point(495, 121);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(95, 17);
+            this.txtComplemento.TabIndex = 3;
+            this.txtComplemento.Text = "Complemento";
             // 
             // txtUf
             // 
@@ -361,17 +361,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(750, 350);
-            this.Controls.Add(this.botaoVoltar);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.inputCep);
             this.Controls.Add(this.inputNumero);
             this.Controls.Add(this.txtObr3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.inputComplemento);
             this.Controls.Add(this.inputboxUf);
             this.Controls.Add(this.txtObr6);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtComplemento);
             this.Controls.Add(this.txtUf);
             this.Controls.Add(this.txtObr5);
             this.Controls.Add(this.txtCidade);
@@ -396,17 +396,17 @@
 
         #endregion
 
-        private Button botaoVoltar;
+        private Button btnVoltar;
         private Label txtTitulo;
         private Button btnCadastrar;
         private MaskedTextBox inputCep;
         private TextBox inputNumero;
         private Label txtObr3;
-        private Label label4;
+        private Label txtNumero;
         private TextBox inputComplemento;
         private ComboBox inputboxUf;
         private Label txtObr6;
-        private Label label2;
+        private Label txtComplemento;
         private Label txtUf;
         private Label txtObr5;
         private Label txtCidade;

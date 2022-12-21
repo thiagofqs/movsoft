@@ -147,7 +147,7 @@ namespace MovSoft
             }
         }
 
-        private void botaoVoltar_MouseClick(object sender, MouseEventArgs e)
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
             AtribuirDadosDosInputs();
             if (editarColaborador == true)
