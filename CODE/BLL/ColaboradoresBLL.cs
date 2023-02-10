@@ -1,10 +1,10 @@
 ﻿using System.Data;
-using MovSoft.CODE.DAL;
-using MovSoft.CODE.DTO;
+using CRUD.CODE.DAL;
+using CRUD.CODE.DTO;
 using MySql.Data.MySqlClient;
 using MovSoft;
 
-namespace MovSoft.CODE.BLL
+namespace CRUD.CODE.BLL
 {
     class ColaboradoresBLL
     {

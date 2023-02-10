@@ -121,10 +121,7 @@ namespace MovSoft
 
         private void inputCelular_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
-                ContinuarCadastro();
-            }
+            ContinuarCadastro();
         }
     }
 }

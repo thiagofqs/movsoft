@@ -1,5 +1,5 @@
-﻿using MovSoft.CODE.BLL;
-using MovSoft.CODE.DTO;
+﻿using CRUD.CODE.BLL;
+using CRUD.CODE.DTO;
 
 namespace MovSoft
 {
@@ -147,7 +147,7 @@ namespace MovSoft
             }
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void botaoVoltar_MouseClick(object sender, MouseEventArgs e)
         {
             AtribuirDadosDosInputs();
             if (editarColaborador == true)

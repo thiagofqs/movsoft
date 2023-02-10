@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace MovSoft
 {
-    public partial class CadCliente : Form
+    public partial class Grupos : Form
     {
-        public CadCliente()
+        public Grupos()
         {
             InitializeComponent();
         }
 
-        private void txtTitulo_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+      
         }
     }
 }

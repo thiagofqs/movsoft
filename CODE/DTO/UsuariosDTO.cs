@@ -1,4 +1,4 @@
-﻿namespace MovSoft.CODE.DTO
+﻿namespace CRUD.CODE.DTO
 {
     class UsuariosDTO
     {

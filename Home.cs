@@ -1,4 +1,4 @@
-using MovSoft.CODE.BLL;
+using CRUD.CODE.BLL;
 
 namespace MovSoft
 {
@@ -142,6 +142,7 @@ namespace MovSoft
                 ListaUsuarios frm = new(usuario); 
                 OpenChildForm(frm);
             }
+            
         }
 
         private void colaboradoresToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -178,34 +179,6 @@ namespace MovSoft
                     dropItens.MouseEnter += CursorHandChanger;
                     dropItens.MouseLeave += CursorDefaultChanger;
                 }
-            }
-        }
-
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            bool permitido = VerificarPermissao(1);
-            if (permitido == false)
-            {
-                MessageBox.Show($"O cargo {usuario.cargo} não tem permissão para acessar a tela Clientes");
-            }
-            else
-            {
-                ListaClientes frm = new();
-                OpenChildForm(frm);
-            }
-        }
-
-        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            bool permitido = VerificarPermissao(1);
-            if (permitido == false)
-            {
-                MessageBox.Show($"O cargo {usuario.cargo} não tem permissão para acessar a tela Fornecedores");
-            }
-            else
-            {
-                ListaFornecedores frm = new();
-                OpenChildForm(frm);
             }
         }
     }

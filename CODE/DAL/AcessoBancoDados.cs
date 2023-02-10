@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace MovSoft.CODE.DAL
+namespace CRUD.CODE.DAL
 {
 	class AcessoBancoDados
 	{
