@@ -1,4 +1,4 @@
-﻿namespace CRUD.CODE.DTO
+﻿namespace MovSoft.CODE.DTO
 {
     class ContatosDTO
     {

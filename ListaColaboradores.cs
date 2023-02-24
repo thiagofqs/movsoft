@@ -1,17 +1,18 @@
-﻿using CRUD.CODE.BLL;
+﻿using MovSoft.CODE.BLL;
 
 namespace MovSoft
 {
     public partial class ListaColaboradores : Form
     {
-        private int idColaborador;
         DataGridViewRow rowData = new();
         ColaboradoresBLL bll = new();
+        Funcoes funcoes = new();
 
         public ListaColaboradores()
         {
             InitializeComponent();
             CarregarColaboradores();
+            funcoes.dataGridView_AplicarCellFormatting(dataGridView);
         }
 
         private void btnCadColaboradores_Click(object sender, EventArgs e)
@@ -21,8 +22,8 @@ namespace MovSoft
 
         private void AbrirCadColaborador(bool editarColaborador)
         {
-            CadColaborador frm = new(editarColaborador, idColaborador);
-            frm.ShowDialog();
+            CadColaborador frm = new(editarColaborador);
+            funcoes.AbrirForms(frm, 2);
         }
 
         public void CarregarColaboradores()
@@ -41,7 +42,7 @@ namespace MovSoft
             }
         }
 
-        private void ProcurarColaboradores()
+        private void PesquisarColaboradores()
         {
             dataGridView.DataSource = bll.ProcurarColaboradores(inputPesquisarColaborador.Text);
         }
@@ -50,20 +51,39 @@ namespace MovSoft
         {
             if (e.KeyChar == 13)
             {
-                ProcurarColaboradores();
+                PesquisarColaboradores();
             }
         }
 
         private void EditarColaboradores(object sender, DataGridViewCellEventArgs e)
         {
             rowData = dataGridView.Rows[e.RowIndex];
-            idColaborador = int.Parse(rowData.Cells[0].Value.ToString());
+            Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());
             AbrirCadColaborador(true);
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             CarregarColaboradores();
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                e.Value = funcoes.GridViewMascaraCPF(e.Value.ToString());
+                e.FormattingApplied = true;
+            }
+            if(e.ColumnIndex == 2)
+            {
+                e.Value = funcoes.GridViewMascaraCelular(e.Value.ToString());
+                e.FormattingApplied = true;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            PesquisarColaboradores();
         }
     }
 }

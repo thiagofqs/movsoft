@@ -83,6 +83,16 @@ namespace MovSoft.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_logout {
+            get {
+                object obj = ResourceManager.GetObject("icon-logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_producao {
             get {
                 object obj = ResourceManager.GetObject("icon-producao", resourceCulture);
@@ -96,6 +106,16 @@ namespace MovSoft.Properties {
         internal static System.Drawing.Bitmap icon_produto {
             get {
                 object obj = ResourceManager.GetObject("icon-produto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_search {
+            get {
+                object obj = ResourceManager.GetObject("icon-search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,72 +1,61 @@
-﻿using CRUD.CODE.BLL;
-using CRUD.CODE.DTO;
+﻿using MovSoft.CODE.BLL;
+using MovSoft.CODE.DTO;
+using Newtonsoft.Json;
 
 namespace MovSoft
 {
     public partial class CadColaboradorEndereco : Form
     {
+        Funcoes funcoes = new();
         ColaboradoresBLL bllColaboradores = new();
         ColaboradoresDTO dtoColaboradores = new();
         EnderecosDTO dtoEnderecos = new();
         ContatosDTO dtoContatos = new();
-        Endereco enderecoColaborador = new();
-        CadColaboradorPessoal.Dados dadosColaborador;
         private bool editarColaborador = false;
-        public struct Endereco
-        {
-            public int idEndereco;
-            public string cep;
-            public string logradouro;
-            public string numero;
-            public string complemento;
-            public string cidade;
-            public string bairro;
-            public string uf;
-        }
 
-        public CadColaboradorEndereco(CadColaboradorPessoal.Dados dadosColaboradorRetornado, bool primeiraAbertura, Endereco enderecoColaboradorRetornado, bool editarColaboradorRetornado)
+        public CadColaboradorEndereco(bool primeiraAbertura, bool editar)
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            dadosColaborador = dadosColaboradorRetornado;
+            CentralizarElementos();
             if (primeiraAbertura == false)
             {
-                enderecoColaborador = enderecoColaboradorRetornado;
                 AtribuirDadosAosInputs();
             }
-            if(editarColaboradorRetornado == true)
+            if(editar == true)
             {
-                enderecoColaborador = enderecoColaboradorRetornado;
                 txtTitulo.Text = "Editar Colaborador 2/2";
                 btnCadastrar.Text = "Salvar";
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
+                CentralizarElementos();
             }
         }
 
         private void RemoverMascarasDeTexto()
         {
-            inputCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            funcoes.RemoverMascarasDeTexto(inputCep);
         }
 
         private void CadastrarColaborador()
         {
-            dtoColaboradores.Nome = dadosColaborador.nome;
-            dtoColaboradores.Sobrenome = dadosColaborador.sobrenome;
-            dtoColaboradores.Id_sexo = dadosColaborador.idSexo;
-            dtoColaboradores.Cpf = dadosColaborador.cpf;
-            dtoColaboradores.Data_nasc = dadosColaborador.nascimento;
-            dtoColaboradores.Email = dadosColaborador.email;
-            dtoEnderecos.Cep = enderecoColaborador.cep;
-            dtoEnderecos.Logradouro = enderecoColaborador.logradouro;
-            dtoEnderecos.Numero = enderecoColaborador.numero;
-            dtoEnderecos.Complemento = enderecoColaborador.complemento;
-            dtoEnderecos.Bairro = enderecoColaborador.bairro;
-            dtoEnderecos.Cidade = enderecoColaborador.cidade;
-            dtoEnderecos.Estado = enderecoColaborador.uf;
-            dtoContatos.Ddd = dadosColaborador.ddd;
-            dtoContatos.Celular = dadosColaborador.celular;
+            dtoColaboradores.Nome = Parametros.nomeColab;
+            dtoColaboradores.Sobrenome = Parametros.sobrenomeColab;
+            dtoColaboradores.Id_sexo = (int)Parametros.idSexoColab;
+            dtoColaboradores.Cpf = Parametros.cpfColab;
+            dtoColaboradores.Data_nasc = Parametros.nascimentoColab;
+            dtoColaboradores.Email = Parametros.emailColab;
+            dtoEnderecos.Cep = Parametros.cep;
+            dtoEnderecos.Logradouro = Parametros.logradouro;
+            dtoEnderecos.Numero = Parametros.numero;
+            dtoEnderecos.Complemento = Parametros.complemento;
+            dtoEnderecos.Bairro = Parametros.bairro;
+            dtoEnderecos.Cidade = Parametros.cidade;
+            dtoEnderecos.Estado = Parametros.uf;
+            dtoContatos.Ddd = Parametros.dddColab;
+            dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.CadastrarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
+            Parametros parametros = new();
             ActiveForm.Close();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is ListaColaboradores
@@ -77,26 +66,31 @@ namespace MovSoft
             }
         }
 
+        private void CentralizarElementos()
+        {
+            funcoes.centralizarElementos(txtTitulo, this);
+        }
+
         private void EditarColaborador()
         {
-            dtoColaboradores.Id_colaborador = dadosColaborador.idColaborador;
-            dtoEnderecos.Id_endereco = enderecoColaborador.idEndereco;
-            dtoContatos.Id_celular = dadosColaborador.idCelular;
-            dtoColaboradores.Nome = dadosColaborador.nome;
-            dtoColaboradores.Sobrenome = dadosColaborador.sobrenome;
-            dtoColaboradores.Id_sexo = dadosColaborador.idSexo;
-            dtoColaboradores.Cpf = dadosColaborador.cpf;
-            dtoColaboradores.Data_nasc = dadosColaborador.nascimento;
-            dtoColaboradores.Email = dadosColaborador.email;
-            dtoEnderecos.Cep = enderecoColaborador.cep;
-            dtoEnderecos.Logradouro = enderecoColaborador.logradouro;
-            dtoEnderecos.Numero = enderecoColaborador.numero;
-            dtoEnderecos.Complemento = enderecoColaborador.complemento;
-            dtoEnderecos.Bairro = enderecoColaborador.bairro;
-            dtoEnderecos.Cidade = enderecoColaborador.cidade;
-            dtoEnderecos.Estado = enderecoColaborador.uf;
-            dtoContatos.Ddd = dadosColaborador.ddd;
-            dtoContatos.Celular = dadosColaborador.celular;
+            dtoColaboradores.Id_colaborador = (int)Parametros.idColab;
+            dtoEnderecos.Id_endereco = (int)Parametros.idEndereco;
+            dtoContatos.Id_celular = (int)Parametros.idCelularColab;
+            dtoColaboradores.Nome = Parametros.nomeColab;
+            dtoColaboradores.Sobrenome = Parametros.sobrenomeColab;
+            dtoColaboradores.Id_sexo = (int)Parametros.idSexoColab;
+            dtoColaboradores.Cpf = Parametros.cpfColab;
+            dtoColaboradores.Data_nasc = Parametros.nascimentoColab;
+            dtoColaboradores.Email = Parametros.emailColab;
+            dtoEnderecos.Cep = Parametros.cep;
+            dtoEnderecos.Logradouro = Parametros.logradouro;
+            dtoEnderecos.Numero = Parametros.numero;
+            dtoEnderecos.Complemento = Parametros.complemento;
+            dtoEnderecos.Bairro = Parametros.bairro;
+            dtoEnderecos.Cidade = Parametros.cidade;
+            dtoEnderecos.Estado = Parametros.uf;
+            dtoContatos.Ddd = Parametros.dddColab;
+            dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.EditarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
             ActiveForm.Close();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
@@ -110,24 +104,24 @@ namespace MovSoft
 
         private void AtribuirDadosAosInputs()
         {
-            inputCep.Text = enderecoColaborador.cep;
-            inputLogradouro.Text = enderecoColaborador.logradouro;
-            inputNumero.Text = enderecoColaborador.numero;
-            inputComplemento.Text = enderecoColaborador.complemento;
-            inputBairro.Text = enderecoColaborador.bairro;
-            inputCidade.Text = enderecoColaborador.cidade;
-            inputboxUf.Text = enderecoColaborador.uf;
+            inputCep.Text = Parametros.cep;
+            inputLogradouro.Text = Parametros.logradouro;
+            inputNumero.Text = Parametros.numero;
+            inputComplemento.Text = Parametros.complemento;
+            inputBairro.Text = Parametros.bairro;
+            inputCidade.Text = Parametros.cidade;
+            inputboxUf.Text = Parametros.uf;
         }
 
         private void AtribuirDadosDosInputs()
         {
-            enderecoColaborador.cep = inputCep.Text;
-            enderecoColaborador.logradouro = inputLogradouro.Text;
-            enderecoColaborador.numero = inputNumero.Text;
-            enderecoColaborador.complemento = inputComplemento.Text;
-            enderecoColaborador.bairro = inputBairro.Text;
-            enderecoColaborador.cidade = inputCidade.Text;
-            enderecoColaborador.uf = inputboxUf.Text;
+            Parametros.cep = inputCep.Text;
+            Parametros.logradouro = inputLogradouro.Text;
+            Parametros.numero = inputNumero.Text;
+            Parametros.complemento = inputComplemento.Text;
+            Parametros.bairro = inputBairro.Text;
+            Parametros.cidade = inputCidade.Text;
+            Parametros.uf = inputboxUf.Text;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -147,7 +141,7 @@ namespace MovSoft
             }
         }
 
-        private void botaoVoltar_MouseClick(object sender, MouseEventArgs e)
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
             AtribuirDadosDosInputs();
             if (editarColaborador == true)
@@ -157,7 +151,7 @@ namespace MovSoft
                              select frm;
                 if (qrForm != null && qrForm.Count() > 0)
                 {
-                    ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoalEditar(dadosColaborador);
+                    ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoal(false, editarColaborador);
                 }
             }
             else if (editarColaborador == false)
@@ -167,9 +161,30 @@ namespace MovSoft
                              select frm;
                 if (qrForm != null && qrForm.Count() > 0)
                 {
-                    ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoal(enderecoColaborador);
+                    ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoal(false, editarColaborador);
                 }
             }
+        }
+
+        private void verificarCep()
+        {
+            if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
+            {
+                string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
+                string? result = funcoes.getApiResult(url);
+                CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
+                inputCep.Text = cepModel.Cep;
+                inputLogradouro.Text = cepModel.Logradouro;
+                inputBairro.Text = cepModel.Bairro;
+                inputComplemento.Text = cepModel.Complemento;
+                inputCidade.Text = cepModel.Localidade;
+                inputboxUf.Text = cepModel.Uf;
+            }
+        }
+
+        private void inputCep_Leave(object sender, EventArgs e)
+        {
+            verificarCep();
         }
     }
 }

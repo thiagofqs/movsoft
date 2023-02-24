@@ -29,64 +29,56 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.pnlHeaderJanela = new System.Windows.Forms.Panel();
             this.txtCargo = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnMinimizarJanela = new System.Windows.Forms.Button();
-            this.btnFecharJanela = new System.Windows.Forms.Button();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesFornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.confecçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoFinalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.componentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcionasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtosFinaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.processosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.revendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ensaiosProvisãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.finançasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.análiseDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ensaiosProvisaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.financasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.analiseDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.painelDeControleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlHeaderJanela.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.menuSaida = new System.Windows.Forms.MenuStrip();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHome.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.menu.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.menuSaida.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlHeaderJanela
-            // 
-            this.pnlHeaderJanela.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlHeaderJanela.Controls.Add(this.txtCargo);
-            this.pnlHeaderJanela.Controls.Add(this.txtUsuario);
-            this.pnlHeaderJanela.Controls.Add(this.btnSair);
-            this.pnlHeaderJanela.Controls.Add(this.btnMinimizarJanela);
-            this.pnlHeaderJanela.Controls.Add(this.btnFecharJanela);
-            this.pnlHeaderJanela.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeaderJanela.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeaderJanela.Name = "pnlHeaderJanela";
-            this.pnlHeaderJanela.Size = new System.Drawing.Size(930, 30);
-            this.pnlHeaderJanela.TabIndex = 0;
             // 
             // txtCargo
             // 
             this.txtCargo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCargo.AutoSize = true;
+            this.txtCargo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.txtCargo.Location = new System.Drawing.Point(657, 15);
+            this.txtCargo.Location = new System.Drawing.Point(0, -1);
             this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(45, 15);
+            this.txtCargo.Padding = new System.Windows.Forms.Padding(5);
+            this.txtCargo.Size = new System.Drawing.Size(55, 25);
             this.txtCargo.TabIndex = 4;
             this.txtCargo.Text = "Cargo: ";
             // 
@@ -95,67 +87,24 @@
             this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.AutoSize = true;
+            this.txtUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.txtUsuario.Location = new System.Drawing.Point(657, 0);
+            this.txtUsuario.Location = new System.Drawing.Point(0, -1);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(55, 15);
+            this.txtUsuario.Padding = new System.Windows.Forms.Padding(5);
+            this.txtUsuario.Size = new System.Drawing.Size(65, 25);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.Text = "Usuário: ";
-            // 
-            // btnSair
-            // 
-            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSair.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.btnSair.Location = new System.Drawing.Point(840, 0);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(30, 30);
-            this.btnSair.TabIndex = 0;
-            this.btnSair.TabStop = false;
-            this.btnSair.Text = "<";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // btnMinimizarJanela
-            // 
-            this.btnMinimizarJanela.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizarJanela.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimizarJanela.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMinimizarJanela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.btnMinimizarJanela.Location = new System.Drawing.Point(870, 0);
-            this.btnMinimizarJanela.Name = "btnMinimizarJanela";
-            this.btnMinimizarJanela.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimizarJanela.TabIndex = 0;
-            this.btnMinimizarJanela.TabStop = false;
-            this.btnMinimizarJanela.Text = "-";
-            this.btnMinimizarJanela.UseVisualStyleBackColor = true;
-            this.btnMinimizarJanela.Click += new System.EventHandler(this.btnMinimizarJanela_Click);
-            // 
-            // btnFecharJanela
-            // 
-            this.btnFecharJanela.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFecharJanela.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFecharJanela.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFecharJanela.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.btnFecharJanela.Location = new System.Drawing.Point(900, 0);
-            this.btnFecharJanela.Name = "btnFecharJanela";
-            this.btnFecharJanela.Size = new System.Drawing.Size(30, 30);
-            this.btnFecharJanela.TabIndex = 0;
-            this.btnFecharJanela.TabStop = false;
-            this.btnFecharJanela.Text = "X";
-            this.btnFecharJanela.UseVisualStyleBackColor = true;
-            this.btnFecharJanela.Click += new System.EventHandler(this.btnFecharJanela_Click);
             // 
             // pnlHome
             // 
             this.pnlHome.Controls.Add(this.pnlMain);
-            this.pnlHome.Controls.Add(this.menu);
+            this.pnlHome.Controls.Add(this.panel1);
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHome.Location = new System.Drawing.Point(0, 30);
+            this.pnlHome.Location = new System.Drawing.Point(0, 0);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(930, 570);
+            this.pnlHome.Size = new System.Drawing.Size(930, 600);
             this.pnlHome.TabIndex = 2;
             // 
             // pnlMain
@@ -164,12 +113,27 @@
             this.pnlMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.pnlMain.Location = new System.Drawing.Point(0, 97);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(930, 473);
+            this.pnlMain.Size = new System.Drawing.Size(930, 503);
             this.pnlMain.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.panel1.Controls.Add(this.menu);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.menuSaida);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(930, 97);
+            this.panel1.TabIndex = 2;
             // 
             // menu
             // 
+            this.menu.AutoSize = false;
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.menu.Dock = System.Windows.Forms.DockStyle.None;
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuárioToolStripMenuItem,
             this.clientesFornecedoresToolStripMenuItem,
@@ -178,14 +142,14 @@
             this.gestorToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(930, 97);
+            this.menu.Size = new System.Drawing.Size(590, 97);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
             this.colaboradoresToolStripMenuItem});
             this.usuárioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.usuárioToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -197,14 +161,14 @@
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // usuáriosToolStripMenuItem
+            // usuariosToolStripMenuItem
             // 
-            this.usuáriosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.usuáriosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
-            this.usuáriosToolStripMenuItem.Text = "Usuários";
-            this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
+            this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.usuariosToolStripMenuItem.Text = "Usuários";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // colaboradoresToolStripMenuItem
             // 
@@ -237,6 +201,7 @@
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // fornecedoresToolStripMenuItem
             // 
@@ -245,14 +210,15 @@
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
             this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
             // produçãoToolStripMenuItem
             // 
             this.produçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.confecçãoToolStripMenuItem,
-            this.insumosToolStripMenuItem,
             this.gruposToolStripMenuItem,
-            this.produtoFinalToolStripMenuItem});
+            this.insumosToolStripMenuItem,
+            this.produtosFinaisToolStripMenuItem,
+            this.processosToolStripMenuItem});
             this.produçãoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.produçãoToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.produçãoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("produçãoToolStripMenuItem.Image")));
@@ -263,43 +229,61 @@
             this.produçãoToolStripMenuItem.Text = "Produção";
             this.produçãoToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // confecçãoToolStripMenuItem
-            // 
-            this.confecçãoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.confecçãoToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.confecçãoToolStripMenuItem.Name = "confecçãoToolStripMenuItem";
-            this.confecçãoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.confecçãoToolStripMenuItem.Text = "Grupos";
-            // 
-            // insumosToolStripMenuItem
-            // 
-            this.insumosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.insumosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.insumosToolStripMenuItem.Text = "Insumos";
-            // 
             // gruposToolStripMenuItem
             // 
             this.gruposToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.gruposToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.gruposToolStripMenuItem.Name = "gruposToolStripMenuItem";
-            this.gruposToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.gruposToolStripMenuItem.Text = "Confecção";
+            this.gruposToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.gruposToolStripMenuItem.Text = "Grupos";
+            this.gruposToolStripMenuItem.Click += new System.EventHandler(this.confecçãoToolStripMenuItem_Click);
             // 
-            // produtoFinalToolStripMenuItem
+            // insumosToolStripMenuItem
             // 
-            this.produtoFinalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.produtoFinalToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.produtoFinalToolStripMenuItem.Name = "produtoFinalToolStripMenuItem";
-            this.produtoFinalToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.produtoFinalToolStripMenuItem.Text = "Produto final";
+            this.insumosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.insumosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.componentesToolStripMenuItem,
+            this.opcionasToolStripMenuItem});
+            this.insumosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.insumosToolStripMenuItem.Text = "Insumos";
+            // 
+            // componentesToolStripMenuItem
+            // 
+            this.componentesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.componentesToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.componentesToolStripMenuItem.Name = "componentesToolStripMenuItem";
+            this.componentesToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.componentesToolStripMenuItem.Text = "Componentes";
+            // 
+            // opcionasToolStripMenuItem
+            // 
+            this.opcionasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.opcionasToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.opcionasToolStripMenuItem.Name = "opcionasToolStripMenuItem";
+            this.opcionasToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.opcionasToolStripMenuItem.Text = "Opcionas";
+            // 
+            // produtosFinaisToolStripMenuItem
+            // 
+            this.produtosFinaisToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.produtosFinaisToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.produtosFinaisToolStripMenuItem.Name = "produtosFinaisToolStripMenuItem";
+            this.produtosFinaisToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.produtosFinaisToolStripMenuItem.Text = "Produtos finais";
+            // 
+            // processosToolStripMenuItem
+            // 
+            this.processosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.processosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.processosToolStripMenuItem.Name = "processosToolStripMenuItem";
+            this.processosToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.processosToolStripMenuItem.Text = "Processos";
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.revendaToolStripMenuItem,
-            this.produtosToolStripMenuItem,
             this.estoqueToolStripMenuItem,
             this.vendaToolStripMenuItem});
             this.produtoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -312,28 +296,12 @@
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // revendaToolStripMenuItem
-            // 
-            this.revendaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.revendaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.revendaToolStripMenuItem.Name = "revendaToolStripMenuItem";
-            this.revendaToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
-            this.revendaToolStripMenuItem.Text = "Revenda";
-            // 
-            // produtosToolStripMenuItem
-            // 
-            this.produtosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.produtosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
-            this.produtosToolStripMenuItem.Text = "Produtos";
-            // 
             // estoqueToolStripMenuItem
             // 
             this.estoqueToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.estoqueToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.estoqueToolStripMenuItem.Text = "Estoque";
             // 
             // vendaToolStripMenuItem
@@ -341,15 +309,15 @@
             this.vendaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.vendaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.vendaToolStripMenuItem.Text = "Venda";
             // 
             // gestorToolStripMenuItem
             // 
             this.gestorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ensaiosProvisãoToolStripMenuItem,
-            this.finançasToolStripMenuItem,
-            this.análiseDeDadosToolStripMenuItem,
+            this.ensaiosProvisaoToolStripMenuItem,
+            this.financasToolStripMenuItem,
+            this.analiseDeDadosToolStripMenuItem,
             this.painelDeControleToolStripMenuItem});
             this.gestorToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gestorToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -361,29 +329,29 @@
             this.gestorToolStripMenuItem.Text = "Gestor";
             this.gestorToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // ensaiosProvisãoToolStripMenuItem
+            // ensaiosProvisaoToolStripMenuItem
             // 
-            this.ensaiosProvisãoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.ensaiosProvisãoToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ensaiosProvisãoToolStripMenuItem.Name = "ensaiosProvisãoToolStripMenuItem";
-            this.ensaiosProvisãoToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.ensaiosProvisãoToolStripMenuItem.Text = "Ensaios/Provisão";
+            this.ensaiosProvisaoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.ensaiosProvisaoToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ensaiosProvisaoToolStripMenuItem.Name = "ensaiosProvisaoToolStripMenuItem";
+            this.ensaiosProvisaoToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.ensaiosProvisaoToolStripMenuItem.Text = "Ensaios/Provisão";
             // 
-            // finançasToolStripMenuItem
+            // financasToolStripMenuItem
             // 
-            this.finançasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.finançasToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.finançasToolStripMenuItem.Name = "finançasToolStripMenuItem";
-            this.finançasToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.finançasToolStripMenuItem.Text = "Finanças";
+            this.financasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.financasToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.financasToolStripMenuItem.Name = "financasToolStripMenuItem";
+            this.financasToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.financasToolStripMenuItem.Text = "Finanças";
             // 
-            // análiseDeDadosToolStripMenuItem
+            // analiseDeDadosToolStripMenuItem
             // 
-            this.análiseDeDadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.análiseDeDadosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.análiseDeDadosToolStripMenuItem.Name = "análiseDeDadosToolStripMenuItem";
-            this.análiseDeDadosToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.análiseDeDadosToolStripMenuItem.Text = "Análise de dados";
+            this.analiseDeDadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.analiseDeDadosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.analiseDeDadosToolStripMenuItem.Name = "analiseDeDadosToolStripMenuItem";
+            this.analiseDeDadosToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.analiseDeDadosToolStripMenuItem.Text = "Análise de dados";
             // 
             // painelDeControleToolStripMenuItem
             // 
@@ -393,6 +361,55 @@
             this.painelDeControleToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.painelDeControleToolStripMenuItem.Text = "Painel de controle";
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.Controls.Add(this.txtCargo);
+            this.panel3.Location = new System.Drawing.Point(593, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 25);
+            this.panel3.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.txtUsuario);
+            this.panel2.Location = new System.Drawing.Point(593, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 25);
+            this.panel2.TabIndex = 3;
+            // 
+            // menuSaida
+            // 
+            this.menuSaida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuSaida.AutoSize = false;
+            this.menuSaida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.menuSaida.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuSaida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.menuSaida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.menuSaida.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sairToolStripMenuItem});
+            this.menuSaida.Location = new System.Drawing.Point(726, 0);
+            this.menuSaida.Name = "menuSaida";
+            this.menuSaida.Size = new System.Drawing.Size(204, 97);
+            this.menuSaida.TabIndex = 3;
+            this.menuSaida.Text = "menuSaida";
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sairToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.sairToolStripMenuItem.Image = global::MovSoft.Properties.Resources.icon_logout;
+            this.sairToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(60, 93);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -400,28 +417,26 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(930, 600);
             this.Controls.Add(this.pnlHome);
-            this.Controls.Add(this.pnlHeaderJanela);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menu;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MovSoft - Home";
+            this.Text = "MovSoft - Página Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.pnlHeaderJanela.ResumeLayout(false);
-            this.pnlHeaderJanela.PerformLayout();
             this.pnlHome.ResumeLayout(false);
-            this.pnlHome.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.menuSaida.ResumeLayout(false);
+            this.menuSaida.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Panel pnlHeaderJanela;
-        private Button btnFecharJanela;
-        private Button btnMinimizarJanela;
-        private Button btnSair;
         private Panel pnlHome;
         private Label txtCargo;
         private Label txtUsuario;
@@ -432,21 +447,26 @@
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem fornecedoresToolStripMenuItem;
         private ToolStripMenuItem produçãoToolStripMenuItem;
-        private ToolStripMenuItem confecçãoToolStripMenuItem;
-        private ToolStripMenuItem insumosToolStripMenuItem;
         private ToolStripMenuItem gruposToolStripMenuItem;
-        private ToolStripMenuItem produtoFinalToolStripMenuItem;
+        private ToolStripMenuItem insumosToolStripMenuItem;
+        private ToolStripMenuItem produtosFinaisToolStripMenuItem;
+        private ToolStripMenuItem processosToolStripMenuItem;
         private ToolStripMenuItem produtoToolStripMenuItem;
-        private ToolStripMenuItem revendaToolStripMenuItem;
-        private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem vendaToolStripMenuItem;
         private ToolStripMenuItem gestorToolStripMenuItem;
-        private ToolStripMenuItem ensaiosProvisãoToolStripMenuItem;
-        private ToolStripMenuItem finançasToolStripMenuItem;
-        private ToolStripMenuItem análiseDeDadosToolStripMenuItem;
+        private ToolStripMenuItem ensaiosProvisaoToolStripMenuItem;
+        private ToolStripMenuItem financasToolStripMenuItem;
+        private ToolStripMenuItem analiseDeDadosToolStripMenuItem;
         private ToolStripMenuItem painelDeControleToolStripMenuItem;
         private Panel pnlMain;
-        private ToolStripMenuItem usuáriosToolStripMenuItem;
+        private ToolStripMenuItem usuariosToolStripMenuItem;
+        private ToolStripMenuItem componentesToolStripMenuItem;
+        private ToolStripMenuItem opcionasToolStripMenuItem;
+        private Panel panel1;
+        private MenuStrip menuSaida;
+        private ToolStripMenuItem sairToolStripMenuItem;
+        private Panel panel2;
+        private Panel panel3;
     }
 }

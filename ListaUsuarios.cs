@@ -1,32 +1,31 @@
-﻿using CRUD.CODE.BLL;
+﻿using MovSoft.CODE.BLL;
 
 namespace MovSoft
 {
     public partial class ListaUsuarios : Form
     {
         UsuariosBLL bll = new();
-        Permissao permissoes = new();
         DataGridViewRow rowData = new();
-        private struct Permissao
-        {
-            public int idCargo;
-            public char admin;
-            public string cargo;
-        }
+        Funcoes funcoes = new();
 
-        public ListaUsuarios(Home.Usuario usuario)
+        public ListaUsuarios()
         {
             InitializeComponent();
-            permissoes.idCargo = usuario.idCargo;
-            permissoes.admin = usuario.admin;
-            permissoes.cargo = usuario.cargo;
             CarregarUsuarios();
         }
         
         private void AbrirCadUsuario(bool editarUsuario)
         {
-            CadUsuario frm = new(permissoes.idCargo, permissoes.admin, rowData, editarUsuario);
-            frm.ShowDialog();
+            if (editarUsuario)
+            {
+                Parametros.editarUser = true;
+            }
+            else
+            {
+                Parametros.editarUser = false;
+            }
+            CadUsuario frm = new();
+            funcoes.AbrirForms(frm, 2);
         }
 
         public void CarregarUsuarios()
@@ -45,7 +44,7 @@ namespace MovSoft
             }
         }
 
-        private void ProcurarUsuarios()
+        private void PesquisarUsuarios()
         {
             dataGridView.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text);
         }
@@ -54,47 +53,33 @@ namespace MovSoft
         {
             if (e.KeyChar == 13)
             {
-                ProcurarUsuarios();
+                PesquisarUsuarios();
             }
-        }
-
-        public bool VerificarPermissao(int permissao)
-        {
-            bool podeAcessar;
-            char permitido = bll.VerificarPermissao(permissoes.idCargo, permissao);
-            if (permitido == 'S' || permissoes.admin == 'S')
-            {
-                podeAcessar = true;
-            }
-            else
-            {
-                podeAcessar = false;
-            }
-            return podeAcessar;
         }
 
         private void btnCadUsuario_Click(object sender, EventArgs e)
         {
-            bool permitido = VerificarPermissao(3);
-            if(permitido)
-            {
-                AbrirCadUsuario(false);
-            }
-            else
-            {
-                MessageBox.Show($"O cargo {permissoes.cargo} não tem permissão para acessar a tela Cadastro de Usuário!");
-            }
+            AbrirCadUsuario(false);
         }
 
         private void EditarUsuarios(object sender, DataGridViewCellEventArgs e)
         {
             rowData = dataGridView.Rows[e.RowIndex];
+            Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
+            Parametros.nomeUserEdit = rowData.Cells[1].Value.ToString();
+            Parametros.cargoUserEdit = rowData.Cells[2].Value.ToString();
+            Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
             AbrirCadUsuario(true);
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             CarregarUsuarios();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            PesquisarUsuarios();
         }
     }
 }

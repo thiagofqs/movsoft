@@ -1,66 +1,32 @@
-﻿using CRUD.CODE.BLL;
-
-namespace MovSoft
+﻿namespace MovSoft
 {
     public partial class CadColaborador : Form
     {
-        ColaboradoresBLL colaboradoresBLL = new();
-        CadColaboradorEndereco.Endereco enderecoColaborador = new();
-        CadColaboradorPessoal.Dados dadosColaborador = new();
+        Funcoes funcoes = new();
         public Form activeForm;
 
-        public CadColaborador(bool editarColaboradorRetornado, int idColaborador)
+        public CadColaborador(bool editar)
         {
             InitializeComponent();
             bool primeiraAbertura = true;
-            bool editarColaborador = false;
-            CadColaboradorPessoal cadColaboradorPessoal = new(dadosColaborador, primeiraAbertura, editarColaborador, enderecoColaborador);
-            OpenChildForm(cadColaboradorPessoal);
-            if(editarColaboradorRetornado == true)
+            CadColaboradorPessoal cadColaboradorPessoal = new(primeiraAbertura, editar);
+            funcoes.OpenChildForm(cadColaboradorPessoal,activeForm,pnlMain,1);
+            if(editar == true)
             {
-                dadosColaborador = colaboradoresBLL.PegarDados(idColaborador);
-                enderecoColaborador = colaboradoresBLL.PegarEndereco(idColaborador);
-                AbrirTelaCadColaboradorPessoalEditar(dadosColaborador);
+                AbrirTelaCadColaboradorPessoal(primeiraAbertura,editar);
             }
         }
 
-        public void OpenChildForm(Form childForm)
+        public void AbrirTelaCadColaboradorPessoal(bool primeiraAbertura, bool editar)
         {
-            activeForm?.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(childForm);
-            pnlMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            CadColaboradorPessoal cadColaboradorPessoal = new(primeiraAbertura,editar);
+            funcoes.OpenChildForm(cadColaboradorPessoal,activeForm,pnlMain,2);
         }
 
-        public void AbrirTelaCadColaboradorPessoal(CadColaboradorEndereco.Endereco endereco)
+        public void AbrirTelaCadColaboradorEndereco(bool primeiraAbertura, bool editar)
         {
-            enderecoColaborador = endereco;
-            CadColaboradorPessoal cadColaboradorPessoal = new(dadosColaborador, false, false,enderecoColaborador);
-            OpenChildForm(cadColaboradorPessoal);
-        }
-
-        public void AbrirTelaCadColaboradorEndereco(CadColaboradorPessoal.Dados dados, bool primeiraAbertura)
-        {
-            dadosColaborador = dados;
-            CadColaboradorEndereco cadColaboradorEndereco = new(dadosColaborador, primeiraAbertura, enderecoColaborador, false);
-            OpenChildForm(cadColaboradorEndereco);
-        }
-
-        public void AbrirTelaCadColaboradorPessoalEditar(CadColaboradorPessoal.Dados dados)
-        {
-            dadosColaborador = dados;
-            CadColaboradorPessoal cadColaboradorPessoal = new(dados, true, true, enderecoColaborador);
-            OpenChildForm(cadColaboradorPessoal);
-        }
-        public void AbrirTelaCadColaboradorEnderecoEditar(CadColaboradorPessoal.Dados dados, CadColaboradorEndereco.Endereco endereco)
-        {
-            CadColaboradorEndereco cadColaboradorEndereco = new(dados, true, endereco, true);
-            OpenChildForm(cadColaboradorEndereco);
+            CadColaboradorEndereco cadColaboradorEndereco = new(primeiraAbertura, editar);
+            funcoes.OpenChildForm(cadColaboradorEndereco, activeForm, pnlMain, 2);
         }
     }
 }

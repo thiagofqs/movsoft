@@ -1,16 +1,15 @@
-﻿using CRUD.CODE.BLL;
-using CRUD.CODE.DTO;
+﻿using MovSoft.CODE.BLL;
+using MovSoft.CODE.DTO;
 
 namespace MovSoft
 {
     public partial class CadUsuario : Form
     {
+        Funcoes funcoes = new();
         ColaboradoresBLL bllColaboradores = new();
         CargosBLL bllCargos = new();
         UsuariosBLL bllUsuarios = new();
         UsuariosDTO dtoUsuarios = new();
-        DataGridViewRow rowData;
-        Permissao permissao = new();
         Dados dados = new();
 
         private struct Dados
@@ -21,35 +20,27 @@ namespace MovSoft
             public int idCargo;
             public int idColaborador;
         }
-
-        private struct Permissao
-        {
-            public int idCargo;
-            public char admin;
-        }
         private bool editarUsuario = false;
 
-        public CadUsuario(int idCargo, char admin, DataGridViewRow rowDataRetornado, bool editarUsuarioRetornado)
+        public CadUsuario()
         {
             InitializeComponent();
+            centralizarElementos();
             ListarColaboradores();
             ListarCargos();
-            permissao.idCargo = idCargo;
-            permissao.admin = admin;
-            if(editarUsuarioRetornado == true)
+            if(Parametros.editarUser == true)
             {
                 editarUsuario = true;
                 txtTitulo.Text = "Editar Usuário";
                 btnCadastrar.Text = "Salvar";
-                rowData = rowDataRetornado;
                 AtribuirValores();
+                centralizarElementos();
             }
         }
 
         private void ListarColaboradores()
         {
-            List<string> lista = new();
-            lista = bllColaboradores.Colaboradores();
+            List<string> lista = bllColaboradores.Colaboradores();
             foreach (string item in lista)
             {
                 inputboxColaborador.Items.Add(item);
@@ -58,8 +49,7 @@ namespace MovSoft
 
         private void ListarCargos()
         {
-            List<string> lista = new();
-            lista = bllCargos.Cargos();
+            List<string> lista = bllCargos.Cargos();
             foreach (string item in lista)
             {
                 inputboxCargo.Items.Add(item);
@@ -68,10 +58,10 @@ namespace MovSoft
 
         private void AtribuirValores()
         {
-            inputUsuario.Text = rowData.Cells[1].Value.ToString();
-            inputboxCargo.Text = rowData.Cells[2].Value.ToString();
-            inputboxColaborador.Text = rowData.Cells[3].Value.ToString();
-            inputSenha.Text = "";
+            inputUsuario.Text = Parametros.nomeUserEdit;
+            inputboxCargo.Text = Parametros.cargoUserEdit;
+            inputboxColaborador.Text = Parametros.colaboradorUserEdit;
+            inputSenha.Text = "";  
             inputConfirmarSenha.Text = "";
         }
 
@@ -117,12 +107,17 @@ namespace MovSoft
             AtribuirDadosDosInputs();
             if (dados.senhaUsuario == dados.confirmarSenha)
             {
-                dtoUsuarios.Id_usuario = int.Parse(rowData.Cells[0].Value.ToString());
+                dtoUsuarios.Id_usuario = (int)Parametros.idUserEdit;
                 dtoUsuarios.Nome = dados.nomeUsuario;
                 dtoUsuarios.Senha = dados.senhaUsuario;
                 dtoUsuarios.Id_cargo = dados.idCargo;
                 dtoUsuarios.Id_colaborador = dados.idColaborador;
                 bllUsuarios.EditarUsuario(dtoUsuarios);
+                if(dtoUsuarios.Id_usuario == Parametros.idUser)
+                {
+                    MessageBox.Show("Você Será Redirecionado Para a Tela de Login");
+                    funcoes.ThreadVoltarAoLogin();
+                }
             }
             else
             {
@@ -140,12 +135,14 @@ namespace MovSoft
             {
                 CadastrarUsuario();
                 Close();
+                Parametros parametros = new();
                 AtualizarUsuarios();
             }
             else if (editarUsuario == true)
             {
                 EditarUsuario();
                 Close();
+                Parametros parametros = new();
                 AtualizarUsuarios();
             }
         }
@@ -161,6 +158,16 @@ namespace MovSoft
             {
                 VerificacaoCadastro();
             }
+        }
+
+        private void centralizarElementos()
+        {
+            funcoes.centralizarElementos(txtTitulo, pnlContent);
+            funcoes.centralizarElementos(pnlContent, this);
+            funcoes.centralizarElementosVerticalmente(pnlContent, this);
+            funcoes.centralizarElementos(btnCadastrar, pnlContent);
+            funcoes.centralizarElementos(inputboxColaborador, pnlContent);
+            txtColaborador.Left = inputboxColaborador.Left;
         }
     }   
 }

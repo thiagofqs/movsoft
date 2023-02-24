@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MovSoft
+﻿namespace MovSoft
 {
     public partial class Grupos : Form
     {
+        Funcoes funcoes = new();
         public Grupos()
         {
             InitializeComponent();
         }
 
+        private void AbrirCadGrupo()
+        {
+            CadGrupos frm = new();
+            funcoes.AbrirForms(frm, 2);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-      
+            AbrirCadGrupo();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

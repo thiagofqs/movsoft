@@ -1,25 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MovSoft
+﻿namespace MovSoft
 {
     public partial class CadCliente : Form
     {
-        public CadCliente()
+        Funcoes funcoes = new();
+        public Form activeForm;
+        public CadCliente(bool editar)
         {
             InitializeComponent();
+            bool primeiraAbertura = true;
+            CadClientePessoal cadClientePessoal = new(primeiraAbertura, editar);
+            funcoes.OpenChildForm(cadClientePessoal, activeForm, pnlMain, 1);
+            if (editar == true)
+            {
+                AbrirTelaCadClientePessoal(primeiraAbertura, editar);
+            }
         }
 
-        private void txtTitulo_Click(object sender, EventArgs e)
+        public void AbrirTelaCadClientePessoal(bool primeiraAbertura, bool editar)
         {
+            CadClientePessoal cadClientesPessoal = new(primeiraAbertura, editar);
+            funcoes.OpenChildForm(cadClientesPessoal, activeForm, pnlMain, 1);
+        }
 
+        public void AbrirTelaCadClienteEndereco(bool primeiraAbertura, bool editar)
+        {
+            CadClienteEndereco cadClientesEndereco = new(primeiraAbertura,editar);
+            funcoes.OpenChildForm(cadClientesEndereco, activeForm, pnlMain, 1);
         }
     }
 }

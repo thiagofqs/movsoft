@@ -1,13 +1,13 @@
 ﻿using System.Data;
-using CRUD.CODE.DAL;
+using MovSoft.CODE.DAL;
 
-namespace CRUD.CODE.BLL
+namespace MovSoft.CODE.BLL
 {
 
     class CargosBLL
     {
         AcessoBancoDados db = new();
-        List<string> listaCargos = new List<string>();
+        List<string> listaCargos = new();
 
         public List<string> Cargos()
         {

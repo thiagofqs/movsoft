@@ -1,20 +1,13 @@
-using CRUD.CODE.BLL;
+using MovSoft.CODE.BLL;
 
 namespace MovSoft
 {
     public partial class Home : Form
     {
         UsuariosBLL bll = new();
-        Thread tr;
-        Usuario usuario = new();
+        Funcoes funcoes = new();
         private Form activeForm;
-        public struct Usuario
-        {
-            public int idCargo;
-            public int idUsuario;
-            public char admin;
-            public string cargo;
-        }
+        private EventHandler CursorHandChanger, CursorDefaultChanger;
 
         public class ownColorTable : ProfessionalColorTable
         {
@@ -66,24 +59,21 @@ namespace MovSoft
             }
         }
 
-        public Home(Login.Usuario retornoUsuario)
+        public Home()
         {
             InitializeComponent();
             menu.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
+            menuSaida.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
             MudarCursorDoMenu();
-            txtUsuario.Text += retornoUsuario.usuario;
-            txtCargo.Text += retornoUsuario.cargo;
-            usuario.idCargo = retornoUsuario.idCargo;
-            usuario.idUsuario = retornoUsuario.idUsuario;
-            usuario.admin = retornoUsuario.admin;
-            usuario.cargo = retornoUsuario.cargo;
+            txtUsuario.Text += Parametros.nomeUser;
+            txtCargo.Text += Parametros.cargoUser;
         }
 
-        public bool VerificarPermissao(int permissao)
+        public bool VerificarPermissao(int permissao,Form forms,Form activeForm,Panel pnlMain)
         {
             bool podeAcessar;
-            char permitido = bll.VerificarPermissao(usuario.idCargo, permissao);
-            if (permitido == 'S' || usuario.admin == 'S')
+            bll.VerificarPermissao((int)Parametros.idCargoUser, permissao);
+            if (Parametros.permissaoUser == 'S' || Parametros.adminUser == 'S')
             {
                 podeAcessar = true;
             }
@@ -94,79 +84,16 @@ namespace MovSoft
             return podeAcessar;
         }
 
-        private void btnFecharJanela_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMinimizarJanela_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            Close();
-            tr = new(AbrirJanelaLogin);
-            tr.SetApartmentState(ApartmentState.STA);
-            tr.Start();
-        }
-
-        private void AbrirJanelaLogin(object obj)
-        {
-            Application.Run(new Login());
-        }
-
-        private void OpenChildForm(Form childForm)
-        {
-            activeForm?.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(childForm);
-            pnlMain.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool permitido = VerificarPermissao(1);
-            if(permitido == false)
-            {
-                MessageBox.Show($"O cargo {usuario.cargo} não tem permissão para acessar a tela Usuários");
-            }
-            else
-            {
-                ListaUsuarios frm = new(usuario); 
-                OpenChildForm(frm);
-            }
-            
+            ListaUsuarios frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain,1);
         }
 
         private void colaboradoresToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            bool permitido = VerificarPermissao(2);
-            if(permitido == false)
-            {
-                MessageBox.Show($"O cargo {usuario.cargo} não tem permissão para acessar a tela Colaboradores");
-            }
-            else
-            {
-                ListaColaboradores frm = new();
-                OpenChildForm(frm);
-            }
-        }
-
-        private void CursorHandChanger(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-
-        private void CursorDefaultChanger(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Default;
+            ListaColaboradores frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain,2);
         }
 
         private void MudarCursorDoMenu()
@@ -180,6 +107,30 @@ namespace MovSoft
                     dropItens.MouseLeave += CursorDefaultChanger;
                 }
             }
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaClientes frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 1);
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaFornecedores frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+            funcoes.ThreadVoltarAoLogin();
+        }
+
+        private void confecçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Grupos frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
     }
 }

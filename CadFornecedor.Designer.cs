@@ -111,6 +111,7 @@
             this.inputCep.Size = new System.Drawing.Size(100, 23);
             this.inputCep.TabIndex = 2;
             this.inputCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inputCep.DragLeave += new System.EventHandler(this.inputCep_Leave);
             // 
             // inputCpf
             // 
@@ -243,6 +244,7 @@
             this.inputboxUf.Name = "inputboxUf";
             this.inputboxUf.Size = new System.Drawing.Size(77, 23);
             this.inputboxUf.TabIndex = 8;
+            this.inputboxUf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputCelular_KeyPress);
             // 
             // txtRazao
             // 
@@ -282,6 +284,7 @@
             this.btnProximo.TabIndex = 9;
             this.btnProximo.Text = "Cadastrar";
             this.btnProximo.UseVisualStyleBackColor = false;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // txtComplemento
             // 
@@ -463,7 +466,6 @@
             this.ClientSize = new System.Drawing.Size(914, 434);
             this.Controls.Add(this.pnlMain);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CadFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovSoft - Cadastrar Fornecedor";

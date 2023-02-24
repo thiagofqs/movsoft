@@ -1,15 +1,13 @@
 ﻿using System.Data;
-using CRUD.CODE.DAL;
-using CRUD.CODE.DTO;
+using MovSoft.CODE.DAL;
+using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
 using MovSoft;
 
-namespace CRUD.CODE.BLL
+namespace MovSoft.CODE.BLL
 {
     class ColaboradoresBLL
     {
-        CadColaboradorEndereco.Endereco endereco = new();
-        CadColaboradorPessoal.Dados dados = new();
         AcessoBancoDados db = new();
         public List<string> Colaboradores()
         {
@@ -95,56 +93,54 @@ namespace CRUD.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
         }
-        public CadColaboradorPessoal.Dados PegarDados(int idColaborador)
+        public void PegarDados(int idColaborador)
         {
             try
             {
                 db.Conectar();
                 string comando = $"call edit_selec_colaboradores({idColaborador})";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                dados.idColaborador = dr.GetInt32(0);
-                dados.nome = dr.GetString(1);
-                dados.sobrenome = dr.GetString(2);
-                dados.ddd = dr.GetString(3);
-                dados.celular = dr.GetString(4);
-                dados.cpf = dr.GetString(5);
-                dados.nascimentoInput = dr.GetString(6);
-                dados.idSexo = dr.GetInt32(7);
-                dados.email = dr.GetString(8);
-                dados.nascimentoInput = dados.nascimentoInput.Replace("/", "");
-                dados.nascimentoInput = dados.nascimentoInput.Substring(0,8);
-                dados.idCelular = dr.GetInt32(17);
+                Parametros.idColab = dr.GetInt32(0);
+                Parametros.nomeColab = dr.GetString(1);
+                Parametros.sobrenomeColab = dr.GetString(2);
+                Parametros.dddColab = dr.GetString(3);
+                Parametros.celularColab = dr.GetString(4);
+                Parametros.cpfColab = dr.GetString(5);
+                Parametros.nascimentoInputColab = dr.GetString(6);
+                Parametros.idSexoColab = dr.GetInt32(7);
+                Parametros.emailColab = dr.GetString(8);
+                Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Replace("/", "");
+                Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Substring(0,8);
+                Parametros.idCelularColab = dr.GetInt32(17);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
-            return dados;
         }
 
-        public CadColaboradorEndereco.Endereco PegarEndereco(int idColaborador)
+        public void PegarEndereco(int idColaborador)
         {
             try
             {
                 db.Conectar();
                 string comando = $"call edit_selec_colaboradores({idColaborador})";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                endereco.idEndereco = dr.GetInt32(9);
-                endereco.uf = dr.GetString(10);
-                endereco.cidade = dr.GetString(11);
-                endereco.bairro = dr.GetString(12);
-                endereco.logradouro = dr.GetString(13);
-                endereco.cep = dr.GetString(14);
-                endereco.complemento = dr.GetString(15);
-                endereco.numero = dr.GetString(16);
+                Parametros.idEndereco = dr.GetInt32(9);
+                Parametros.uf = dr.GetString(10);
+                Parametros.cidade = dr.GetString(11);
+                Parametros.bairro = dr.GetString(12);
+                Parametros.logradouro = dr.GetString(13);
+                Parametros.cep = dr.GetString(14);
+                Parametros.complemento = dr.GetString(15);
+                Parametros.numero = dr.GetString(16);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.ToString());
             }
-            return endereco;
         }
 
     }

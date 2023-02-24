@@ -1,4 +1,6 @@
-﻿using CRUD.CODE.BLL;
+﻿using IniParser.Model;
+using IniParser;
+using MovSoft.CODE.BLL;
 
 namespace MovSoft
 {
@@ -6,23 +8,17 @@ namespace MovSoft
     {
         Thread tr;
         UsuariosBLL bll = new();
-        Usuario usuario = new();
-        UsuariosBLL.Usuario retornoDados;
-
-        public struct Usuario
-        {
-            public int idUsuario;
-            public string usuario;
-            public string senha;
-            public string cargo;
-            public char admin;
-            public int idCargo;
-        }
 
         public Login()
         {
             InitializeComponent();
             ActiveControl = inputUsuario;
+            bool existe;
+            existe = File.Exists(Parametros.Dir);
+            if (existe == false)
+            {
+                CriarIni();
+            }
         }
 
         private void btnFecharJanela_Click(object sender, EventArgs e)
@@ -45,14 +41,9 @@ namespace MovSoft
             {
                 string usuarioDigitado = inputUsuario.Text;
                 string senhaDigitada = inputSenha.Text;
-                retornoDados = bll.Login(usuarioDigitado);
-                if (retornoDados.senha == senhaDigitada)
+                bll.Login(usuarioDigitado);
+                if (Parametros.senhaUser == senhaDigitada)
                 {
-                    usuario.idUsuario = retornoDados.idUsuario;
-                    usuario.usuario = retornoDados.nome;
-                    usuario.cargo = retornoDados.cargo;
-                    usuario.idCargo = retornoDados.idCargo;
-                    usuario.admin = retornoDados.admin;
                     Close();
                     tr = new(AbrirJanelaHome);
                     tr.SetApartmentState(ApartmentState.STA);
@@ -79,10 +70,33 @@ namespace MovSoft
 
         private void AbrirJanelaHome(object obj)
         {
-            Application.Run(new Home(usuario));
+            Application.Run(new Home());
         }
 
-        private void inputSenha_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void inputSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Logar();
+            }
+        }
+
+        private async void CriarIni()
+        {
+            await File.WriteAllTextAsync(Parametros.Dir, "");
+            IniData data;
+            var parser = new FileIniDataParser();
+            data = parser.ReadFile(Parametros.Dir);
+            data.Sections.AddSection("DataBase");
+            data["DataBase"].AddKey("DB_Server", "127.0.0.1");
+            data["DataBase"].AddKey("DB_Database", "movsoft");
+            data["DataBase"].AddKey("DB_Username", "root");
+            data["DataBase"].AddKey("DB_Password", "root");
+            data["DataBase"].AddKey("DB_Port", "3305");
+            parser.WriteFile(Parametros.Dir, data);
+        }
+
+        private void inputUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {

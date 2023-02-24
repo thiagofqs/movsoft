@@ -1,101 +1,104 @@
-﻿using System.Data;
+﻿using MovSoft.CODE.BLL;
+using System.Data;
 
 namespace MovSoft
 {
     public partial class CadColaboradorPessoal : Form
     {
-        Dados dadosColaborador = new();
-        public struct Dados
-        {
-            public int idColaborador;
-            public string nome;
-            public string sobrenome;
-            public int idSexo;
-            public string cpf;
-            public string nascimento;
-            public string nascimentoInput;
-            public string email;
-            public int idCelular;
-            public string ddd;
-            public string celular;
-        }
-        CadColaboradorEndereco.Endereco enderecoColaborador = new();
-        private bool primeiraAberturaEndereco = true;
+        Funcoes funcoes = new();
+        ColaboradoresBLL colaboradoresBLL = new();
+        private bool primeiraAberturaColaborador = true;
         private bool editarColaborador = false;
-        public CadColaboradorPessoal(Dados dadosColaboradorRetornado, bool primeiraAbertura, bool editarColaboradorRetornado, CadColaboradorEndereco.Endereco enderecoColaboradorRetornado)
+        public CadColaboradorPessoal(bool primeiraAbertura, bool editar)
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            CentralizarElementos();
+         
             if(primeiraAbertura == false)
             {
-                primeiraAberturaEndereco = false;
-                dadosColaborador = dadosColaboradorRetornado;
+                primeiraAberturaColaborador = false;
                 AtribuirDadosAosInputs();
             }
-            if(editarColaboradorRetornado == true)
+            else if (primeiraAbertura == true && editar == false)
+            {
+                Parametros parametros = new();
+            }
+            if(editar == true && primeiraAbertura == true)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
-                dadosColaborador = dadosColaboradorRetornado;
-                enderecoColaborador = enderecoColaboradorRetornado;
+                colaboradoresBLL.PegarDados((int)Parametros.idColab);
+                colaboradoresBLL.PegarEndereco((int)Parametros.idColab);
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
+                CentralizarElementos();
+            }
+            else if(editar == true && primeiraAbertura == false)
+            {
+                txtTitulo.Text = "Editar Colaborador 1/2";
+                editarColaborador = true;
+                AtribuirDadosAosInputs();
+                CentralizarElementos();
             }
         }
 
         private void RemoverMascarasDeTexto()
         {
-            inputCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            inputNascimento.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            inputCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            funcoes.RemoverMascarasDeTexto(inputCpf);
+            funcoes.RemoverMascarasDeTexto(inputNascimento);
+            funcoes.RemoverMascarasDeTexto(inputCelular);
+        }
+
+        private void CentralizarElementos()
+        {
+            funcoes.centralizarElementos(btnProximo, this);
+            funcoes.centralizarElementos(txtTitulo, this);
         }
 
         private string BdDataNascimento(string data)
         {
-            data = data.Substring(4, 4) + "-" + data.Substring(2, 2) + "-" + data.Substring(0, 2);
+            data = funcoes.BdDataNascimento(data);
             return data;
         }
 
         private void AtribuirDadosDosInputs()
         {
-            dadosColaborador.nome = inputNome.Text;
-            dadosColaborador.sobrenome = inputSobrenome.Text;
-            dadosColaborador.idSexo = inputboxSexo.SelectedIndex + 1;
-            dadosColaborador.cpf = inputCpf.Text;
-            if(primeiraAberturaEndereco == true)
+            Parametros.nomeColab = inputNome.Text;
+            Parametros.sobrenomeColab = inputSobrenome.Text;
+            Parametros.idSexoColab = inputboxSexo.SelectedIndex + 1;
+            Parametros.cpfColab = inputCpf.Text;
+            if(primeiraAberturaColaborador == true)
             {
-                dadosColaborador.nascimento = BdDataNascimento(inputNascimento.Text);
+                Parametros.nascimentoColab = BdDataNascimento(inputNascimento.Text);
             }
-            dadosColaborador.nascimentoInput = inputNascimento.Text;
-            dadosColaborador.email = inputEmail.Text;
-            dadosColaborador.ddd = inputCelular.Text.Substring(0, 2);
-            dadosColaborador.celular = inputCelular.Text.Substring(2, 9);
+            Parametros.nascimentoInputColab = inputNascimento.Text;
+            Parametros.emailColab = inputEmail.Text;
+            Parametros.dddColab = inputCelular.Text.Substring(0, 2);
+            Parametros.celularColab = inputCelular.Text.Substring(2, 9);
         }
 
         private void AtribuirDadosAosInputs()
         {
-            inputNome.Text = dadosColaborador.nome;
-            inputSobrenome.Text = dadosColaborador.sobrenome;
-            inputboxSexo.SelectedIndex = dadosColaborador.idSexo - 1;
-            inputCpf.Text = dadosColaborador.cpf;
-            inputNascimento.Text = dadosColaborador.nascimentoInput;
-            inputEmail.Text = dadosColaborador.email;
-            inputCelular.Text = dadosColaborador.ddd + dadosColaborador.celular;
+            inputNome.Text = Parametros.nomeColab;
+            inputSobrenome.Text = Parametros.sobrenomeColab;
+            inputboxSexo.SelectedIndex = (int)Parametros.idSexoColab - 1;
+            inputCpf.Text = Parametros.cpfColab;
+            inputNascimento.Text = Parametros.nascimentoInputColab;
+            inputEmail.Text = Parametros.emailColab;
+            inputCelular.Text = Parametros.dddColab + Parametros.celularColab;
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            ContinuarCadastro();
+            if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular)/* && funcoes.ValidacaoCPF(inputCpf)*/)
+            {
+                ContinuarCadastro();
+            } 
         }
 
         private void ContinuarCadastro()
         {
-            if (inputNome.Text == "" || inputSobrenome.Text == "" || inputboxSexo.Text == "" || inputCpf.Text == "" || inputNascimento.Text == "" || inputEmail.Text == "" || inputCelular.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else
-            {
-                AtribuirDadosDosInputs();
+            AtribuirDadosDosInputs();
                 if (editarColaborador == true)
                 {
                     var qrForm = from frm in Application.OpenForms.Cast<Form>()
@@ -103,7 +106,7 @@ namespace MovSoft
                                  select frm;
                     if (qrForm != null && qrForm.Count() > 0)
                     {
-                        ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEnderecoEditar(dadosColaborador, enderecoColaborador);
+                        ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEndereco(primeiraAberturaColaborador, editarColaborador);
                     }
                 }
                 else
@@ -113,15 +116,17 @@ namespace MovSoft
                                  select frm;
                     if (qrForm != null && qrForm.Count() > 0)
                     {
-                        ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEndereco(dadosColaborador, primeiraAberturaEndereco);
+                        ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEndereco(primeiraAberturaColaborador, editarColaborador);
                     }
                 }
-            }
         }
 
         private void inputCelular_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ContinuarCadastro();
+            if (e.KeyChar == 13)
+            {
+                ContinuarCadastro();
+            }
         }
     }
 }

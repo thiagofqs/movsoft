@@ -68,6 +68,7 @@
             this.btnVoltar.TabIndex = 8;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txtTitulo
             // 
@@ -96,6 +97,7 @@
             this.btnCadastrar.TabIndex = 7;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // inputCep
             // 
@@ -109,6 +111,7 @@
             this.inputCep.Size = new System.Drawing.Size(100, 23);
             this.inputCep.TabIndex = 0;
             this.inputCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inputCep.Leave += new System.EventHandler(this.inputCep_Leave);
             // 
             // inputNumero
             // 
