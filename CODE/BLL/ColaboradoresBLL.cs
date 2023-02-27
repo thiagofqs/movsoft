@@ -2,7 +2,7 @@
 using MovSoft.CODE.DAL;
 using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
-using MovSoft;
+using MovSoft.Classes;
 
 namespace MovSoft.CODE.BLL
 {
