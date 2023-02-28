@@ -133,15 +133,11 @@ namespace MovSoft
             else if (editarUsuario == false)
             {
                 CadastrarUsuario();
-                Close();
-                Parametros parametros = new();
                 AtualizarUsuarios();
             }
             else if (editarUsuario == true)
             {
                 EditarUsuario();
-                Close();
-                Parametros parametros = new();
                 AtualizarUsuarios();
             }
         }

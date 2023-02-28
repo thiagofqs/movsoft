@@ -36,6 +36,17 @@ namespace MovSoft
             funcoes.RemoverMascarasDeTexto(inputCep);
         }
 
+        private void AtualizarColaboradores()
+        {
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is ListaColaboradores
+                         select frm;
+            if (qrForm != null && qrForm.Count() > 0)
+            {
+                ((ListaColaboradores)qrForm.First()).CarregarColaboradores();
+            }
+        }
+
         private void CadastrarColaborador()
         {
             dtoColaboradores.Nome = Parametros.nomeColab;
@@ -54,15 +65,8 @@ namespace MovSoft
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.CadastrarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
-            Parametros parametros = new();
-            ActiveForm.Close();
-            var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is ListaColaboradores
-                         select frm;
-            if (qrForm != null && qrForm.Count() > 0)
-            {
-                ((ListaColaboradores)qrForm.First()).CarregarColaboradores();
-            }
+            //ActiveForm.Close();
+            
         }
 
         private void EditarColaborador()
@@ -86,14 +90,7 @@ namespace MovSoft
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.EditarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
-            ActiveForm.Close();
-            var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is ListaColaboradores
-                         select frm;
-            if (qrForm != null && qrForm.Count() > 0)
-            {
-                ((ListaColaboradores)qrForm.First()).CarregarColaboradores();
-            }
+            //ActiveForm.Close();
     }
 
         private void AtribuirDadosAosInputs()
@@ -128,10 +125,12 @@ namespace MovSoft
             else if (editarColaborador == false)
             {
                 CadastrarColaborador();
+                AtualizarColaboradores();
             }
             else if(editarColaborador == true)
             {
                 EditarColaborador();
+                AtualizarColaboradores();
             }
         }
 

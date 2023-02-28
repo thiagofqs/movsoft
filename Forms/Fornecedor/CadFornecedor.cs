@@ -33,7 +33,7 @@ namespace MovSoft
 
         private void EditarFornecedor()
         {
-            fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
@@ -56,7 +56,7 @@ namespace MovSoft
 
         private void CadastrarFornecedor()
         {
-            fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
@@ -99,13 +99,20 @@ namespace MovSoft
         private void ContinuarCadastro()
         {
             AtribuirDadosDosInputs();
-            if(editarFornecedor == true)
+            if (inputNomeFantasia.Text == "" || inputRazaoSocial.Text == "" || inputCnpj.Text == "" || inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
             {
-                EditarFornecedor();
+                MessageBox.Show("Preencha todos os campos obrigatórios!");
             }
             else
             {
-                CadastrarFornecedor();
+                if (editarFornecedor == true)
+                {
+                    EditarFornecedor();
+                }
+                else
+                {
+                    CadastrarFornecedor();
+                }
             }
         }
 

@@ -80,10 +80,17 @@ namespace MovSoft
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular) && funcoes.ValidacaoCPF(inputCpf))
+            if (inputNome.Text == "" || inputSobrenome.Text == "" || inputboxSexo.Text == "" || inputCpf.Text == "" || inputNascimento.Text == "" || inputEmail.Text == "" || inputCelular.Text == "")
             {
-                ContinuarCadastro();
+                MessageBox.Show("Preencha todos os campos obrigatórios!");
+            } else
+            {
+                if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular) && funcoes.ValidacaoCPF(inputCpf))
+                {
+                    ContinuarCadastro();
+                }
             }
+            
         }
 
         private void ContinuarCadastro()
