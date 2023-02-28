@@ -39,8 +39,9 @@
 
         //Dados Fornecedores Editar/Cadastro
         public static int? idFornecedor { get; set; }
+        public static string? nomeFantasia { get; set; }
         public static string? razaoSocial { get; set; }
-        public static string? Cnpj { get; set; }
+        public static string? cnpj { get; set; }
 
         //Dados Endereços Editar/Cadastro
         public static int? idEndereco { get; set; }

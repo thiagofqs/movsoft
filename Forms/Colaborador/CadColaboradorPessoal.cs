@@ -14,7 +14,6 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            CentralizarElementos();
          
             if(primeiraAbertura == false)
             {
@@ -32,14 +31,12 @@ namespace MovSoft
                 colaboradoresBLL.PegarEndereco((int)Parametros.idColab);
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
-                CentralizarElementos();
             }
             else if(editar == true && primeiraAbertura == false)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
-                CentralizarElementos();
             }
         }
 
@@ -48,12 +45,6 @@ namespace MovSoft
             funcoes.RemoverMascarasDeTexto(inputCpf);
             funcoes.RemoverMascarasDeTexto(inputNascimento);
             funcoes.RemoverMascarasDeTexto(inputCelular);
-        }
-
-        private void CentralizarElementos()
-        {
-            funcoes.centralizarElementos(btnProximo, this);
-            funcoes.centralizarElementos(txtTitulo, this);
         }
 
         private string BdDataNascimento(string data)
@@ -91,10 +82,10 @@ namespace MovSoft
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular)/* && funcoes.ValidacaoCPF(inputCpf)*/)
+            if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular) && funcoes.ValidacaoCPF(inputCpf))
             {
                 ContinuarCadastro();
-            } 
+            }
         }
 
         private void ContinuarCadastro()

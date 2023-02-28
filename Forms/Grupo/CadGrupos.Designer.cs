@@ -57,6 +57,7 @@
             // 
             this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr1.AutoSize = true;
+            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
             this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr1.Location = new System.Drawing.Point(361, 139);
             this.txtObr1.Name = "txtObr1";
@@ -68,6 +69,7 @@
             // 
             this.txtNomeGrupo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNomeGrupo.AutoSize = true;
+            this.txtNomeGrupo.BackColor = System.Drawing.Color.Transparent;
             this.txtNomeGrupo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNomeGrupo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtNomeGrupo.Location = new System.Drawing.Point(249, 137);
@@ -80,9 +82,10 @@
             // 
             this.txtTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BackColor = System.Drawing.Color.Transparent;
             this.txtTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtTitulo.Location = new System.Drawing.Point(268, 15);
+            this.txtTitulo.Location = new System.Drawing.Point(268, 26);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(202, 32);
             this.txtTitulo.TabIndex = 0;

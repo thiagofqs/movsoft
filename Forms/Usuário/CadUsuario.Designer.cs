@@ -92,8 +92,9 @@
             // 
             this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr5.AutoSize = true;
+            this.txtObr5.BackColor = System.Drawing.Color.Transparent;
             this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(498, 206);
+            this.txtObr5.Location = new System.Drawing.Point(507, 206);
             this.txtObr5.Name = "txtObr5";
             this.txtObr5.Size = new System.Drawing.Size(12, 15);
             this.txtObr5.TabIndex = 4;
@@ -103,8 +104,9 @@
             // 
             this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr4.AutoSize = true;
+            this.txtObr4.BackColor = System.Drawing.Color.Transparent;
             this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(234, 206);
+            this.txtObr4.Location = new System.Drawing.Point(242, 206);
             this.txtObr4.Name = "txtObr4";
             this.txtObr4.Size = new System.Drawing.Size(12, 15);
             this.txtObr4.TabIndex = 3;
@@ -114,8 +116,9 @@
             // 
             this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr3.AutoSize = true;
+            this.txtObr3.BackColor = System.Drawing.Color.Transparent;
             this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(433, 143);
+            this.txtObr3.Location = new System.Drawing.Point(442, 143);
             this.txtObr3.Name = "txtObr3";
             this.txtObr3.Size = new System.Drawing.Size(12, 15);
             this.txtObr3.TabIndex = 2;
@@ -125,8 +128,9 @@
             // 
             this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr2.AutoSize = true;
+            this.txtObr2.BackColor = System.Drawing.Color.Transparent;
             this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(242, 143);
+            this.txtObr2.Location = new System.Drawing.Point(252, 143);
             this.txtObr2.Name = "txtObr2";
             this.txtObr2.Size = new System.Drawing.Size(12, 15);
             this.txtObr2.TabIndex = 1;
@@ -136,6 +140,7 @@
             // 
             this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr1.AutoSize = true;
+            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
             this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr1.Location = new System.Drawing.Point(373, 81);
             this.txtObr1.Name = "txtObr1";
@@ -147,6 +152,7 @@
             // 
             this.txtColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtColaborador.AutoSize = true;
+            this.txtColaborador.BackColor = System.Drawing.Color.Transparent;
             this.txtColaborador.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtColaborador.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtColaborador.Location = new System.Drawing.Point(283, 79);
@@ -159,6 +165,7 @@
             // 
             this.txtConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtConfirmarSenha.AutoSize = true;
+            this.txtConfirmarSenha.BackColor = System.Drawing.Color.Transparent;
             this.txtConfirmarSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmarSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtConfirmarSenha.Location = new System.Drawing.Point(391, 204);
@@ -171,6 +178,7 @@
             // 
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.AutoSize = true;
+            this.txtSenha.BackColor = System.Drawing.Color.Transparent;
             this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtSenha.Location = new System.Drawing.Point(191, 204);
@@ -183,6 +191,7 @@
             // 
             this.txtCargo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCargo.AutoSize = true;
+            this.txtCargo.BackColor = System.Drawing.Color.Transparent;
             this.txtCargo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCargo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCargo.Location = new System.Drawing.Point(392, 141);
@@ -195,6 +204,7 @@
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsuario.AutoSize = true;
+            this.txtUsuario.BackColor = System.Drawing.Color.Transparent;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsuario.Location = new System.Drawing.Point(191, 141);
@@ -212,7 +222,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrar.Location = new System.Drawing.Point(310, 274);
+            this.btnCadastrar.Location = new System.Drawing.Point(308, 274);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(115, 35);
             this.btnCadastrar.TabIndex = 5;
@@ -224,6 +234,7 @@
             // 
             this.txtTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BackColor = System.Drawing.Color.Transparent;
             this.txtTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtTitulo.Location = new System.Drawing.Point(252, 33);

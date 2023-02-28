@@ -17,7 +17,6 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            CentralizarElementos();
             if (primeiraAbertura == false)
             {
                 AtribuirDadosAosInputs();
@@ -28,7 +27,6 @@ namespace MovSoft
                 btnCadastrar.Text = "Salvar";
                 editarCliente = true;
                 AtribuirDadosAosInputs();
-                CentralizarElementos();
             }
         }
 
@@ -64,11 +62,6 @@ namespace MovSoft
             {
                 ((ListaClientes)qrForm.First()).CarregarClientes();
             }
-        }
-
-        private void CentralizarElementos()
-        {
-            funcoes.centralizarElementos(txtTitulo, this);
         }
 
         private void EditarCliente()

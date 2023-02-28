@@ -18,7 +18,6 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            CentralizarElementos();
             if (primeiraAbertura == false)
             {
                 AtribuirDadosAosInputs();
@@ -29,7 +28,6 @@ namespace MovSoft
                 btnCadastrar.Text = "Salvar";
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
-                CentralizarElementos();
             }
         }
 
@@ -65,11 +63,6 @@ namespace MovSoft
             {
                 ((ListaColaboradores)qrForm.First()).CarregarColaboradores();
             }
-        }
-
-        private void CentralizarElementos()
-        {
-            funcoes.centralizarElementos(txtTitulo, this);
         }
 
         private void EditarColaborador()

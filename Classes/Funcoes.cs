@@ -64,16 +64,6 @@ namespace MovSoft.Classes
             return data;
         }
 
-        public void centralizarElementos(Control element, Control parent)
-        {
-            element.Left = (parent.Width - element.Width) / 2;
-        }
-
-        public void centralizarElementosVerticalmente(Control element, Form frm)
-        {
-            element.Top = (frm.Height - element.Height) / 2;
-        }
-
         public string GridViewMascaraCPF(string valor)
         {
             if (valor == "")
@@ -153,7 +143,7 @@ namespace MovSoft.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, $" | Erro ao conectar em {url}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, $" | Erro ao conectar em {url} ({MessageBoxButtons.OK} {MessageBoxIcon.Error})");
             }
             return result;
         }
@@ -207,7 +197,7 @@ namespace MovSoft.Classes
                 Regex regex = new(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
                 if (!regex.IsMatch(input))
                 {
-                    MessageBox.Show("Informe um e-mail válido, exemplo: 'exemplo@exemplo.com' ou 'exemplo@exemplo.com.br'");
+                    MessageBox.Show("Informe um e-mail válido! Exemplo: 'exemplo@exemplo.com' ou 'exemplo@exemplo.com.br'");
                     inputEmail.Focus();
                     inputEmail.Clear();
                     return false;
@@ -219,10 +209,10 @@ namespace MovSoft.Classes
 
         public bool ValidacaoTelefone(MaskedTextBox inputCelular)
         {
-            string input = inputCelular.Text;
-            if (input != null)
+            string numeroCelular = inputCelular.Text;
+            if (numeroCelular != null)
             {
-                if (input.Length < 11)
+                if (numeroCelular.Length < 11)
                 {
                     MessageBox.Show("Quantidade de caracteres inválidos!");
                     inputCelular.Focus();
@@ -231,22 +221,22 @@ namespace MovSoft.Classes
                 else
                 {
                     Regex regex = new(@"^[1-9]{2} ?:[2-8]|9[1-9][0-9]{3}[0-9]{4}$");
-                    if (!regex.IsMatch(input))
+                    if (!regex.IsMatch(numeroCelular))
                     {
-                        MessageBox.Show("Primeiro Digito incorreto adicione o prineiro digito corretamente '9'");
+                        MessageBox.Show("Primeiro dígito incorreto, adicione o primeiro dígito corretamente '9'!");
                         inputCelular.Focus();
                         inputCelular.Clear();
                         return false;
                     }
-                    input = inputCelular.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
-                    List<string> dddBrasil = new List<string> {"61", "62", "64", "65", "66", "67", "82", "71", "73", "74", "75",
+                    numeroCelular = inputCelular.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+                    List<string> dddBrasil = new() {"61", "62", "64", "65", "66", "67", "82", "71", "73", "74", "75",
                 "77", "85", "88", "98", "99", "83", "81", "87", "86", "89", "84", "79", "68", "96", "92", "97", "91", "93",
                 "94", "69", "95", "63","27", "28", "31", "32", "33", "34", "35", "37", "38", "21", "22", "24", "11", "12",
                 "13", "14", "15", "16", "17", "18", "19", "41", "42", "43", "44", "45", "46", "51", "53", "54",
                 "55", "47", "48", "49"};
-                    string ddd = input.Substring(0, 2);
-                    bool resultDdd = dddBrasil.Contains(ddd);
-                    if (resultDdd == false)
+                    string dddInserido = numeroCelular.Substring(0, 2);
+                    bool dddExistente = dddBrasil.Contains(dddInserido);
+                    if (dddExistente == false)
                     {
                         MessageBox.Show("Esse DDD não existe!");
                         inputCelular.Focus();
@@ -259,57 +249,87 @@ namespace MovSoft.Classes
             return false;
         }
 
-        /*
         public bool ValidacaoCPF(MaskedTextBox inputCpf)
         {
-            string input = inputCpf.Text;
-            bool primeiraValidacao = false;
-            int multiplicadores = 10;
-            int resultado = 0;
-            bool repetido = false;
-            if (input.Length == 11)
+            string cpf = inputCpf.Text;
+            bool cpfValido = true;
+
+            // Verificar se o cpf tem 11 dígitos
+            if (cpf.Length != 11)
             {
-                for(int i = 0; i <= 8; i++)
-                {
-                    resultado += int.Parse(input[i].ToString()) * multiplicadores;
-                    multiplicadores = multiplicadores - 1;
-                    if (input[i] == input[i + 1])
-                    {
-                        repetido = true;
-                    }
-                    else
-                    {
-                        repetido = false;
-                    }
-                }
-                if (resultado * 10 % 11 == 10)
-                {
-                    resultado = 0;
-                }
-                if(resultado * 10 % 11 == int.Parse(input[9].ToString()) || resultado == 0)
-                {
-                    primeiraValidacao = true;
-                    resultado = 0;
-                    multiplicadores = 11;
-                }
-                if (primeiraValidacao == true && repetido == false) {
-                    for (int i = 0; i <= 9; i++)
-                    {
-                        resultado += int.Parse(input[i].ToString()) * multiplicadores;
-                        multiplicadores -= 1;
-                    }
-                    if (resultado * 10 % 11 == int.Parse(input[10].ToString()))
-                    {
-                        return true;
-                    }
-                    MessageBox.Show("CPF inválido!");
-                    return false;
-                }
-                MessageBox.Show("CPF inválido!");
-                return false;
+                cpfValido = false;
             }
-            MessageBox.Show("CPF inválido!");
-            return false;
-        }*/
+
+            // Verificar se é 00000000000 ...., 99999999999
+            if (cpfValido)
+            {
+                int n = cpf.Length;
+                cpfValido = false;
+                for (int i = 1; i < n; i++)
+                {
+                    if (cpf[i] != cpf[0])
+                    {
+                        cpfValido = true;
+                    }
+                }
+            }
+
+            // Verificar dígito de controle do cpf
+            if (cpfValido)
+            {
+                var j = 0;
+                var d1 = 0;
+                var d2 = 0;
+
+                // Validar o primeiro número do dígito de controle
+                for (int i = 10; i > 1; i--)
+                {
+                    d1 += Convert.ToInt32(cpf.Substring(j, 1)) * i;
+                    j++;
+                }
+
+                // Resto da divisão
+                d1 = (d1 * 10) % 11;
+                if (d1 == 10)
+                {
+                    d1 = 0;
+                }
+
+                // Verificar se o primeiro número bateu ---- posição 9 (penúltima)
+                if (d1 != Convert.ToInt32(cpf.Substring(9, 1)))
+                {
+                    cpfValido = false;
+                }
+
+                // Validar o segundo número (dígito) do controle
+                if (cpfValido)
+                {
+                    j = 0;
+                    for (int i = 11; i > 1; i--)
+                    {
+                        d2 += Convert.ToInt32(cpf.Substring(j, 1)) * i;
+                        j++;
+                    }
+
+                    // Resto divisão
+                    d2 = (d2 * 10) % 11;
+                    if (d2 == 10)
+                    {
+                        d2 = 0;
+                    }
+
+                    // Verificar se o segundo número bateu ---- posicao 10 (última)
+                    if (d2 != Convert.ToInt32(cpf.Substring(10, 1)))
+                    {
+                        cpfValido = false;
+                    }
+                }
+            }
+            if (cpfValido == false)
+            {
+                MessageBox.Show("CPF inválido!");
+            }
+            return cpfValido;
+        }
     }
 }

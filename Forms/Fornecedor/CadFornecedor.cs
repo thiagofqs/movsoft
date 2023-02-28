@@ -11,14 +11,14 @@ namespace MovSoft
         FornecedoresBLL fornecedoresBLL = new();
         FornecedoresDTO fornecedoresDTO = new();
         EnderecosDTO EnderecosDTO = new();
-        bool editarForncedor = false;
+        bool editarFornecedor = false;
         public CadFornecedor(bool editar)
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
             if(editar == true)
             {
-                editarForncedor = true;
+                editarFornecedor = true;
                 AtribuirDadosAosInputs();
                 txtTitulo.Text = "Editar Fornecedor 1/2";
                 fornecedoresBLL.PegarDados((int)Parametros.idFornecedor);
@@ -27,19 +27,14 @@ namespace MovSoft
             }
             else
             {
-                editarForncedor = false;
+                editarFornecedor = false;
             }
-        }
-
-        private void CentralizarElementos()
-        {
-            funcoes.centralizarElementos(btnCadastrar, this);
-            funcoes.centralizarElementos(txtTitulo, this);
         }
 
         private void EditarFornecedor()
         {
-            fornecedoresDTO.RazaoSocial = inputRazaoSocial.Text;
+            fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
             EnderecosDTO.Estado = inputboxUf.Text;
@@ -61,7 +56,8 @@ namespace MovSoft
 
         private void CadastrarFornecedor()
         {
-            fornecedoresDTO.RazaoSocial = inputRazaoSocial.Text;
+            fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
             EnderecosDTO.Estado = inputboxUf.Text;
@@ -90,7 +86,7 @@ namespace MovSoft
         private void AtribuirDadosAosInputs()
         {
             inputRazaoSocial.Text = Parametros.nomeCliente;
-            inputCnpj.Text = Parametros.Cnpj;
+            inputCnpj.Text = Parametros.cnpj;
             inputCep.Text = Parametros.cep;
             inputboxUf.Text = Parametros.uf;
             inputCidade.Text = Parametros.cidade;
@@ -103,7 +99,7 @@ namespace MovSoft
         private void ContinuarCadastro()
         {
             AtribuirDadosDosInputs();
-            if(editarForncedor == true)
+            if(editarFornecedor == true)
             {
                 EditarFornecedor();
             }
@@ -115,8 +111,9 @@ namespace MovSoft
 
         private void AtribuirDadosDosInputs()
         {
+            Parametros.nomeFantasia = inputNomeFantasia.Text;
             Parametros.razaoSocial = inputRazaoSocial.Text;
-            Parametros.Cnpj = inputCnpj.Text;
+            Parametros.cnpj = inputCnpj.Text;
             Parametros.cep = inputCep.Text;
             Parametros.uf = inputboxUf.Text;
             Parametros.cidade = inputCidade.Text;
@@ -131,11 +128,6 @@ namespace MovSoft
             {
                 ContinuarCadastro();
             }
-        }
-
-        private void btnProximo_Click(object sender, EventArgs e)
-        {
-            ContinuarCadastro();
         }
 
         private void verificarCep()
@@ -157,6 +149,11 @@ namespace MovSoft
         private void inputCep_Leave(object sender, EventArgs e)
         {
             verificarCep();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            ContinuarCadastro();
         }
     }
 }

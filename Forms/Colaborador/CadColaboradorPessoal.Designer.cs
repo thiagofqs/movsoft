@@ -57,6 +57,7 @@
             // 
             this.txtTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BackColor = System.Drawing.Color.Transparent;
             this.txtTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtTitulo.Location = new System.Drawing.Point(213, 25);
@@ -126,6 +127,7 @@
             // 
             this.txtObr7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr7.AutoSize = true;
+            this.txtObr7.BackColor = System.Drawing.Color.Transparent;
             this.txtObr7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr7.Location = new System.Drawing.Point(458, 207);
             this.txtObr7.Name = "txtObr7";
@@ -137,6 +139,7 @@
             // 
             this.txtCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCelular.AutoSize = true;
+            this.txtCelular.BackColor = System.Drawing.Color.Transparent;
             this.txtCelular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCelular.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCelular.Location = new System.Drawing.Point(410, 205);
@@ -149,6 +152,7 @@
             // 
             this.txtObr6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr6.AutoSize = true;
+            this.txtObr6.BackColor = System.Drawing.Color.Transparent;
             this.txtObr6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr6.Location = new System.Drawing.Point(222, 207);
             this.txtObr6.Name = "txtObr6";
@@ -160,6 +164,7 @@
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.AutoSize = true;
+            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtEmail.Location = new System.Drawing.Point(178, 205);
@@ -183,6 +188,7 @@
             // 
             this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr4.AutoSize = true;
+            this.txtObr4.BackColor = System.Drawing.Color.Transparent;
             this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr4.Location = new System.Drawing.Point(320, 149);
             this.txtObr4.Name = "txtObr4";
@@ -194,6 +200,7 @@
             // 
             this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCpf.AutoSize = true;
+            this.txtCpf.BackColor = System.Drawing.Color.Transparent;
             this.txtCpf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCpf.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCpf.Location = new System.Drawing.Point(289, 147);
@@ -217,6 +224,7 @@
             // 
             this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr3.AutoSize = true;
+            this.txtObr3.BackColor = System.Drawing.Color.Transparent;
             this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr3.Location = new System.Drawing.Point(213, 151);
             this.txtObr3.Name = "txtObr3";
@@ -228,6 +236,7 @@
             // 
             this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr5.AutoSize = true;
+            this.txtObr5.BackColor = System.Drawing.Color.Transparent;
             this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr5.Location = new System.Drawing.Point(538, 147);
             this.txtObr5.Name = "txtObr5";
@@ -239,6 +248,7 @@
             // 
             this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr2.AutoSize = true;
+            this.txtObr2.BackColor = System.Drawing.Color.Transparent;
             this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr2.Location = new System.Drawing.Point(443, 88);
             this.txtObr2.Name = "txtObr2";
@@ -250,6 +260,7 @@
             // 
             this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtObr1.AutoSize = true;
+            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
             this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.txtObr1.Location = new System.Drawing.Point(320, 88);
             this.txtObr1.Name = "txtObr1";
@@ -261,6 +272,7 @@
             // 
             this.txtSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSexo.AutoSize = true;
+            this.txtSexo.BackColor = System.Drawing.Color.Transparent;
             this.txtSexo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSexo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtSexo.Location = new System.Drawing.Point(178, 149);
@@ -273,6 +285,7 @@
             // 
             this.txtNascimento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNascimento.AutoSize = true;
+            this.txtNascimento.BackColor = System.Drawing.Color.Transparent;
             this.txtNascimento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNascimento.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtNascimento.Location = new System.Drawing.Point(410, 147);
@@ -285,6 +298,7 @@
             // 
             this.txtSobrenome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSobrenome.AutoSize = true;
+            this.txtSobrenome.BackColor = System.Drawing.Color.Transparent;
             this.txtSobrenome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSobrenome.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtSobrenome.Location = new System.Drawing.Point(366, 86);
@@ -297,6 +311,7 @@
             // 
             this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNome.AutoSize = true;
+            this.txtNome.BackColor = System.Drawing.Color.Transparent;
             this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtNome.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtNome.Location = new System.Drawing.Point(178, 86);

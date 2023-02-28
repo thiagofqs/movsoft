@@ -33,6 +33,7 @@
             this.txtUsuario = new System.Windows.Forms.Label();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.txtMovSoft = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +62,7 @@
             this.menuSaida = new System.Windows.Forms.MenuStrip();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHome.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -109,12 +111,26 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.txtMovSoft);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.pnlMain.Location = new System.Drawing.Point(0, 97);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(930, 503);
             this.pnlMain.TabIndex = 2;
+            // 
+            // txtMovSoft
+            // 
+            this.txtMovSoft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMovSoft.AutoSize = true;
+            this.txtMovSoft.BackColor = System.Drawing.Color.Transparent;
+            this.txtMovSoft.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtMovSoft.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtMovSoft.Location = new System.Drawing.Point(309, 194);
+            this.txtMovSoft.Name = "txtMovSoft";
+            this.txtMovSoft.Size = new System.Drawing.Size(297, 86);
+            this.txtMovSoft.TabIndex = 0;
+            this.txtMovSoft.Text = "MovSoft";
             // 
             // panel1
             // 
@@ -423,6 +439,8 @@
             this.Text = "MovSoft - Página Inicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlHome.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
@@ -468,5 +486,6 @@
         private ToolStripMenuItem sairToolStripMenuItem;
         private Panel panel2;
         private Panel panel3;
+        private Label txtMovSoft;
     }
 }

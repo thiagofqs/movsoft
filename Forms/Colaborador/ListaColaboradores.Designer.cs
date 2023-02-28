@@ -152,7 +152,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
             this.btnSearch.BackgroundImage = global::MovSoft.Properties.Resources.icon_search;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -169,7 +169,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(198, 434);
@@ -182,26 +182,29 @@
             // 
             this.radioBtnDesabilitado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioBtnDesabilitado.AutoSize = true;
+            this.radioBtnDesabilitado.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnDesabilitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.radioBtnDesabilitado.Location = new System.Drawing.Point(348, 432);
             this.radioBtnDesabilitado.Name = "radioBtnDesabilitado";
             this.radioBtnDesabilitado.Size = new System.Drawing.Size(90, 19);
             this.radioBtnDesabilitado.TabIndex = 6;
             this.radioBtnDesabilitado.Text = "Desabilitado";
-            this.radioBtnDesabilitado.UseVisualStyleBackColor = true;
+            this.radioBtnDesabilitado.UseVisualStyleBackColor = false;
             // 
             // radioBtnHabilitado
             // 
             this.radioBtnHabilitado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.radioBtnHabilitado.AutoSize = true;
+            this.radioBtnHabilitado.BackColor = System.Drawing.Color.Transparent;
             this.radioBtnHabilitado.Checked = true;
             this.radioBtnHabilitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioBtnHabilitado.Location = new System.Drawing.Point(262, 432);
             this.radioBtnHabilitado.Name = "radioBtnHabilitado";
             this.radioBtnHabilitado.Size = new System.Drawing.Size(80, 19);
             this.radioBtnHabilitado.TabIndex = 5;
+            this.radioBtnHabilitado.TabStop = true;
             this.radioBtnHabilitado.Text = "Habilitado";
-            this.radioBtnHabilitado.UseVisualStyleBackColor = true;
+            this.radioBtnHabilitado.UseVisualStyleBackColor = false;
             // 
             // ListaColaboradores
             // 

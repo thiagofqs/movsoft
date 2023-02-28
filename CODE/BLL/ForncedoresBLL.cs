@@ -15,7 +15,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_fornecedor('{dtoFornecedores.RazaoSocial}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
+                string comando = $"call cad_fornecedor('{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_fornecedor({dtoFornecedores.Id_fornecedor},{dtoEnderecos.Id_endereco},'{dtoFornecedores.RazaoSocial}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
+                string comando = $"call edit_fornecedor({dtoFornecedores.Id_fornecedor}, {dtoEnderecos.Id_endereco}, '{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -80,8 +80,9 @@ namespace MovSoft.CODE.BLL
                 string comando = $"call edit_selec_fornecedores({idFornecedor})";
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.idFornecedor = dr.GetInt32(0);
-                Parametros.razaoSocial = dr.GetString(1);
-                Parametros.Cnpj = dr.GetString(2);
+                Parametros.nomeFantasia = dr.GetString(1);
+                Parametros.razaoSocial = dr.GetString(2);
+                Parametros.cnpj = dr.GetString(3);
             }
             catch (Exception ex)
             {

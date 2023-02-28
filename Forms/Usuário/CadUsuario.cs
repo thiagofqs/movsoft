@@ -26,7 +26,6 @@ namespace MovSoft
         public CadUsuario()
         {
             InitializeComponent();
-            centralizarElementos();
             ListarColaboradores();
             ListarCargos();
             if(Parametros.editarUser == true)
@@ -35,7 +34,6 @@ namespace MovSoft
                 txtTitulo.Text = "Editar Usuário";
                 btnCadastrar.Text = "Salvar";
                 AtribuirValores();
-                centralizarElementos();
             }
         }
 
@@ -62,7 +60,7 @@ namespace MovSoft
             inputUsuario.Text = Parametros.nomeUserEdit;
             inputboxCargo.Text = Parametros.cargoUserEdit;
             inputboxColaborador.Text = Parametros.colaboradorUserEdit;
-            inputSenha.Text = "";  
+            inputSenha.Text = "";
             inputConfirmarSenha.Text = "";
         }
 
@@ -116,7 +114,7 @@ namespace MovSoft
                 bllUsuarios.EditarUsuario(dtoUsuarios);
                 if(dtoUsuarios.Id_usuario == Parametros.idUser)
                 {
-                    MessageBox.Show("Você Será Redirecionado Para a Tela de Login");
+                    MessageBox.Show("Você será redirecionado para a tela de login!");
                     funcoes.ThreadVoltarAoLogin();
                 }
             }
@@ -159,16 +157,6 @@ namespace MovSoft
             {
                 VerificacaoCadastro();
             }
-        }
-
-        private void centralizarElementos()
-        {
-            funcoes.centralizarElementos(txtTitulo, pnlContent);
-            funcoes.centralizarElementos(pnlContent, this);
-            funcoes.centralizarElementosVerticalmente(pnlContent, this);
-            funcoes.centralizarElementos(btnCadastrar, pnlContent);
-            funcoes.centralizarElementos(inputboxColaborador, pnlContent);
-            txtColaborador.Left = inputboxColaborador.Left;
         }
     }   
 }
