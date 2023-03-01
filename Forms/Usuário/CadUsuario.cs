@@ -28,7 +28,8 @@ namespace MovSoft
             InitializeComponent();
             ListarColaboradores();
             ListarCargos();
-            if(Parametros.editarUser == true)
+            funcoes.PrimeiroInputEmFoco(inputboxColaborador);
+            if (Parametros.editarUser == true)
             {
                 editarUsuario = true;
                 txtTitulo.Text = "Editar Usuário";
@@ -124,34 +125,42 @@ namespace MovSoft
             }
         }
 
-        private void VerificacaoCadastro()
+        private void VerificarCampos()
         {
             if (inputboxColaborador.Text == "" || inputUsuario.Text == "" || inputboxCargo.Text == "" || inputSenha.Text == "" || inputConfirmarSenha.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
             }
-            else if (editarUsuario == false)
+            else
             {
-                CadastrarUsuario();
-                AtualizarUsuarios();
+                CadastrarOuEditar();
             }
-            else if (editarUsuario == true)
+        }
+
+        private void CadastrarOuEditar()
+        {
+            if (editarUsuario)
             {
                 EditarUsuario();
+                AtualizarUsuarios();
+            }
+            else if (!editarUsuario)
+            {
+                CadastrarUsuario();
                 AtualizarUsuarios();
             }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            VerificacaoCadastro();
+            VerificarCampos();
         }
 
         private void inputConfirmarSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                VerificacaoCadastro();
+                VerificarCampos();
             }
         }
     }   

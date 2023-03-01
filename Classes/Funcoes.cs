@@ -29,6 +29,12 @@ namespace MovSoft.Classes
                 MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {childForm.Text}!");
             }
         }
+
+        public void PrimeiroInputEmFoco(Control input)
+        {
+            input.Focus();
+        }
+
         public bool VerificarPermissao(int nivelPermissao)
         {
             bool podeAcessar;
@@ -85,8 +91,7 @@ namespace MovSoft.Classes
 
         public string BdDataNascimento(string data)
         {
-            data = data.Substring(4, 4) + "-" + data.Substring(2, 2) + "-" + data.Substring(0, 2);
-            return data;
+            return data.Substring(4, 4) + "-" + data.Substring(2, 2) + "-" + data.Substring(0, 2);
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -147,46 +152,38 @@ namespace MovSoft.Classes
             }
             return result;
         }
-        public bool ValidacaoData(MaskedTextBox inputNascimento)
+        public bool ValidacaoDataNascimento(MaskedTextBox inputNascimento)
         {
             string? input = inputNascimento.Text;
-            if (input != "")
+            if (input.Length < 8)
             {
-                if (input.Length < 8)
-                {
-                    MessageBox.Show("Quantidade de caracteres inválida!");
-                    inputNascimento.Focus();
-                    return false;
-                }
-                else
-                {
-                    input = input.Substring(2, 2) + "/" + input.Substring(2, 2) + "/" + input.Substring(4, 4);
-                    DateTime date;
+                MessageBox.Show("Quantidade de caracteres inválida no campo de Data de Nascimento!");
+                inputNascimento.Focus();
+                return false;
+            }
+            else
+            {
+                input = input.Substring(2, 2) + "/" + input.Substring(2, 2) + "/" + input.Substring(4, 4);
+                DateTime date;
 
-                    if (DateTime.TryParse(input, out date))
+                if (DateTime.TryParse(input, out date))
+                {
+                    if (date >= DateTime.Now)
                     {
-                        if (date >= DateTime.Now)
-                        {
-                            MessageBox.Show("Ano de nascimento acima do atual!");
-                            inputNascimento.Focus();
-                            inputNascimento.Clear();
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Data de nascimento inválida!");
+                        MessageBox.Show("O ano de nascimento inserido é acima do ano atual!");
                         inputNascimento.Focus();
                         inputNascimento.Clear();
                         return false;
                     }
-                    return true;
                 }
-            }
-            else
-            {
-                MessageBox.Show("O campo de data não pode estar vazio!");
-                return false;
+                else
+                {
+                    MessageBox.Show("Data de nascimento inválida!");
+                    inputNascimento.Focus();
+                    inputNascimento.Clear();
+                    return false;
+                }
+                return true;
             }
         }
         public bool ValidacaoEmail(TextBox inputEmail)
@@ -214,7 +211,7 @@ namespace MovSoft.Classes
             {
                 if (numeroCelular.Length < 11)
                 {
-                    MessageBox.Show("Quantidade de caracteres inválidos!");
+                    MessageBox.Show("Quantidade de caracteres inválidos no campo de Celular!");
                     inputCelular.Focus();
                     return false;
                 }
@@ -223,7 +220,7 @@ namespace MovSoft.Classes
                     Regex regex = new(@"^[1-9]{2} ?:[2-8]|9[1-9][0-9]{3}[0-9]{4}$");
                     if (!regex.IsMatch(numeroCelular))
                     {
-                        MessageBox.Show("Primeiro dígito incorreto, adicione o primeiro dígito corretamente '9'!");
+                        MessageBox.Show("Primeiro dígito incorreto, adicione '9' corretamente no campo de Celular!");
                         inputCelular.Focus();
                         inputCelular.Clear();
                         return false;
@@ -325,9 +322,11 @@ namespace MovSoft.Classes
                     }
                 }
             }
-            if (cpfValido == false)
+            if (!cpfValido)
             {
                 MessageBox.Show("CPF inválido!");
+                inputCpf.Focus();
+                inputCpf.Clear();
             }
             return cpfValido;
         }

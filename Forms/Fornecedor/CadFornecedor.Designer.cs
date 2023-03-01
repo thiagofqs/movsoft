@@ -257,6 +257,7 @@
             this.inputboxUf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputboxUf.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputboxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputboxUf.Enabled = false;
             this.inputboxUf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputboxUf.FormattingEnabled = true;
             this.inputboxUf.Items.AddRange(new object[] {
@@ -440,10 +441,12 @@
             // 
             this.inputCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputCidade.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.inputCidade.Enabled = false;
             this.inputCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputCidade.Location = new System.Drawing.Point(302, 222);
             this.inputCidade.MaxLength = 100;
             this.inputCidade.Name = "inputCidade";
+            this.inputCidade.ReadOnly = true;
             this.inputCidade.Size = new System.Drawing.Size(154, 23);
             this.inputCidade.TabIndex = 8;
             // 
@@ -463,10 +466,12 @@
             // 
             this.inputBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputBairro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.inputBairro.Enabled = false;
             this.inputBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputBairro.Location = new System.Drawing.Point(123, 222);
             this.inputBairro.MaxLength = 100;
             this.inputBairro.Name = "inputBairro";
+            this.inputBairro.ReadOnly = true;
             this.inputBairro.Size = new System.Drawing.Size(154, 23);
             this.inputBairro.TabIndex = 7;
             // 

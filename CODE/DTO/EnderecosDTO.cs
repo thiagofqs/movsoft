@@ -3,7 +3,7 @@
     class EnderecosDTO
     {
         private int id_endereco;
-        private string estado;
+        private string uf;
         private string cidade;
         private string bairro;
         private string logradouro;
@@ -12,7 +12,7 @@
         private string cep;
 
         public int Id_endereco { get => id_endereco; set => id_endereco = value; }
-        public string Estado { get => estado; set => estado = value; }
+        public string Uf { get => uf; set => uf = value; }
         public string Cidade { get => cidade; set => cidade = value; }
         public string Bairro { get => bairro; set => bairro = value; }
         public string Logradouro { get => logradouro; set => logradouro = value; }

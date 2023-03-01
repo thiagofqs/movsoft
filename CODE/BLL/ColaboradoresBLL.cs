@@ -70,7 +70,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_colaborador('{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
+                string comando = $"call cad_colaborador('{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_colaborador({dtoColaboradores.Id_colaborador},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
+                string comando = $"call edit_colaborador({dtoColaboradores.Id_colaborador},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)

@@ -381,6 +381,7 @@
             this.Name = "CadClientePessoal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovSoft - Cadastrar Cliente";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

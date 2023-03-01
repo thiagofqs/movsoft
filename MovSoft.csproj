@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Forms\Cliente\CadClienteEndereco.Designer.cs~RFb2731b.TMP" />
+    <None Remove="Forms\Cliente\CadClientePessoal.Designer.cs~RFb301be.TMP" />
     <None Remove="ListaClientes.resx~RF591ada.TMP" />
   </ItemGroup>
 

@@ -16,7 +16,8 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            if(editar == true)
+            funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
+            if (editar)
             {
                 editarFornecedor = true;
                 AtribuirDadosAosInputs();
@@ -31,20 +32,8 @@ namespace MovSoft
             }
         }
 
-        private void EditarFornecedor()
+        private void AtualizarFornecedores()
         {
-            //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
-            fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
-            fornecedoresDTO.Cnpj = inputCnpj.Text;
-            EnderecosDTO.Cep = inputCep.Text;
-            EnderecosDTO.Estado = inputboxUf.Text;
-            EnderecosDTO.Cidade = inputCidade.Text;
-            EnderecosDTO.Bairro = inputBairro.Text;
-            EnderecosDTO.Logradouro = inputLogradouro.Text;
-            EnderecosDTO.Complemento = inputComplemento.Text;
-            fornecedoresBLL.EditarFornecedor(fornecedoresDTO, EnderecosDTO);
-            Parametros parametros = new();
-            ActiveForm.Close();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is ListaFornecedores
                          select frm;
@@ -54,27 +43,36 @@ namespace MovSoft
             }
         }
 
+        private void EditarFornecedor()
+        {
+            //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
+            fornecedoresDTO.Cnpj = inputCnpj.Text;
+            EnderecosDTO.Cep = inputCep.Text;
+            EnderecosDTO.Uf = inputboxUf.Text;
+            EnderecosDTO.Cidade = inputCidade.Text;
+            EnderecosDTO.Bairro = inputBairro.Text;
+            EnderecosDTO.Logradouro = inputLogradouro.Text;
+            EnderecosDTO.Complemento = inputComplemento.Text;
+            fornecedoresBLL.EditarFornecedor(fornecedoresDTO, EnderecosDTO);
+            ActiveForm.Close();
+            AtualizarFornecedores();
+        }
+
         private void CadastrarFornecedor()
         {
             //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
-            EnderecosDTO.Estado = inputboxUf.Text;
+            EnderecosDTO.Uf = inputboxUf.Text;
             EnderecosDTO.Cidade = inputCidade.Text;
             EnderecosDTO.Bairro = inputBairro.Text;
             EnderecosDTO.Logradouro = inputLogradouro.Text;
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.CadastrarFornecedor(fornecedoresDTO, EnderecosDTO);
-            Parametros parametros = new();
             ActiveForm.Close();
-            var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is ListaFornecedores
-                         select frm;
-            if (qrForm != null && qrForm.Count() > 0)
-            {
-                ((ListaFornecedores)qrForm.First()).CarregarFornecedores();
-            }
+            AtualizarFornecedores();
         }
 
         private void RemoverMascarasDeTexto()
@@ -96,23 +94,28 @@ namespace MovSoft
             inputComplemento.Text = Parametros.complemento;
         }
 
-        private void ContinuarCadastro()
+        private void CadastrarOuEditar()
         {
             AtribuirDadosDosInputs();
+            if (editarFornecedor)
+            {
+                EditarFornecedor();
+            }
+            else if(!editarFornecedor)
+            {
+                CadastrarFornecedor();
+            }
+        }
+
+        private void VerificarCampos()
+        {
             if (inputNomeFantasia.Text == "" || inputRazaoSocial.Text == "" || inputCnpj.Text == "" || inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
             }
             else
             {
-                if (editarFornecedor == true)
-                {
-                    EditarFornecedor();
-                }
-                else
-                {
-                    CadastrarFornecedor();
-                }
+                CadastrarOuEditar();
             }
         }
 
@@ -133,34 +136,39 @@ namespace MovSoft
         {
             if (e.KeyChar == 13)
             {
-                ContinuarCadastro();
+                VerificarCampos();
             }
         }
 
-        private void verificarCep()
+        private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
+        {
+            inputCep.Text = cepModel.Cep;
+            inputLogradouro.Text = cepModel.Logradouro;
+            inputBairro.Text = cepModel.Bairro;
+            inputComplemento.Text = cepModel.Complemento;
+            inputCidade.Text = cepModel.Localidade;
+            inputboxUf.Text = cepModel.Uf;
+        }
+
+        private void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
                 string? result = funcoes.getApiResult(url);
                 CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                inputCep.Text = cepModel.Cep;
-                inputLogradouro.Text = cepModel.Logradouro;
-                inputBairro.Text = cepModel.Bairro;
-                inputComplemento.Text = cepModel.Complemento;
-                inputCidade.Text = cepModel.Localidade;
-                inputboxUf.Text = cepModel.Uf;
+                AtribuirDadosDoCepAosInputs(cepModel);
             }
         }
 
         private void inputCep_Leave(object sender, EventArgs e)
         {
-            verificarCep();
+            VerificarCep();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            ContinuarCadastro();
+            VerificarCampos();
         }
     }
 }

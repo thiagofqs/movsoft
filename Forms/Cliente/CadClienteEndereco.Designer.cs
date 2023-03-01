@@ -166,6 +166,7 @@
             this.inputboxUf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputboxUf.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputboxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputboxUf.Enabled = false;
             this.inputboxUf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputboxUf.FormattingEnabled = true;
             this.inputboxUf.Items.AddRange(new object[] {
@@ -268,10 +269,12 @@
             // 
             this.inputCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputCidade.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.inputCidade.Enabled = false;
             this.inputCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputCidade.Location = new System.Drawing.Point(309, 205);
             this.inputCidade.MaxLength = 100;
             this.inputCidade.Name = "inputCidade";
+            this.inputCidade.ReadOnly = true;
             this.inputCidade.Size = new System.Drawing.Size(154, 23);
             this.inputCidade.TabIndex = 5;
             // 
@@ -279,10 +282,12 @@
             // 
             this.inputBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputBairro.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.inputBairro.Enabled = false;
             this.inputBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputBairro.Location = new System.Drawing.Point(130, 205);
             this.inputBairro.MaxLength = 100;
             this.inputBairro.Name = "inputBairro";
+            this.inputBairro.ReadOnly = true;
             this.inputBairro.Size = new System.Drawing.Size(154, 23);
             this.inputBairro.TabIndex = 4;
             // 
@@ -406,6 +411,7 @@
             this.Name = "CadClienteEndereco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovSoft - Cadastrar Cliente (2/2)";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

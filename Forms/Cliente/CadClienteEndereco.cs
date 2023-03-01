@@ -13,15 +13,17 @@ namespace MovSoft
         EnderecosDTO dtoEnderecos = new();
         ContatosDTO dtoContatos = new();
         private bool editarCliente = false;
+
         public CadClienteEndereco(bool primeiraAbertura, bool editar)
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            if (primeiraAbertura == false)
+            funcoes.PrimeiroInputEmFoco(inputCep);
+            if (!primeiraAbertura)
             {
                 AtribuirDadosAosInputs();
             }
-            if (editar == true)
+            if (editar)
             {
                 txtTitulo.Text = "Editar Colaborador 2/2";
                 btnCadastrar.Text = "Salvar";
@@ -49,19 +51,12 @@ namespace MovSoft
             dtoEnderecos.Complemento = Parametros.complemento;
             dtoEnderecos.Bairro = Parametros.bairro;
             dtoEnderecos.Cidade = Parametros.cidade;
-            dtoEnderecos.Estado = Parametros.uf;
+            dtoEnderecos.Uf = Parametros.uf;
             dtoContatos.Ddd = Parametros.dddCliente;
             dtoContatos.Celular = Parametros.celularCliente;
             bllClientes.CadastrarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            Parametros parametros = new();
             ActiveForm.Close();
-            var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is ListaClientes
-                         select frm;
-            if (qrForm != null && qrForm.Count() > 0)
-            {
-                ((ListaClientes)qrForm.First()).CarregarClientes();
-            }
+            AtualizarClientes();
         }
 
         private void EditarCliente()
@@ -81,11 +76,16 @@ namespace MovSoft
             dtoEnderecos.Complemento = Parametros.complemento;
             dtoEnderecos.Bairro = Parametros.bairro;
             dtoEnderecos.Cidade = Parametros.cidade;
-            dtoEnderecos.Estado = Parametros.uf;
+            dtoEnderecos.Uf = Parametros.uf;
             dtoContatos.Ddd = Parametros.dddCliente;
             dtoContatos.Celular = Parametros.celularCliente;
             bllClientes.EditarCliente(dtoClientes, dtoEnderecos, dtoContatos);
             ActiveForm.Close();
+            AtualizarClientes();
+        }
+
+        private void AtualizarClientes()
+        {
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is ListaClientes
                          select frm;
@@ -94,7 +94,6 @@ namespace MovSoft
                 ((ListaClientes)qrForm.First()).CarregarClientes();
             }
         }
-
         private void AtribuirDadosAosInputs()
         {
             inputCep.Text = Parametros.cep;
@@ -119,65 +118,70 @@ namespace MovSoft
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            AtribuirDadosDosInputs();
-            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else if (editarCliente == false)
-            {
-                CadastrarCliente();
-            }
-            else if (editarCliente == true)
-            {
-                EditarCliente();
-            }
+            VerificarCampos();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             AtribuirDadosDosInputs();
-            if (editarCliente == true)
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is CadCliente
+                         select frm;
+            if (qrForm != null && qrForm.Count() > 0)
             {
-                var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                             where frm is CadCliente
-                             select frm;
-                if (qrForm != null && qrForm.Count() > 0)
-                {
-                    ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(false, editarCliente);
-                }
-            }
-            else if (editarCliente == false)
-            {
-                var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                             where frm is CadCliente
-                             select frm;
-                if (qrForm != null && qrForm.Count() > 0)
-                {
-                    ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(false, editarCliente);
-                }
+                ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(false, editarCliente);
             }
         }
 
-        private void verificarCep()
+        private void CadastrarOuEditar()
+        {
+            AtribuirDadosDosInputs();
+            if (!editarCliente)
+            {
+                CadastrarCliente();
+            }
+            else if (editarCliente)
+            {
+                EditarCliente();
+            }
+        }
+
+        private void VerificarCampos()
+        {
+            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios!");
+            }
+            else
+            {
+                CadastrarOuEditar();
+            }
+        }
+
+        private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
+        {
+            inputCep.Text = cepModel.Cep;
+            inputLogradouro.Text = cepModel.Logradouro;
+            inputBairro.Text = cepModel.Bairro;
+            inputComplemento.Text = cepModel.Complemento;
+            inputCidade.Text = cepModel.Localidade;
+            inputboxUf.Text = cepModel.Uf;
+        }
+
+        private void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
                 string? result = funcoes.getApiResult(url);
                 CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                inputCep.Text = cepModel.Cep;
-                inputLogradouro.Text = cepModel.Logradouro;
-                inputBairro.Text = cepModel.Bairro;
-                inputComplemento.Text = cepModel.Complemento;
-                inputCidade.Text = cepModel.Localidade;
-                inputboxUf.Text = cepModel.Uf;
+                AtribuirDadosDoCepAosInputs(cepModel);
             }
         }
 
         private void inputCep_Leave(object sender, EventArgs e)
         {
-            verificarCep();
+            VerificarCep();
         }
     }
 }

@@ -1,10 +1,15 @@
-﻿namespace MovSoft
+﻿using MovSoft.Classes;
+
+namespace MovSoft
 {
     public partial class CadGrupos : Form
     {
+        Funcoes funcoes = new();
+
         public CadGrupos()
         {
             InitializeComponent();
+            funcoes.PrimeiroInputEmFoco(inputNomeGrupo);
         }
 
         private void ContinuarCadastro()

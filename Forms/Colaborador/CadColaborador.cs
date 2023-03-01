@@ -12,7 +12,7 @@ namespace MovSoft
             InitializeComponent();
             bool primeiraAbertura = true;
             CadColaboradorPessoal cadColaboradorPessoal = new(primeiraAbertura, editar);
-            funcoes.OpenChildForm(cadColaboradorPessoal,activeForm,pnlMain,1);
+            funcoes.OpenChildForm(cadColaboradorPessoal, activeForm, pnlMain, 1);
             if(editar == true)
             {
                 AbrirTelaCadColaboradorPessoal(primeiraAbertura,editar);
@@ -22,7 +22,7 @@ namespace MovSoft
         public void AbrirTelaCadColaboradorPessoal(bool primeiraAbertura, bool editar)
         {
             CadColaboradorPessoal cadColaboradorPessoal = new(primeiraAbertura,editar);
-            funcoes.OpenChildForm(cadColaboradorPessoal,activeForm,pnlMain,2);
+            funcoes.OpenChildForm(cadColaboradorPessoal, activeForm, pnlMain, 2);
         }
 
         public void AbrirTelaCadColaboradorEndereco(bool primeiraAbertura, bool editar)

@@ -15,7 +15,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_fornecedor('{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
+                string comando = $"call cad_fornecedor('{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_fornecedor({dtoFornecedores.Id_fornecedor}, {dtoEnderecos.Id_endereco}, '{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
+                string comando = $"call edit_fornecedor({dtoFornecedores.Id_fornecedor}, {dtoEnderecos.Id_endereco}, '{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)

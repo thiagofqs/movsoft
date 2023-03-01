@@ -10,21 +10,22 @@ namespace MovSoft
         ColaboradoresBLL colaboradoresBLL = new();
         private bool primeiraAberturaColaborador = true;
         private bool editarColaborador = false;
+
         public CadColaboradorPessoal(bool primeiraAbertura, bool editar)
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-         
-            if(primeiraAbertura == false)
+            funcoes.PrimeiroInputEmFoco(inputNome);
+            if (!primeiraAbertura)
             {
                 primeiraAberturaColaborador = false;
                 AtribuirDadosAosInputs();
-            }
+            }/*
             else if (primeiraAbertura == true && editar == false)
             {
                 Parametros parametros = new();
-            }
-            if(editar == true && primeiraAbertura == true)
+            }*/
+            if(editar && primeiraAbertura)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 colaboradoresBLL.PegarDados((int)Parametros.idColab);
@@ -32,7 +33,7 @@ namespace MovSoft
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
             }
-            else if(editar == true && primeiraAbertura == false)
+            else if(editar && !primeiraAbertura)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 editarColaborador = true;
@@ -47,21 +48,15 @@ namespace MovSoft
             funcoes.RemoverMascarasDeTexto(inputCelular);
         }
 
-        private string BdDataNascimento(string data)
-        {
-            data = funcoes.BdDataNascimento(data);
-            return data;
-        }
-
         private void AtribuirDadosDosInputs()
         {
             Parametros.nomeColab = inputNome.Text;
             Parametros.sobrenomeColab = inputSobrenome.Text;
             Parametros.idSexoColab = inputboxSexo.SelectedIndex + 1;
             Parametros.cpfColab = inputCpf.Text;
-            if(primeiraAberturaColaborador == true)
+            if(primeiraAberturaColaborador)
             {
-                Parametros.nascimentoColab = BdDataNascimento(inputNascimento.Text);
+                Parametros.nascimentoColab = funcoes.BdDataNascimento(inputNascimento.Text);
             }
             Parametros.nascimentoInputColab = inputNascimento.Text;
             Parametros.emailColab = inputEmail.Text;
@@ -80,44 +75,48 @@ namespace MovSoft
             inputCelular.Text = Parametros.dddColab + Parametros.celularColab;
         }
 
-        private void btnProximo_Click(object sender, EventArgs e)
+        private void VerificarCampos()
         {
-            if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular) && funcoes.ValidacaoCPF(inputCpf))
+            if (inputNome.Text == "" || inputSobrenome.Text == "" || inputboxSexo.Text == "" || inputCpf.Text == "" || inputNascimento.Text == "" || inputEmail.Text == "" || inputCelular.Text == "")
             {
-                ContinuarCadastro();
+                MessageBox.Show("Preencha todos os campos obrigatórios!");
+            }
+            else
+            {
+                bool[] validacaoCorreta = new bool[4];
+                validacaoCorreta[0] = funcoes.ValidacaoCPF(inputCpf);
+                validacaoCorreta[1] = funcoes.ValidacaoDataNascimento(inputNascimento);
+                validacaoCorreta[2] = funcoes.ValidacaoEmail(inputEmail);
+                validacaoCorreta[3] = funcoes.ValidacaoTelefone(inputCelular);
+                if (validacaoCorreta[0] && validacaoCorreta[1] && validacaoCorreta[2] && validacaoCorreta[3])
+                {
+                    ContinuarCadastro();
+                }
             }
         }
 
         private void ContinuarCadastro()
         {
             AtribuirDadosDosInputs();
-                if (editarColaborador == true)
-                {
-                    var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                 where frm is CadColaborador
-                                 select frm;
-                    if (qrForm != null && qrForm.Count() > 0)
-                    {
-                        ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEndereco(primeiraAberturaColaborador, editarColaborador);
-                    }
-                }
-                else
-                {
-                    var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                 where frm is CadColaborador
-                                 select frm;
-                    if (qrForm != null && qrForm.Count() > 0)
-                    {
-                        ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEndereco(primeiraAberturaColaborador, editarColaborador);
-                    }
-                }
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is CadColaborador
+                         select frm;
+            if (qrForm != null && qrForm.Count() > 0)
+            {
+                ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorEndereco(primeiraAberturaColaborador, editarColaborador);
+            }
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            VerificarCampos();
         }
 
         private void inputCelular_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                ContinuarCadastro();
+                VerificarCampos();
             }
         }
     }

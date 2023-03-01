@@ -18,11 +18,12 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            if (primeiraAbertura == false)
+            funcoes.PrimeiroInputEmFoco(inputCep);
+            if (!primeiraAbertura)
             {
                 AtribuirDadosAosInputs();
             }
-            if(editar == true)
+            if(editar)
             {
                 txtTitulo.Text = "Editar Colaborador 2/2";
                 btnCadastrar.Text = "Salvar";
@@ -61,12 +62,11 @@ namespace MovSoft
             dtoEnderecos.Complemento = Parametros.complemento;
             dtoEnderecos.Bairro = Parametros.bairro;
             dtoEnderecos.Cidade = Parametros.cidade;
-            dtoEnderecos.Estado = Parametros.uf;
+            dtoEnderecos.Uf = Parametros.uf;
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.CadastrarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
             //ActiveForm.Close();
-            
         }
 
         private void EditarColaborador()
@@ -86,7 +86,7 @@ namespace MovSoft
             dtoEnderecos.Complemento = Parametros.complemento;
             dtoEnderecos.Bairro = Parametros.bairro;
             dtoEnderecos.Cidade = Parametros.cidade;
-            dtoEnderecos.Estado = Parametros.uf;
+            dtoEnderecos.Uf = Parametros.uf;
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.EditarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
@@ -115,69 +115,73 @@ namespace MovSoft
             Parametros.uf = inputboxUf.Text;
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void VerificarCampos()
         {
-            AtribuirDadosDosInputs();
-            if(inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
+            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
+            } else
+            {
+                CadastrarOuEditar();
             }
-            else if (editarColaborador == false)
+        }
+
+        private void CadastrarOuEditar()
+        {
+            if (!editarColaborador)
             {
                 CadastrarColaborador();
                 AtualizarColaboradores();
             }
-            else if(editarColaborador == true)
+            else if (editarColaborador)
             {
                 EditarColaborador();
                 AtualizarColaboradores();
             }
         }
 
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            AtribuirDadosDosInputs();
+            VerificarCampos();
+        }
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             AtribuirDadosDosInputs();
-            if (editarColaborador == true)
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is CadColaborador
+                         select frm;
+            if (qrForm != null && qrForm.Count() > 0)
             {
-                var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                             where frm is CadColaborador
-                             select frm;
-                if (qrForm != null && qrForm.Count() > 0)
-                {
-                    ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoal(false, editarColaborador);
-                }
-            }
-            else if (editarColaborador == false)
-            {
-                var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                             where frm is CadColaborador
-                             select frm;
-                if (qrForm != null && qrForm.Count() > 0)
-                {
-                    ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoal(false, editarColaborador);
-                }
+                ((CadColaborador)qrForm.First()).AbrirTelaCadColaboradorPessoal(false, editarColaborador);
             }
         }
 
-        private void verificarCep()
+        private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
+        {
+            inputCep.Text = cepModel.Cep;
+            inputLogradouro.Text = cepModel.Logradouro;
+            inputBairro.Text = cepModel.Bairro;
+            inputComplemento.Text = cepModel.Complemento;
+            inputCidade.Text = cepModel.Localidade;
+            inputboxUf.Text = cepModel.Uf;
+        }
+
+        private void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
                 string? result = funcoes.getApiResult(url);
                 CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                inputCep.Text = cepModel.Cep;
-                inputLogradouro.Text = cepModel.Logradouro;
-                inputBairro.Text = cepModel.Bairro;
-                inputComplemento.Text = cepModel.Complemento;
-                inputCidade.Text = cepModel.Localidade;
-                inputboxUf.Text = cepModel.Uf;
+                AtribuirDadosDoCepAosInputs(cepModel);
             }
         }
 
         private void inputCep_Leave(object sender, EventArgs e)
         {
-            verificarCep();
+            VerificarCep();
         }
     }
 }

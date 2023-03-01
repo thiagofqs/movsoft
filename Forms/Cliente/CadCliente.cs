@@ -6,6 +6,7 @@ namespace MovSoft
     {
         Funcoes funcoes = new();
         public Form activeForm;
+
         public CadCliente(bool editar)
         {
             InitializeComponent();

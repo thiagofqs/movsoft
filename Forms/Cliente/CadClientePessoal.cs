@@ -13,16 +13,17 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            if (primeiraAbertura == false)
+            funcoes.PrimeiroInputEmFoco(inputNome);
+            if (!primeiraAbertura)
             {
                 primeiraAberturaCliente = false;
                 AtribuirDadosAosInputs();
-            }
+            }/*
             else if (primeiraAbertura == true && editar == false)
             {
                 Parametros parametros = new Parametros();
-            }
-            if (editar == true && primeiraAbertura == true)
+            }*/
+            if (editar && primeiraAbertura)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 clientesBLL.PegarDados((int)Parametros.idCliente);
@@ -30,7 +31,7 @@ namespace MovSoft
                 editarCliente = true;
                 AtribuirDadosAosInputs();
             }
-            else if (editar == true && primeiraAbertura == false)
+            else if (editar && !primeiraAbertura)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 editarCliente = true;
@@ -45,12 +46,6 @@ namespace MovSoft
             funcoes.RemoverMascarasDeTexto(inputCelular);
         }
 
-        private string BdDataNascimento(string data)
-        {
-            data = funcoes.BdDataNascimento(data);
-            return data;
-        }
-
         private void AtribuirDadosDosInputs()
         {
             Parametros.nomeCliente = inputNome.Text;
@@ -59,7 +54,7 @@ namespace MovSoft
             Parametros.cpfCliente = inputCpf.Text;
             if (primeiraAberturaCliente == true)
             {
-                Parametros.nascimentoCliente = BdDataNascimento(inputNascimento.Text);
+                Parametros.nascimentoCliente = funcoes.BdDataNascimento(inputNascimento.Text);
             }
             Parametros.nascimentoInputCliente = inputNascimento.Text;
             Parametros.emailCliente = inputEmail.Text;
@@ -80,28 +75,38 @@ namespace MovSoft
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            if (inputNome.Text == "" || inputSobrenome.Text == "" || inputboxSexo.Text == "" || inputCpf.Text == "" || inputNascimento.Text == "" || inputEmail.Text == "" || inputCelular.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            } else
-            {
-                if (funcoes.ValidacaoData(inputNascimento) && funcoes.ValidacaoEmail(inputEmail) && funcoes.ValidacaoTelefone(inputCelular) && funcoes.ValidacaoCPF(inputCpf))
-                {
-                    ContinuarCadastro();
-                }
-            }
-            
+            VerificarCampos();
         }
 
         private void ContinuarCadastro()
         {
-                AtribuirDadosDosInputs();
-                    var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                 where frm is CadCliente
-                                 select frm;
+            AtribuirDadosDosInputs();
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is CadCliente
+                         select frm;
             if (qrForm != null && qrForm.Count() > 0)
             {
                 ((CadCliente)qrForm.First()).AbrirTelaCadClienteEndereco(primeiraAberturaCliente, editarCliente);
+            }
+        }
+
+        private void VerificarCampos()
+        {
+            if (inputNome.Text == "" || inputSobrenome.Text == "" || inputboxSexo.Text == "" || inputCpf.Text == "" || inputNascimento.Text == "" || inputEmail.Text == "" || inputCelular.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios!");
+            }
+            else
+            {
+                bool[] validacaoCorreta = new bool[4];
+                validacaoCorreta[0] = funcoes.ValidacaoCPF(inputCpf);
+                validacaoCorreta[1] = funcoes.ValidacaoDataNascimento(inputNascimento);
+                validacaoCorreta[2] = funcoes.ValidacaoEmail(inputEmail);
+                validacaoCorreta[3] = funcoes.ValidacaoTelefone(inputCelular);
+                if (validacaoCorreta[0] && validacaoCorreta[1] && validacaoCorreta[2] && validacaoCorreta[3])
+                {
+                    ContinuarCadastro();
+                }
             }
         }
 
@@ -109,7 +114,7 @@ namespace MovSoft
         {
             if (e.KeyChar == 13)
             {
-                ContinuarCadastro();
+                VerificarCampos();
             }
         }
     }
