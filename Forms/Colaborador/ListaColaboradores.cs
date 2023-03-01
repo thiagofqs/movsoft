@@ -58,9 +58,12 @@ namespace MovSoft
 
         private void EditarColaboradores(object sender, DataGridViewCellEventArgs e)
         {
-            rowData = dataGridView.Rows[e.RowIndex];
-            Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());
-            AbrirCadColaborador(true);
+            if(e.RowIndex > 0)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());
+                AbrirCadColaborador(true);
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

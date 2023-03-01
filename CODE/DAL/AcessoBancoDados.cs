@@ -1,10 +1,15 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
+using IniParser.Model;
+using IniParser;
+using System.IO;
+using MovSoft.Classes;
 
 namespace MovSoft.CODE.DAL
 {
     class AcessoBancoDados
     {
+        private IniData iniData;
         private MySqlConnection conn;
         private DataTable data;
         private MySqlDataAdapter da;
@@ -17,8 +22,19 @@ namespace MovSoft.CODE.DAL
         private string port = "3306";
         private string password = "root";
 
+        private async void GetIniData()
+        {
+            iniData = Funcoes.LerIni();
+            server = iniData["DataBase"]["DB_Server"];
+            user = iniData["DataBase"]["DB_Username"];
+            database = iniData["DataBase"]["DB_Database"];
+            port = iniData["DataBase"]["DB_Port"];
+            password = iniData["DataBase"]["DB_Password"];
+        }
+
         public void Conectar()
         {
+            GetIniData();
             string connStr = string.Format("server={0}; User Id={1}; database={2}; port={3}; password={4}; pooling=false", server, user, database, port, password);
             try
             {

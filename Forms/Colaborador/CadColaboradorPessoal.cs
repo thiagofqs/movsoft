@@ -1,6 +1,7 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace MovSoft
 {
@@ -40,6 +41,7 @@ namespace MovSoft
                 AtribuirDadosAosInputs();
             }
         }
+
 
         private void RemoverMascarasDeTexto()
         {
@@ -98,6 +100,8 @@ namespace MovSoft
         private void ContinuarCadastro()
         {
             AtribuirDadosDosInputs();
+            Close();
+            GC.Collect();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is CadColaborador
                          select frm;

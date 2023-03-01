@@ -149,6 +149,8 @@ namespace MovSoft
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             AtribuirDadosDosInputs();
+            Close();
+            GC.Collect();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is CadColaborador
                          select frm;
