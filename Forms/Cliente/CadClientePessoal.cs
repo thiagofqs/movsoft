@@ -81,6 +81,8 @@ namespace MovSoft
         private void ContinuarCadastro()
         {
             AtribuirDadosDosInputs();
+            Close();
+            GC.Collect();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is CadCliente
                          select frm;

@@ -58,7 +58,7 @@ namespace MovSoft
 
         private void EditarColaboradores(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if (e.RowIndex > -1)
             {
                 rowData = dataGridView.Rows[e.RowIndex];
                 Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());

@@ -65,6 +65,12 @@ namespace MovSoft
             InitializeComponent();
             menu.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
             menuSaida.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
+            pnlUsuario.Controls.Add(txtUsuario);
+            pnlCargo.Controls.Add(txtCargo);
+            pnlHeader.Controls.Add(pnlUsuario);
+            pnlHeader.Controls.Add(pnlCargo);
+            pnlHeader.Controls.Add(menu);
+            pnlHeader.Controls.Add(menuSaida);
             MudarCursorDoMenu();
             txtUsuario.Text += Parametros.nomeUser;
             txtCargo.Text += Parametros.cargoUser;

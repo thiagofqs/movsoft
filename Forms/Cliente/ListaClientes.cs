@@ -1,5 +1,8 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
+using Mysqlx.Crud;
+using Mysqlx.Resultset;
+
 namespace MovSoft
 {
     public partial class ListaClientes : Form
@@ -53,9 +56,12 @@ namespace MovSoft
 
         private void EditarClientes(object sender, DataGridViewCellEventArgs e)
         {
-            rowData = dataGridView.Rows[e.RowIndex];
-            Parametros.idCliente = int.Parse(rowData.Cells[0].Value.ToString());
-            AbrirCadCliente(true);
+            if (e.RowIndex > -1)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.idCliente = int.Parse(rowData.Cells[0].Value.ToString());
+                AbrirCadCliente(true);
+            }
         }
 
         private void ListaColaboradores_KeyPress(object sender, KeyPressEventArgs e)

@@ -164,6 +164,8 @@ namespace MovSoft
                 CadastrarUsuario();
                 AtualizarUsuarios();
             }
+            Close();
+            GC.Collect();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

@@ -65,12 +65,15 @@ namespace MovSoft
 
         private void EditarUsuarios(object sender, DataGridViewCellEventArgs e)
         {
-            rowData = dataGridView.Rows[e.RowIndex];
-            Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
-            Parametros.nomeUserEdit = rowData.Cells[1].Value.ToString();
-            Parametros.cargoUserEdit = rowData.Cells[2].Value.ToString();
-            Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
-            AbrirCadUsuario(true);
+            if(e.RowIndex > - 1)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
+                Parametros.nomeUserEdit = rowData.Cells[1].Value.ToString();
+                Parametros.cargoUserEdit = rowData.Cells[2].Value.ToString();
+                Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
+                AbrirCadUsuario(true);
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

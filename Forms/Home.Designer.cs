@@ -34,7 +34,7 @@
             this.pnlHome = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.txtMovSoft = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlHeader = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,23 +57,22 @@
             this.financasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analiseDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.painelDeControleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlCargo = new System.Windows.Forms.Panel();
+            this.pnlUsuario = new System.Windows.Forms.Panel();
             this.menuSaida = new System.Windows.Forms.MenuStrip();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHome.SuspendLayout();
             this.pnlMain.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.menu.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlCargo.SuspendLayout();
+            this.pnlUsuario.SuspendLayout();
             this.menuSaida.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCargo
             // 
-            this.txtCargo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCargo.AutoSize = true;
             this.txtCargo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
@@ -86,8 +85,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.AutoSize = true;
             this.txtUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -102,7 +100,7 @@
             // pnlHome
             // 
             this.pnlHome.Controls.Add(this.pnlMain);
-            this.pnlHome.Controls.Add(this.panel1);
+            this.pnlHome.Controls.Add(this.pnlHeader);
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHome.Location = new System.Drawing.Point(0, 0);
             this.pnlHome.Name = "pnlHome";
@@ -132,18 +130,18 @@
             this.txtMovSoft.TabIndex = 0;
             this.txtMovSoft.Text = "MovSoft";
             // 
-            // panel1
+            // pnlHeader
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.panel1.Controls.Add(this.menu);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.menuSaida);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(930, 97);
-            this.panel1.TabIndex = 2;
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.pnlHeader.Controls.Add(this.menu);
+            this.pnlHeader.Controls.Add(this.pnlCargo);
+            this.pnlHeader.Controls.Add(this.pnlUsuario);
+            this.pnlHeader.Controls.Add(this.menuSaida);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(930, 97);
+            this.pnlHeader.TabIndex = 2;
             // 
             // menu
             // 
@@ -158,7 +156,8 @@
             this.gestorToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(590, 97);
+            this.menu.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menu.Size = new System.Drawing.Size(591, 97);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -377,25 +376,25 @@
             this.painelDeControleToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.painelDeControleToolStripMenuItem.Text = "Painel de controle";
             // 
-            // panel3
+            // pnlCargo
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.txtCargo);
-            this.panel3.Location = new System.Drawing.Point(593, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 25);
-            this.panel3.TabIndex = 5;
+            this.pnlCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCargo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlCargo.Controls.Add(this.txtCargo);
+            this.pnlCargo.Location = new System.Drawing.Point(593, 50);
+            this.pnlCargo.Name = "pnlCargo";
+            this.pnlCargo.Size = new System.Drawing.Size(200, 25);
+            this.pnlCargo.TabIndex = 5;
             // 
-            // panel2
+            // pnlUsuario
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.txtUsuario);
-            this.panel2.Location = new System.Drawing.Point(593, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 25);
-            this.panel2.TabIndex = 3;
+            this.pnlUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlUsuario.Controls.Add(this.txtUsuario);
+            this.pnlUsuario.Location = new System.Drawing.Point(593, 20);
+            this.pnlUsuario.Name = "pnlUsuario";
+            this.pnlUsuario.Size = new System.Drawing.Size(200, 25);
+            this.pnlUsuario.TabIndex = 3;
             // 
             // menuSaida
             // 
@@ -407,20 +406,23 @@
             this.menuSaida.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.menuSaida.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sairToolStripMenuItem});
-            this.menuSaida.Location = new System.Drawing.Point(726, 0);
+            this.menuSaida.Location = new System.Drawing.Point(862, 0);
             this.menuSaida.Name = "menuSaida";
-            this.menuSaida.Size = new System.Drawing.Size(204, 97);
+            this.menuSaida.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.menuSaida.Size = new System.Drawing.Size(68, 97);
             this.menuSaida.TabIndex = 3;
             this.menuSaida.Text = "menuSaida";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.sairToolStripMenuItem.AutoSize = false;
             this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sairToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.sairToolStripMenuItem.Image = global::MovSoft.Properties.Resources.icon_logout;
             this.sairToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10);
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(60, 93);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -441,13 +443,13 @@
             this.pnlHome.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnlHeader.ResumeLayout(false);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlCargo.ResumeLayout(false);
+            this.pnlCargo.PerformLayout();
+            this.pnlUsuario.ResumeLayout(false);
+            this.pnlUsuario.PerformLayout();
             this.menuSaida.ResumeLayout(false);
             this.menuSaida.PerformLayout();
             this.ResumeLayout(false);
@@ -481,11 +483,11 @@
         private ToolStripMenuItem usuariosToolStripMenuItem;
         private ToolStripMenuItem componentesToolStripMenuItem;
         private ToolStripMenuItem opcionasToolStripMenuItem;
-        private Panel panel1;
+        private Panel pnlHeader;
         private MenuStrip menuSaida;
         private ToolStripMenuItem sairToolStripMenuItem;
-        private Panel panel2;
-        private Panel panel3;
+        private Panel pnlUsuario;
+        private Panel pnlCargo;
         private Label txtMovSoft;
     }
 }

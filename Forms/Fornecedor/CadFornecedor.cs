@@ -20,10 +20,9 @@ namespace MovSoft
             if (editar)
             {
                 editarFornecedor = true;
-                AtribuirDadosAosInputs();
-                txtTitulo.Text = "Editar Fornecedor 1/2";
                 fornecedoresBLL.PegarDados((int)Parametros.idFornecedor);
                 fornecedoresBLL.PegarEndereco((int)Parametros.idFornecedor);
+                txtTitulo.Text = "Editar Fornecedor 1/2";
                 AtribuirDadosAosInputs();
             }
             else
@@ -45,7 +44,7 @@ namespace MovSoft
 
         private void EditarFornecedor()
         {
-            //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
@@ -53,6 +52,7 @@ namespace MovSoft
             EnderecosDTO.Cidade = inputCidade.Text;
             EnderecosDTO.Bairro = inputBairro.Text;
             EnderecosDTO.Logradouro = inputLogradouro.Text;
+            EnderecosDTO.Numero = inputNumero.Text;
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.EditarFornecedor(fornecedoresDTO, EnderecosDTO);
             ActiveForm.Close();
@@ -61,7 +61,7 @@ namespace MovSoft
 
         private void CadastrarFornecedor()
         {
-            //fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
+            fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
@@ -69,6 +69,7 @@ namespace MovSoft
             EnderecosDTO.Cidade = inputCidade.Text;
             EnderecosDTO.Bairro = inputBairro.Text;
             EnderecosDTO.Logradouro = inputLogradouro.Text;
+            EnderecosDTO.Numero = inputNumero.Text;
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.CadastrarFornecedor(fornecedoresDTO, EnderecosDTO);
             ActiveForm.Close();
@@ -83,7 +84,8 @@ namespace MovSoft
 
         private void AtribuirDadosAosInputs()
         {
-            inputRazaoSocial.Text = Parametros.nomeCliente;
+            inputRazaoSocial.Text = Parametros.razaoSocial;
+            inputNomeFantasia.Text = Parametros.nomeFantasia;
             inputCnpj.Text = Parametros.cnpj;
             inputCep.Text = Parametros.cep;
             inputboxUf.Text = Parametros.uf;
@@ -128,6 +130,7 @@ namespace MovSoft
             Parametros.uf = inputboxUf.Text;
             Parametros.cidade = inputCidade.Text;
             Parametros.bairro = inputBairro.Text;
+            Parametros.numero = inputNumero.Text;
             Parametros.logradouro = inputLogradouro.Text;
             Parametros.complemento = inputComplemento.Text;
         }

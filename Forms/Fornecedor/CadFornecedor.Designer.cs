@@ -153,7 +153,7 @@
             this.inputCep.Size = new System.Drawing.Size(100, 23);
             this.inputCep.TabIndex = 3;
             this.inputCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.inputCep.DragLeave += new System.EventHandler(this.inputCep_Leave);
+            this.inputCep.Leave += new System.EventHandler(this.inputCep_Leave);
             // 
             // inputCnpj
             // 

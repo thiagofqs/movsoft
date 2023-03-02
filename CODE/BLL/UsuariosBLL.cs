@@ -56,7 +56,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_usuario('{dto.Nome}','{dto.Senha}',{dto.Id_cargo}, {dto.Id_colaborador})";
+                string comando = $"call cad_usuario('{dto.Nome}','{dto.Senha}',{dto.Id_cargo}, {dto.Id_colaborador},'S')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call usuarios()");
+                dataTable = db.RetDataTable("call usuarios('S')");
             }
             catch (Exception ex)
             {
@@ -101,7 +101,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_usuario({dto.Id_usuario}, {dto.Id_colaborador}, {dto.Id_cargo}, '{dto.Nome}','{dto.Senha}')";
+                string comando = $"call edit_usuario({dto.Id_usuario}, {dto.Id_colaborador}, {dto.Id_cargo}, '{dto.Nome}','{dto.Senha}','S')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)

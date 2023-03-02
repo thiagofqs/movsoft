@@ -80,7 +80,8 @@ namespace MovSoft
             dtoContatos.Ddd = Parametros.dddCliente;
             dtoContatos.Celular = Parametros.celularCliente;
             bllClientes.EditarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            ActiveForm.Close();
+            Close();
+            GC.Collect();
             AtualizarClientes();
         }
 
@@ -124,6 +125,8 @@ namespace MovSoft
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             AtribuirDadosDosInputs();
+            Close();
+            GC.Collect();
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is CadCliente
                          select frm;

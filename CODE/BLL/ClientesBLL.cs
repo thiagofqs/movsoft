@@ -15,7 +15,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_cliente('{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
+                string comando = $"call cad_cliente('{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}', 'S')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -31,7 +31,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call clientes()");
+                dataTable = db.RetDataTable("call clientes('S')");
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_cliente({dtoClientes.Id_cliente},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
+                string comando = $"call edit_cliente({dtoClientes.Id_cliente},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}', 'S')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
