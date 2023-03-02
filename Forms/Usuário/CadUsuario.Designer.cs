@@ -80,6 +80,8 @@
             // inputboxColaborador
             // 
             this.inputboxColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.inputboxColaborador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.inputboxColaborador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.inputboxColaborador.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputboxColaborador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputboxColaborador.FormattingEnabled = true;

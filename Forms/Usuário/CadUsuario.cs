@@ -44,6 +44,7 @@ namespace MovSoft
             foreach (string item in lista)
             {
                 inputboxColaborador.Items.Add(item);
+                inputboxColaborador.AutoCompleteCustomSource.Add(item);
             }
         }
 
@@ -88,40 +89,54 @@ namespace MovSoft
         private void CadastrarUsuario()
         {
             AtribuirDadosDosInputs();
-            if (dados.senhaUsuario == dados.confirmarSenha)
+            if(dados.senhaUsuario.Length >= 8)
             {
-                dtoUsuarios.Nome = dados.nomeUsuario;
-                dtoUsuarios.Senha = dados.senhaUsuario;
-                dtoUsuarios.Id_cargo = dados.idCargo;
-                dtoUsuarios.Id_colaborador = dados.idColaborador;
-                bllUsuarios.CadastrarUsuarios(dtoUsuarios);
+                if (dados.senhaUsuario == dados.confirmarSenha)
+                {
+                    dtoUsuarios.Nome = dados.nomeUsuario;
+                    dtoUsuarios.Senha = dados.senhaUsuario;
+                    dtoUsuarios.Id_cargo = dados.idCargo;
+                    dtoUsuarios.Id_colaborador = dados.idColaborador;
+                    bllUsuarios.CadastrarUsuarios(dtoUsuarios);
+                }
+                else
+                {
+                    MessageBox.Show("Senhas não idênticas!");
+                }
             }
             else
             {
-                MessageBox.Show("Senhas não idênticas!");
+                MessageBox.Show("A senha deve possuir no mínimo 8 caracteres!");
             }
         }
 
         private void EditarUsuario()
         {
             AtribuirDadosDosInputs();
-            if (dados.senhaUsuario == dados.confirmarSenha)
+            if (dados.senhaUsuario.Length >= 8)
             {
-                dtoUsuarios.Id_usuario = (int)Parametros.idUserEdit;
-                dtoUsuarios.Nome = dados.nomeUsuario;
-                dtoUsuarios.Senha = dados.senhaUsuario;
-                dtoUsuarios.Id_cargo = dados.idCargo;
-                dtoUsuarios.Id_colaborador = dados.idColaborador;
-                bllUsuarios.EditarUsuario(dtoUsuarios);
-                if(dtoUsuarios.Id_usuario == Parametros.idUser)
+                if (dados.senhaUsuario == dados.confirmarSenha)
                 {
-                    MessageBox.Show("Você será redirecionado para a tela de login!");
-                    funcoes.ThreadVoltarAoLogin();
+                    dtoUsuarios.Id_usuario = (int)Parametros.idUserEdit;
+                    dtoUsuarios.Nome = dados.nomeUsuario;
+                    dtoUsuarios.Senha = dados.senhaUsuario;
+                    dtoUsuarios.Id_cargo = dados.idCargo;
+                    dtoUsuarios.Id_colaborador = dados.idColaborador;
+                    bllUsuarios.EditarUsuario(dtoUsuarios);
+                    if (dtoUsuarios.Id_usuario == Parametros.idUser)
+                    {
+                        MessageBox.Show("Você será redirecionado para a tela de login!");
+                        funcoes.ThreadVoltarAoLogin();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Senhas não idênticas!");
                 }
             }
             else
             {
-                MessageBox.Show("Senhas não idênticas!");
+                MessageBox.Show("A senha deve possuir no mínimo 8 caracteres!");
             }
         }
 

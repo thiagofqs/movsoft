@@ -1,8 +1,6 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
 using IniParser.Model;
-using IniParser;
-using System.IO;
 using MovSoft.Classes;
 
 namespace MovSoft.CODE.DAL
@@ -19,7 +17,7 @@ namespace MovSoft.CODE.DAL
         private string server = "127.0.0.1";
         private string user = "root";
         private string database = "movsoft";
-        private string port = "3306";
+        private string port = "3305";
         private string password = "root";
 
         private async void GetIniData()
@@ -61,7 +59,7 @@ namespace MovSoft.CODE.DAL
                 {
                     MySqlCommand comando = new(comandoSql, conn);
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Registro Criado Com Sucesso!");
+                    MessageBox.Show("Registro criado com sucesso!");
                 }
                 else
                 {

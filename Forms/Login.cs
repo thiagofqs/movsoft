@@ -14,22 +14,13 @@ namespace MovSoft
         {
             InitializeComponent();
             ActiveControl = inputUsuario;
-            bool existe;
-            existe = File.Exists(Parametros.Dir);
-            if (existe == false)
+            bool iniExiste;
+            iniExiste = File.Exists(Parametros.Dir);
+            if (!iniExiste)
             {
                 CriarIni();
+                MessageBox.Show("teste");
             }
-        }
-
-        private void btnFecharJanela_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnMinimizarJanela_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
         }
 
         private void Logar()
@@ -42,7 +33,7 @@ namespace MovSoft
             {
                 string usuarioDigitado = inputUsuario.Text;
                 string senhaDigitada = inputSenha.Text;
-                bll.Login(usuarioDigitado);
+                bool logado = bll.Login(usuarioDigitado);
                 if (Parametros.senhaUser == senhaDigitada)
                 {
                     Close();
@@ -50,7 +41,7 @@ namespace MovSoft
                     tr.SetApartmentState(ApartmentState.STA);
                     tr.Start();
                 }
-                else
+                else if(logado)
                 {
                     MessageBox.Show("Senha incorreta!");
                 }
@@ -61,7 +52,7 @@ namespace MovSoft
         {
             if(inputUsuario.Text == "" || inputSenha.Text == "")
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Preencha todos os campos de login!");
             }
             else
             {
@@ -86,7 +77,7 @@ namespace MovSoft
         {
             await File.WriteAllTextAsync(Parametros.Dir, "");
             IniData data;
-            var parser = new FileIniDataParser();
+            FileIniDataParser parser = new();
             data = parser.ReadFile(Parametros.Dir);
             data.Sections.AddSection("DataBase");
             data["DataBase"].AddKey("DB_Server", "127.0.0.1");

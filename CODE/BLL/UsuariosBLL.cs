@@ -10,25 +10,27 @@ namespace MovSoft.CODE.BLL
     {
         AcessoBancoDados db = new();
 
-        public void Login(string usuarioDigitado)
+        public bool Login(string usuarioDigitado)
         {
             try
             {
                 db.Conectar();
                 string comando = $"call login('{usuarioDigitado}')";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                    Parametros.idUser = dr.GetInt32(0);
-                    Parametros.nomeUser = dr.GetString(1);
-                    Parametros.senhaUser = dr.GetString(2);
-                    Parametros.cargoUser = dr.GetString(3);
-                    Parametros.adminUser = char.Parse(dr.GetString(4));
-                    Parametros.idCargoUser = dr.GetInt32(5);
+                Parametros.idUser = dr.GetInt32(0);
+                Parametros.nomeUser = dr.GetString(1);
+                Parametros.senhaUser = dr.GetString(2);
+                Parametros.cargoUser = dr.GetString(3);
+                Parametros.adminUser = char.Parse(dr.GetString(4));
+                Parametros.idCargoUser = dr.GetInt32(5);
                 dr.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
+                return false;
             }
         }
 
