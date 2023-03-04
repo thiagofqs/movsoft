@@ -13,6 +13,7 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputNome);
             if (!primeiraAbertura)
             {
@@ -37,6 +38,17 @@ namespace MovSoft
                 editarCliente = true;
                 AtribuirDadosAosInputs();
             }
+        }
+
+        private void PosicionarObrs()
+        {
+            funcoes.PosicionarObrFilho(txtNome, txtObr1);
+            funcoes.PosicionarObrFilho(txtSobrenome, txtObr2);
+            funcoes.PosicionarObrFilho(txtSexo, txtObr3);
+            funcoes.PosicionarObrFilho(txtCpf, txtObr4);
+            funcoes.PosicionarObrFilho(txtNascimento, txtObr5);
+            funcoes.PosicionarObrFilho(txtEmail, txtObr6);
+            funcoes.PosicionarObrFilho(txtCelular, txtObr7);
         }
 
         private void RemoverMascarasDeTexto()

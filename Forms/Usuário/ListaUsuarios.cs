@@ -13,8 +13,9 @@ namespace MovSoft
         {
             InitializeComponent();
             CarregarUsuarios();
+            comboBoxFiltro.SelectedIndex = 0;
         }
-        
+
         private void AbrirCadUsuario(bool editarUsuario)
         {
             if (editarUsuario)
@@ -65,7 +66,7 @@ namespace MovSoft
 
         private void EditarUsuarios(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > - 1)
+            if (e.RowIndex > -1)
             {
                 rowData = dataGridView.Rows[e.RowIndex];
                 Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
@@ -74,11 +75,6 @@ namespace MovSoft
                 Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
                 AbrirCadUsuario(true);
             }
-        }
-
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            CarregarUsuarios();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

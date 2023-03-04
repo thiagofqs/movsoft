@@ -14,6 +14,7 @@ namespace MovSoft
             InitializeComponent();
             CarregarColaboradores();
             funcoes.dataGridView_AplicarCellFormatting(dataGridView);
+            comboBoxFiltro.SelectedIndex = 0;
         }
 
         private void btnCadColaboradores_Click(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace MovSoft
                 e.Value = funcoes.GridViewMascaraCPF(e.Value.ToString());
                 e.FormattingApplied = true;
             }
-            if(e.ColumnIndex == 2)
+            if (e.ColumnIndex == 2)
             {
                 e.Value = funcoes.GridViewMascaraCelular(e.Value.ToString());
                 e.FormattingApplied = true;

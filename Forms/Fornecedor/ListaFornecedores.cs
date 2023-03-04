@@ -12,6 +12,7 @@ namespace MovSoft
         {
             InitializeComponent();
             CarregarFornecedores();
+            comboBoxFiltro.SelectedIndex = 0;
         }
 
         private void AbrirCadFornecedor(bool editarFornecedor)
@@ -59,11 +60,6 @@ namespace MovSoft
             rowData = dataGridView.Rows[e.RowIndex];
             Parametros.idFornecedor = int.Parse(rowData.Cells[0].Value.ToString());
             AbrirCadFornecedor(true);
-        }
-
-        private void btnAtualizar_Click(object sender, EventArgs e)
-        {
-            CarregarFornecedores();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

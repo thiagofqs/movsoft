@@ -28,166 +28,280 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.inputPesquisarGrupos = new System.Windows.Forms.TextBox();
-            this.dataGridViewGrupos = new System.Windows.Forms.DataGridView();
-            this.btnAtualizarGrupos = new System.Windows.Forms.Button();
-            this.btnCadGrupos = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioBtnDesabilitado = new System.Windows.Forms.RadioButton();
-            this.radioBtnHabilitado = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            inputPesquisarGrupos = new TextBox();
+            dataGridViewGrupos = new DataGridView();
+            btnPesquisar = new Button();
+            inputNomeGrupo = new TextBox();
+            txtNomeGrupo = new Label();
+            txtObr1 = new Label();
+            txtObr2 = new Label();
+            txtAtivo = new Label();
+            toggleButtonAtivo = new Controls.ToggleButton();
+            btnCadastrarGrupos = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            panel1 = new Panel();
+            imgFiltro = new PictureBox();
+            comboBoxFiltro = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGrupos).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgFiltro).BeginInit();
+            SuspendLayout();
             // 
             // inputPesquisarGrupos
             // 
-            this.inputPesquisarGrupos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputPesquisarGrupos.Location = new System.Drawing.Point(198, 66);
-            this.inputPesquisarGrupos.Name = "inputPesquisarGrupos";
-            this.inputPesquisarGrupos.PlaceholderText = "Pesquisar";
-            this.inputPesquisarGrupos.Size = new System.Drawing.Size(240, 23);
-            this.inputPesquisarGrupos.TabIndex = 0;
+            inputPesquisarGrupos.BackColor = Color.WhiteSmoke;
+            inputPesquisarGrupos.ForeColor = Color.FromArgb(56, 56, 56);
+            inputPesquisarGrupos.Location = new Point(198, 243);
+            inputPesquisarGrupos.Name = "inputPesquisarGrupos";
+            inputPesquisarGrupos.PlaceholderText = "Pesquisar";
+            inputPesquisarGrupos.Size = new Size(240, 23);
+            inputPesquisarGrupos.TabIndex = 2;
             // 
             // dataGridViewGrupos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewGrupos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewGrupos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridViewGrupos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewGrupos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewGrupos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridViewGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGrupos.Location = new System.Drawing.Point(198, 95);
-            this.dataGridViewGrupos.Name = "dataGridViewGrupos";
-            this.dataGridViewGrupos.RowTemplate.Height = 25;
-            this.dataGridViewGrupos.Size = new System.Drawing.Size(561, 321);
-            this.dataGridViewGrupos.TabIndex = 3;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewGrupos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewGrupos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewGrupos.BackgroundColor = Color.WhiteSmoke;
+            dataGridViewGrupos.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewGrupos.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewGrupos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewGrupos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewGrupos.Location = new Point(198, 274);
+            dataGridViewGrupos.Name = "dataGridViewGrupos";
+            dataGridViewGrupos.RowTemplate.Height = 25;
+            dataGridViewGrupos.Size = new Size(430, 142);
+            dataGridViewGrupos.TabIndex = 8;
             // 
-            // btnAtualizarGrupos
+            // btnPesquisar
             // 
-            this.btnAtualizarGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAtualizarGrupos.AutoSize = true;
-            this.btnAtualizarGrupos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAtualizarGrupos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtualizarGrupos.Location = new System.Drawing.Point(696, 66);
-            this.btnAtualizarGrupos.Name = "btnAtualizarGrupos";
-            this.btnAtualizarGrupos.Size = new System.Drawing.Size(63, 25);
-            this.btnAtualizarGrupos.TabIndex = 2;
-            this.btnAtualizarGrupos.Text = "Atualizar";
-            this.btnAtualizarGrupos.UseVisualStyleBackColor = false;
+            btnPesquisar.BackColor = Color.Transparent;
+            btnPesquisar.BackgroundImage = Properties.Resources.icon_search;
+            btnPesquisar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPesquisar.Cursor = Cursors.Hand;
+            btnPesquisar.FlatAppearance.BorderSize = 0;
+            btnPesquisar.FlatStyle = FlatStyle.Flat;
+            btnPesquisar.Location = new Point(444, 243);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(23, 23);
+            btnPesquisar.TabIndex = 3;
+            btnPesquisar.UseVisualStyleBackColor = false;
+            btnPesquisar.Click += btnSearch_Click;
             // 
-            // btnCadGrupos
+            // inputNomeGrupo
             // 
-            this.btnCadGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadGrupos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadGrupos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadGrupos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadGrupos.FlatAppearance.BorderSize = 0;
-            this.btnCadGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadGrupos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCadGrupos.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadGrupos.Location = new System.Drawing.Point(576, 422);
-            this.btnCadGrupos.Name = "btnCadGrupos";
-            this.btnCadGrupos.Size = new System.Drawing.Size(183, 34);
-            this.btnCadGrupos.TabIndex = 4;
-            this.btnCadGrupos.Text = "Cadastrar Grupo";
-            this.btnCadGrupos.UseVisualStyleBackColor = false;
-            this.btnCadGrupos.Click += new System.EventHandler(this.button2_Click);
+            inputNomeGrupo.ForeColor = Color.FromArgb(56, 56, 56);
+            inputNomeGrupo.Location = new Point(12, 34);
+            inputNomeGrupo.Name = "inputNomeGrupo";
+            inputNomeGrupo.Size = new Size(179, 23);
+            inputNomeGrupo.TabIndex = 0;
             // 
-            // btnSearch
+            // txtNomeGrupo
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BackgroundImage = global::MovSoft.Properties.Resources.icon_search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(444, 66);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(23, 23);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            txtNomeGrupo.AutoSize = true;
+            txtNomeGrupo.BackColor = Color.Transparent;
+            txtNomeGrupo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtNomeGrupo.ForeColor = Color.WhiteSmoke;
+            txtNomeGrupo.Location = new Point(12, 14);
+            txtNomeGrupo.Name = "txtNomeGrupo";
+            txtNomeGrupo.Size = new Size(106, 17);
+            txtNomeGrupo.TabIndex = 0;
+            txtNomeGrupo.Text = "Nome do grupo";
             // 
-            // label1
+            // txtObr1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(198, 434);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Filtro:";
+            txtObr1.AutoSize = true;
+            txtObr1.BackColor = Color.Transparent;
+            txtObr1.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr1.Location = new Point(124, 16);
+            txtObr1.Name = "txtObr1";
+            txtObr1.Size = new Size(12, 15);
+            txtObr1.TabIndex = 0;
+            txtObr1.Text = "*";
             // 
-            // radioBtnDesabilitado
+            // txtObr2
             // 
-            this.radioBtnDesabilitado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioBtnDesabilitado.AutoSize = true;
-            this.radioBtnDesabilitado.BackColor = System.Drawing.Color.Transparent;
-            this.radioBtnDesabilitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.radioBtnDesabilitado.Location = new System.Drawing.Point(348, 432);
-            this.radioBtnDesabilitado.Name = "radioBtnDesabilitado";
-            this.radioBtnDesabilitado.Size = new System.Drawing.Size(90, 19);
-            this.radioBtnDesabilitado.TabIndex = 6;
-            this.radioBtnDesabilitado.Text = "Desabilitado";
-            this.radioBtnDesabilitado.UseVisualStyleBackColor = false;
+            txtObr2.AutoSize = true;
+            txtObr2.BackColor = Color.Transparent;
+            txtObr2.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr2.Location = new Point(264, 17);
+            txtObr2.Name = "txtObr2";
+            txtObr2.Size = new Size(12, 15);
+            txtObr2.TabIndex = 1;
+            txtObr2.Text = "*";
             // 
-            // radioBtnHabilitado
+            // txtAtivo
             // 
-            this.radioBtnHabilitado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.radioBtnHabilitado.AutoSize = true;
-            this.radioBtnHabilitado.BackColor = System.Drawing.Color.Transparent;
-            this.radioBtnHabilitado.Checked = true;
-            this.radioBtnHabilitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioBtnHabilitado.Location = new System.Drawing.Point(262, 432);
-            this.radioBtnHabilitado.Name = "radioBtnHabilitado";
-            this.radioBtnHabilitado.Size = new System.Drawing.Size(80, 19);
-            this.radioBtnHabilitado.TabIndex = 5;
-            this.radioBtnHabilitado.TabStop = true;
-            this.radioBtnHabilitado.Text = "Habilitado";
-            this.radioBtnHabilitado.UseVisualStyleBackColor = false;
+            txtAtivo.AutoSize = true;
+            txtAtivo.BackColor = Color.Transparent;
+            txtAtivo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAtivo.ForeColor = Color.WhiteSmoke;
+            txtAtivo.Location = new Point(217, 15);
+            txtAtivo.Name = "txtAtivo";
+            txtAtivo.Size = new Size(41, 17);
+            txtAtivo.TabIndex = 1;
+            txtAtivo.Text = "Ativo";
+            txtAtivo.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // toggleButtonAtivo
+            // 
+            toggleButtonAtivo.AutoSize = true;
+            toggleButtonAtivo.Checked = true;
+            toggleButtonAtivo.CheckState = CheckState.Checked;
+            toggleButtonAtivo.Cursor = Cursors.Hand;
+            toggleButtonAtivo.FocusToggleColor = Color.Gold;
+            toggleButtonAtivo.Location = new Point(217, 35);
+            toggleButtonAtivo.MinimumSize = new Size(45, 22);
+            toggleButtonAtivo.Name = "toggleButtonAtivo";
+            toggleButtonAtivo.OffBackColor = Color.Gray;
+            toggleButtonAtivo.OffToggleColor = Color.Gainsboro;
+            toggleButtonAtivo.OnBackColor = Color.FromArgb(0, 133, 132);
+            toggleButtonAtivo.OnToggleColor = Color.WhiteSmoke;
+            toggleButtonAtivo.Size = new Size(45, 22);
+            toggleButtonAtivo.TabIndex = 1;
+            toggleButtonAtivo.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastrarGrupos
+            // 
+            btnCadastrarGrupos.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCadastrarGrupos.BackColor = Color.FromArgb(0, 133, 132);
+            btnCadastrarGrupos.Cursor = Cursors.Hand;
+            btnCadastrarGrupos.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            btnCadastrarGrupos.FlatAppearance.BorderSize = 0;
+            btnCadastrarGrupos.FlatStyle = FlatStyle.Flat;
+            btnCadastrarGrupos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCadastrarGrupos.ForeColor = Color.WhiteSmoke;
+            btnCadastrarGrupos.Location = new Point(634, 274);
+            btnCadastrarGrupos.Name = "btnCadastrarGrupos";
+            btnCadastrarGrupos.Size = new Size(125, 34);
+            btnCadastrarGrupos.TabIndex = 5;
+            btnCadastrarGrupos.Text = "Cadastrar";
+            btnCadastrarGrupos.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(0, 133, 132);
+            button1.Cursor = Cursors.Hand;
+            button1.Enabled = false;
+            button1.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.WhiteSmoke;
+            button1.Location = new Point(634, 354);
+            button1.Name = "button1";
+            button1.Size = new Size(125, 34);
+            button1.TabIndex = 7;
+            button1.Text = "Cancelar";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = Color.FromArgb(0, 133, 132);
+            button2.Cursor = Cursors.Hand;
+            button2.Enabled = false;
+            button2.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.WhiteSmoke;
+            button2.Location = new Point(634, 314);
+            button2.Name = "button2";
+            button2.Size = new Size(125, 34);
+            button2.TabIndex = 6;
+            button2.Text = "Editar";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(114, 101, 75);
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(inputNomeGrupo);
+            panel1.Controls.Add(txtNomeGrupo);
+            panel1.Controls.Add(txtObr1);
+            panel1.Controls.Add(toggleButtonAtivo);
+            panel1.Controls.Add(txtObr2);
+            panel1.Controls.Add(txtAtivo);
+            panel1.Enabled = false;
+            panel1.ForeColor = Color.FromArgb(56, 56, 56);
+            panel1.Location = new Point(198, 36);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(561, 162);
+            panel1.TabIndex = 17;
+            // 
+            // imgFiltro
+            // 
+            imgFiltro.BackColor = Color.Transparent;
+            imgFiltro.BackgroundImage = Properties.Resources.icon_filter;
+            imgFiltro.BackgroundImageLayout = ImageLayout.Zoom;
+            imgFiltro.Location = new Point(501, 243);
+            imgFiltro.Name = "imgFiltro";
+            imgFiltro.Size = new Size(23, 23);
+            imgFiltro.TabIndex = 19;
+            imgFiltro.TabStop = false;
+            // 
+            // comboBoxFiltro
+            // 
+            comboBoxFiltro.BackColor = Color.WhiteSmoke;
+            comboBoxFiltro.Cursor = Cursors.Hand;
+            comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
+            comboBoxFiltro.FormattingEnabled = true;
+            comboBoxFiltro.Items.AddRange(new object[] { "Habilitado", "Desabilitado" });
+            comboBoxFiltro.Location = new Point(530, 243);
+            comboBoxFiltro.Name = "comboBoxFiltro";
+            comboBoxFiltro.Size = new Size(98, 23);
+            comboBoxFiltro.TabIndex = 4;
             // 
             // Grupos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(930, 503);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioBtnDesabilitado);
-            this.Controls.Add(this.radioBtnHabilitado);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnCadGrupos);
-            this.Controls.Add(this.btnAtualizarGrupos);
-            this.Controls.Add(this.dataGridViewGrupos);
-            this.Controls.Add(this.inputPesquisarGrupos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Grupos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MovSoft - Lista de Grupos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(56, 56, 56);
+            ClientSize = new Size(930, 503);
+            Controls.Add(imgFiltro);
+            Controls.Add(comboBoxFiltro);
+            Controls.Add(panel1);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(btnCadastrarGrupos);
+            Controls.Add(btnPesquisar);
+            Controls.Add(dataGridViewGrupos);
+            Controls.Add(inputPesquisarGrupos);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Grupos";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MovSoft - Lista de Grupos";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGrupos).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgFiltro).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private TextBox inputPesquisarGrupos;
         private DataGridView dataGridViewGrupos;
-        private Button btnAtualizarGrupos;
-        private Button btnCadGrupos;
-        private Button btnSearch;
-        private Label label1;
-        private RadioButton radioBtnDesabilitado;
-        private RadioButton radioBtnHabilitado;
+        private Button btnPesquisar;
+        private TextBox inputNomeGrupo;
+        private Label txtNomeGrupo;
+        private Label txtObr1;
+        private Label txtObr2;
+        private Label txtAtivo;
+        private Controls.ToggleButton toggleButtonAtivo;
+        private Button btnCadastrarGrupos;
+        private Button button1;
+        private Button button2;
+        private Panel panel1;
+        private PictureBox imgFiltro;
+        private ComboBox comboBoxFiltro;
     }
 }

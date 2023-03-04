@@ -28,393 +28,381 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.inputCep = new System.Windows.Forms.MaskedTextBox();
-            this.inputNumero = new System.Windows.Forms.TextBox();
-            this.txtObr3 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.Label();
-            this.inputComplemento = new System.Windows.Forms.TextBox();
-            this.inputboxUf = new System.Windows.Forms.ComboBox();
-            this.txtObr6 = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.Label();
-            this.txtUf = new System.Windows.Forms.Label();
-            this.txtObr5 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.Label();
-            this.inputCidade = new System.Windows.Forms.TextBox();
-            this.inputBairro = new System.Windows.Forms.TextBox();
-            this.txtObr4 = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.Label();
-            this.inputLogradouro = new System.Windows.Forms.TextBox();
-            this.txtObr2 = new System.Windows.Forms.Label();
-            this.txtObr1 = new System.Windows.Forms.Label();
-            this.txtLogradouro = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtTitulo = new System.Windows.Forms.Label();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            inputCep = new MaskedTextBox();
+            inputNumero = new TextBox();
+            txtObr3 = new Label();
+            txtNumero = new Label();
+            inputComplemento = new TextBox();
+            inputboxUf = new ComboBox();
+            txtObr6 = new Label();
+            txtComplemento = new Label();
+            txtUf = new Label();
+            txtObr5 = new Label();
+            txtCidade = new Label();
+            inputCidade = new TextBox();
+            inputBairro = new TextBox();
+            txtObr4 = new Label();
+            txtBairro = new Label();
+            inputLogradouro = new TextBox();
+            txtObr2 = new Label();
+            txtObr1 = new Label();
+            txtLogradouro = new Label();
+            txtCep = new Label();
+            btnCadastrar = new Button();
+            txtTitulo = new Label();
+            btnVoltar = new Button();
+            btnPesquisarCep = new Button();
+            SuspendLayout();
             // 
             // inputCep
             // 
-            this.inputCep.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputCep.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputCep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputCep.Location = new System.Drawing.Point(104, 125);
-            this.inputCep.Mask = "00000-000";
-            this.inputCep.Name = "inputCep";
-            this.inputCep.PromptChar = ' ';
-            this.inputCep.Size = new System.Drawing.Size(100, 23);
-            this.inputCep.TabIndex = 0;
-            this.inputCep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.inputCep.Leave += new System.EventHandler(this.inputCep_Leave);
+            inputCep.Anchor = AnchorStyles.None;
+            inputCep.BackColor = Color.WhiteSmoke;
+            inputCep.ForeColor = Color.FromArgb(56, 56, 56);
+            inputCep.Location = new Point(104, 125);
+            inputCep.Mask = "00000-000";
+            inputCep.Name = "inputCep";
+            inputCep.PromptChar = ' ';
+            inputCep.Size = new Size(100, 23);
+            inputCep.TabIndex = 0;
+            inputCep.KeyPress += inputCep_KeyPress;
             // 
             // inputNumero
             // 
-            this.inputNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputNumero.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputNumero.Location = new System.Drawing.Point(398, 125);
-            this.inputNumero.MaxLength = 5;
-            this.inputNumero.Name = "inputNumero";
-            this.inputNumero.Size = new System.Drawing.Size(76, 23);
-            this.inputNumero.TabIndex = 2;
+            inputNumero.Anchor = AnchorStyles.None;
+            inputNumero.BackColor = Color.WhiteSmoke;
+            inputNumero.ForeColor = Color.FromArgb(56, 56, 56);
+            inputNumero.Location = new Point(398, 125);
+            inputNumero.MaxLength = 5;
+            inputNumero.Name = "inputNumero";
+            inputNumero.Size = new Size(76, 23);
+            inputNumero.TabIndex = 3;
             // 
             // txtObr3
             // 
-            this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr3.AutoSize = true;
-            this.txtObr3.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(462, 107);
-            this.txtObr3.Name = "txtObr3";
-            this.txtObr3.Size = new System.Drawing.Size(12, 15);
-            this.txtObr3.TabIndex = 2;
-            this.txtObr3.Text = "*";
+            txtObr3.Anchor = AnchorStyles.None;
+            txtObr3.AutoSize = true;
+            txtObr3.BackColor = Color.Transparent;
+            txtObr3.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr3.Location = new Point(462, 107);
+            txtObr3.Name = "txtObr3";
+            txtObr3.Size = new Size(12, 15);
+            txtObr3.TabIndex = 2;
+            txtObr3.Text = "*";
             // 
             // txtNumero
             // 
-            this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNumero.AutoSize = true;
-            this.txtNumero.BackColor = System.Drawing.Color.Transparent;
-            this.txtNumero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtNumero.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtNumero.Location = new System.Drawing.Point(398, 105);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(58, 17);
-            this.txtNumero.TabIndex = 2;
-            this.txtNumero.Text = "Número";
+            txtNumero.Anchor = AnchorStyles.None;
+            txtNumero.AutoSize = true;
+            txtNumero.BackColor = Color.Transparent;
+            txtNumero.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtNumero.ForeColor = Color.WhiteSmoke;
+            txtNumero.Location = new Point(398, 105);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(58, 17);
+            txtNumero.TabIndex = 2;
+            txtNumero.Text = "Número";
             // 
             // inputComplemento
             // 
-            this.inputComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputComplemento.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputComplemento.Location = new System.Drawing.Point(498, 125);
-            this.inputComplemento.MaxLength = 200;
-            this.inputComplemento.Name = "inputComplemento";
-            this.inputComplemento.Size = new System.Drawing.Size(154, 23);
-            this.inputComplemento.TabIndex = 3;
+            inputComplemento.Anchor = AnchorStyles.None;
+            inputComplemento.BackColor = Color.WhiteSmoke;
+            inputComplemento.ForeColor = Color.FromArgb(56, 56, 56);
+            inputComplemento.Location = new Point(498, 125);
+            inputComplemento.MaxLength = 200;
+            inputComplemento.Name = "inputComplemento";
+            inputComplemento.Size = new Size(154, 23);
+            inputComplemento.TabIndex = 4;
             // 
             // inputboxUf
             // 
-            this.inputboxUf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputboxUf.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputboxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.inputboxUf.Enabled = false;
-            this.inputboxUf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputboxUf.FormattingEnabled = true;
-            this.inputboxUf.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PA",
-            "PB",
-            "PR",
-            "PE",
-            "PI",
-            "RJ",
-            "RN",
-            "RS",
-            "RO",
-            "RR",
-            "SC",
-            "SP",
-            "SE",
-            "TO"});
-            this.inputboxUf.Location = new System.Drawing.Point(498, 194);
-            this.inputboxUf.Name = "inputboxUf";
-            this.inputboxUf.Size = new System.Drawing.Size(77, 23);
-            this.inputboxUf.TabIndex = 6;
+            inputboxUf.Anchor = AnchorStyles.None;
+            inputboxUf.BackColor = Color.WhiteSmoke;
+            inputboxUf.DropDownStyle = ComboBoxStyle.DropDownList;
+            inputboxUf.Enabled = false;
+            inputboxUf.ForeColor = Color.FromArgb(56, 56, 56);
+            inputboxUf.FormattingEnabled = true;
+            inputboxUf.Items.AddRange(new object[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" });
+            inputboxUf.Location = new Point(498, 194);
+            inputboxUf.Name = "inputboxUf";
+            inputboxUf.Size = new Size(77, 23);
+            inputboxUf.TabIndex = 7;
             // 
             // txtObr6
             // 
-            this.txtObr6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr6.AutoSize = true;
-            this.txtObr6.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr6.Location = new System.Drawing.Point(527, 176);
-            this.txtObr6.Name = "txtObr6";
-            this.txtObr6.Size = new System.Drawing.Size(12, 15);
-            this.txtObr6.TabIndex = 6;
-            this.txtObr6.Text = "*";
+            txtObr6.Anchor = AnchorStyles.None;
+            txtObr6.AutoSize = true;
+            txtObr6.BackColor = Color.Transparent;
+            txtObr6.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr6.Location = new Point(527, 176);
+            txtObr6.Name = "txtObr6";
+            txtObr6.Size = new Size(12, 15);
+            txtObr6.TabIndex = 6;
+            txtObr6.Text = "*";
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtComplemento.AutoSize = true;
-            this.txtComplemento.BackColor = System.Drawing.Color.Transparent;
-            this.txtComplemento.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtComplemento.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtComplemento.Location = new System.Drawing.Point(498, 105);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(95, 17);
-            this.txtComplemento.TabIndex = 3;
-            this.txtComplemento.Text = "Complemento";
+            txtComplemento.Anchor = AnchorStyles.None;
+            txtComplemento.AutoSize = true;
+            txtComplemento.BackColor = Color.Transparent;
+            txtComplemento.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtComplemento.ForeColor = Color.WhiteSmoke;
+            txtComplemento.Location = new Point(498, 105);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.Size = new Size(95, 17);
+            txtComplemento.TabIndex = 3;
+            txtComplemento.Text = "Complemento";
             // 
             // txtUf
             // 
-            this.txtUf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUf.AutoSize = true;
-            this.txtUf.BackColor = System.Drawing.Color.Transparent;
-            this.txtUf.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUf.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUf.Location = new System.Drawing.Point(497, 174);
-            this.txtUf.Name = "txtUf";
-            this.txtUf.Size = new System.Drawing.Size(24, 17);
-            this.txtUf.TabIndex = 6;
-            this.txtUf.Text = "UF";
+            txtUf.Anchor = AnchorStyles.None;
+            txtUf.AutoSize = true;
+            txtUf.BackColor = Color.Transparent;
+            txtUf.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUf.ForeColor = Color.WhiteSmoke;
+            txtUf.Location = new Point(497, 174);
+            txtUf.Name = "txtUf";
+            txtUf.Size = new Size(24, 17);
+            txtUf.TabIndex = 6;
+            txtUf.Text = "UF";
             // 
             // txtObr5
             // 
-            this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr5.AutoSize = true;
-            this.txtObr5.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(371, 176);
-            this.txtObr5.Name = "txtObr5";
-            this.txtObr5.Size = new System.Drawing.Size(12, 15);
-            this.txtObr5.TabIndex = 5;
-            this.txtObr5.Text = "*";
+            txtObr5.Anchor = AnchorStyles.None;
+            txtObr5.AutoSize = true;
+            txtObr5.BackColor = Color.Transparent;
+            txtObr5.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr5.Location = new Point(371, 176);
+            txtObr5.Name = "txtObr5";
+            txtObr5.Size = new Size(12, 15);
+            txtObr5.TabIndex = 5;
+            txtObr5.Text = "*";
             // 
             // txtCidade
             // 
-            this.txtCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCidade.AutoSize = true;
-            this.txtCidade.BackColor = System.Drawing.Color.Transparent;
-            this.txtCidade.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCidade.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCidade.Location = new System.Drawing.Point(320, 174);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(50, 17);
-            this.txtCidade.TabIndex = 5;
-            this.txtCidade.Text = "Cidade";
+            txtCidade.Anchor = AnchorStyles.None;
+            txtCidade.AutoSize = true;
+            txtCidade.BackColor = Color.Transparent;
+            txtCidade.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCidade.ForeColor = Color.WhiteSmoke;
+            txtCidade.Location = new Point(320, 174);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(50, 17);
+            txtCidade.TabIndex = 5;
+            txtCidade.Text = "Cidade";
             // 
             // inputCidade
             // 
-            this.inputCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputCidade.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputCidade.Enabled = false;
-            this.inputCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputCidade.Location = new System.Drawing.Point(320, 194);
-            this.inputCidade.MaxLength = 100;
-            this.inputCidade.Name = "inputCidade";
-            this.inputCidade.ReadOnly = true;
-            this.inputCidade.Size = new System.Drawing.Size(154, 23);
-            this.inputCidade.TabIndex = 5;
+            inputCidade.Anchor = AnchorStyles.None;
+            inputCidade.BackColor = Color.WhiteSmoke;
+            inputCidade.Enabled = false;
+            inputCidade.ForeColor = Color.FromArgb(56, 56, 56);
+            inputCidade.Location = new Point(320, 194);
+            inputCidade.MaxLength = 100;
+            inputCidade.Name = "inputCidade";
+            inputCidade.ReadOnly = true;
+            inputCidade.Size = new Size(154, 23);
+            inputCidade.TabIndex = 6;
             // 
             // inputBairro
             // 
-            this.inputBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputBairro.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputBairro.Enabled = false;
-            this.inputBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputBairro.Location = new System.Drawing.Point(141, 194);
-            this.inputBairro.MaxLength = 100;
-            this.inputBairro.Name = "inputBairro";
-            this.inputBairro.ReadOnly = true;
-            this.inputBairro.Size = new System.Drawing.Size(154, 23);
-            this.inputBairro.TabIndex = 4;
+            inputBairro.Anchor = AnchorStyles.None;
+            inputBairro.BackColor = Color.WhiteSmoke;
+            inputBairro.Enabled = false;
+            inputBairro.ForeColor = Color.FromArgb(56, 56, 56);
+            inputBairro.Location = new Point(141, 194);
+            inputBairro.MaxLength = 100;
+            inputBairro.Name = "inputBairro";
+            inputBairro.ReadOnly = true;
+            inputBairro.Size = new Size(154, 23);
+            inputBairro.TabIndex = 5;
             // 
             // txtObr4
             // 
-            this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr4.AutoSize = true;
-            this.txtObr4.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(188, 176);
-            this.txtObr4.Name = "txtObr4";
-            this.txtObr4.Size = new System.Drawing.Size(12, 15);
-            this.txtObr4.TabIndex = 4;
-            this.txtObr4.Text = "*";
+            txtObr4.Anchor = AnchorStyles.None;
+            txtObr4.AutoSize = true;
+            txtObr4.BackColor = Color.Transparent;
+            txtObr4.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr4.Location = new Point(188, 176);
+            txtObr4.Name = "txtObr4";
+            txtObr4.Size = new Size(12, 15);
+            txtObr4.TabIndex = 4;
+            txtObr4.Text = "*";
             // 
             // txtBairro
             // 
-            this.txtBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBairro.AutoSize = true;
-            this.txtBairro.BackColor = System.Drawing.Color.Transparent;
-            this.txtBairro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtBairro.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtBairro.Location = new System.Drawing.Point(141, 174);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(45, 17);
-            this.txtBairro.TabIndex = 4;
-            this.txtBairro.Text = "Bairro";
+            txtBairro.Anchor = AnchorStyles.None;
+            txtBairro.AutoSize = true;
+            txtBairro.BackColor = Color.Transparent;
+            txtBairro.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtBairro.ForeColor = Color.WhiteSmoke;
+            txtBairro.Location = new Point(141, 174);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(45, 17);
+            txtBairro.TabIndex = 4;
+            txtBairro.Text = "Bairro";
             // 
             // inputLogradouro
             // 
-            this.inputLogradouro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputLogradouro.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputLogradouro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputLogradouro.Location = new System.Drawing.Point(226, 125);
-            this.inputLogradouro.MaxLength = 255;
-            this.inputLogradouro.Name = "inputLogradouro";
-            this.inputLogradouro.Size = new System.Drawing.Size(154, 23);
-            this.inputLogradouro.TabIndex = 1;
+            inputLogradouro.Anchor = AnchorStyles.None;
+            inputLogradouro.BackColor = Color.WhiteSmoke;
+            inputLogradouro.ForeColor = Color.FromArgb(56, 56, 56);
+            inputLogradouro.Location = new Point(226, 125);
+            inputLogradouro.MaxLength = 255;
+            inputLogradouro.Name = "inputLogradouro";
+            inputLogradouro.Size = new Size(154, 23);
+            inputLogradouro.TabIndex = 2;
             // 
             // txtObr2
             // 
-            this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr2.AutoSize = true;
-            this.txtObr2.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(312, 107);
-            this.txtObr2.Name = "txtObr2";
-            this.txtObr2.Size = new System.Drawing.Size(12, 15);
-            this.txtObr2.TabIndex = 1;
-            this.txtObr2.Text = "*";
+            txtObr2.Anchor = AnchorStyles.None;
+            txtObr2.AutoSize = true;
+            txtObr2.BackColor = Color.Transparent;
+            txtObr2.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr2.Location = new Point(312, 107);
+            txtObr2.Name = "txtObr2";
+            txtObr2.Size = new Size(12, 15);
+            txtObr2.TabIndex = 1;
+            txtObr2.Text = "*";
             // 
             // txtObr1
             // 
-            this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr1.AutoSize = true;
-            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr1.Location = new System.Drawing.Point(141, 107);
-            this.txtObr1.Name = "txtObr1";
-            this.txtObr1.Size = new System.Drawing.Size(12, 15);
-            this.txtObr1.TabIndex = 0;
-            this.txtObr1.Text = "*";
+            txtObr1.Anchor = AnchorStyles.None;
+            txtObr1.AutoSize = true;
+            txtObr1.BackColor = Color.Transparent;
+            txtObr1.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr1.Location = new Point(141, 107);
+            txtObr1.Name = "txtObr1";
+            txtObr1.Size = new Size(12, 15);
+            txtObr1.TabIndex = 0;
+            txtObr1.Text = "*";
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtLogradouro.AutoSize = true;
-            this.txtLogradouro.BackColor = System.Drawing.Color.Transparent;
-            this.txtLogradouro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtLogradouro.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtLogradouro.Location = new System.Drawing.Point(226, 105);
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(80, 17);
-            this.txtLogradouro.TabIndex = 1;
-            this.txtLogradouro.Text = "Logradouro";
+            txtLogradouro.Anchor = AnchorStyles.None;
+            txtLogradouro.AutoSize = true;
+            txtLogradouro.BackColor = Color.Transparent;
+            txtLogradouro.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtLogradouro.ForeColor = Color.WhiteSmoke;
+            txtLogradouro.Location = new Point(226, 105);
+            txtLogradouro.Name = "txtLogradouro";
+            txtLogradouro.Size = new Size(80, 17);
+            txtLogradouro.TabIndex = 1;
+            txtLogradouro.Text = "Logradouro";
             // 
             // txtCep
             // 
-            this.txtCep.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCep.AutoSize = true;
-            this.txtCep.BackColor = System.Drawing.Color.Transparent;
-            this.txtCep.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCep.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCep.Location = new System.Drawing.Point(104, 105);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(31, 17);
-            this.txtCep.TabIndex = 0;
-            this.txtCep.Text = "CEP";
+            txtCep.Anchor = AnchorStyles.None;
+            txtCep.AutoSize = true;
+            txtCep.BackColor = Color.Transparent;
+            txtCep.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCep.ForeColor = Color.WhiteSmoke;
+            txtCep.Location = new Point(104, 105);
+            txtCep.Name = "txtCep";
+            txtCep.Size = new Size(31, 17);
+            txtCep.TabIndex = 0;
+            txtCep.Text = "CEP";
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrar.Location = new System.Drawing.Point(398, 259);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(115, 35);
-            this.btnCadastrar.TabIndex = 7;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            btnCadastrar.Anchor = AnchorStyles.None;
+            btnCadastrar.BackColor = Color.FromArgb(0, 133, 132);
+            btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderSize = 0;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCadastrar.ForeColor = Color.WhiteSmoke;
+            btnCadastrar.Location = new Point(398, 259);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(115, 35);
+            btnCadastrar.TabIndex = 8;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTitulo.AutoSize = true;
-            this.txtTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.txtTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtTitulo.Location = new System.Drawing.Point(213, 25);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(337, 32);
-            this.txtTitulo.TabIndex = 0;
-            this.txtTitulo.Text = "Cadastrar Colaborador (2/2)";
+            txtTitulo.Anchor = AnchorStyles.None;
+            txtTitulo.AutoSize = true;
+            txtTitulo.BackColor = Color.Transparent;
+            txtTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTitulo.ForeColor = Color.WhiteSmoke;
+            txtTitulo.Location = new Point(213, 25);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(337, 32);
+            txtTitulo.TabIndex = 0;
+            txtTitulo.Text = "Cadastrar Colaborador (2/2)";
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVoltar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnVoltar.Location = new System.Drawing.Point(246, 259);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(115, 35);
-            this.btnVoltar.TabIndex = 8;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            btnVoltar.Anchor = AnchorStyles.None;
+            btnVoltar.BackColor = Color.FromArgb(0, 133, 132);
+            btnVoltar.Cursor = Cursors.Hand;
+            btnVoltar.FlatAppearance.BorderSize = 0;
+            btnVoltar.FlatStyle = FlatStyle.Flat;
+            btnVoltar.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVoltar.ForeColor = Color.WhiteSmoke;
+            btnVoltar.Location = new Point(246, 259);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(115, 35);
+            btnVoltar.TabIndex = 9;
+            btnVoltar.Text = "Voltar";
+            btnVoltar.UseVisualStyleBackColor = false;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
+            // btnPesquisarCep
+            // 
+            btnPesquisarCep.BackColor = Color.FromArgb(0, 133, 132);
+            btnPesquisarCep.BackgroundImage = Properties.Resources.icon_search;
+            btnPesquisarCep.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPesquisarCep.Cursor = Cursors.Hand;
+            btnPesquisarCep.FlatAppearance.BorderSize = 0;
+            btnPesquisarCep.FlatStyle = FlatStyle.Flat;
+            btnPesquisarCep.Location = new Point(180, 126);
+            btnPesquisarCep.Name = "btnPesquisarCep";
+            btnPesquisarCep.Size = new Size(23, 21);
+            btnPesquisarCep.TabIndex = 1;
+            btnPesquisarCep.UseVisualStyleBackColor = false;
+            btnPesquisarCep.Click += btnPesquisarCep_Click;
             // 
             // CadColaboradorEndereco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(734, 341);
-            this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.inputCep);
-            this.Controls.Add(this.inputNumero);
-            this.Controls.Add(this.txtObr3);
-            this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.inputComplemento);
-            this.Controls.Add(this.inputboxUf);
-            this.Controls.Add(this.txtObr6);
-            this.Controls.Add(this.txtComplemento);
-            this.Controls.Add(this.txtUf);
-            this.Controls.Add(this.txtObr5);
-            this.Controls.Add(this.txtCidade);
-            this.Controls.Add(this.inputCidade);
-            this.Controls.Add(this.inputBairro);
-            this.Controls.Add(this.txtObr4);
-            this.Controls.Add(this.txtBairro);
-            this.Controls.Add(this.inputLogradouro);
-            this.Controls.Add(this.txtObr2);
-            this.Controls.Add(this.txtObr1);
-            this.Controls.Add(this.txtLogradouro);
-            this.Controls.Add(this.txtCep);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CadColaboradorEndereco";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MovSoft - Cadastrar Colaborador";
-            this.TopMost = true;
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(114, 101, 75);
+            ClientSize = new Size(734, 341);
+            Controls.Add(btnPesquisarCep);
+            Controls.Add(btnVoltar);
+            Controls.Add(txtTitulo);
+            Controls.Add(btnCadastrar);
+            Controls.Add(inputCep);
+            Controls.Add(inputNumero);
+            Controls.Add(txtObr3);
+            Controls.Add(txtNumero);
+            Controls.Add(inputComplemento);
+            Controls.Add(inputboxUf);
+            Controls.Add(txtObr6);
+            Controls.Add(txtComplemento);
+            Controls.Add(txtUf);
+            Controls.Add(txtObr5);
+            Controls.Add(txtCidade);
+            Controls.Add(inputCidade);
+            Controls.Add(inputBairro);
+            Controls.Add(txtObr4);
+            Controls.Add(txtBairro);
+            Controls.Add(inputLogradouro);
+            Controls.Add(txtObr2);
+            Controls.Add(txtObr1);
+            Controls.Add(txtLogradouro);
+            Controls.Add(txtCep);
+            ForeColor = Color.FromArgb(56, 56, 56);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "CadColaboradorEndereco";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MovSoft - Cadastrar Colaborador";
+            TopMost = true;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -442,5 +430,6 @@
         private Button btnCadastrar;
         private Label txtTitulo;
         private Button btnVoltar;
+        private Button btnPesquisarCep;
     }
 }

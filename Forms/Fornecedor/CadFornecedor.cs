@@ -16,6 +16,7 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
             if (editar)
             {
@@ -29,6 +30,19 @@ namespace MovSoft
             {
                 editarFornecedor = false;
             }
+        }
+
+        private void PosicionarObrs()
+        {
+            funcoes.PosicionarObrFilho(txtNomeFantasia, txtObr0);
+            funcoes.PosicionarObrFilho(txtRazao, txtObr1);
+            funcoes.PosicionarObrFilho(txtCnpj, txtObr2);
+            funcoes.PosicionarObrFilho(txtCep, txtObr3);
+            funcoes.PosicionarObrFilho(txtLogradouro, txtObr4);
+            funcoes.PosicionarObrFilho(txtNumero, txtObr5);
+            funcoes.PosicionarObrFilho(txtBairro, txtObr6);
+            funcoes.PosicionarObrFilho(txtCidade, txtObr7);
+            funcoes.PosicionarObrFilho(txtUf, txtObr8);
         }
 
         private void AtualizarFornecedores()
@@ -56,7 +70,6 @@ namespace MovSoft
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.EditarFornecedor(fornecedoresDTO, EnderecosDTO);
             ActiveForm.Close();
-            AtualizarFornecedores();
         }
 
         private void CadastrarFornecedor()
@@ -73,7 +86,6 @@ namespace MovSoft
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.CadastrarFornecedor(fornecedoresDTO, EnderecosDTO);
             ActiveForm.Close();
-            AtualizarFornecedores();
         }
 
         private void RemoverMascarasDeTexto()
@@ -102,10 +114,12 @@ namespace MovSoft
             if (editarFornecedor)
             {
                 EditarFornecedor();
+                AtualizarFornecedores();
             }
-            else if(!editarFornecedor)
+            else if (!editarFornecedor)
             {
                 CadastrarFornecedor();
+                AtualizarFornecedores();
             }
         }
 
@@ -164,14 +178,22 @@ namespace MovSoft
             }
         }
 
-        private void inputCep_Leave(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            VerificarCampos();
+        }
+
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
         {
             VerificarCep();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void inputCep_KeyPress(object sender, KeyPressEventArgs e)
         {
-            VerificarCampos();
+            if (e.KeyChar == 13)
+            {
+                VerificarCep();
+            }
         }
     }
 }

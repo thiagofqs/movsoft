@@ -19,7 +19,7 @@ namespace MovSoft
             if (!iniExiste)
             {
                 CriarIni();
-                MessageBox.Show("teste");
+                MessageBox.Show("Arquivo .ini gerado! Para configurar, abra-o e altere os valores padrões.");
             }
         }
 

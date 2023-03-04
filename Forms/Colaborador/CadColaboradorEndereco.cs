@@ -18,18 +18,29 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputCep);
             if (!primeiraAbertura)
             {
                 AtribuirDadosAosInputs();
             }
-            if(editar)
+            if (editar)
             {
                 txtTitulo.Text = "Editar Colaborador 2/2";
                 btnCadastrar.Text = "Salvar";
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
             }
+        }
+
+        private void PosicionarObrs()
+        {
+            funcoes.PosicionarObrFilho(txtCep, txtObr1);
+            funcoes.PosicionarObrFilho(txtLogradouro, txtObr2);
+            funcoes.PosicionarObrFilho(txtNumero, txtObr3);
+            funcoes.PosicionarObrFilho(txtBairro, txtObr4);
+            funcoes.PosicionarObrFilho(txtCidade, txtObr5);
+            funcoes.PosicionarObrFilho(txtUf, txtObr6);
         }
 
         private void RemoverMascarasDeTexto()
@@ -66,7 +77,7 @@ namespace MovSoft
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.CadastrarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
-            //ActiveForm.Close();
+            ActiveForm.Close();
         }
 
         private void EditarColaborador()
@@ -90,8 +101,8 @@ namespace MovSoft
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.EditarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
-            //ActiveForm.Close();
-    }
+            ActiveForm.Close();
+        }
 
         private void AtribuirDadosAosInputs()
         {
@@ -120,7 +131,8 @@ namespace MovSoft
             if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
-            } else
+            }
+            else
             {
                 CadastrarOuEditar();
             }
@@ -181,7 +193,15 @@ namespace MovSoft
             }
         }
 
-        private void inputCep_Leave(object sender, EventArgs e)
+        private void inputCep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                VerificarCep();
+            }
+        }
+
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
         {
             VerificarCep();
         }

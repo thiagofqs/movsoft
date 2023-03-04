@@ -29,17 +29,17 @@ namespace MovSoft
 
             public override Color MenuItemSelectedGradientBegin
             {
-                get 
+                get
                 {
-                    return Color.FromArgb(176, 155, 113); 
+                    return Color.FromArgb(176, 155, 113);
                 }
             }
 
             public override Color MenuItemSelectedGradientEnd
             {
-                get 
+                get
                 {
-                    return Color.FromArgb(176, 155, 113); 
+                    return Color.FromArgb(176, 155, 113);
                 }
             }
 
@@ -76,7 +76,7 @@ namespace MovSoft
             txtCargo.Text += Parametros.cargoUser;
         }
 
-        public bool VerificarPermissao(int permissao,Form forms,Form activeForm,Panel pnlMain)
+        public bool VerificarPermissao(int permissao, Form forms, Form activeForm, Panel pnlMain)
         {
             bool podeAcessar;
             bll.VerificarPermissao((int)Parametros.idCargoUser, permissao);
@@ -94,22 +94,23 @@ namespace MovSoft
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaUsuarios frm = new();
-            funcoes.OpenChildForm(frm, activeForm, pnlMain,1);
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 1);
         }
 
         private void colaboradoresToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ListaColaboradores frm = new();
-            funcoes.OpenChildForm(frm, activeForm, pnlMain,2);
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 2);
         }
 
         private void MudarCursorDoMenu()
         {
-            foreach(ToolStripMenuItem item in menu.Items)
+            foreach (ToolStripMenuItem item in menu.Items)
             {
                 item.MouseEnter += CursorHandChanger;
                 item.MouseLeave += CursorDefaultChanger;
-                foreach(ToolStripMenuItem dropItens in item.DropDownItems) {
+                foreach (ToolStripMenuItem dropItens in item.DropDownItems)
+                {
                     dropItens.MouseEnter += CursorHandChanger;
                     dropItens.MouseLeave += CursorDefaultChanger;
                 }

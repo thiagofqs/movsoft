@@ -73,6 +73,16 @@ namespace MovSoft.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_filter {
+            get {
+                object obj = ResourceManager.GetObject("icon-filter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_gestor {
             get {
                 object obj = ResourceManager.GetObject("icon-gestor", resourceCulture);

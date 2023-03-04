@@ -1,7 +1,6 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using System.Data;
-using System.Runtime.CompilerServices;
 
 namespace MovSoft
 {
@@ -16,17 +15,14 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputNome);
             if (!primeiraAbertura)
             {
                 primeiraAberturaColaborador = false;
                 AtribuirDadosAosInputs();
-            }/*
-            else if (primeiraAbertura == true && editar == false)
-            {
-                Parametros parametros = new();
-            }*/
-            if(editar && primeiraAbertura)
+            }
+            if (editar && primeiraAbertura)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 colaboradoresBLL.PegarDados((int)Parametros.idColab);
@@ -34,12 +30,24 @@ namespace MovSoft
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
             }
-            else if(editar && !primeiraAbertura)
+            else if (editar && !primeiraAbertura)
             {
                 txtTitulo.Text = "Editar Colaborador 1/2";
                 editarColaborador = true;
                 AtribuirDadosAosInputs();
             }
+        }
+
+        private void PosicionarObrs()
+        {
+            funcoes.PosicionarObrFilho(txtNome, txtObr1);
+            funcoes.PosicionarObrFilho(txtSobrenome, txtObr2);
+            funcoes.PosicionarObrFilho(txtSexo, txtObr3);
+            funcoes.PosicionarObrFilho(txtCpf, txtObr4);
+            funcoes.PosicionarObrFilho(txtNascimento, txtObr5);
+            funcoes.PosicionarObrFilho(txtEmail, txtObr6);
+            funcoes.PosicionarObrFilho(txtCelular, txtObr7);
+            funcoes.PosicionarObrFilho(txtAtivo, txtObr8);
         }
 
 
@@ -56,7 +64,7 @@ namespace MovSoft
             Parametros.sobrenomeColab = inputSobrenome.Text;
             Parametros.idSexoColab = inputboxSexo.SelectedIndex + 1;
             Parametros.cpfColab = inputCpf.Text;
-            if(primeiraAberturaColaborador)
+            if (primeiraAberturaColaborador)
             {
                 Parametros.nascimentoColab = funcoes.BdDataNascimento(inputNascimento.Text);
             }
@@ -122,6 +130,18 @@ namespace MovSoft
             {
                 VerificarCampos();
             }
+        }
+
+        private void toggleButton_CheckedChanged(object sender, EventArgs e)
+        {/*
+            if (toggleButton.Checked)
+            {
+                txtAtivo.Text = "Ativo";
+            }
+            else
+            {
+                txtAtivo.Text = "Desativo";
+            }*/
         }
     }
 }

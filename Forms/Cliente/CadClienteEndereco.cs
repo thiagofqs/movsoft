@@ -18,6 +18,7 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputCep);
             if (!primeiraAbertura)
             {
@@ -30,6 +31,16 @@ namespace MovSoft
                 editarCliente = true;
                 AtribuirDadosAosInputs();
             }
+        }
+
+        private void PosicionarObrs()
+        {
+            funcoes.PosicionarObrFilho(txtCep, txtObr1);
+            funcoes.PosicionarObrFilho(txtLogradouro, txtObr2);
+            funcoes.PosicionarObrFilho(txtNumero, txtObr3);
+            funcoes.PosicionarObrFilho(txtBairro, txtObr4);
+            funcoes.PosicionarObrFilho(txtCidade, txtObr5);
+            funcoes.PosicionarObrFilho(txtUf, txtObr6);
         }
 
         private void RemoverMascarasDeTexto()
@@ -56,7 +67,6 @@ namespace MovSoft
             dtoContatos.Celular = Parametros.celularCliente;
             bllClientes.CadastrarCliente(dtoClientes, dtoEnderecos, dtoContatos);
             ActiveForm.Close();
-            AtualizarClientes();
         }
 
         private void EditarCliente()
@@ -82,7 +92,6 @@ namespace MovSoft
             bllClientes.EditarCliente(dtoClientes, dtoEnderecos, dtoContatos);
             Close();
             GC.Collect();
-            AtualizarClientes();
         }
 
         private void AtualizarClientes()
@@ -142,10 +151,12 @@ namespace MovSoft
             if (!editarCliente)
             {
                 CadastrarCliente();
+                AtualizarClientes();
             }
             else if (editarCliente)
             {
                 EditarCliente();
+                AtualizarClientes();
             }
         }
 
@@ -182,9 +193,17 @@ namespace MovSoft
             }
         }
 
-        private void inputCep_Leave(object sender, EventArgs e)
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
         {
             VerificarCep();
+        }
+
+        private void inputCep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                VerificarCep();
+            }
         }
     }
 }

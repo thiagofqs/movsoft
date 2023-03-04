@@ -28,287 +28,335 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.inputboxColaborador = new System.Windows.Forms.ComboBox();
-            this.txtObr5 = new System.Windows.Forms.Label();
-            this.txtObr4 = new System.Windows.Forms.Label();
-            this.txtObr3 = new System.Windows.Forms.Label();
-            this.txtObr2 = new System.Windows.Forms.Label();
-            this.txtObr1 = new System.Windows.Forms.Label();
-            this.txtColaborador = new System.Windows.Forms.Label();
-            this.txtConfirmarSenha = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtTitulo = new System.Windows.Forms.Label();
-            this.inputboxCargo = new System.Windows.Forms.ComboBox();
-            this.inputConfirmarSenha = new System.Windows.Forms.TextBox();
-            this.inputSenha = new System.Windows.Forms.TextBox();
-            this.inputUsuario = new System.Windows.Forms.TextBox();
-            this.pnlContent.SuspendLayout();
-            this.SuspendLayout();
+            pnlContent = new Panel();
+            txtObr8 = new Label();
+            txtAtivo = new Label();
+            toggleButton = new Controls.ToggleButton();
+            inputboxColaborador = new ComboBox();
+            txtObr5 = new Label();
+            txtObr4 = new Label();
+            txtObr3 = new Label();
+            txtObr2 = new Label();
+            txtObr1 = new Label();
+            txtColaborador = new Label();
+            txtConfirmarSenha = new Label();
+            txtSenha = new Label();
+            txtCargo = new Label();
+            txtUsuario = new Label();
+            btnCadastrar = new Button();
+            txtTitulo = new Label();
+            inputboxCargo = new ComboBox();
+            inputConfirmarSenha = new TextBox();
+            inputSenha = new TextBox();
+            inputUsuario = new TextBox();
+            pnlContent.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlContent
             // 
-            this.pnlContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.pnlContent.Controls.Add(this.inputboxColaborador);
-            this.pnlContent.Controls.Add(this.txtObr5);
-            this.pnlContent.Controls.Add(this.txtObr4);
-            this.pnlContent.Controls.Add(this.txtObr3);
-            this.pnlContent.Controls.Add(this.txtObr2);
-            this.pnlContent.Controls.Add(this.txtObr1);
-            this.pnlContent.Controls.Add(this.txtColaborador);
-            this.pnlContent.Controls.Add(this.txtConfirmarSenha);
-            this.pnlContent.Controls.Add(this.txtSenha);
-            this.pnlContent.Controls.Add(this.txtCargo);
-            this.pnlContent.Controls.Add(this.txtUsuario);
-            this.pnlContent.Controls.Add(this.btnCadastrar);
-            this.pnlContent.Controls.Add(this.txtTitulo);
-            this.pnlContent.Controls.Add(this.inputboxCargo);
-            this.pnlContent.Controls.Add(this.inputConfirmarSenha);
-            this.pnlContent.Controls.Add(this.inputSenha);
-            this.pnlContent.Controls.Add(this.inputUsuario);
-            this.pnlContent.Location = new System.Drawing.Point(90, 65);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(734, 341);
-            this.pnlContent.TabIndex = 0;
+            pnlContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlContent.BackColor = Color.FromArgb(114, 101, 75);
+            pnlContent.Controls.Add(txtObr8);
+            pnlContent.Controls.Add(txtAtivo);
+            pnlContent.Controls.Add(toggleButton);
+            pnlContent.Controls.Add(inputboxColaborador);
+            pnlContent.Controls.Add(txtObr5);
+            pnlContent.Controls.Add(txtObr4);
+            pnlContent.Controls.Add(txtObr3);
+            pnlContent.Controls.Add(txtObr2);
+            pnlContent.Controls.Add(txtObr1);
+            pnlContent.Controls.Add(txtColaborador);
+            pnlContent.Controls.Add(txtConfirmarSenha);
+            pnlContent.Controls.Add(txtSenha);
+            pnlContent.Controls.Add(txtCargo);
+            pnlContent.Controls.Add(txtUsuario);
+            pnlContent.Controls.Add(btnCadastrar);
+            pnlContent.Controls.Add(txtTitulo);
+            pnlContent.Controls.Add(inputboxCargo);
+            pnlContent.Controls.Add(inputConfirmarSenha);
+            pnlContent.Controls.Add(inputSenha);
+            pnlContent.Controls.Add(inputUsuario);
+            pnlContent.Location = new Point(90, 65);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(734, 341);
+            pnlContent.TabIndex = 0;
+            // 
+            // txtObr8
+            // 
+            txtObr8.Anchor = AnchorStyles.None;
+            txtObr8.AutoSize = true;
+            txtObr8.BackColor = Color.Transparent;
+            txtObr8.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr8.Location = new Point(489, 81);
+            txtObr8.Name = "txtObr8";
+            txtObr8.Size = new Size(12, 15);
+            txtObr8.TabIndex = 1;
+            txtObr8.Text = "*";
+            // 
+            // txtAtivo
+            // 
+            txtAtivo.Anchor = AnchorStyles.None;
+            txtAtivo.AutoSize = true;
+            txtAtivo.BackColor = Color.Transparent;
+            txtAtivo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAtivo.ForeColor = Color.WhiteSmoke;
+            txtAtivo.Location = new Point(442, 79);
+            txtAtivo.Name = "txtAtivo";
+            txtAtivo.Size = new Size(41, 17);
+            txtAtivo.TabIndex = 1;
+            txtAtivo.Text = "Ativo";
+            txtAtivo.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // toggleButton
+            // 
+            toggleButton.Anchor = AnchorStyles.None;
+            toggleButton.AutoSize = true;
+            toggleButton.Checked = true;
+            toggleButton.CheckState = CheckState.Checked;
+            toggleButton.Cursor = Cursors.Hand;
+            toggleButton.FocusToggleColor = Color.Gold;
+            toggleButton.Location = new Point(442, 99);
+            toggleButton.MinimumSize = new Size(45, 22);
+            toggleButton.Name = "toggleButton";
+            toggleButton.OffBackColor = Color.Gray;
+            toggleButton.OffToggleColor = Color.Gainsboro;
+            toggleButton.OnBackColor = Color.FromArgb(0, 133, 132);
+            toggleButton.OnToggleColor = Color.WhiteSmoke;
+            toggleButton.Size = new Size(45, 22);
+            toggleButton.TabIndex = 1;
+            toggleButton.UseVisualStyleBackColor = true;
             // 
             // inputboxColaborador
             // 
-            this.inputboxColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputboxColaborador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.inputboxColaborador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.inputboxColaborador.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputboxColaborador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputboxColaborador.FormattingEnabled = true;
-            this.inputboxColaborador.Location = new System.Drawing.Point(283, 99);
-            this.inputboxColaborador.Name = "inputboxColaborador";
-            this.inputboxColaborador.Size = new System.Drawing.Size(153, 23);
-            this.inputboxColaborador.TabIndex = 0;
+            inputboxColaborador.Anchor = AnchorStyles.None;
+            inputboxColaborador.AutoCompleteMode = AutoCompleteMode.Append;
+            inputboxColaborador.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            inputboxColaborador.BackColor = Color.WhiteSmoke;
+            inputboxColaborador.ForeColor = Color.FromArgb(56, 56, 56);
+            inputboxColaborador.FormattingEnabled = true;
+            inputboxColaborador.Location = new Point(192, 99);
+            inputboxColaborador.Name = "inputboxColaborador";
+            inputboxColaborador.Size = new Size(153, 23);
+            inputboxColaborador.TabIndex = 0;
             // 
             // txtObr5
             // 
-            this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr5.AutoSize = true;
-            this.txtObr5.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(507, 206);
-            this.txtObr5.Name = "txtObr5";
-            this.txtObr5.Size = new System.Drawing.Size(12, 15);
-            this.txtObr5.TabIndex = 4;
-            this.txtObr5.Text = "*";
+            txtObr5.Anchor = AnchorStyles.None;
+            txtObr5.AutoSize = true;
+            txtObr5.BackColor = Color.Transparent;
+            txtObr5.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr5.Location = new Point(507, 206);
+            txtObr5.Name = "txtObr5";
+            txtObr5.Size = new Size(12, 15);
+            txtObr5.TabIndex = 5;
+            txtObr5.Text = "*";
             // 
             // txtObr4
             // 
-            this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr4.AutoSize = true;
-            this.txtObr4.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(242, 206);
-            this.txtObr4.Name = "txtObr4";
-            this.txtObr4.Size = new System.Drawing.Size(12, 15);
-            this.txtObr4.TabIndex = 3;
-            this.txtObr4.Text = "*";
+            txtObr4.Anchor = AnchorStyles.None;
+            txtObr4.AutoSize = true;
+            txtObr4.BackColor = Color.Transparent;
+            txtObr4.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr4.Location = new Point(242, 206);
+            txtObr4.Name = "txtObr4";
+            txtObr4.Size = new Size(12, 15);
+            txtObr4.TabIndex = 4;
+            txtObr4.Text = "*";
             // 
             // txtObr3
             // 
-            this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr3.AutoSize = true;
-            this.txtObr3.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(442, 143);
-            this.txtObr3.Name = "txtObr3";
-            this.txtObr3.Size = new System.Drawing.Size(12, 15);
-            this.txtObr3.TabIndex = 2;
-            this.txtObr3.Text = "*";
+            txtObr3.Anchor = AnchorStyles.None;
+            txtObr3.AutoSize = true;
+            txtObr3.BackColor = Color.Transparent;
+            txtObr3.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr3.Location = new Point(442, 143);
+            txtObr3.Name = "txtObr3";
+            txtObr3.Size = new Size(12, 15);
+            txtObr3.TabIndex = 3;
+            txtObr3.Text = "*";
             // 
             // txtObr2
             // 
-            this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr2.AutoSize = true;
-            this.txtObr2.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(252, 143);
-            this.txtObr2.Name = "txtObr2";
-            this.txtObr2.Size = new System.Drawing.Size(12, 15);
-            this.txtObr2.TabIndex = 1;
-            this.txtObr2.Text = "*";
+            txtObr2.Anchor = AnchorStyles.None;
+            txtObr2.AutoSize = true;
+            txtObr2.BackColor = Color.Transparent;
+            txtObr2.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr2.Location = new Point(252, 143);
+            txtObr2.Name = "txtObr2";
+            txtObr2.Size = new Size(12, 15);
+            txtObr2.TabIndex = 2;
+            txtObr2.Text = "*";
             // 
             // txtObr1
             // 
-            this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr1.AutoSize = true;
-            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr1.Location = new System.Drawing.Point(373, 81);
-            this.txtObr1.Name = "txtObr1";
-            this.txtObr1.Size = new System.Drawing.Size(12, 15);
-            this.txtObr1.TabIndex = 0;
-            this.txtObr1.Text = "*";
+            txtObr1.Anchor = AnchorStyles.None;
+            txtObr1.AutoSize = true;
+            txtObr1.BackColor = Color.Transparent;
+            txtObr1.ForeColor = Color.FromArgb(255, 51, 56);
+            txtObr1.Location = new Point(282, 81);
+            txtObr1.Name = "txtObr1";
+            txtObr1.Size = new Size(12, 15);
+            txtObr1.TabIndex = 0;
+            txtObr1.Text = "*";
             // 
             // txtColaborador
             // 
-            this.txtColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtColaborador.AutoSize = true;
-            this.txtColaborador.BackColor = System.Drawing.Color.Transparent;
-            this.txtColaborador.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtColaborador.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtColaborador.Location = new System.Drawing.Point(283, 79);
-            this.txtColaborador.Name = "txtColaborador";
-            this.txtColaborador.Size = new System.Drawing.Size(84, 17);
-            this.txtColaborador.TabIndex = 0;
-            this.txtColaborador.Text = "Colaborador";
+            txtColaborador.Anchor = AnchorStyles.None;
+            txtColaborador.AutoSize = true;
+            txtColaborador.BackColor = Color.Transparent;
+            txtColaborador.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtColaborador.ForeColor = Color.WhiteSmoke;
+            txtColaborador.Location = new Point(192, 79);
+            txtColaborador.Name = "txtColaborador";
+            txtColaborador.Size = new Size(84, 17);
+            txtColaborador.TabIndex = 0;
+            txtColaborador.Text = "Colaborador";
             // 
             // txtConfirmarSenha
             // 
-            this.txtConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtConfirmarSenha.AutoSize = true;
-            this.txtConfirmarSenha.BackColor = System.Drawing.Color.Transparent;
-            this.txtConfirmarSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(391, 204);
-            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(110, 17);
-            this.txtConfirmarSenha.TabIndex = 4;
-            this.txtConfirmarSenha.Text = "Confirmar senha";
+            txtConfirmarSenha.Anchor = AnchorStyles.None;
+            txtConfirmarSenha.AutoSize = true;
+            txtConfirmarSenha.BackColor = Color.Transparent;
+            txtConfirmarSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtConfirmarSenha.ForeColor = Color.WhiteSmoke;
+            txtConfirmarSenha.Location = new Point(391, 204);
+            txtConfirmarSenha.Name = "txtConfirmarSenha";
+            txtConfirmarSenha.Size = new Size(110, 17);
+            txtConfirmarSenha.TabIndex = 5;
+            txtConfirmarSenha.Text = "Confirmar senha";
             // 
             // txtSenha
             // 
-            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSenha.AutoSize = true;
-            this.txtSenha.BackColor = System.Drawing.Color.Transparent;
-            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSenha.Location = new System.Drawing.Point(191, 204);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(45, 17);
-            this.txtSenha.TabIndex = 3;
-            this.txtSenha.Text = "Senha";
+            txtSenha.Anchor = AnchorStyles.None;
+            txtSenha.AutoSize = true;
+            txtSenha.BackColor = Color.Transparent;
+            txtSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSenha.ForeColor = Color.WhiteSmoke;
+            txtSenha.Location = new Point(191, 204);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(45, 17);
+            txtSenha.TabIndex = 4;
+            txtSenha.Text = "Senha";
             // 
             // txtCargo
             // 
-            this.txtCargo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCargo.AutoSize = true;
-            this.txtCargo.BackColor = System.Drawing.Color.Transparent;
-            this.txtCargo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCargo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCargo.Location = new System.Drawing.Point(392, 141);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(44, 17);
-            this.txtCargo.TabIndex = 2;
-            this.txtCargo.Text = "Cargo";
+            txtCargo.Anchor = AnchorStyles.None;
+            txtCargo.AutoSize = true;
+            txtCargo.BackColor = Color.Transparent;
+            txtCargo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCargo.ForeColor = Color.WhiteSmoke;
+            txtCargo.Location = new Point(392, 141);
+            txtCargo.Name = "txtCargo";
+            txtCargo.Size = new Size(44, 17);
+            txtCargo.TabIndex = 3;
+            txtCargo.Text = "Cargo";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsuario.AutoSize = true;
-            this.txtUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUsuario.Location = new System.Drawing.Point(191, 141);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(55, 17);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "Usuário";
+            txtUsuario.Anchor = AnchorStyles.None;
+            txtUsuario.AutoSize = true;
+            txtUsuario.BackColor = Color.Transparent;
+            txtUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUsuario.ForeColor = Color.WhiteSmoke;
+            txtUsuario.Location = new Point(191, 141);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(55, 17);
+            txtUsuario.TabIndex = 2;
+            txtUsuario.Text = "Usuário";
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrar.Location = new System.Drawing.Point(308, 274);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(115, 35);
-            this.btnCadastrar.TabIndex = 5;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            btnCadastrar.Anchor = AnchorStyles.None;
+            btnCadastrar.BackColor = Color.FromArgb(0, 133, 132);
+            btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderSize = 0;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCadastrar.ForeColor = Color.WhiteSmoke;
+            btnCadastrar.Location = new Point(308, 274);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(115, 35);
+            btnCadastrar.TabIndex = 6;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTitulo.AutoSize = true;
-            this.txtTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.txtTitulo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtTitulo.Location = new System.Drawing.Point(252, 33);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(218, 32);
-            this.txtTitulo.TabIndex = 0;
-            this.txtTitulo.Text = "Cadastrar Usuário";
+            txtTitulo.Anchor = AnchorStyles.None;
+            txtTitulo.AutoSize = true;
+            txtTitulo.BackColor = Color.Transparent;
+            txtTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            txtTitulo.ForeColor = Color.WhiteSmoke;
+            txtTitulo.Location = new Point(252, 33);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(218, 32);
+            txtTitulo.TabIndex = 0;
+            txtTitulo.Text = "Cadastrar Usuário";
             // 
             // inputboxCargo
             // 
-            this.inputboxCargo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputboxCargo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputboxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.inputboxCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputboxCargo.FormattingEnabled = true;
-            this.inputboxCargo.Location = new System.Drawing.Point(392, 161);
-            this.inputboxCargo.Name = "inputboxCargo";
-            this.inputboxCargo.Size = new System.Drawing.Size(153, 23);
-            this.inputboxCargo.TabIndex = 2;
+            inputboxCargo.Anchor = AnchorStyles.None;
+            inputboxCargo.BackColor = Color.WhiteSmoke;
+            inputboxCargo.DropDownStyle = ComboBoxStyle.DropDownList;
+            inputboxCargo.ForeColor = Color.FromArgb(56, 56, 56);
+            inputboxCargo.FormattingEnabled = true;
+            inputboxCargo.Location = new Point(392, 161);
+            inputboxCargo.Name = "inputboxCargo";
+            inputboxCargo.Size = new Size(153, 23);
+            inputboxCargo.TabIndex = 3;
             // 
             // inputConfirmarSenha
             // 
-            this.inputConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputConfirmarSenha.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputConfirmarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputConfirmarSenha.Location = new System.Drawing.Point(391, 224);
-            this.inputConfirmarSenha.MaxLength = 20;
-            this.inputConfirmarSenha.Name = "inputConfirmarSenha";
-            this.inputConfirmarSenha.Size = new System.Drawing.Size(154, 23);
-            this.inputConfirmarSenha.TabIndex = 4;
-            this.inputConfirmarSenha.UseSystemPasswordChar = true;
-            this.inputConfirmarSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputConfirmarSenha_KeyPress);
+            inputConfirmarSenha.Anchor = AnchorStyles.None;
+            inputConfirmarSenha.BackColor = Color.WhiteSmoke;
+            inputConfirmarSenha.ForeColor = Color.FromArgb(56, 56, 56);
+            inputConfirmarSenha.Location = new Point(391, 224);
+            inputConfirmarSenha.MaxLength = 20;
+            inputConfirmarSenha.Name = "inputConfirmarSenha";
+            inputConfirmarSenha.Size = new Size(154, 23);
+            inputConfirmarSenha.TabIndex = 5;
+            inputConfirmarSenha.UseSystemPasswordChar = true;
+            inputConfirmarSenha.KeyPress += inputConfirmarSenha_KeyPress;
             // 
             // inputSenha
             // 
-            this.inputSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputSenha.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputSenha.Location = new System.Drawing.Point(191, 224);
-            this.inputSenha.MaxLength = 20;
-            this.inputSenha.Name = "inputSenha";
-            this.inputSenha.Size = new System.Drawing.Size(154, 23);
-            this.inputSenha.TabIndex = 3;
-            this.inputSenha.UseSystemPasswordChar = true;
+            inputSenha.Anchor = AnchorStyles.None;
+            inputSenha.BackColor = Color.WhiteSmoke;
+            inputSenha.ForeColor = Color.FromArgb(56, 56, 56);
+            inputSenha.Location = new Point(191, 224);
+            inputSenha.MaxLength = 20;
+            inputSenha.Name = "inputSenha";
+            inputSenha.Size = new Size(154, 23);
+            inputSenha.TabIndex = 4;
+            inputSenha.UseSystemPasswordChar = true;
             // 
             // inputUsuario
             // 
-            this.inputUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.inputUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputUsuario.Location = new System.Drawing.Point(191, 161);
-            this.inputUsuario.MaxLength = 20;
-            this.inputUsuario.Name = "inputUsuario";
-            this.inputUsuario.Size = new System.Drawing.Size(154, 23);
-            this.inputUsuario.TabIndex = 1;
+            inputUsuario.Anchor = AnchorStyles.None;
+            inputUsuario.BackColor = Color.WhiteSmoke;
+            inputUsuario.ForeColor = Color.FromArgb(56, 56, 56);
+            inputUsuario.Location = new Point(191, 161);
+            inputUsuario.MaxLength = 20;
+            inputUsuario.Name = "inputUsuario";
+            inputUsuario.Size = new Size(154, 23);
+            inputUsuario.TabIndex = 2;
             // 
             // CadUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(914, 464);
-            this.Controls.Add(this.pnlContent);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.Name = "CadUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MovSoft - Cadastrar Usuário";
-            this.TopMost = true;
-            this.pnlContent.ResumeLayout(false);
-            this.pnlContent.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(56, 56, 56);
+            ClientSize = new Size(914, 464);
+            Controls.Add(pnlContent);
+            ForeColor = Color.FromArgb(56, 56, 56);
+            Name = "CadUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MovSoft - Cadastrar Usuário";
+            TopMost = true;
+            pnlContent.ResumeLayout(false);
+            pnlContent.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -331,5 +379,8 @@
         private Label txtObr2;
         private Label txtObr1;
         private ComboBox inputboxColaborador;
+        private Label txtObr8;
+        private Label txtAtivo;
+        private Controls.ToggleButton toggleButton;
     }
 }

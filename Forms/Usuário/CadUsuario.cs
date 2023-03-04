@@ -28,6 +28,7 @@ namespace MovSoft
             InitializeComponent();
             ListarColaboradores();
             ListarCargos();
+            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputboxColaborador);
             if (Parametros.editarUser == true)
             {
@@ -36,6 +37,15 @@ namespace MovSoft
                 btnCadastrar.Text = "Salvar";
                 AtribuirValores();
             }
+        }
+
+        private void PosicionarObrs()
+        {
+            funcoes.PosicionarObrFilho(txtColaborador, txtObr1);
+            funcoes.PosicionarObrFilho(txtUsuario, txtObr2);
+            funcoes.PosicionarObrFilho(txtCargo, txtObr3);
+            funcoes.PosicionarObrFilho(txtSenha, txtObr4);
+            funcoes.PosicionarObrFilho(txtConfirmarSenha, txtObr5);
         }
 
         private void ListarColaboradores()
@@ -89,7 +99,7 @@ namespace MovSoft
         private void CadastrarUsuario()
         {
             AtribuirDadosDosInputs();
-            if(dados.senhaUsuario.Length >= 8)
+            if (dados.senhaUsuario.Length >= 8)
             {
                 if (dados.senhaUsuario == dados.confirmarSenha)
                 {
@@ -103,6 +113,7 @@ namespace MovSoft
                 {
                     MessageBox.Show("Senhas não idênticas!");
                 }
+
             }
             else
             {
@@ -180,5 +191,5 @@ namespace MovSoft
                 VerificarCampos();
             }
         }
-    }   
+    }
 }

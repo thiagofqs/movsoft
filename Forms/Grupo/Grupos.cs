@@ -8,17 +8,13 @@ namespace MovSoft
         public Grupos()
         {
             InitializeComponent();
+            PosicionarObrs();
+            comboBoxFiltro.SelectedIndex = 0;
         }
 
-        private void AbrirCadGrupo()
+        private void PosicionarObrs()
         {
-            CadGrupos frm = new();
-            funcoes.AbrirForms(frm, 2);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AbrirCadGrupo();
+            funcoes.PosicionarObrFilho(txtNomeGrupo, txtObr1);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
