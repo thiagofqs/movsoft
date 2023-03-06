@@ -17,9 +17,5 @@ namespace MovSoft
             funcoes.PosicionarObrFilho(txtNomeGrupo, txtObr1);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
