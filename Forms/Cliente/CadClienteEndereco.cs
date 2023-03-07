@@ -112,7 +112,7 @@ namespace MovSoft
             inputComplemento.Text = Parametros.complemento;
             inputBairro.Text = Parametros.bairro;
             inputCidade.Text = Parametros.cidade;
-            inputboxUf.Text = Parametros.uf;
+            inputBoxUf.Text = Parametros.uf;
         }
 
         private void AtribuirDadosDosInputs()
@@ -123,26 +123,7 @@ namespace MovSoft
             Parametros.complemento = inputComplemento.Text;
             Parametros.bairro = inputBairro.Text;
             Parametros.cidade = inputCidade.Text;
-            Parametros.uf = inputboxUf.Text;
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            VerificarCampos();
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            AtribuirDadosDosInputs();
-            Close();
-            GC.Collect();
-            var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is CadCliente
-                         select frm;
-            if (qrForm != null && qrForm.Count() > 0)
-            {
-                ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(false, editarCliente);
-            }
+            Parametros.uf = inputBoxUf.Text;
         }
 
         private void CadastrarOuEditar()
@@ -162,7 +143,7 @@ namespace MovSoft
 
         private void VerificarCampos()
         {
-            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
+            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputBoxUf.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
             }
@@ -179,7 +160,7 @@ namespace MovSoft
             inputBairro.Text = cepModel.Bairro;
             inputComplemento.Text = cepModel.Complemento;
             inputCidade.Text = cepModel.Localidade;
-            inputboxUf.Text = cepModel.Uf;
+            inputBoxUf.Text = cepModel.Uf;
         }
 
         private void VerificarCep()
@@ -193,9 +174,23 @@ namespace MovSoft
             }
         }
 
-        private void btnPesquisarCep_Click(object sender, EventArgs e)
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
-            VerificarCep();
+            AtribuirDadosDosInputs();
+            Close();
+            GC.Collect();
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is CadCliente
+                         select frm;
+            if (qrForm != null && qrForm.Count() > 0)
+            {
+                ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(false, editarCliente);
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            VerificarCampos();
         }
 
         private void inputCep_KeyPress(object sender, KeyPressEventArgs e)
@@ -204,6 +199,16 @@ namespace MovSoft
             {
                 VerificarCep();
             }
+        }
+
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
+        {
+            VerificarCep();
+        }
+
+        private void inputBoxUf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos();
         }
     }
 }

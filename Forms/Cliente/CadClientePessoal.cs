@@ -85,11 +85,6 @@ namespace MovSoft
             inputCelular.Text = Parametros.dddCliente + Parametros.celularCliente;
         }
 
-        private void btnProximo_Click(object sender, EventArgs e)
-        {
-            VerificarCampos();
-        }
-
         private void ContinuarCadastro()
         {
             AtribuirDadosDosInputs();
@@ -121,6 +116,19 @@ namespace MovSoft
                 {
                     ContinuarCadastro();
                 }
+            }
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            VerificarCampos();
+        }
+
+        private void toggleButton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                VerificarCampos();
             }
         }
 

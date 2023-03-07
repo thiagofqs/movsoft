@@ -18,7 +18,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $"call colaboradores('S')";
                 dataTable = db.RetDataTable(comando);
-                foreach(DataRow dataRow in dataTable.Rows )
+                foreach (DataRow dataRow in dataTable.Rows)
                 {
                     string content = dataRow["Nome Completo"].ToString();
                     listaColaboradores.Add(content);
@@ -34,7 +34,7 @@ namespace MovSoft.CODE.BLL
 
         public DataTable MostrarColaboradores()
         {
-            DataTable dataTable = new DataTable();
+            DataTable dataTable = new();
 
             try
             {
@@ -46,7 +46,7 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show("Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
-            
+
             return dataTable;
         }
 
@@ -77,6 +77,7 @@ namespace MovSoft.CODE.BLL
             {
                 MessageBox.Show($"Erro ao cadastrar colaborador!");
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.HResult.ToString());
             }
         }
         public void EditarColaborador(ColaboradoresDTO dtoColaboradores, EnderecosDTO dtoEnderecos, ContatosDTO dtoContatos)
@@ -110,7 +111,7 @@ namespace MovSoft.CODE.BLL
                 Parametros.idSexoColab = dr.GetInt32(7);
                 Parametros.emailColab = dr.GetString(8);
                 Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Replace("/", "");
-                Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Substring(0,8);
+                Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Substring(0, 8);
                 Parametros.idCelularColab = dr.GetInt32(17);
             }
             catch (Exception ex)

@@ -17,11 +17,6 @@ namespace MovSoft
             comboBoxFiltro.SelectedIndex = 0;
         }
 
-        private void btnCadColaboradores_Click(object sender, EventArgs e)
-        {
-            AbrirCadColaborador(false);
-        }
-
         private void AbrirCadColaborador(bool editarColaborador)
         {
             CadColaborador frm = new(editarColaborador);
@@ -47,14 +42,6 @@ namespace MovSoft
         private void PesquisarColaboradores()
         {
             dataGridView.DataSource = bll.ProcurarColaboradores(inputPesquisarColaborador.Text);
-        }
-
-        private void ListaColaboradores_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                PesquisarColaboradores();
-            }
         }
 
         private void EditarColaboradores(object sender, DataGridViewCellEventArgs e)
@@ -86,9 +73,22 @@ namespace MovSoft
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PesquisarColaboradores();
+        }
+
+        private void inputPesquisarColaborador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                PesquisarColaboradores();
+            }
+        }
+
+        private void btnCadColaboradores_Click(object sender, EventArgs e)
+        {
+            AbrirCadColaborador(false);
         }
     }
 }

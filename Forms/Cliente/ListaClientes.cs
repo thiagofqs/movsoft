@@ -24,11 +24,6 @@ namespace MovSoft
             funcoes.AbrirForms(frm, 1);
         }
 
-        private void btnCadClientes_Click(object sender, EventArgs e)
-        {
-            AbrirCadCliente(false);
-        }
-
         private void PesquisarClientes()
         {
             dataGridView.DataSource = bll.ProcurarClientes(inputPesquisarClientes.Text);
@@ -65,7 +60,12 @@ namespace MovSoft
             }
         }
 
-        private void ListaColaboradores_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarClientes();
+        }
+
+        private void inputPesquisarClientes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
@@ -73,9 +73,9 @@ namespace MovSoft
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnCadClientes_Click(object sender, EventArgs e)
         {
-            PesquisarClientes();
+            AbrirCadCliente(false);
         }
     }
 }

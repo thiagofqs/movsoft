@@ -138,6 +138,7 @@ namespace MovSoft
                     {
                         MessageBox.Show("Você será redirecionado para a tela de login!");
                         funcoes.ThreadVoltarAoLogin();
+                        Close();
                     }
                 }
                 else
@@ -174,14 +175,9 @@ namespace MovSoft
             {
                 CadastrarUsuario();
                 AtualizarUsuarios();
+                Close();
             }
-            Close();
             GC.Collect();
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            VerificarCampos();
         }
 
         private void inputConfirmarSenha_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,6 +186,11 @@ namespace MovSoft
             {
                 VerificarCampos();
             }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            VerificarCampos();
         }
     }
 }

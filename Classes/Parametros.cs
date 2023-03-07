@@ -23,6 +23,7 @@
         public static int? idCelularColab { get; set; }
         public static string? dddColab { get; set; }
         public static string? celularColab { get; set; }
+        public static string ColaboradorAtivo { get; set; }
 
         //Dados Clientes Editar/Cadastro
         public static int? idCliente { get; set; }
@@ -36,12 +37,15 @@
         public static int? idCelularCliente { get; set; }
         public static string? dddCliente { get; set; }
         public static string? celularCliente { get; set; }
+        public static string ClienteAtivo { get; set; }
 
         //Dados Fornecedores Editar/Cadastro
         public static int? idFornecedor { get; set; }
         public static string? nomeFantasia { get; set; }
         public static string? razaoSocial { get; set; }
         public static string? cnpj { get; set; }
+
+        public static string FornecedorAtivo { get; set; }
 
         //Dados Endereços Editar/Cadastro
         public static int? idEndereco { get; set; }
@@ -59,6 +63,13 @@
         public static string? nomeUserEdit { get; set; }
         public static string? cargoUserEdit { get; set; }
         public static string? colaboradorUserEdit { get; set; }
+        public static string UserAtivo { get; set; }
+
+        //Dados Grupo Editar/Cadastro
+
+        public static int? idGrupo { get; set; }
+        public static string? Grupo { get; set; }
+        public static string? GrupoAtivo { get; set; }
 
         //Controle de Formularios
         public static bool? editarUser { get; set; }
@@ -68,6 +79,13 @@
 
         public Parametros()
         {
+            idUser = null;
+            nomeUser = null;
+            cargoUser = null;
+            permissaoUser = null;
+            senhaUser = null;
+            idCargoUser = null;
+            adminUser = null;
             idColab = null;
             nomeColab = null;
             sobrenomeColab = null;

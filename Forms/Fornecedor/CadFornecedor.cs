@@ -62,7 +62,7 @@ namespace MovSoft
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
-            EnderecosDTO.Uf = inputboxUf.Text;
+            EnderecosDTO.Uf = inputBoxUf.Text;
             EnderecosDTO.Cidade = inputCidade.Text;
             EnderecosDTO.Bairro = inputBairro.Text;
             EnderecosDTO.Logradouro = inputLogradouro.Text;
@@ -78,7 +78,7 @@ namespace MovSoft
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
             EnderecosDTO.Cep = inputCep.Text;
-            EnderecosDTO.Uf = inputboxUf.Text;
+            EnderecosDTO.Uf = inputBoxUf.Text;
             EnderecosDTO.Cidade = inputCidade.Text;
             EnderecosDTO.Bairro = inputBairro.Text;
             EnderecosDTO.Logradouro = inputLogradouro.Text;
@@ -100,7 +100,7 @@ namespace MovSoft
             inputNomeFantasia.Text = Parametros.nomeFantasia;
             inputCnpj.Text = Parametros.cnpj;
             inputCep.Text = Parametros.cep;
-            inputboxUf.Text = Parametros.uf;
+            inputBoxUf.Text = Parametros.uf;
             inputCidade.Text = Parametros.cidade;
             inputLogradouro.Text = Parametros.logradouro;
             inputNumero.Text = Parametros.numero;
@@ -125,7 +125,7 @@ namespace MovSoft
 
         private void VerificarCampos()
         {
-            if (inputNomeFantasia.Text == "" || inputRazaoSocial.Text == "" || inputCnpj.Text == "" || inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
+            if (inputNomeFantasia.Text == "" || inputRazaoSocial.Text == "" || inputCnpj.Text == "" || inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputBoxUf.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
             }
@@ -141,7 +141,7 @@ namespace MovSoft
             Parametros.razaoSocial = inputRazaoSocial.Text;
             Parametros.cnpj = inputCnpj.Text;
             Parametros.cep = inputCep.Text;
-            Parametros.uf = inputboxUf.Text;
+            Parametros.uf = inputBoxUf.Text;
             Parametros.cidade = inputCidade.Text;
             Parametros.bairro = inputBairro.Text;
             Parametros.numero = inputNumero.Text;
@@ -164,7 +164,7 @@ namespace MovSoft
             inputBairro.Text = cepModel.Bairro;
             inputComplemento.Text = cepModel.Complemento;
             inputCidade.Text = cepModel.Localidade;
-            inputboxUf.Text = cepModel.Uf;
+            inputBoxUf.Text = cepModel.Uf;
         }
 
         private void VerificarCep()
@@ -183,16 +183,29 @@ namespace MovSoft
             VerificarCampos();
         }
 
-        private void btnPesquisarCep_Click(object sender, EventArgs e)
-        {
-            VerificarCep();
-        }
-
         private void inputCep_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 VerificarCep();
+            }
+        }
+
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
+        {
+            VerificarCep();
+        }
+
+        private void toggleButton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            VerificarCampos();
+        }
+
+        private void inputBoxUf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                VerificarCampos();
             }
         }
     }

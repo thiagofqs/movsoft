@@ -51,19 +51,6 @@ namespace MovSoft
             dataGridView.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text);
         }
 
-        private void ListaUsuarios_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                PesquisarUsuarios();
-            }
-        }
-
-        private void btnCadUsuario_Click(object sender, EventArgs e)
-        {
-            AbrirCadUsuario(false);
-        }
-
         private void EditarUsuarios(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -77,9 +64,22 @@ namespace MovSoft
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PesquisarUsuarios();
+        }
+
+        private void inputPesquisarUsuarios_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                PesquisarUsuarios();
+            }
+        }
+
+        private void btnCadUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirCadUsuario(false);
         }
     }
 }

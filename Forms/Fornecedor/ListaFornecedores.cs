@@ -21,11 +21,6 @@ namespace MovSoft
             funcoes.AbrirForms(frm, 2);
         }
 
-        private void btnCadFornecedores_Click(object sender, EventArgs e)
-        {
-            AbrirCadFornecedor(false);
-        }
-
         public void CarregarFornecedores()
         {
             dataGridView.DataSource = bll.MostrarFornecedores();
@@ -47,14 +42,6 @@ namespace MovSoft
             dataGridView.DataSource = bll.ProcurarFornecedores(inputPesquisarColaborador.Text);
         }
 
-        private void ListaFornecedores_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                PesquisarFornecedores();
-            }
-        }
-
         private void EditarFornecedores(object sender, DataGridViewCellEventArgs e)
         {
             rowData = dataGridView.Rows[e.RowIndex];
@@ -62,9 +49,19 @@ namespace MovSoft
             AbrirCadFornecedor(true);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PesquisarFornecedores();
+        }
+
+        private void inputPesquisarColaborador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            PesquisarFornecedores();
+        }
+
+        private void btnCadFornecedores_Click(object sender, EventArgs e)
+        {
+            AbrirCadFornecedor(false);
         }
     }
 }

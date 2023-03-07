@@ -1,5 +1,6 @@
 using MovSoft.Classes;
 using MovSoft.CODE.BLL;
+using MovSoft.Forms.Grupo;
 
 namespace MovSoft
 {
@@ -91,18 +92,6 @@ namespace MovSoft
             return podeAcessar;
         }
 
-        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ListaUsuarios frm = new();
-            funcoes.OpenChildForm(frm, activeForm, pnlMain, 1);
-        }
-
-        private void colaboradoresToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            ListaColaboradores frm = new();
-            funcoes.OpenChildForm(frm, activeForm, pnlMain, 2);
-        }
-
         private void MudarCursorDoMenu()
         {
             foreach (ToolStripMenuItem item in menu.Items)
@@ -117,6 +106,18 @@ namespace MovSoft
             }
         }
 
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaUsuarios frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 1);
+        }
+
+        private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaColaboradores frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 2);
+        }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaClientes frm = new();
@@ -129,15 +130,21 @@ namespace MovSoft
             funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
 
+        private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Grupos frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
             funcoes.ThreadVoltarAoLogin();
         }
 
-        private void confecçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Grupos frm = new();
+            Insumos frm = new();
             funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
     }

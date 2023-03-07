@@ -112,7 +112,7 @@ namespace MovSoft
             inputComplemento.Text = Parametros.complemento;
             inputBairro.Text = Parametros.bairro;
             inputCidade.Text = Parametros.cidade;
-            inputboxUf.Text = Parametros.uf;
+            inputBoxUf.Text = Parametros.uf;
         }
 
         private void AtribuirDadosDosInputs()
@@ -123,12 +123,12 @@ namespace MovSoft
             Parametros.complemento = inputComplemento.Text;
             Parametros.bairro = inputBairro.Text;
             Parametros.cidade = inputCidade.Text;
-            Parametros.uf = inputboxUf.Text;
+            Parametros.uf = inputBoxUf.Text;
         }
 
         private void VerificarCampos()
         {
-            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputboxUf.Text == "")
+            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputBoxUf.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos obrigatórios!");
             }
@@ -140,6 +140,7 @@ namespace MovSoft
 
         private void CadastrarOuEditar()
         {
+            AtribuirDadosDosInputs();
             if (!editarColaborador)
             {
                 CadastrarColaborador();
@@ -152,10 +153,25 @@ namespace MovSoft
             }
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
         {
-            AtribuirDadosDosInputs();
-            VerificarCampos();
+            inputCep.Text = cepModel.Cep;
+            inputLogradouro.Text = cepModel.Logradouro;
+            inputBairro.Text = cepModel.Bairro;
+            inputComplemento.Text = cepModel.Complemento;
+            inputCidade.Text = cepModel.Localidade;
+            inputBoxUf.Text = cepModel.Uf;
+        }
+
+        private void VerificarCep()
+        {
+            if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
+            {
+                string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
+                string? result = funcoes.getApiResult(url);
+                CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
+                AtribuirDadosDoCepAosInputs(cepModel);
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -172,25 +188,14 @@ namespace MovSoft
             }
         }
 
-        private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            inputCep.Text = cepModel.Cep;
-            inputLogradouro.Text = cepModel.Logradouro;
-            inputBairro.Text = cepModel.Bairro;
-            inputComplemento.Text = cepModel.Complemento;
-            inputCidade.Text = cepModel.Localidade;
-            inputboxUf.Text = cepModel.Uf;
+            VerificarCampos();
         }
 
-        private void VerificarCep()
+        private void btnPesquisarCep_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
-            {
-                string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? result = funcoes.getApiResult(url);
-                CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                AtribuirDadosDoCepAosInputs(cepModel);
-            }
+            VerificarCep();
         }
 
         private void inputCep_KeyPress(object sender, KeyPressEventArgs e)
@@ -201,9 +206,12 @@ namespace MovSoft
             }
         }
 
-        private void btnPesquisarCep_Click(object sender, EventArgs e)
+        private void inputBoxUf_KeyPress(object sender, KeyPressEventArgs e)
         {
-            VerificarCep();
+            if (e.KeyChar == 13)
+            {
+                VerificarCampos();
+            }
         }
     }
 }

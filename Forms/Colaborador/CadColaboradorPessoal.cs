@@ -119,6 +119,18 @@ namespace MovSoft
             }
         }
 
+        private void toggleButton_CheckedChanged(object sender, EventArgs e)
+        {/*
+            if (toggleButton.Checked)
+            {
+                txtAtivo.Text = "Ativo";
+            }
+            else
+            {
+                txtAtivo.Text = "Desativo";
+            }*/
+        }
+
         private void btnProximo_Click(object sender, EventArgs e)
         {
             VerificarCampos();
@@ -132,16 +144,12 @@ namespace MovSoft
             }
         }
 
-        private void toggleButton_CheckedChanged(object sender, EventArgs e)
-        {/*
-            if (toggleButton.Checked)
+        private void toggleButton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
             {
-                txtAtivo.Text = "Ativo";
+                VerificarCampos();
             }
-            else
-            {
-                txtAtivo.Text = "Desativo";
-            }*/
         }
     }
 }

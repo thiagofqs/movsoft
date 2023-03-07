@@ -33,6 +33,7 @@ namespace MovSoft
             {
                 string usuarioDigitado = inputUsuario.Text;
                 string senhaDigitada = inputSenha.Text;
+                Parametros parametros = new();
                 bool logado = bll.Login(usuarioDigitado);
                 if (Parametros.senhaUser == senhaDigitada)
                 {
@@ -41,7 +42,7 @@ namespace MovSoft
                     tr.SetApartmentState(ApartmentState.STA);
                     tr.Start();
                 }
-                else if(logado)
+                else if (logado)
                 {
                     MessageBox.Show("Senha incorreta!");
                 }
@@ -50,7 +51,7 @@ namespace MovSoft
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(inputUsuario.Text == "" || inputSenha.Text == "")
+            if (inputUsuario.Text == "" || inputSenha.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos de login!");
             }
