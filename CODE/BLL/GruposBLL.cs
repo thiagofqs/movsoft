@@ -59,8 +59,8 @@ namespace MovSoft.CODE.BLL
                 ";
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.idGrupo = dr.GetInt32(0);
-                Parametros.Grupo = dr.GetString(1);
-                Parametros.GrupoAtivo = dr.GetString(2);
+                Parametros.nomeGrupo = dr.GetString(1);
+                Parametros.grupoAtivo = dr.GetString(2);
             }
             catch(Exception ex)
             {

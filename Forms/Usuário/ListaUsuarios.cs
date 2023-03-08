@@ -32,8 +32,8 @@ namespace MovSoft
 
         public void CarregarUsuarios()
         {
-            dataGridView.DataSource = bll.MostrarUsuarios();
-            foreach (DataGridViewColumn column in dataGridView.Columns)
+            dataGridViewUsuarios.DataSource = bll.MostrarUsuarios();
+            foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
             {
                 if (column.Index == 0)
                 {
@@ -48,20 +48,7 @@ namespace MovSoft
 
         private void PesquisarUsuarios()
         {
-            dataGridView.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text);
-        }
-
-        private void EditarUsuarios(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                rowData = dataGridView.Rows[e.RowIndex];
-                Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
-                Parametros.nomeUserEdit = rowData.Cells[1].Value.ToString();
-                Parametros.cargoUserEdit = rowData.Cells[2].Value.ToString();
-                Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
-                AbrirCadUsuario(true);
-            }
+            dataGridViewUsuarios.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text);
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -80,6 +67,19 @@ namespace MovSoft
         private void btnCadUsuario_Click(object sender, EventArgs e)
         {
             AbrirCadUsuario(false);
+        }
+
+        private void dataGridViewUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                rowData = dataGridViewUsuarios.Rows[e.RowIndex];
+                Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
+                Parametros.nomeUserEdit = rowData.Cells[1].Value.ToString();
+                Parametros.cargoUserEdit = rowData.Cells[2].Value.ToString();
+                Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
+                AbrirCadUsuario(true);
+            }
         }
     }
 }

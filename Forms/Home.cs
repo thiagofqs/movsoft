@@ -142,9 +142,15 @@ namespace MovSoft
             funcoes.ThreadVoltarAoLogin();
         }
 
-        private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void componentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Insumos frm = new();
+            Componentes frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
+        private void opcionaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Opcionais frm = new();
             funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
     }

@@ -124,6 +124,7 @@
             this.dataGridViewGrupos.ShowRowErrors = false;
             this.dataGridViewGrupos.Size = new System.Drawing.Size(430, 142);
             this.dataGridViewGrupos.TabIndex = 6;
+            this.dataGridViewGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGrupos_CellClick);
             // 
             // btnPesquisar
             // 
@@ -270,6 +271,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // pnlCadastro
             // 

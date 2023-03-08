@@ -44,16 +44,6 @@ namespace MovSoft
             dataGridView.DataSource = bll.ProcurarColaboradores(inputPesquisarColaborador.Text);
         }
 
-        private void EditarColaboradores(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                rowData = dataGridView.Rows[e.RowIndex];
-                Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());
-                AbrirCadColaborador(true);
-            }
-        }
-
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             CarregarColaboradores();
@@ -89,6 +79,16 @@ namespace MovSoft
         private void btnCadColaboradores_Click(object sender, EventArgs e)
         {
             AbrirCadColaborador(false);
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());
+                AbrirCadColaborador(true);
+            }
         }
     }
 }

@@ -120,6 +120,7 @@
             this.dataGridView.ShowRowErrors = false;
             this.dataGridView.Size = new System.Drawing.Size(561, 321);
             this.dataGridView.TabIndex = 4;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 
             // inputPesquisarColaborador
             // 

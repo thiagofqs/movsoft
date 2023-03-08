@@ -42,13 +42,6 @@ namespace MovSoft
             dataGridView.DataSource = bll.ProcurarFornecedores(inputPesquisarColaborador.Text);
         }
 
-        private void EditarFornecedores(object sender, DataGridViewCellEventArgs e)
-        {
-            rowData = dataGridView.Rows[e.RowIndex];
-            Parametros.idFornecedor = int.Parse(rowData.Cells[0].Value.ToString());
-            AbrirCadFornecedor(true);
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PesquisarFornecedores();
@@ -62,6 +55,16 @@ namespace MovSoft
         private void btnCadFornecedores_Click(object sender, EventArgs e)
         {
             AbrirCadFornecedor(false);
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.idFornecedor = int.Parse(rowData.Cells[0].Value.ToString());
+                AbrirCadFornecedor(true);
+            }
         }
     }
 }

@@ -50,16 +50,6 @@ namespace MovSoft
             CarregarClientes();
         }
 
-        private void EditarClientes(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
-            {
-                rowData = dataGridView.Rows[e.RowIndex];
-                Parametros.idCliente = int.Parse(rowData.Cells[0].Value.ToString());
-                AbrirCadCliente(true);
-            }
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PesquisarClientes();
@@ -76,6 +66,16 @@ namespace MovSoft
         private void btnCadClientes_Click(object sender, EventArgs e)
         {
             AbrirCadCliente(false);
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.idCliente = int.Parse(rowData.Cells[0].Value.ToString());
+                AbrirCadCliente(true);
+            }
         }
     }
 }

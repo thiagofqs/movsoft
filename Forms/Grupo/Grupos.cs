@@ -10,6 +10,7 @@ namespace MovSoft
         Funcoes funcoes = new();
         GruposBLL bll = new();
         GruposDTO dto = new();
+        DataGridViewRow rowData = new();
 
         public Grupos()
         {
@@ -58,22 +59,38 @@ namespace MovSoft
             inputNomeGrupo.Text = "";
         }
 
-        private void AtribuirDadosDosInputs()
+        private void AtribuirDadosDosInputs(bool editar)
         {
+            if (editar)
+            {
+                dto.IdGrupo = (int)Parametros.idGrupo;
+            }
             dto.NomeGrupo = inputNomeGrupo.Text;
         }
 
         private void VoltarAoPadrao()
         {
+            btnCadastrar.Text = "Cadastrar";
+            btnEditar.Text = "Editar";
+            dataGridViewGrupos.Enabled = true;
             pnlCadastro.Enabled = false;
             LimparCampos();
+            btnCadastrar.Enabled = true;
+            btnEditar.Enabled = false;
             btnCancelar.Enabled = false;
         }
 
         private void CadastrarGrupo()
         {
-            AtribuirDadosDosInputs();
+            AtribuirDadosDosInputs(false);
             bll.CadastrarGrupo(dto);
+            CarregarGupos();
+        }
+
+        private void EditarGrupo()
+        {
+            AtribuirDadosDosInputs(true);
+            bll.EditarGrupo(dto);
             CarregarGupos();
         }
 
@@ -94,6 +111,8 @@ namespace MovSoft
             }
             else
             {
+                dataGridViewGrupos.Enabled = false;
+                btnCadastrar.Text = "Salvar";
                 pnlCadastro.Enabled = true;
                 btnCancelar.Enabled = true;
                 inputNomeGrupo.Focus();
@@ -118,6 +137,51 @@ namespace MovSoft
                 CadastrarGrupo();
                 VoltarAoPadrao();
             }
+        }
+
+        private void AtribuirDadosAosInputs()
+        {
+            inputNomeGrupo.Text = Parametros.nomeGrupo;
+        }
+
+        private void dataGridViewGrupos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                btnCadastrar.Enabled = false;
+                btnEditar.Enabled = true;
+                btnCancelar.Enabled = true;
+                rowData = dataGridViewGrupos.Rows[e.RowIndex];
+                Parametros.idGrupo = int.Parse(rowData.Cells[0].Value.ToString());
+                bll.PegarDados((int)Parametros.idGrupo);
+                AtribuirDadosAosInputs();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (pnlCadastro.Enabled)
+            {
+                if (inputNomeGrupo.Text == "")
+                {
+                    MessageBox.Show("Preencha todos os campos obrigatórios!");
+                    inputNomeGrupo.Focus();
+                }
+                else
+                {
+                    EditarGrupo();
+                    VoltarAoPadrao();
+                }
+            }
+            else
+            {
+                btnEditar.Text = "Salvar";
+                dataGridViewGrupos.Enabled = false;
+                pnlCadastro.Enabled = true;
+                btnCancelar.Enabled = true;
+                inputNomeGrupo.Focus();
+            }
+            
         }
     }
 }

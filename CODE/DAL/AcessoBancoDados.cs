@@ -59,7 +59,7 @@ namespace MovSoft.CODE.DAL
                 {
                     MySqlCommand comando = new(comandoSql, conn);
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Registro criado com sucesso!");
+                    MessageBox.Show("Registro salvo com sucesso!");
                 }
                 else
                 {

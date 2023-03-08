@@ -68,8 +68,8 @@
         //Dados Grupo Editar/Cadastro
 
         public static int? idGrupo { get; set; }
-        public static string? Grupo { get; set; }
-        public static string? GrupoAtivo { get; set; }
+        public static string? nomeGrupo { get; set; }
+        public static string? grupoAtivo { get; set; }
 
         //Controle de Formularios
         public static bool? editarUser { get; set; }

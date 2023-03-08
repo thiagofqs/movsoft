@@ -9,12 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Forms\Cliente\CadClienteEndereco.cs~RFc15113.TMP" />
     <None Remove="Forms\Cliente\CadClienteEndereco.Designer.cs~RFb2731b.TMP" />
     <None Remove="Forms\Cliente\CadClientePessoal.Designer.cs~RFb301be.TMP" />
     <None Remove="ListaClientes.resx~RF591ada.TMP" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\Insumos\Opcionais.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
