@@ -2,7 +2,7 @@
 using MovSoft.CODE.BLL;
 using System.Data;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class CadColaboradorPessoal : Form
     {
@@ -15,7 +15,6 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputNome);
             if (!primeiraAbertura)
             {
@@ -37,19 +36,6 @@ namespace MovSoft
                 AtribuirDadosAosInputs();
             }
         }
-
-        private void PosicionarObrs()
-        {
-            funcoes.PosicionarObrFilho(txtNome, txtObr1);
-            funcoes.PosicionarObrFilho(txtSobrenome, txtObr2);
-            funcoes.PosicionarObrFilho(txtSexo, txtObr3);
-            funcoes.PosicionarObrFilho(txtCpf, txtObr4);
-            funcoes.PosicionarObrFilho(txtNascimento, txtObr5);
-            funcoes.PosicionarObrFilho(txtEmail, txtObr6);
-            funcoes.PosicionarObrFilho(txtCelular, txtObr7);
-            funcoes.PosicionarObrFilho(txtAtivo, txtObr8);
-        }
-
 
         private void RemoverMascarasDeTexto()
         {

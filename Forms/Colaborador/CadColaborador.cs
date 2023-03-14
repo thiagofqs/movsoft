@@ -1,6 +1,6 @@
 ﻿using MovSoft.Classes;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class CadColaborador : Form
     {

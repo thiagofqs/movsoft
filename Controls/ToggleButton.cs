@@ -5,7 +5,7 @@ namespace MovSoft.Controls
     public class ToggleButton : CheckBox
     {
         //Fields
-        private Color onBackColor = Color.MediumSlateBlue;
+        private Color onBackColor = Color.FromArgb(0, 133, 132);//Color.MediumSlateBlue;
         private Color onToggleColor = Color.WhiteSmoke;
         private Color offBackColor = Color.Gray;
         private Color offToggleColor = Color.Gainsboro;
@@ -89,7 +89,7 @@ namespace MovSoft.Controls
         //Constructor
         public ToggleButton()
         {
-            MinimumSize = new Size(45, 22);
+            MinimumSize = new Size(45, 23);
         }
 
         //Methods

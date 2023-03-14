@@ -1,6 +1,6 @@
 using MovSoft.Classes;
 using MovSoft.CODE.BLL;
-using MovSoft.Forms.Grupo;
+using MovSoft.Forms;
 
 namespace MovSoft
 {
@@ -146,6 +146,41 @@ namespace MovSoft
         {
             Componentes frm = new();
             funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
+        private void ensaiosProvisaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
+        }
+
+        private void financasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
+        }
+
+        private void painelDeControleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
+        }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
+        }
+
+        private void produtosFinaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
+        }
+
+        private void analiseDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Opção indisponível!");
         }
 
         private void opcionaisToolStripMenuItem_Click(object sender, EventArgs e)

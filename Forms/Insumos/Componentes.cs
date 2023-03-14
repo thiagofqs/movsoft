@@ -1,4 +1,4 @@
-﻿namespace MovSoft.Forms.Grupo
+﻿namespace MovSoft.Forms
 {
     public partial class Componentes : Form
     {

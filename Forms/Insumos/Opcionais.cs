@@ -1,6 +1,6 @@
 ﻿using MovSoft.Classes;
 
-namespace MovSoft.Forms.Grupo
+namespace MovSoft.Forms
 {
     public partial class Opcionais : Form
     {

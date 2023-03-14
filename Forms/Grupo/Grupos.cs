@@ -1,9 +1,8 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
-using System.Windows.Forms;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class Grupos : Form
     {
@@ -16,13 +15,7 @@ namespace MovSoft
         {
             InitializeComponent();
             CarregarGupos();
-            PosicionarObrs();
             comboBoxFiltro.SelectedIndex = 0;
-        }
-
-        private void PosicionarObrs()
-        {
-            funcoes.PosicionarObrFilho(txtNomeGrupo, txtObr1);
         }
 
         public void CarregarGupos()

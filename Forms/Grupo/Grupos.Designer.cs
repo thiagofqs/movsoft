@@ -1,4 +1,4 @@
-﻿namespace MovSoft
+﻿namespace MovSoft.Forms
 {
     partial class Grupos
     {
@@ -28,24 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.inputPesquisar = new System.Windows.Forms.TextBox();
             this.dataGridViewGrupos = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.inputNomeGrupo = new System.Windows.Forms.TextBox();
-            this.txtNomeGrupo = new System.Windows.Forms.Label();
-            this.txtObr1 = new System.Windows.Forms.Label();
-            this.txtObr2 = new System.Windows.Forms.Label();
-            this.txtAtivo = new System.Windows.Forms.Label();
-            this.toggleButtonAtivo = new MovSoft.Controls.ToggleButton();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.toggleButton1 = new MovSoft.Controls.ToggleButton();
+            this.kryptonLabelNome = new Krypton.Toolkit.KryptonLabel();
             this.imgFiltro = new System.Windows.Forms.PictureBox();
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).BeginInit();
@@ -70,10 +68,10 @@
             this.dataGridViewGrupos.AllowUserToDeleteRows = false;
             this.dataGridViewGrupos.AllowUserToResizeColumns = false;
             this.dataGridViewGrupos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewGrupos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dataGridViewGrupos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -81,41 +79,41 @@
             this.dataGridViewGrupos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewGrupos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewGrupos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGrupos.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewGrupos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewGrupos.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewGrupos.EnableHeadersVisualStyles = false;
             this.dataGridViewGrupos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.dataGridViewGrupos.Location = new System.Drawing.Point(198, 274);
             this.dataGridViewGrupos.Name = "dataGridViewGrupos";
             this.dataGridViewGrupos.ReadOnly = true;
             this.dataGridViewGrupos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewGrupos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewGrupos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewGrupos.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewGrupos.RowTemplate.Height = 25;
             this.dataGridViewGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGrupos.ShowCellErrors = false;
@@ -151,71 +149,6 @@
             this.inputNomeGrupo.Size = new System.Drawing.Size(179, 23);
             this.inputNomeGrupo.TabIndex = 7;
             this.inputNomeGrupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputNomeGrupo_KeyPress);
-            // 
-            // txtNomeGrupo
-            // 
-            this.txtNomeGrupo.AutoSize = true;
-            this.txtNomeGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.txtNomeGrupo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtNomeGrupo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtNomeGrupo.Location = new System.Drawing.Point(12, 14);
-            this.txtNomeGrupo.Name = "txtNomeGrupo";
-            this.txtNomeGrupo.Size = new System.Drawing.Size(106, 17);
-            this.txtNomeGrupo.TabIndex = 0;
-            this.txtNomeGrupo.Text = "Nome do grupo";
-            // 
-            // txtObr1
-            // 
-            this.txtObr1.AutoSize = true;
-            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr1.Location = new System.Drawing.Point(124, 16);
-            this.txtObr1.Name = "txtObr1";
-            this.txtObr1.Size = new System.Drawing.Size(12, 15);
-            this.txtObr1.TabIndex = 0;
-            this.txtObr1.Text = "*";
-            // 
-            // txtObr2
-            // 
-            this.txtObr2.AutoSize = true;
-            this.txtObr2.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(264, 17);
-            this.txtObr2.Name = "txtObr2";
-            this.txtObr2.Size = new System.Drawing.Size(12, 15);
-            this.txtObr2.TabIndex = 1;
-            this.txtObr2.Text = "*";
-            // 
-            // txtAtivo
-            // 
-            this.txtAtivo.AutoSize = true;
-            this.txtAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.txtAtivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAtivo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtAtivo.Location = new System.Drawing.Point(217, 15);
-            this.txtAtivo.Name = "txtAtivo";
-            this.txtAtivo.Size = new System.Drawing.Size(41, 17);
-            this.txtAtivo.TabIndex = 1;
-            this.txtAtivo.Text = "Ativo";
-            this.txtAtivo.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // toggleButtonAtivo
-            // 
-            this.toggleButtonAtivo.AutoSize = true;
-            this.toggleButtonAtivo.Checked = true;
-            this.toggleButtonAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toggleButtonAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toggleButtonAtivo.FocusToggleColor = System.Drawing.Color.Gold;
-            this.toggleButtonAtivo.Location = new System.Drawing.Point(217, 35);
-            this.toggleButtonAtivo.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleButtonAtivo.Name = "toggleButtonAtivo";
-            this.toggleButtonAtivo.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleButtonAtivo.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleButtonAtivo.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.toggleButtonAtivo.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleButtonAtivo.Size = new System.Drawing.Size(45, 22);
-            this.toggleButtonAtivo.TabIndex = 8;
-            this.toggleButtonAtivo.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
             // 
@@ -279,18 +212,61 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.pnlCadastro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCadastro.Controls.Add(this.kryptonLabel1);
+            this.pnlCadastro.Controls.Add(this.toggleButton1);
+            this.pnlCadastro.Controls.Add(this.kryptonLabelNome);
             this.pnlCadastro.Controls.Add(this.inputNomeGrupo);
-            this.pnlCadastro.Controls.Add(this.txtNomeGrupo);
-            this.pnlCadastro.Controls.Add(this.txtObr1);
-            this.pnlCadastro.Controls.Add(this.toggleButtonAtivo);
-            this.pnlCadastro.Controls.Add(this.txtObr2);
-            this.pnlCadastro.Controls.Add(this.txtAtivo);
             this.pnlCadastro.Enabled = false;
             this.pnlCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.pnlCadastro.Location = new System.Drawing.Point(198, 36);
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(561, 162);
             this.pnlCadastro.TabIndex = 17;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(222, 7);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(57, 21);
+            this.kryptonLabel1.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabel1.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabel1.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabel1.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabel1.TabIndex = 11;
+            this.kryptonLabel1.Values.ExtraText = "*";
+            this.kryptonLabel1.Values.Text = "Ativo";
+            // 
+            // toggleButton1
+            // 
+            this.toggleButton1.AutoSize = true;
+            this.toggleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.toggleButton1.Checked = true;
+            this.toggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toggleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.toggleButton1.FocusToggleColor = System.Drawing.Color.Gold;
+            this.toggleButton1.Location = new System.Drawing.Point(222, 34);
+            this.toggleButton1.MinimumSize = new System.Drawing.Size(45, 23);
+            this.toggleButton1.Name = "toggleButton1";
+            this.toggleButton1.OffBackColor = System.Drawing.Color.Gray;
+            this.toggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.toggleButton1.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
+            this.toggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.toggleButton1.Size = new System.Drawing.Size(45, 23);
+            this.toggleButton1.TabIndex = 10;
+            this.toggleButton1.UseVisualStyleBackColor = false;
+            // 
+            // kryptonLabelNome
+            // 
+            this.kryptonLabelNome.Location = new System.Drawing.Point(12, 7);
+            this.kryptonLabelNome.Name = "kryptonLabelNome";
+            this.kryptonLabelNome.Size = new System.Drawing.Size(123, 21);
+            this.kryptonLabelNome.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelNome.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelNome.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelNome.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelNome.TabIndex = 9;
+            this.kryptonLabelNome.Values.ExtraText = "*";
+            this.kryptonLabelNome.Values.Text = "Nome do grupo";
             // 
             // imgFiltro
             // 
@@ -352,16 +328,14 @@
         private DataGridView dataGridViewGrupos;
         private Button btnPesquisar;
         private TextBox inputNomeGrupo;
-        private Label txtNomeGrupo;
-        private Label txtObr1;
-        private Label txtObr2;
-        private Label txtAtivo;
-        private Controls.ToggleButton toggleButtonAtivo;
         private Button btnCadastrar;
         private Button btnCancelar;
         private Button btnEditar;
         private Panel pnlCadastro;
         private PictureBox imgFiltro;
         private ComboBox comboBoxFiltro;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Controls.ToggleButton toggleButton1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelNome;
     }
 }

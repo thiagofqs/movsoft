@@ -1,7 +1,7 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class ListaColaboradores : Form
     {

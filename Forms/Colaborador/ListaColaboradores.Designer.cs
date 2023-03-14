@@ -1,4 +1,4 @@
-﻿namespace MovSoft
+﻿namespace MovSoft.Forms
 {
     partial class ListaColaboradores
     {

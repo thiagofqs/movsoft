@@ -1,4 +1,4 @@
-﻿namespace MovSoft
+﻿namespace MovSoft.Forms
 {
     partial class CadUsuario
     {
@@ -29,20 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.txtObr8 = new System.Windows.Forms.Label();
-            this.txtAtivo = new System.Windows.Forms.Label();
-            this.toggleButton = new MovSoft.Controls.ToggleButton();
+            this.toggleButton1 = new MovSoft.Controls.ToggleButton();
+            this.kryptonLabelConfirmarSenha = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabelSenha = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabelCargo = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabelUsuario = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabelAtivo = new Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabelColaborador = new Krypton.Toolkit.KryptonLabel();
             this.inputboxColaborador = new System.Windows.Forms.ComboBox();
-            this.txtObr5 = new System.Windows.Forms.Label();
-            this.txtObr4 = new System.Windows.Forms.Label();
-            this.txtObr3 = new System.Windows.Forms.Label();
-            this.txtObr2 = new System.Windows.Forms.Label();
-            this.txtObr1 = new System.Windows.Forms.Label();
-            this.txtColaborador = new System.Windows.Forms.Label();
-            this.txtConfirmarSenha = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtTitulo = new System.Windows.Forms.Label();
             this.inputboxCargo = new System.Windows.Forms.ComboBox();
@@ -58,20 +52,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.pnlContent.Controls.Add(this.txtObr8);
-            this.pnlContent.Controls.Add(this.txtAtivo);
-            this.pnlContent.Controls.Add(this.toggleButton);
+            this.pnlContent.Controls.Add(this.toggleButton1);
+            this.pnlContent.Controls.Add(this.kryptonLabelConfirmarSenha);
+            this.pnlContent.Controls.Add(this.kryptonLabelSenha);
+            this.pnlContent.Controls.Add(this.kryptonLabelCargo);
+            this.pnlContent.Controls.Add(this.kryptonLabelUsuario);
+            this.pnlContent.Controls.Add(this.kryptonLabelAtivo);
+            this.pnlContent.Controls.Add(this.kryptonLabelColaborador);
             this.pnlContent.Controls.Add(this.inputboxColaborador);
-            this.pnlContent.Controls.Add(this.txtObr5);
-            this.pnlContent.Controls.Add(this.txtObr4);
-            this.pnlContent.Controls.Add(this.txtObr3);
-            this.pnlContent.Controls.Add(this.txtObr2);
-            this.pnlContent.Controls.Add(this.txtObr1);
-            this.pnlContent.Controls.Add(this.txtColaborador);
-            this.pnlContent.Controls.Add(this.txtConfirmarSenha);
-            this.pnlContent.Controls.Add(this.txtSenha);
-            this.pnlContent.Controls.Add(this.txtCargo);
-            this.pnlContent.Controls.Add(this.txtUsuario);
             this.pnlContent.Controls.Add(this.btnCadastrar);
             this.pnlContent.Controls.Add(this.txtTitulo);
             this.pnlContent.Controls.Add(this.inputboxCargo);
@@ -83,50 +71,109 @@
             this.pnlContent.Size = new System.Drawing.Size(734, 341);
             this.pnlContent.TabIndex = 0;
             // 
-            // txtObr8
+            // toggleButton1
             // 
-            this.txtObr8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr8.AutoSize = true;
-            this.txtObr8.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr8.Location = new System.Drawing.Point(489, 81);
-            this.txtObr8.Name = "txtObr8";
-            this.txtObr8.Size = new System.Drawing.Size(12, 15);
-            this.txtObr8.TabIndex = 1;
-            this.txtObr8.Text = "*";
+            this.toggleButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.toggleButton1.AutoSize = true;
+            this.toggleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.toggleButton1.Checked = true;
+            this.toggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toggleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.toggleButton1.FocusToggleColor = System.Drawing.Color.Gold;
+            this.toggleButton1.Location = new System.Drawing.Point(442, 99);
+            this.toggleButton1.MinimumSize = new System.Drawing.Size(45, 23);
+            this.toggleButton1.Name = "toggleButton1";
+            this.toggleButton1.OffBackColor = System.Drawing.Color.Gray;
+            this.toggleButton1.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.toggleButton1.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
+            this.toggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.toggleButton1.Size = new System.Drawing.Size(45, 23);
+            this.toggleButton1.TabIndex = 1;
+            this.toggleButton1.UseVisualStyleBackColor = false;
             // 
-            // txtAtivo
+            // kryptonLabelConfirmarSenha
             // 
-            this.txtAtivo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAtivo.AutoSize = true;
-            this.txtAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.txtAtivo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAtivo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtAtivo.Location = new System.Drawing.Point(442, 79);
-            this.txtAtivo.Name = "txtAtivo";
-            this.txtAtivo.Size = new System.Drawing.Size(41, 17);
-            this.txtAtivo.TabIndex = 1;
-            this.txtAtivo.Text = "Ativo";
-            this.txtAtivo.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.kryptonLabelConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabelConfirmarSenha.Location = new System.Drawing.Point(390, 197);
+            this.kryptonLabelConfirmarSenha.Name = "kryptonLabelConfirmarSenha";
+            this.kryptonLabelConfirmarSenha.Size = new System.Drawing.Size(127, 21);
+            this.kryptonLabelConfirmarSenha.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelConfirmarSenha.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelConfirmarSenha.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelConfirmarSenha.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelConfirmarSenha.TabIndex = 5;
+            this.kryptonLabelConfirmarSenha.Values.ExtraText = "*";
+            this.kryptonLabelConfirmarSenha.Values.Text = "Confirmar senha";
             // 
-            // toggleButton
+            // kryptonLabelSenha
             // 
-            this.toggleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toggleButton.AutoSize = true;
-            this.toggleButton.Checked = true;
-            this.toggleButton.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toggleButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toggleButton.FocusToggleColor = System.Drawing.Color.Gold;
-            this.toggleButton.Location = new System.Drawing.Point(442, 99);
-            this.toggleButton.MinimumSize = new System.Drawing.Size(45, 22);
-            this.toggleButton.Name = "toggleButton";
-            this.toggleButton.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleButton.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleButton.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.toggleButton.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleButton.Size = new System.Drawing.Size(45, 22);
-            this.toggleButton.TabIndex = 1;
-            this.toggleButton.UseVisualStyleBackColor = true;
+            this.kryptonLabelSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabelSenha.Location = new System.Drawing.Point(191, 197);
+            this.kryptonLabelSenha.Name = "kryptonLabelSenha";
+            this.kryptonLabelSenha.Size = new System.Drawing.Size(61, 21);
+            this.kryptonLabelSenha.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelSenha.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelSenha.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelSenha.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelSenha.TabIndex = 4;
+            this.kryptonLabelSenha.Values.ExtraText = "*";
+            this.kryptonLabelSenha.Values.Text = "Senha";
+            // 
+            // kryptonLabelCargo
+            // 
+            this.kryptonLabelCargo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabelCargo.Location = new System.Drawing.Point(390, 137);
+            this.kryptonLabelCargo.Name = "kryptonLabelCargo";
+            this.kryptonLabelCargo.Size = new System.Drawing.Size(60, 21);
+            this.kryptonLabelCargo.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelCargo.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelCargo.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelCargo.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelCargo.TabIndex = 3;
+            this.kryptonLabelCargo.Values.ExtraText = "*";
+            this.kryptonLabelCargo.Values.Text = "Cargo";
+            // 
+            // kryptonLabelUsuario
+            // 
+            this.kryptonLabelUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabelUsuario.Location = new System.Drawing.Point(191, 137);
+            this.kryptonLabelUsuario.Name = "kryptonLabelUsuario";
+            this.kryptonLabelUsuario.Size = new System.Drawing.Size(71, 21);
+            this.kryptonLabelUsuario.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelUsuario.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelUsuario.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelUsuario.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelUsuario.TabIndex = 2;
+            this.kryptonLabelUsuario.Values.ExtraText = "*";
+            this.kryptonLabelUsuario.Values.Text = "Usuário";
+            // 
+            // kryptonLabelAtivo
+            // 
+            this.kryptonLabelAtivo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabelAtivo.Location = new System.Drawing.Point(442, 73);
+            this.kryptonLabelAtivo.Name = "kryptonLabelAtivo";
+            this.kryptonLabelAtivo.Size = new System.Drawing.Size(57, 21);
+            this.kryptonLabelAtivo.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelAtivo.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelAtivo.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelAtivo.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelAtivo.TabIndex = 1;
+            this.kryptonLabelAtivo.Values.ExtraText = "*";
+            this.kryptonLabelAtivo.Values.Text = "Ativo";
+            // 
+            // kryptonLabelColaborador
+            // 
+            this.kryptonLabelColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kryptonLabelColaborador.Location = new System.Drawing.Point(191, 73);
+            this.kryptonLabelColaborador.Name = "kryptonLabelColaborador";
+            this.kryptonLabelColaborador.Size = new System.Drawing.Size(101, 21);
+            this.kryptonLabelColaborador.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelColaborador.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelColaborador.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonLabelColaborador.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonLabelColaborador.TabIndex = 0;
+            this.kryptonLabelColaborador.Values.ExtraText = "*";
+            this.kryptonLabelColaborador.Values.Text = "Colaborador";
             // 
             // inputboxColaborador
             // 
@@ -140,131 +187,6 @@
             this.inputboxColaborador.Name = "inputboxColaborador";
             this.inputboxColaborador.Size = new System.Drawing.Size(153, 23);
             this.inputboxColaborador.TabIndex = 0;
-            // 
-            // txtObr5
-            // 
-            this.txtObr5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr5.AutoSize = true;
-            this.txtObr5.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr5.Location = new System.Drawing.Point(507, 206);
-            this.txtObr5.Name = "txtObr5";
-            this.txtObr5.Size = new System.Drawing.Size(12, 15);
-            this.txtObr5.TabIndex = 5;
-            this.txtObr5.Text = "*";
-            // 
-            // txtObr4
-            // 
-            this.txtObr4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr4.AutoSize = true;
-            this.txtObr4.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr4.Location = new System.Drawing.Point(242, 206);
-            this.txtObr4.Name = "txtObr4";
-            this.txtObr4.Size = new System.Drawing.Size(12, 15);
-            this.txtObr4.TabIndex = 4;
-            this.txtObr4.Text = "*";
-            // 
-            // txtObr3
-            // 
-            this.txtObr3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr3.AutoSize = true;
-            this.txtObr3.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr3.Location = new System.Drawing.Point(442, 143);
-            this.txtObr3.Name = "txtObr3";
-            this.txtObr3.Size = new System.Drawing.Size(12, 15);
-            this.txtObr3.TabIndex = 3;
-            this.txtObr3.Text = "*";
-            // 
-            // txtObr2
-            // 
-            this.txtObr2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr2.AutoSize = true;
-            this.txtObr2.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr2.Location = new System.Drawing.Point(252, 143);
-            this.txtObr2.Name = "txtObr2";
-            this.txtObr2.Size = new System.Drawing.Size(12, 15);
-            this.txtObr2.TabIndex = 2;
-            this.txtObr2.Text = "*";
-            // 
-            // txtObr1
-            // 
-            this.txtObr1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObr1.AutoSize = true;
-            this.txtObr1.BackColor = System.Drawing.Color.Transparent;
-            this.txtObr1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObr1.Location = new System.Drawing.Point(282, 81);
-            this.txtObr1.Name = "txtObr1";
-            this.txtObr1.Size = new System.Drawing.Size(12, 15);
-            this.txtObr1.TabIndex = 0;
-            this.txtObr1.Text = "*";
-            // 
-            // txtColaborador
-            // 
-            this.txtColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtColaborador.AutoSize = true;
-            this.txtColaborador.BackColor = System.Drawing.Color.Transparent;
-            this.txtColaborador.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtColaborador.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtColaborador.Location = new System.Drawing.Point(192, 79);
-            this.txtColaborador.Name = "txtColaborador";
-            this.txtColaborador.Size = new System.Drawing.Size(84, 17);
-            this.txtColaborador.TabIndex = 0;
-            this.txtColaborador.Text = "Colaborador";
-            // 
-            // txtConfirmarSenha
-            // 
-            this.txtConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtConfirmarSenha.AutoSize = true;
-            this.txtConfirmarSenha.BackColor = System.Drawing.Color.Transparent;
-            this.txtConfirmarSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(391, 204);
-            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(110, 17);
-            this.txtConfirmarSenha.TabIndex = 5;
-            this.txtConfirmarSenha.Text = "Confirmar senha";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSenha.AutoSize = true;
-            this.txtSenha.BackColor = System.Drawing.Color.Transparent;
-            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSenha.Location = new System.Drawing.Point(191, 204);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(45, 17);
-            this.txtSenha.TabIndex = 4;
-            this.txtSenha.Text = "Senha";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCargo.AutoSize = true;
-            this.txtCargo.BackColor = System.Drawing.Color.Transparent;
-            this.txtCargo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCargo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCargo.Location = new System.Drawing.Point(392, 141);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(44, 17);
-            this.txtCargo.TabIndex = 3;
-            this.txtCargo.Text = "Cargo";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsuario.AutoSize = true;
-            this.txtUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUsuario.Location = new System.Drawing.Point(191, 141);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(55, 17);
-            this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "Usuário";
             // 
             // btnCadastrar
             // 
@@ -371,19 +293,13 @@
         private TextBox inputUsuario;
         private Label txtTitulo;
         private Button btnCadastrar;
-        private Label txtColaborador;
-        private Label txtConfirmarSenha;
-        private Label txtSenha;
-        private Label txtCargo;
-        private Label txtUsuario;
-        private Label txtObr5;
-        private Label txtObr4;
-        private Label txtObr3;
-        private Label txtObr2;
-        private Label txtObr1;
         private ComboBox inputboxColaborador;
-        private Label txtObr8;
-        private Label txtAtivo;
-        private Controls.ToggleButton toggleButton;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelConfirmarSenha;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelSenha;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelCargo;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelUsuario;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelAtivo;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelColaborador;
+        private Controls.ToggleButton toggleButton1;
     }
 }

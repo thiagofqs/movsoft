@@ -3,7 +3,7 @@ using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
 using Newtonsoft.Json;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class CadClienteEndereco : Form
     {
@@ -18,7 +18,6 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputCep);
             if (!primeiraAbertura)
             {
@@ -31,16 +30,6 @@ namespace MovSoft
                 editarCliente = true;
                 AtribuirDadosAosInputs();
             }
-        }
-
-        private void PosicionarObrs()
-        {
-            funcoes.PosicionarObrFilho(txtCep, txtObr1);
-            funcoes.PosicionarObrFilho(txtLogradouro, txtObr2);
-            funcoes.PosicionarObrFilho(txtNumero, txtObr3);
-            funcoes.PosicionarObrFilho(txtBairro, txtObr4);
-            funcoes.PosicionarObrFilho(txtCidade, txtObr5);
-            funcoes.PosicionarObrFilho(txtUf, txtObr6);
         }
 
         private void RemoverMascarasDeTexto()

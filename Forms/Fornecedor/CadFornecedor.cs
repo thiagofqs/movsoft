@@ -3,7 +3,7 @@ using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
 using Newtonsoft.Json;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class CadFornecedor : Form
     {
@@ -16,7 +16,6 @@ namespace MovSoft
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
             if (editar)
             {
@@ -30,19 +29,6 @@ namespace MovSoft
             {
                 editarFornecedor = false;
             }
-        }
-
-        private void PosicionarObrs()
-        {
-            funcoes.PosicionarObrFilho(txtNomeFantasia, txtObr0);
-            funcoes.PosicionarObrFilho(txtRazao, txtObr1);
-            funcoes.PosicionarObrFilho(txtCnpj, txtObr2);
-            funcoes.PosicionarObrFilho(txtCep, txtObr3);
-            funcoes.PosicionarObrFilho(txtLogradouro, txtObr4);
-            funcoes.PosicionarObrFilho(txtNumero, txtObr5);
-            funcoes.PosicionarObrFilho(txtBairro, txtObr6);
-            funcoes.PosicionarObrFilho(txtCidade, txtObr7);
-            funcoes.PosicionarObrFilho(txtUf, txtObr8);
         }
 
         private void AtualizarFornecedores()

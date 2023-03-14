@@ -30,14 +30,6 @@ namespace MovSoft.Classes
             }
         }
 
-        public void PosicionarObrFilho(Label pai, Label filho)
-        {
-            pai.AutoSize = false;
-            pai.Controls.Add(filho);
-            filho.Location = new Point(pai.Width - filho.Width + 10, -4);
-            pai.Width += filho.Width;
-        }
-
         public void PrimeiroInputEmFoco(Control input)
         {
             input.Focus();

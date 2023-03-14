@@ -2,7 +2,7 @@
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class CadUsuario : Form
     {
@@ -28,7 +28,6 @@ namespace MovSoft
             InitializeComponent();
             ListarColaboradores();
             ListarCargos();
-            PosicionarObrs();
             funcoes.PrimeiroInputEmFoco(inputboxColaborador);
             if (Parametros.editarUser == true)
             {
@@ -37,15 +36,6 @@ namespace MovSoft
                 btnCadastrar.Text = "Salvar";
                 AtribuirValores();
             }
-        }
-
-        private void PosicionarObrs()
-        {
-            funcoes.PosicionarObrFilho(txtColaborador, txtObr1);
-            funcoes.PosicionarObrFilho(txtUsuario, txtObr2);
-            funcoes.PosicionarObrFilho(txtCargo, txtObr3);
-            funcoes.PosicionarObrFilho(txtSenha, txtObr4);
-            funcoes.PosicionarObrFilho(txtConfirmarSenha, txtObr5);
         }
 
         private void ListarColaboradores()

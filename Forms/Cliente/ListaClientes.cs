@@ -1,9 +1,7 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
-using Mysqlx.Crud;
-using Mysqlx.Resultset;
 
-namespace MovSoft
+namespace MovSoft.Forms
 {
     public partial class ListaClientes : Form
     {
