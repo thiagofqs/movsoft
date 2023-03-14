@@ -37,8 +37,6 @@
             this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
             this.imgFiltro = new System.Windows.Forms.PictureBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtUnidadeDeMedida = new System.Windows.Forms.Label();
-            this.txtObg3 = new System.Windows.Forms.Label();
             this.comboBoxUnidadeDeMedida = new System.Windows.Forms.ComboBox();
             this.toggleButtonAtivoComponentes = new MovSoft.Controls.ToggleButton();
             this.inputNomeComponente = new System.Windows.Forms.TextBox();
@@ -52,6 +50,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dataGridViewComponentes = new System.Windows.Forms.DataGridView();
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.txtUnidadeDeMedida = new System.Windows.Forms.Label();
+            this.txtObg3 = new System.Windows.Forms.Label();
             this.numericUpDownComponentes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).BeginInit();
@@ -110,29 +110,6 @@
             this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtUnidadeDeMedida
-            // 
-            this.txtUnidadeDeMedida.AutoSize = true;
-            this.txtUnidadeDeMedida.BackColor = System.Drawing.Color.Transparent;
-            this.txtUnidadeDeMedida.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUnidadeDeMedida.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUnidadeDeMedida.Location = new System.Drawing.Point(154, 82);
-            this.txtUnidadeDeMedida.Name = "txtUnidadeDeMedida";
-            this.txtUnidadeDeMedida.Size = new System.Drawing.Size(128, 17);
-            this.txtUnidadeDeMedida.TabIndex = 8;
-            this.txtUnidadeDeMedida.Text = "Unidade de medida";
-            // 
-            // txtObg3
-            // 
-            this.txtObg3.AutoSize = true;
-            this.txtObg3.BackColor = System.Drawing.Color.Transparent;
-            this.txtObg3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.txtObg3.Location = new System.Drawing.Point(288, 84);
-            this.txtObg3.Name = "txtObg3";
-            this.txtObg3.Size = new System.Drawing.Size(12, 15);
-            this.txtObg3.TabIndex = 9;
-            this.txtObg3.Text = "*";
             // 
             // comboBoxUnidadeDeMedida
             // 
@@ -383,6 +360,29 @@
             this.pnlCadastro.Size = new System.Drawing.Size(561, 162);
             this.pnlCadastro.TabIndex = 24;
             // 
+            // txtUnidadeDeMedida
+            // 
+            this.txtUnidadeDeMedida.AutoSize = true;
+            this.txtUnidadeDeMedida.BackColor = System.Drawing.Color.Transparent;
+            this.txtUnidadeDeMedida.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtUnidadeDeMedida.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtUnidadeDeMedida.Location = new System.Drawing.Point(154, 82);
+            this.txtUnidadeDeMedida.Name = "txtUnidadeDeMedida";
+            this.txtUnidadeDeMedida.Size = new System.Drawing.Size(128, 17);
+            this.txtUnidadeDeMedida.TabIndex = 8;
+            this.txtUnidadeDeMedida.Text = "Unidade de medida";
+            // 
+            // txtObg3
+            // 
+            this.txtObg3.AutoSize = true;
+            this.txtObg3.BackColor = System.Drawing.Color.Transparent;
+            this.txtObg3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.txtObg3.Location = new System.Drawing.Point(288, 84);
+            this.txtObg3.Name = "txtObg3";
+            this.txtObg3.Size = new System.Drawing.Size(12, 15);
+            this.txtObg3.TabIndex = 9;
+            this.txtObg3.Text = "*";
+            // 
             // numericUpDownComponentes
             // 
             this.numericUpDownComponentes.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -435,8 +435,6 @@
         private TextBox inputNomeComponente;
         private Label txtAtivo;
         private Controls.ToggleButton toggleButtonAtivoComponentes;
-        private Label txtUnidadeDeMedida;
-        private Label txtObg3;
         private ComboBox comboBoxUnidadeDeMedida;
         private Label txtObg1;
         private Label txtNomeComponentes;
@@ -448,5 +446,7 @@
         private DataGridView dataGridViewComponentes;
         private Panel pnlCadastro;
         private NumericUpDown numericUpDownComponentes;
+        private Label txtObg3;
+        private Label txtUnidadeDeMedida;
     }
 }
