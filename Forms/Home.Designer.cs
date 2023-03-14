@@ -146,9 +146,9 @@
             // 
             // menu
             // 
-            this.menu.AutoSize = false;
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.menu.Dock = System.Windows.Forms.DockStyle.None;
+            this.menu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuárioToolStripMenuItem,
             this.clientesFornecedoresToolStripMenuItem,
@@ -158,7 +158,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(591, 97);
+            this.menu.Size = new System.Drawing.Size(585, 97);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -299,6 +299,7 @@
             this.processosToolStripMenuItem.Name = "processosToolStripMenuItem";
             this.processosToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.processosToolStripMenuItem.Text = "Processos";
+            this.processosToolStripMenuItem.Click += new System.EventHandler(this.processosToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
@@ -320,7 +321,7 @@
             this.estoqueToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.estoqueToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.estoqueToolStripMenuItem.Text = "Estoque";
             this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
             // 
@@ -329,7 +330,7 @@
             this.vendaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.vendaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.vendaToolStripMenuItem.Text = "Venda";
             this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
             // 
@@ -445,6 +446,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(930, 600);
             this.Controls.Add(this.pnlHome);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.menu;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -454,6 +456,7 @@
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.pnlCargo.ResumeLayout(false);
