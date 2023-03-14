@@ -66,30 +66,24 @@ namespace MovSoft
             InitializeComponent();
             menu.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
             menuSaida.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
-            pnlUsuario.Controls.Add(txtUsuario);
-            pnlCargo.Controls.Add(txtCargo);
-            pnlHeader.Controls.Add(pnlUsuario);
-            pnlHeader.Controls.Add(pnlCargo);
-            pnlHeader.Controls.Add(menu);
-            pnlHeader.Controls.Add(menuSaida);
             MudarCursorDoMenu();
-            txtUsuario.Text += Parametros.nomeUser;
-            txtCargo.Text += Parametros.cargoUser;
+            AdicionarNomeDoUsuarioECargo();
+            AjustarTamanhoInformacaoDoUsuario();
         }
 
-        public bool VerificarPermissao(int permissao, Form forms, Form activeForm, Panel pnlMain)
+        private void AdicionarNomeDoUsuarioECargo()
         {
-            bool podeAcessar;
-            bll.VerificarPermissao((int)Parametros.idCargoUser, permissao);
-            if (Parametros.permissaoUser == 'S' || Parametros.adminUser == 'S')
-            {
-                podeAcessar = true;
-            }
-            else
-            {
-                podeAcessar = false;
-            }
-            return podeAcessar;
+            kryptonTextBoxUsuario.Text += " " + Parametros.nomeUser;
+            kryptonTextBoxCargo.Text += " " + Parametros.cargoUser;
+        }
+
+        private void AjustarTamanhoInformacaoDoUsuario()
+        {
+            Size preferredSizeUsuario = kryptonTextBoxUsuario.GetPreferredSize(Size.Empty);
+            Size preferredSizeCargo = kryptonTextBoxCargo.GetPreferredSize(Size.Empty);
+            Size maiorTamanho = new Size(Math.Max(preferredSizeUsuario.Width, preferredSizeCargo.Width), Math.Max(preferredSizeUsuario.Height, preferredSizeCargo.Height));
+            kryptonTextBoxUsuario.Size = maiorTamanho;
+            kryptonTextBoxCargo.Size = maiorTamanho;
         }
 
         private void MudarCursorDoMenu()
@@ -165,7 +159,8 @@ namespace MovSoft
 
         private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            Estoque frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
 
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)

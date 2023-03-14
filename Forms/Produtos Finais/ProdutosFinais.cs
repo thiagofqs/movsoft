@@ -5,6 +5,7 @@
         public ProdutosFinais()
         {
             InitializeComponent();
+            comboBoxFiltro.SelectedIndex = 0;
         }
     }
 }

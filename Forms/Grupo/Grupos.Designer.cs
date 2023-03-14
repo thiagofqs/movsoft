@@ -219,7 +219,7 @@
             this.pnlCadastro.Location = new System.Drawing.Point(198, 36);
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(561, 162);
-            this.pnlCadastro.TabIndex = 17;
+            this.pnlCadastro.TabIndex = 7;
             // 
             // kryptonLabel1
             // 

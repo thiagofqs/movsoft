@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.txtCargo = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.Label();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.txtMovSoft = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.kryptonTextBoxCargo = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBoxUsuario = new Krypton.Toolkit.KryptonTextBox();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,45 +57,14 @@
             this.financasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analiseDeDadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.painelDeControleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlCargo = new System.Windows.Forms.Panel();
-            this.pnlUsuario = new System.Windows.Forms.Panel();
             this.menuSaida = new System.Windows.Forms.MenuStrip();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHome.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.menu.SuspendLayout();
-            this.pnlCargo.SuspendLayout();
-            this.pnlUsuario.SuspendLayout();
             this.menuSaida.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCargo.AutoSize = true;
-            this.txtCargo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.txtCargo.Location = new System.Drawing.Point(0, -1);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Padding = new System.Windows.Forms.Padding(5);
-            this.txtCargo.Size = new System.Drawing.Size(55, 25);
-            this.txtCargo.TabIndex = 4;
-            this.txtCargo.Text = "Cargo: ";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsuario.AutoSize = true;
-            this.txtUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.txtUsuario.Location = new System.Drawing.Point(0, -1);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.txtUsuario.Size = new System.Drawing.Size(65, 25);
-            this.txtUsuario.TabIndex = 3;
-            this.txtUsuario.Text = "Usuário: ";
             // 
             // pnlHome
             // 
@@ -133,9 +102,9 @@
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
+            this.pnlHeader.Controls.Add(this.kryptonTextBoxCargo);
+            this.pnlHeader.Controls.Add(this.kryptonTextBoxUsuario);
             this.pnlHeader.Controls.Add(this.menu);
-            this.pnlHeader.Controls.Add(this.pnlCargo);
-            this.pnlHeader.Controls.Add(this.pnlUsuario);
             this.pnlHeader.Controls.Add(this.menuSaida);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
@@ -143,6 +112,50 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(930, 97);
             this.pnlHeader.TabIndex = 2;
+            // 
+            // kryptonTextBoxCargo
+            // 
+            this.kryptonTextBoxCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonTextBoxCargo.Enabled = false;
+            this.kryptonTextBoxCargo.Location = new System.Drawing.Point(610, 51);
+            this.kryptonTextBoxCargo.Name = "kryptonTextBoxCargo";
+            this.kryptonTextBoxCargo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kryptonTextBoxCargo.ReadOnly = true;
+            this.kryptonTextBoxCargo.Size = new System.Drawing.Size(205, 29);
+            this.kryptonTextBoxCargo.StateCommon.Border.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonTextBoxCargo.StateCommon.Border.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonTextBoxCargo.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBoxCargo.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBoxCargo.StateCommon.Border.Rounding = 8F;
+            this.kryptonTextBoxCargo.StateCommon.Border.Width = 1;
+            this.kryptonTextBoxCargo.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.kryptonTextBoxCargo.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kryptonTextBoxCargo.TabIndex = 0;
+            this.kryptonTextBoxCargo.Text = "Cargo:";
+            // 
+            // kryptonTextBoxUsuario
+            // 
+            this.kryptonTextBoxUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.kryptonTextBoxUsuario.Enabled = false;
+            this.kryptonTextBoxUsuario.Location = new System.Drawing.Point(610, 18);
+            this.kryptonTextBoxUsuario.Name = "kryptonTextBoxUsuario";
+            this.kryptonTextBoxUsuario.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kryptonTextBoxUsuario.ReadOnly = true;
+            this.kryptonTextBoxUsuario.Size = new System.Drawing.Size(205, 29);
+            this.kryptonTextBoxUsuario.StateCommon.Border.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonTextBoxUsuario.StateCommon.Border.Color2 = System.Drawing.Color.WhiteSmoke;
+            this.kryptonTextBoxUsuario.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBoxUsuario.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBoxUsuario.StateCommon.Border.Rounding = 8F;
+            this.kryptonTextBoxUsuario.StateCommon.Border.Width = 1;
+            this.kryptonTextBoxUsuario.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.kryptonTextBoxUsuario.StateCommon.Content.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.kryptonTextBoxUsuario.TabIndex = 0;
+            this.kryptonTextBoxUsuario.Text = "Usuário:";
             // 
             // menu
             // 
@@ -387,26 +400,6 @@
             this.painelDeControleToolStripMenuItem.Text = "Painel de controle";
             this.painelDeControleToolStripMenuItem.Click += new System.EventHandler(this.painelDeControleToolStripMenuItem_Click);
             // 
-            // pnlCargo
-            // 
-            this.pnlCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlCargo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlCargo.Controls.Add(this.txtCargo);
-            this.pnlCargo.Location = new System.Drawing.Point(593, 50);
-            this.pnlCargo.Name = "pnlCargo";
-            this.pnlCargo.Size = new System.Drawing.Size(200, 25);
-            this.pnlCargo.TabIndex = 5;
-            // 
-            // pnlUsuario
-            // 
-            this.pnlUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlUsuario.Controls.Add(this.txtUsuario);
-            this.pnlUsuario.Location = new System.Drawing.Point(593, 20);
-            this.pnlUsuario.Name = "pnlUsuario";
-            this.pnlUsuario.Size = new System.Drawing.Size(200, 25);
-            this.pnlUsuario.TabIndex = 3;
-            // 
             // menuSaida
             // 
             this.menuSaida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -459,10 +452,6 @@
             this.pnlHeader.PerformLayout();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
-            this.pnlCargo.ResumeLayout(false);
-            this.pnlCargo.PerformLayout();
-            this.pnlUsuario.ResumeLayout(false);
-            this.pnlUsuario.PerformLayout();
             this.menuSaida.ResumeLayout(false);
             this.menuSaida.PerformLayout();
             this.ResumeLayout(false);
@@ -471,8 +460,6 @@
 
         #endregion
         private Panel pnlHome;
-        private Label txtCargo;
-        private Label txtUsuario;
         private MenuStrip menu;
         private ToolStripMenuItem usuárioToolStripMenuItem;
         private ToolStripMenuItem colaboradoresToolStripMenuItem;
@@ -497,10 +484,10 @@
         private Panel pnlHeader;
         private MenuStrip menuSaida;
         private ToolStripMenuItem sairToolStripMenuItem;
-        private Panel pnlUsuario;
-        private Panel pnlCargo;
         private Label txtMovSoft;
         private ToolStripMenuItem componentesToolStripMenuItem;
         private ToolStripMenuItem opcionaisToolStripMenuItem;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBoxUsuario;
+        private Krypton.Toolkit.KryptonTextBox kryptonTextBoxCargo;
     }
 }
