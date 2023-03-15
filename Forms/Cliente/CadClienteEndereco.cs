@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace MovSoft.Forms
 {
-    public partial class CadClienteEndereco : Form
+    public partial class CadClienteEndereco : Pai
     {
         Funcoes funcoes = new();
         ClientesBLL bllClientes = new();
@@ -17,6 +17,7 @@ namespace MovSoft.Forms
         public CadClienteEndereco(bool primeiraAbertura, bool editar)
         {
             InitializeComponent();
+            AjustarSelectorMaskedTextBox();
             RemoverMascarasDeTexto();
             funcoes.PrimeiroInputEmFoco(inputCep);
             if (!primeiraAbertura)
@@ -151,15 +152,39 @@ namespace MovSoft.Forms
             inputCidade.Text = cepModel.Localidade;
             inputBoxUf.Text = cepModel.Uf;
         }
+        
+        private void LimparInputs()
+        {
+            foreach(TextBox input in Controls.OfType<TextBox>())
+            {
+                input.Clear();
+            }
+            inputBoxUf.SelectedIndex = -1;
+        }
 
-        private void VerificarCep()
+        private async void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? result = funcoes.getApiResult(url);
-                CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                AtribuirDadosDoCepAosInputs(cepModel);
+                string? result = await Task.Run(() => funcoes.getApiResult(url));
+                try
+                {
+                    CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
+                    AtribuirDadosDoCepAosInputs(cepModel);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("CEP inexistente. Por favor Insira um CEP valido e tente novamente");
+                }
+                
+            }
+            else
+            {
+                foreach (TextBox input in Controls.OfType<TextBox>())
+                {
+                    LimparInputs();
+                }
             }
         }
 
@@ -198,6 +223,11 @@ namespace MovSoft.Forms
         private void inputBoxUf_KeyPress(object sender, KeyPressEventArgs e)
         {
             VerificarCampos();
+        }
+
+        private void inputCep_Leave(object sender, EventArgs e)
+        {
+            VerificarCep();
         }
     }
 }

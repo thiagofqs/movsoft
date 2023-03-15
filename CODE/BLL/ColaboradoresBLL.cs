@@ -3,6 +3,7 @@ using MovSoft.CODE.DAL;
 using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
 using MovSoft.Classes;
+using Google.Protobuf.Collections;
 
 namespace MovSoft.CODE.BLL
 {
@@ -119,6 +120,27 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public MapField<int,string?> ColaboradoresSemUser()
+        {
+            DataTable datatable = new();
+            MapField<int, string?> colaboradores = new();
+            try
+            {
+                db.Conectar();
+                string comando = "call colaboradoresSemUser()";
+                datatable = db.RetDataTable(comando);
+                foreach(DataRow row in datatable.Rows)
+                {
+                    colaboradores.Add(int.Parse(row["ID"].ToString()), row["Colaborador"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return colaboradores;
         }
 
         public void PegarEndereco(int idColaborador)

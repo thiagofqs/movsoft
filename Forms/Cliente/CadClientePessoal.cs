@@ -3,7 +3,7 @@ using MovSoft.CODE.BLL;
 
 namespace MovSoft.Forms
 {
-    public partial class CadClientePessoal : Form
+    public partial class CadClientePessoal : Pai
     {
         ClientesBLL clientesBLL = new();
         Funcoes funcoes = new();
@@ -13,6 +13,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            AjustarSelectorMaskedTextBox();
             funcoes.PrimeiroInputEmFoco(inputNome);
             if (!primeiraAbertura)
             {

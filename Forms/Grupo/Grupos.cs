@@ -110,7 +110,7 @@ namespace MovSoft.Forms
                 btnCancelar.Enabled = true;
                 inputNomeGrupo.Focus();
             }
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace MovSoft.Forms
                 btnCancelar.Enabled = true;
                 inputNomeGrupo.Focus();
             }
-            
+
         }
     }
 }

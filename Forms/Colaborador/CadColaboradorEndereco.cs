@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace MovSoft.Forms
 {
-    public partial class CadColaboradorEndereco : Form
+    public partial class CadColaboradorEndereco : Pai
     {
         Funcoes funcoes = new();
         ColaboradoresBLL bllColaboradores = new();
@@ -18,6 +18,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            AjustarSelectorMaskedTextBox();
             funcoes.PrimeiroInputEmFoco(inputCep);
             if (!primeiraAbertura)
             {
@@ -66,6 +67,7 @@ namespace MovSoft.Forms
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.CadastrarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
+            AtualizarColaboradores();
             ActiveForm.Close();
         }
 
@@ -90,6 +92,7 @@ namespace MovSoft.Forms
             dtoContatos.Ddd = Parametros.dddColab;
             dtoContatos.Celular = Parametros.celularColab;
             bllColaboradores.EditarColaborador(dtoColaboradores, dtoEnderecos, dtoContatos);
+            AtualizarColaboradores();
             ActiveForm.Close();
         }
 
@@ -133,12 +136,10 @@ namespace MovSoft.Forms
             if (!editarColaborador)
             {
                 CadastrarColaborador();
-                AtualizarColaboradores();
             }
             else if (editarColaborador)
             {
                 EditarColaborador();
-                AtualizarColaboradores();
             }
         }
 
@@ -152,14 +153,38 @@ namespace MovSoft.Forms
             inputBoxUf.Text = cepModel.Uf;
         }
 
-        private void VerificarCep()
+        private void LimparInputs()
+        {
+            foreach (TextBox input in Controls.OfType<TextBox>())
+            {
+                input.Clear();
+            }
+            inputBoxUf.SelectedIndex = -1;
+        }
+
+        private async void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? result = funcoes.getApiResult(url);
-                CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                AtribuirDadosDoCepAosInputs(cepModel);
+                string? result = await Task.Run(() => funcoes.getApiResult(url));
+                try
+                {
+                    CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
+                    AtribuirDadosDoCepAosInputs(cepModel);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("CEP inexistente. Por favor Insira um CEP valido e tente novamente");
+                }
+
+            }
+            else
+            {
+                foreach (TextBox input in Controls.OfType<TextBox>())
+                {
+                    LimparInputs();
+                }
             }
         }
 
@@ -201,6 +226,11 @@ namespace MovSoft.Forms
             {
                 VerificarCampos();
             }
+        }
+
+        private void inputCep_Leave(object sender, EventArgs e)
+        {
+            VerificarCep();
         }
     }
 }

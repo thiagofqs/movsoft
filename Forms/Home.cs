@@ -68,7 +68,19 @@ namespace MovSoft
             menuSaida.Renderer = new ToolStripProfessionalRenderer(new ownColorTable());
             MudarCursorDoMenu();
             AdicionarNomeDoUsuarioECargo();
+            AjustarCentralizarMenu();
             AjustarTamanhoInformacaoDoUsuario();
+        }
+
+        private void AjustarCentralizarMenu()
+        {
+            Size larguraMenu = menu.GetPreferredSize(Size.Empty);
+            menu.Width = larguraMenu.Width;
+            menu.Height = pnlHeader.Height;
+            menu.Left = (pnlHeader.Width - menu.Width) / 2;
+            menu.Top = (pnlHeader.Height - menu.Height) / 2;
+            menuSaida.Left = pnlHeader.Width - menuSaida.Width;
+            menuSaida.Height = pnlHeader.Height;
         }
 
         private void AdicionarNomeDoUsuarioECargo()

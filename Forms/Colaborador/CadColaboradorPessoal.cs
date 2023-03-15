@@ -4,7 +4,7 @@ using System.Data;
 
 namespace MovSoft.Forms
 {
-    public partial class CadColaboradorPessoal : Form
+    public partial class CadColaboradorPessoal : Pai
     {
         Funcoes funcoes = new();
         ColaboradoresBLL colaboradoresBLL = new();
@@ -15,6 +15,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
+            AjustarSelectorMaskedTextBox();
             funcoes.PrimeiroInputEmFoco(inputNome);
             if (!primeiraAbertura)
             {

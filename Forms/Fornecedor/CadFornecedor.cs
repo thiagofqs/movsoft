@@ -17,6 +17,7 @@ namespace MovSoft.Forms
             InitializeComponent();
             RemoverMascarasDeTexto();
             funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
+            AjustarSelectorMaskeredTextBox();
             if (editar)
             {
                 editarFornecedor = true;
@@ -143,8 +144,21 @@ namespace MovSoft.Forms
             }
         }
 
+        private void LimparInputsLocalidade()
+        {
+            foreach(TextBox input in pnlMain.Controls.OfType<TextBox>())
+            {
+                if(input.TabIndex > 3)
+                {
+                    input.Clear();
+                }
+            }
+            inputBoxUf.SelectedIndex = -1;
+        }
+
         private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
         {
+            LimparInputsLocalidade();
             inputCep.Text = cepModel.Cep;
             inputLogradouro.Text = cepModel.Logradouro;
             inputBairro.Text = cepModel.Bairro;
@@ -153,14 +167,37 @@ namespace MovSoft.Forms
             inputBoxUf.Text = cepModel.Uf;
         }
 
-        private void VerificarCep()
+        private void AjustarSelectorMaskeredTextBox()
+        {
+            foreach(MaskedTextBox input in pnlMain.Controls.OfType<MaskedTextBox>())
+            {
+                input.Click += (s, e) =>
+                {
+                    if (string.IsNullOrEmpty(input.Text))
+                    {
+                        input.Select(0, 0);
+                    }
+                };
+            }
+        }
+
+        private void Input_Click(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private async void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? result = funcoes.getApiResult(url);
+                string? result = await Task.Run(() => funcoes.getApiResult(url));
                 CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
                 AtribuirDadosDoCepAosInputs(cepModel);
+            }
+            else
+            {
+                LimparInputsLocalidade();
             }
         }
 
@@ -193,6 +230,11 @@ namespace MovSoft.Forms
             {
                 VerificarCampos();
             }
+        }
+
+        private void inputCep_Leave(object sender, EventArgs e)
+        {
+            VerificarCep();
         }
     }
 }

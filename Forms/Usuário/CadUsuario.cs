@@ -1,4 +1,5 @@
-﻿using MovSoft.Classes;
+﻿using Google.Protobuf.Collections;
+using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
 
@@ -13,6 +14,7 @@ namespace MovSoft.Forms
         UsuariosDTO dtoUsuarios = new();
         Dados dados = new();
 
+        MapField<int, string> colaboradores = new();
         private struct Dados
         {
             public string nomeUsuario;
@@ -40,8 +42,8 @@ namespace MovSoft.Forms
 
         private void ListarColaboradores()
         {
-            List<string> lista = bllColaboradores.Colaboradores();
-            foreach (string item in lista)
+            colaboradores = bllColaboradores.ColaboradoresSemUser();
+            foreach (string item in colaboradores.Values)
             {
                 inputboxColaborador.Items.Add(item);
                 inputboxColaborador.AutoCompleteCustomSource.Add(item);
@@ -83,7 +85,7 @@ namespace MovSoft.Forms
             dados.senhaUsuario = inputSenha.Text;
             dados.confirmarSenha = inputConfirmarSenha.Text;
             dados.idCargo = inputboxCargo.SelectedIndex + 1;
-            dados.idColaborador = inputboxColaborador.SelectedIndex + 1;
+            dados.idColaborador = colaboradores.FirstOrDefault(x => x.Value == inputboxColaborador.SelectedItem).Key;
         }
 
         private void CadastrarUsuario()
@@ -98,6 +100,7 @@ namespace MovSoft.Forms
                     dtoUsuarios.Id_cargo = dados.idCargo;
                     dtoUsuarios.Id_colaborador = dados.idColaborador;
                     bllUsuarios.CadastrarUsuarios(dtoUsuarios);
+                    AtualizarUsuarios();
                 }
                 else
                 {
@@ -124,6 +127,7 @@ namespace MovSoft.Forms
                     dtoUsuarios.Id_cargo = dados.idCargo;
                     dtoUsuarios.Id_colaborador = dados.idColaborador;
                     bllUsuarios.EditarUsuario(dtoUsuarios);
+                    AtualizarUsuarios();
                     if (dtoUsuarios.Id_usuario == Parametros.idUser)
                     {
                         MessageBox.Show("Você será redirecionado para a tela de login!");
@@ -159,13 +163,11 @@ namespace MovSoft.Forms
             if (editarUsuario)
             {
                 EditarUsuario();
-                AtualizarUsuarios();
+                Close();
             }
             else if (!editarUsuario)
             {
                 CadastrarUsuario();
-                AtualizarUsuarios();
-                Close();
             }
             GC.Collect();
         }
