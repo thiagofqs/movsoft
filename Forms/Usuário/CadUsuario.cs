@@ -14,7 +14,7 @@ namespace MovSoft.Forms
         UsuariosDTO dtoUsuarios = new();
         Dados dados = new();
 
-        MapField<int, string> colaboradores = new();
+        List<string> colaboradores = new();
         private struct Dados
         {
             public string nomeUsuario;
@@ -42,11 +42,15 @@ namespace MovSoft.Forms
 
         private void ListarColaboradores()
         {
-            colaboradores = bllColaboradores.ColaboradoresSemUser();
-            foreach (string item in colaboradores.Values)
+            colaboradores = bllColaboradores.ColaboradoresSemUsuarioVinculado();
+            foreach (string item in colaboradores)
             {
                 inputboxColaborador.Items.Add(item);
                 inputboxColaborador.AutoCompleteCustomSource.Add(item);
+            }
+            if (Parametros.editarUser == true)
+            {
+                inputboxColaborador.Items.Add(Parametros.colaboradorUserEdit);
             }
         }
 
@@ -85,7 +89,12 @@ namespace MovSoft.Forms
             dados.senhaUsuario = inputSenha.Text;
             dados.confirmarSenha = inputConfirmarSenha.Text;
             dados.idCargo = inputboxCargo.SelectedIndex + 1;
-            dados.idColaborador = colaboradores.FirstOrDefault(x => x.Value == inputboxColaborador.SelectedItem).Key;
+            PegarIdColaboradorPeloNome();
+        }
+
+        private void PegarIdColaboradorPeloNome()
+        {
+            dados.idColaborador = bllColaboradores.PegarIdPeloNome(inputboxColaborador.Text);
         }
 
         private void CadastrarUsuario()
@@ -117,32 +126,19 @@ namespace MovSoft.Forms
         private void EditarUsuario()
         {
             AtribuirDadosDosInputs();
-            if (dados.senhaUsuario.Length >= 8)
+            if (dados.senhaUsuario == dados.confirmarSenha)
             {
-                if (dados.senhaUsuario == dados.confirmarSenha)
-                {
-                    dtoUsuarios.Id_usuario = (int)Parametros.idUserEdit;
-                    dtoUsuarios.Nome = dados.nomeUsuario;
-                    dtoUsuarios.Senha = dados.senhaUsuario;
-                    dtoUsuarios.Id_cargo = dados.idCargo;
-                    dtoUsuarios.Id_colaborador = dados.idColaborador;
-                    bllUsuarios.EditarUsuario(dtoUsuarios);
-                    AtualizarUsuarios();
-                    if (dtoUsuarios.Id_usuario == Parametros.idUser)
-                    {
-                        MessageBox.Show("Você será redirecionado para a tela de login!");
-                        funcoes.ThreadVoltarAoLogin();
-                        Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Senhas não idênticas!");
-                }
+                dtoUsuarios.Id_usuario = (int)Parametros.idUserEdit;
+                dtoUsuarios.Nome = dados.nomeUsuario;
+                dtoUsuarios.Senha = dados.senhaUsuario;
+                dtoUsuarios.Id_cargo = dados.idCargo;
+                dtoUsuarios.Id_colaborador = dados.idColaborador;
+                bllUsuarios.EditarUsuario(dtoUsuarios);
+                AtualizarUsuarios();
             }
             else
             {
-                MessageBox.Show("A senha deve possuir no mínimo 8 caracteres!");
+                MessageBox.Show("Senhas não idênticas!");
             }
         }
 

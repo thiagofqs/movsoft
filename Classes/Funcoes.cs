@@ -94,6 +94,18 @@ namespace MovSoft.Classes
             return data.Substring(4, 4) + "-" + data.Substring(2, 2) + "-" + data.Substring(0, 2);
         }
 
+        public void CentralizarHorizontalmente(Control controlDeReferencia, Control controlCentralizado)
+        {
+            controlCentralizado.Anchor = AnchorStyles.Top;
+            controlCentralizado.Left = (controlDeReferencia.Width - controlCentralizado.Width) / 2;
+        }
+
+        public void CentralizarVerticalmente(Control controlDeReferencia, Control controlCentralizado)
+        {
+            controlCentralizado.Anchor = AnchorStyles.Top;
+            controlCentralizado.Top = (controlDeReferencia.Height - controlCentralizado.Height) / 2;
+        }
+
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 3)
@@ -133,6 +145,24 @@ namespace MovSoft.Classes
         public void AplicarFuncaoSair(Control obj)
         {
             obj.Click += new EventHandler(SairOnClick);
+        }
+
+        public void AjustarSelectorDosMaskedTextBox(Control control)
+        {
+            foreach (MaskedTextBox input in control.Controls.OfType<MaskedTextBox>())
+            {
+                input.Click += (s, e) =>
+                {
+                    if (string.IsNullOrEmpty(input.Text))
+                    {
+                        input.Select(0, 0);
+                    }
+                    else
+                    {
+                        input.SelectionStart = input.MaskedTextProvider.LastAssignedPosition + 1;
+                    }
+                };
+            }
         }
 
         public string? getApiResult(string url)

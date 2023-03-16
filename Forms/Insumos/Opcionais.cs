@@ -4,12 +4,13 @@ namespace MovSoft.Forms
 {
     public partial class Opcionais : Form
     {
-        string[] opc = new string[10];
+        Funcoes funcoes = new Funcoes();
 
         public Opcionais()
         {
             InitializeComponent();
             comboBoxFiltro.SelectedIndex = 0;
+            funcoes.CentralizarHorizontalmente(this, pnlCadastro);
         }
 
         private void LimparCampos()

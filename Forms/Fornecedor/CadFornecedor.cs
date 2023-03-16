@@ -17,7 +17,7 @@ namespace MovSoft.Forms
             InitializeComponent();
             RemoverMascarasDeTexto();
             funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
-            AjustarSelectorMaskeredTextBox();
+            funcoes.AjustarSelectorDosMaskedTextBox(pnlMain);
             if (editar)
             {
                 editarFornecedor = true;
@@ -167,33 +167,21 @@ namespace MovSoft.Forms
             inputBoxUf.Text = cepModel.Uf;
         }
 
-        private void AjustarSelectorMaskeredTextBox()
-        {
-            foreach(MaskedTextBox input in pnlMain.Controls.OfType<MaskedTextBox>())
-            {
-                input.Click += (s, e) =>
-                {
-                    if (string.IsNullOrEmpty(input.Text))
-                    {
-                        input.Select(0, 0);
-                    }
-                };
-            }
-        }
-
-        private void Input_Click(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private async void VerificarCep()
         {
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? result = await Task.Run(() => funcoes.getApiResult(url));
-                CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
-                AtribuirDadosDoCepAosInputs(cepModel);
+                string? resultado = await Task.Run(() => funcoes.getApiResult(url));
+                try
+                {
+                    CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);
+                    AtribuirDadosDoCepAosInputs(cepModel);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("CEP inexistente! Por favor, insira um CEP válido e tente novamente.");
+                }
             }
             else
             {

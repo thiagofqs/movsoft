@@ -46,7 +46,7 @@
             this.numericUpDownQuantidade = new System.Windows.Forms.NumericUpDown();
             this.comboBoxProduto = new System.Windows.Forms.ComboBox();
             this.comboBoxFornecedor = new System.Windows.Forms.ComboBox();
-            this.dataGridViewComponentes = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEstoque = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.pnlCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpCusto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,32 +235,32 @@
             this.comboBoxFornecedor.Size = new System.Drawing.Size(107, 23);
             this.comboBoxFornecedor.TabIndex = 8;
             // 
-            // dataGridViewComponentes
+            // dataGridViewEstoque
             // 
-            this.dataGridViewComponentes.AllowUserToAddRows = false;
-            this.dataGridViewComponentes.AllowUserToDeleteRows = false;
-            this.dataGridViewComponentes.AllowUserToResizeColumns = false;
-            this.dataGridViewComponentes.AllowUserToResizeRows = false;
+            this.dataGridViewEstoque.AllowUserToAddRows = false;
+            this.dataGridViewEstoque.AllowUserToDeleteRows = false;
+            this.dataGridViewEstoque.AllowUserToResizeColumns = false;
+            this.dataGridViewEstoque.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewComponentes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewComponentes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewEstoque.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewComponentes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridViewComponentes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewComponentes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewComponentes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewEstoque.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewEstoque.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewComponentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewComponentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewComponentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridViewEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -268,33 +268,33 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewComponentes.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewComponentes.EnableHeadersVisualStyles = false;
-            this.dataGridViewComponentes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.dataGridViewComponentes.Location = new System.Drawing.Point(198, 273);
-            this.dataGridViewComponentes.Name = "dataGridViewComponentes";
-            this.dataGridViewComponentes.ReadOnly = true;
-            this.dataGridViewComponentes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewEstoque.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewEstoque.EnableHeadersVisualStyles = false;
+            this.dataGridViewEstoque.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.dataGridViewEstoque.Location = new System.Drawing.Point(198, 273);
+            this.dataGridViewEstoque.Name = "dataGridViewEstoque";
+            this.dataGridViewEstoque.ReadOnly = true;
+            this.dataGridViewEstoque.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewComponentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewComponentes.RowHeadersVisible = false;
+            this.dataGridViewEstoque.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewEstoque.RowHeadersVisible = false;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewComponentes.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewComponentes.RowTemplate.Height = 25;
-            this.dataGridViewComponentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewComponentes.ShowCellErrors = false;
-            this.dataGridViewComponentes.ShowCellToolTips = false;
-            this.dataGridViewComponentes.ShowEditingIcon = false;
-            this.dataGridViewComponentes.ShowRowErrors = false;
-            this.dataGridViewComponentes.Size = new System.Drawing.Size(430, 142);
-            this.dataGridViewComponentes.TabIndex = 33;
+            this.dataGridViewEstoque.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewEstoque.RowTemplate.Height = 25;
+            this.dataGridViewEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEstoque.ShowCellErrors = false;
+            this.dataGridViewEstoque.ShowCellToolTips = false;
+            this.dataGridViewEstoque.ShowEditingIcon = false;
+            this.dataGridViewEstoque.ShowRowErrors = false;
+            this.dataGridViewEstoque.Size = new System.Drawing.Size(430, 142);
+            this.dataGridViewEstoque.TabIndex = 33;
             // 
             // btnEditar
             // 
@@ -313,6 +313,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnCancelar
             // 
@@ -331,6 +332,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCadastrar
             // 
@@ -348,6 +350,7 @@
             this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // imgFiltro
             // 
@@ -405,7 +408,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(930, 503);
-            this.Controls.Add(this.dataGridViewComponentes);
+            this.Controls.Add(this.dataGridViewEstoque);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
@@ -421,7 +424,7 @@
             this.pnlCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpCusto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -431,7 +434,7 @@
         #endregion
 
         private Panel pnlCadastro;
-        private DataGridView dataGridViewComponentes;
+        private DataGridView dataGridViewEstoque;
         private Button btnEditar;
         private Button btnCancelar;
         private Button btnCadastrar;

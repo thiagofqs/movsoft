@@ -3,7 +3,7 @@ using MovSoft.CODE.BLL;
 
 namespace MovSoft.Forms
 {
-    public partial class CadClientePessoal : Pai
+    public partial class CadClientePessoal : Form
     {
         ClientesBLL clientesBLL = new();
         Funcoes funcoes = new();
@@ -13,20 +13,16 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            AjustarSelectorMaskedTextBox();
             funcoes.PrimeiroInputEmFoco(inputNome);
+            funcoes.AjustarSelectorDosMaskedTextBox(this);
             if (!primeiraAbertura)
             {
                 primeiraAberturaCliente = false;
                 AtribuirDadosAosInputs();
-            }/*
-            else if (primeiraAbertura == true && editar == false)
-            {
-                Parametros parametros = new Parametros();
-            }*/
+            }
             if (editar && primeiraAbertura)
             {
-                txtTitulo.Text = "Editar Colaborador 1/2";
+                txtTitulo.Text = "Editar Cliente 1/2";
                 clientesBLL.PegarDados((int)Parametros.idCliente);
                 clientesBLL.PegarEndereco((int)Parametros.idCliente);
                 editarCliente = true;
@@ -34,7 +30,7 @@ namespace MovSoft.Forms
             }
             else if (editar && !primeiraAbertura)
             {
-                txtTitulo.Text = "Editar Colaborador 1/2";
+                txtTitulo.Text = "Editar Cliente 1/2";
                 editarCliente = true;
                 AtribuirDadosAosInputs();
             }

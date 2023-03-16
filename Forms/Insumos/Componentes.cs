@@ -1,14 +1,17 @@
-﻿namespace MovSoft.Forms
+﻿using MovSoft.Classes;
+
+namespace MovSoft.Forms
 {
     public partial class Componentes : Form
     {
-        string[] opc = new string[10];
+        Funcoes funcoes = new();
 
         public Componentes()
         {
             InitializeComponent();
             comboBoxUnidadeDeMedida.SelectedIndex = 0;
             comboBoxFiltro.SelectedIndex = 0;
+            funcoes.CentralizarHorizontalmente(this, pnlCadastro);
         }
 
         private void LimparCampos()

@@ -6,7 +6,6 @@ namespace MovSoft
 {
     public partial class Home : Form
     {
-        UsuariosBLL bll = new();
         Funcoes funcoes = new();
         private Form activeForm;
         private EventHandler CursorHandChanger, CursorDefaultChanger;

@@ -1,4 +1,5 @@
-﻿using MovSoft.Classes;
+﻿using K4os.Compression.LZ4.Streams;
+using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 
 namespace MovSoft.Forms
@@ -29,6 +30,10 @@ namespace MovSoft.Forms
                 if (column.Index == 0)
                 {
                     column.Width = 50;
+                }
+                else if(column.Index == 2)
+                {
+                    column.HeaderText = "Razão Social";
                 }
                 else
                 {

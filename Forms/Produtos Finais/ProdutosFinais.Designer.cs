@@ -60,8 +60,10 @@
             // 
             // tabControlProdutos
             // 
+            this.tabControlProdutos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tabControlProdutos.Controls.Add(this.Geral);
             this.tabControlProdutos.Controls.Add(this.tabControlPreco);
+            this.tabControlProdutos.Enabled = false;
             this.tabControlProdutos.Location = new System.Drawing.Point(198, 36);
             this.tabControlProdutos.Name = "tabControlProdutos";
             this.tabControlProdutos.SelectedIndex = 0;
@@ -335,6 +337,7 @@
             this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // imgFiltro
             // 

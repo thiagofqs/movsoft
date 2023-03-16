@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace MovSoft.Forms
 {
-    public partial class CadClienteEndereco : Pai
+    public partial class CadClienteEndereco : Form
     {
         Funcoes funcoes = new();
         ClientesBLL bllClientes = new();
@@ -17,16 +17,16 @@ namespace MovSoft.Forms
         public CadClienteEndereco(bool primeiraAbertura, bool editar)
         {
             InitializeComponent();
-            AjustarSelectorMaskedTextBox();
             RemoverMascarasDeTexto();
             funcoes.PrimeiroInputEmFoco(inputCep);
+            funcoes.AjustarSelectorDosMaskedTextBox(this);
             if (!primeiraAbertura)
             {
                 AtribuirDadosAosInputs();
             }
             if (editar)
             {
-                txtTitulo.Text = "Editar Colaborador 2/2";
+                txtTitulo.Text = "Editar Cliente 2/2";
                 btnCadastrar.Text = "Salvar";
                 editarCliente = true;
                 AtribuirDadosAosInputs();
@@ -167,17 +167,16 @@ namespace MovSoft.Forms
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? result = await Task.Run(() => funcoes.getApiResult(url));
+                string? resultado = await Task.Run(() => funcoes.getApiResult(url));
                 try
                 {
-                    CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(result);
+                    CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);
                     AtribuirDadosDoCepAosInputs(cepModel);
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("CEP inexistente. Por favor Insira um CEP valido e tente novamente");
+                    MessageBox.Show("CEP inexistente! Por favor, insira um CEP válido e tente novamente.");
                 }
-                
             }
             else
             {

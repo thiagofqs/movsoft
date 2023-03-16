@@ -122,18 +122,17 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public MapField<int,string?> ColaboradoresSemUser()
+        public List<string> ColaboradoresSemUsuarioVinculado()
         {
-            DataTable datatable = new();
-            MapField<int, string?> colaboradores = new();
+            List<string> colaboradores = new();
             try
             {
                 db.Conectar();
-                string comando = "call colaboradoresSemUser()";
-                datatable = db.RetDataTable(comando);
-                foreach(DataRow row in datatable.Rows)
+                string comando = "call colaboradoresSemUsuarioVinculado()";
+                DataTable dataTable = db.RetDataTable(comando);
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    colaboradores.Add(int.Parse(row["ID"].ToString()), row["Colaborador"].ToString());
+                    colaboradores.Add(row["Colaborador"].ToString());
                 }
             }
             catch(Exception ex)
@@ -141,6 +140,28 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
             return colaboradores;
+        }
+
+        public int PegarIdPeloNome(string nomeCompleto)
+        {
+            int idColaborador = 0;
+            try
+            {
+                DataTable dataTable = new();
+                db.Conectar();
+                string comando = $"select id_colaborador as 'ID' from colaboradores where Concat(nome,' ',sobrenome) = '{nomeCompleto}' limit 1";
+                dataTable = db.RetDataTable(comando);
+                foreach(DataRow row in dataTable.Rows)
+                {
+                    idColaborador = int.Parse(row["ID"].ToString());
+                }
+                MessageBox.Show(nomeCompleto);
+            }
+            catch(Exception ex ) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return idColaborador;
         }
 
         public void PegarEndereco(int idColaborador)
