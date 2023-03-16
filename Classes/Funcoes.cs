@@ -2,6 +2,7 @@
 using IniParser;
 using MovSoft.CODE.BLL;
 using System.Text.RegularExpressions;
+using MovSoft.Controls;
 
 namespace MovSoft.Classes
 {
@@ -30,6 +31,44 @@ namespace MovSoft.Classes
             }
         }
 
+        public bool VerificaSeInputEstáVazio(Control controlComInputs)
+        {
+            List<bool?> verificadores = new();
+            foreach (Control control in controlComInputs.Controls)
+            {
+                if (!string.IsNullOrEmpty((string)control.Tag))
+                {
+                    if (control.GetType() == typeof(TextBox))
+                    {
+                        if (control.Text == string.Empty)
+                        {
+                            MessageBox.Show($"O campo {control.Tag} está vazio");
+                            verificadores.Add(false);
+                        }
+                    }
+                    else if(control.GetType() == typeof(ComboBox))
+                    {
+                        if(((ComboBox)control).SelectedIndex == -1)
+                        {
+                            MessageBox.Show($"O campo {control.Tag} está vazio");
+                            verificadores.Add(false);
+                        }
+                    }
+                    else if(control.GetType() == typeof(NumericUpDown))
+                    {
+                        if(((NumericUpDown)control).Value == 0)
+                        {
+                            MessageBox.Show($"O campo {control.Tag} está vazio");
+                        }
+                    }
+                }
+            }
+            if(verificadores.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
         public void PrimeiroInputEmFoco(Control input)
         {
             input.Focus();

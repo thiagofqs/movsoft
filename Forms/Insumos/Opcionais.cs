@@ -23,9 +23,8 @@ namespace MovSoft.Forms
         {
             if (pnlCadastro.Enabled)
             {
-                if (inputNomeOpcionais.Text == "" || numericUpDownOpcionais.Text == "")
+                if (funcoes.VerificaSeInputEstáVazio(pnlCadastro))
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
                     inputNomeOpcionais.Focus();
                 }
                 else

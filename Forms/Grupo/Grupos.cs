@@ -92,12 +92,7 @@ namespace MovSoft.Forms
         {
             if (pnlCadastro.Enabled)
             {
-                if (inputNomeGrupo.Text == "")
-                {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
-                    inputNomeGrupo.Focus();
-                }
-                else
+                if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
                 {
                     CadastrarGrupo();
                     VoltarAoPadrao();

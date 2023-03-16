@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             inputPesquisar = new TextBox();
             btnPesquisar = new Button();
             inputNomeGrupo = new TextBox();
@@ -55,10 +55,11 @@
             // 
             inputPesquisar.BackColor = Color.WhiteSmoke;
             inputPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
-            inputPesquisar.Location = new Point(198, 243);
+            inputPesquisar.Location = new Point(226, 324);
+            inputPesquisar.Margin = new Padding(3, 4, 3, 4);
             inputPesquisar.Name = "inputPesquisar";
             inputPesquisar.PlaceholderText = "Pesquisar";
-            inputPesquisar.Size = new Size(240, 23);
+            inputPesquisar.Size = new Size(274, 27);
             inputPesquisar.TabIndex = 0;
             inputPesquisar.KeyPress += inputPesquisarGrupos_KeyPress;
             // 
@@ -71,9 +72,10 @@
             btnPesquisar.FlatAppearance.BorderSize = 0;
             btnPesquisar.FlatStyle = FlatStyle.Flat;
             btnPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
-            btnPesquisar.Location = new Point(444, 243);
+            btnPesquisar.Location = new Point(507, 324);
+            btnPesquisar.Margin = new Padding(3, 4, 3, 4);
             btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(23, 23);
+            btnPesquisar.Size = new Size(26, 31);
             btnPesquisar.TabIndex = 1;
             btnPesquisar.UseVisualStyleBackColor = false;
             btnPesquisar.Click += btnPesquisar_Click;
@@ -82,10 +84,12 @@
             // 
             inputNomeGrupo.BackColor = Color.WhiteSmoke;
             inputNomeGrupo.ForeColor = Color.FromArgb(56, 56, 56);
-            inputNomeGrupo.Location = new Point(12, 41);
+            inputNomeGrupo.Location = new Point(14, 55);
+            inputNomeGrupo.Margin = new Padding(3, 4, 3, 4);
             inputNomeGrupo.Name = "inputNomeGrupo";
-            inputNomeGrupo.Size = new Size(179, 23);
+            inputNomeGrupo.Size = new Size(204, 27);
             inputNomeGrupo.TabIndex = 7;
+            inputNomeGrupo.Tag = "*Nome do Grupo";
             inputNomeGrupo.KeyPress += inputNomeGrupo_KeyPress;
             // 
             // btnCadastrar
@@ -98,9 +102,10 @@
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCadastrar.ForeColor = Color.WhiteSmoke;
-            btnCadastrar.Location = new Point(634, 274);
+            btnCadastrar.Location = new Point(725, 365);
+            btnCadastrar.Margin = new Padding(3, 4, 3, 4);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(125, 34);
+            btnCadastrar.Size = new Size(143, 45);
             btnCadastrar.TabIndex = 3;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -117,9 +122,10 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = Color.WhiteSmoke;
-            btnCancelar.Location = new Point(634, 354);
+            btnCancelar.Location = new Point(725, 472);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(125, 34);
+            btnCancelar.Size = new Size(143, 45);
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -136,9 +142,10 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditar.ForeColor = Color.WhiteSmoke;
-            btnEditar.Location = new Point(634, 314);
+            btnEditar.Location = new Point(725, 419);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(125, 34);
+            btnEditar.Size = new Size(143, 45);
             btnEditar.TabIndex = 4;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -154,16 +161,18 @@
             pnlCadastro.Controls.Add(inputNomeGrupo);
             pnlCadastro.Enabled = false;
             pnlCadastro.ForeColor = Color.FromArgb(56, 56, 56);
-            pnlCadastro.Location = new Point(198, 36);
+            pnlCadastro.Location = new Point(226, 48);
+            pnlCadastro.Margin = new Padding(3, 4, 3, 4);
             pnlCadastro.Name = "pnlCadastro";
-            pnlCadastro.Size = new Size(561, 162);
+            pnlCadastro.Size = new Size(641, 215);
             pnlCadastro.TabIndex = 7;
             // 
             // kryptonLabel1
             // 
-            kryptonLabel1.Location = new Point(222, 14);
+            kryptonLabel1.Location = new Point(254, 19);
+            kryptonLabel1.Margin = new Padding(3, 4, 3, 4);
             kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(57, 21);
+            kryptonLabel1.Size = new Size(69, 26);
             kryptonLabel1.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
             kryptonLabel1.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabel1.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
@@ -180,22 +189,25 @@
             toggleButton1.CheckState = CheckState.Checked;
             toggleButton1.Cursor = Cursors.Hand;
             toggleButton1.FocusToggleColor = Color.Gold;
-            toggleButton1.Location = new Point(222, 41);
-            toggleButton1.MinimumSize = new Size(45, 23);
+            toggleButton1.Location = new Point(254, 55);
+            toggleButton1.Margin = new Padding(3, 4, 3, 4);
+            toggleButton1.MinimumSize = new Size(51, 31);
             toggleButton1.Name = "toggleButton1";
             toggleButton1.OffBackColor = Color.Gray;
             toggleButton1.OffToggleColor = Color.Gainsboro;
             toggleButton1.OnBackColor = Color.FromArgb(0, 133, 132);
             toggleButton1.OnToggleColor = Color.WhiteSmoke;
-            toggleButton1.Size = new Size(45, 23);
+            toggleButton1.Size = new Size(51, 31);
             toggleButton1.TabIndex = 10;
+            toggleButton1.Tag = "";
             toggleButton1.UseVisualStyleBackColor = false;
             // 
             // kryptonLabelNome
             // 
-            kryptonLabelNome.Location = new Point(12, 14);
+            kryptonLabelNome.Location = new Point(14, 19);
+            kryptonLabelNome.Margin = new Padding(3, 4, 3, 4);
             kryptonLabelNome.Name = "kryptonLabelNome";
-            kryptonLabelNome.Size = new Size(123, 21);
+            kryptonLabelNome.Size = new Size(152, 26);
             kryptonLabelNome.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
             kryptonLabelNome.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelNome.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
@@ -209,9 +221,10 @@
             imgFiltro.BackColor = Color.Transparent;
             imgFiltro.BackgroundImage = Properties.Resources.icon_filter;
             imgFiltro.BackgroundImageLayout = ImageLayout.Zoom;
-            imgFiltro.Location = new Point(501, 243);
+            imgFiltro.Location = new Point(573, 324);
+            imgFiltro.Margin = new Padding(3, 4, 3, 4);
             imgFiltro.Name = "imgFiltro";
-            imgFiltro.Size = new Size(23, 23);
+            imgFiltro.Size = new Size(26, 31);
             imgFiltro.TabIndex = 19;
             imgFiltro.TabStop = false;
             // 
@@ -223,9 +236,10 @@
             comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
             comboBoxFiltro.FormattingEnabled = true;
             comboBoxFiltro.Items.AddRange(new object[] { "Habilitado", "Desabilitado" });
-            comboBoxFiltro.Location = new Point(530, 243);
+            comboBoxFiltro.Location = new Point(606, 324);
+            comboBoxFiltro.Margin = new Padding(3, 4, 3, 4);
             comboBoxFiltro.Name = "comboBoxFiltro";
-            comboBoxFiltro.Size = new Size(98, 23);
+            comboBoxFiltro.Size = new Size(111, 28);
             comboBoxFiltro.TabIndex = 2;
             // 
             // dataGridViewGrupos
@@ -234,65 +248,67 @@
             dataGridViewGrupos.AllowUserToDeleteRows = false;
             dataGridViewGrupos.AllowUserToResizeColumns = false;
             dataGridViewGrupos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewGrupos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewGrupos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewGrupos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewGrupos.BackgroundColor = Color.WhiteSmoke;
             dataGridViewGrupos.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewGrupos.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewGrupos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(56, 56, 56);
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ControlLight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewGrupos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGrupos.Cursor = Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = SystemColors.Control;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(56, 56, 56);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataGridViewGrupos.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridViewGrupos.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewGrupos.EnableHeadersVisualStyles = false;
             dataGridViewGrupos.GridColor = Color.FromArgb(56, 56, 56);
-            dataGridViewGrupos.Location = new Point(198, 274);
+            dataGridViewGrupos.Location = new Point(226, 365);
+            dataGridViewGrupos.Margin = new Padding(3, 4, 3, 4);
             dataGridViewGrupos.Name = "dataGridViewGrupos";
             dataGridViewGrupos.ReadOnly = true;
             dataGridViewGrupos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(56, 56, 56);
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewGrupos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewGrupos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewGrupos.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewGrupos.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewGrupos.RowTemplate.Height = 25;
             dataGridViewGrupos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewGrupos.ShowCellErrors = false;
             dataGridViewGrupos.ShowCellToolTips = false;
             dataGridViewGrupos.ShowEditingIcon = false;
             dataGridViewGrupos.ShowRowErrors = false;
-            dataGridViewGrupos.Size = new Size(430, 142);
+            dataGridViewGrupos.Size = new Size(491, 189);
             dataGridViewGrupos.TabIndex = 20;
             // 
             // Grupos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(56, 56, 56);
-            ClientSize = new Size(930, 503);
+            ClientSize = new Size(1063, 671);
             Controls.Add(dataGridViewGrupos);
             Controls.Add(imgFiltro);
             Controls.Add(comboBoxFiltro);
@@ -303,6 +319,7 @@
             Controls.Add(btnPesquisar);
             Controls.Add(inputPesquisar);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Grupos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MovSoft - Lista de Grupos";

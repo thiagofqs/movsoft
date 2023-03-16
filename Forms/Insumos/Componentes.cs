@@ -17,7 +17,6 @@ namespace MovSoft.Forms
         private void LimparCampos()
         {
             inputNomeComponente.Text = "";
-            numericUpDownComponentes.Text = "";
             comboBoxUnidadeDeMedida.Text = "";
         }
 
@@ -25,9 +24,8 @@ namespace MovSoft.Forms
         {
             if (pnlCadastro.Enabled)
             {
-                if (inputNomeComponente.Text == "" || numericUpDownComponentes.Text == "" || comboBoxUnidadeDeMedida.Text == "")
+                if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
                     inputNomeComponente.Focus();
                 }
                 else
