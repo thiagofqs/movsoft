@@ -37,12 +37,7 @@ namespace MovSoft.Forms
         {
             if (pnlCadastro.Enabled)
             {
-                if (comboBoxFiltro.Text == "" || comboBoxProduto.Text == "" || comboBoxMovimento.Text == "" || numericUpDownQuantidade.Text == "" || numericUpCusto.Text == "")
-                {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
-                    comboBoxFiltro.Focus();
-                }
-                else
+                if(!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
                 {
                     //CadastrarGrupo();
                     VoltarAoPadrao();

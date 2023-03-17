@@ -120,11 +120,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputBoxUf.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else
+            if(!funcoes.VerificaSeInputEstáVazio(this))
             {
                 CadastrarOuEditar();
             }

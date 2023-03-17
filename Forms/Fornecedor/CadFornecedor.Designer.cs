@@ -98,13 +98,12 @@
             kryptonLabelAtivo.Location = new Point(650, 260);
             kryptonLabelAtivo.Margin = new Padding(3, 4, 3, 4);
             kryptonLabelAtivo.Name = "kryptonLabelAtivo";
-            kryptonLabelAtivo.Size = new Size(69, 26);
+            kryptonLabelAtivo.Size = new Size(54, 26);
             kryptonLabelAtivo.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
             kryptonLabelAtivo.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelAtivo.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
             kryptonLabelAtivo.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelAtivo.TabIndex = 10;
-            kryptonLabelAtivo.Values.ExtraText = "*";
             kryptonLabelAtivo.Values.Text = "Ativo";
             // 
             // toggleButtonAtivo
@@ -305,6 +304,7 @@
             inputNomeFantasia.Name = "inputNomeFantasia";
             inputNomeFantasia.Size = new Size(175, 27);
             inputNomeFantasia.TabIndex = 0;
+            inputNomeFantasia.Tag = "Nome Fantasia";
             // 
             // inputCep
             // 
@@ -318,6 +318,7 @@
             inputCep.PromptChar = ' ';
             inputCep.Size = new Size(114, 27);
             inputCep.TabIndex = 3;
+            inputCep.Tag = "CEP";
             inputCep.KeyPress += inputCep_KeyPress;
             inputCep.Leave += inputCep_Leave;
             // 
@@ -333,6 +334,7 @@
             inputCnpj.PromptChar = ' ';
             inputCnpj.Size = new Size(125, 27);
             inputCnpj.TabIndex = 2;
+            inputCnpj.Tag = "CNPJ";
             inputCnpj.TextAlign = HorizontalAlignment.Center;
             // 
             // inputNumero
@@ -346,6 +348,7 @@
             inputNumero.Name = "inputNumero";
             inputNumero.Size = new Size(86, 27);
             inputNumero.TabIndex = 6;
+            inputNumero.Tag = "Número";
             // 
             // inputComplemento
             // 
@@ -373,6 +376,7 @@
             inputBoxUf.Name = "inputBoxUf";
             inputBoxUf.Size = new Size(87, 28);
             inputBoxUf.TabIndex = 10;
+            inputBoxUf.Tag = "UF";
             inputBoxUf.KeyPress += inputBoxUf_KeyPress;
             // 
             // btnCadastrar
@@ -404,6 +408,7 @@
             inputRazaoSocial.Name = "inputRazaoSocial";
             inputRazaoSocial.Size = new Size(175, 27);
             inputRazaoSocial.TabIndex = 1;
+            inputRazaoSocial.Tag = "Razão Social";
             // 
             // txtTitulo
             // 
@@ -431,6 +436,7 @@
             inputCidade.ReadOnly = true;
             inputCidade.Size = new Size(175, 27);
             inputCidade.TabIndex = 9;
+            inputCidade.Tag = "Cidade";
             // 
             // inputBairro
             // 
@@ -445,6 +451,7 @@
             inputBairro.ReadOnly = true;
             inputBairro.Size = new Size(175, 27);
             inputBairro.TabIndex = 8;
+            inputBairro.Tag = "Bairro";
             // 
             // inputLogradouro
             // 
@@ -457,6 +464,7 @@
             inputLogradouro.Name = "inputLogradouro";
             inputLogradouro.Size = new Size(175, 27);
             inputLogradouro.TabIndex = 5;
+            inputLogradouro.Tag = "Logradouro";
             // 
             // CadFornecedor
             // 

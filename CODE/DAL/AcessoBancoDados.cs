@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using IniParser.Model;
 using MovSoft.Classes;
+using System.Text.RegularExpressions;
 
 namespace MovSoft.CODE.DAL
 {
@@ -42,7 +43,7 @@ namespace MovSoft.CODE.DAL
             catch (Exception ex)
             {
                 MessageBox.Show("Não foi possível realizar a conexão!");
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -67,9 +68,21 @@ namespace MovSoft.CODE.DAL
                 }
             }
             catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao executar comando SQL!");
-                MessageBox.Show(ex.ToString());
+            { 
+                if(((MySqlException)ex).ErrorCode == -2147467259)
+                {
+                    string padrao = @"'([^']*)'\s*?$";
+                    Match match = Regex.Match(ex.Message, padrao);
+                    if (match.Success)
+                    {
+                        string ultimaPalavraEntreAspasSimples = match.Groups[1].Value;
+                        MessageBox.Show($"Esse {match.Groups[1].Value.ToUpper()} já foi cadastrado no sistema!", "Erro ao salvar registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao executar o procedimento");
+                }
             }
             finally
             {

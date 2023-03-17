@@ -38,11 +38,20 @@ namespace MovSoft.Classes
             {
                 if (!string.IsNullOrEmpty((string)control.Tag))
                 {
-                    if (control.GetType() == typeof(TextBox))
+                    if(control.GetType() == typeof(MaskedTextBox))
+                    {
+                        ((MaskedTextBox)control).TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                        if(control.Text == string.Empty)
+                        {
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
+                            verificadores.Add(false);
+                        }
+                    }
+                    else if (control.GetType() == typeof(TextBox))
                     {
                         if (control.Text == string.Empty)
                         {
-                            MessageBox.Show($"O campo {control.Tag} está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
                             verificadores.Add(false);
                         }
                     }
@@ -50,7 +59,7 @@ namespace MovSoft.Classes
                     {
                         if(((ComboBox)control).SelectedIndex == -1)
                         {
-                            MessageBox.Show($"O campo {control.Tag} está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
                             verificadores.Add(false);
                         }
                     }
@@ -58,7 +67,7 @@ namespace MovSoft.Classes
                     {
                         if(((NumericUpDown)control).Value == 0)
                         {
-                            MessageBox.Show($"O campo {control.Tag} está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
                         }
                     }
                 }

@@ -60,6 +60,7 @@
             inputCep.PromptChar = ' ';
             inputCep.Size = new Size(114, 27);
             inputCep.TabIndex = 0;
+            inputCep.Tag = "CEP";
             inputCep.KeyPress += inputCep_KeyPress;
             inputCep.Leave += inputCep_Leave;
             // 
@@ -74,6 +75,7 @@
             inputNumero.Name = "inputNumero";
             inputNumero.Size = new Size(86, 27);
             inputNumero.TabIndex = 3;
+            inputNumero.Tag = "Número";
             // 
             // inputComplemento
             // 
@@ -101,6 +103,7 @@
             inputBoxUf.Name = "inputBoxUf";
             inputBoxUf.Size = new Size(87, 28);
             inputBoxUf.TabIndex = 7;
+            inputBoxUf.Tag = "UF";
             inputBoxUf.KeyPress += inputBoxUf_KeyPress;
             // 
             // inputCidade
@@ -116,6 +119,7 @@
             inputCidade.ReadOnly = true;
             inputCidade.Size = new Size(175, 27);
             inputCidade.TabIndex = 6;
+            inputCidade.Tag = "Cidade";
             // 
             // inputBairro
             // 
@@ -130,6 +134,7 @@
             inputBairro.ReadOnly = true;
             inputBairro.Size = new Size(175, 27);
             inputBairro.TabIndex = 5;
+            inputBairro.Tag = "Bairro";
             // 
             // inputLogradouro
             // 
@@ -142,6 +147,7 @@
             inputLogradouro.Name = "inputLogradouro";
             inputLogradouro.Size = new Size(175, 27);
             inputLogradouro.TabIndex = 2;
+            inputLogradouro.Tag = "Logradouro";
             // 
             // btnCadastrar
             // 

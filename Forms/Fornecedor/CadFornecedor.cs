@@ -112,11 +112,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if (inputNomeFantasia.Text == "" || inputRazaoSocial.Text == "" || inputCnpj.Text == "" || inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputBoxUf.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else
+            if(!funcoes.VerificaSeInputEstáVazio(pnlMain))
             {
                 CadastrarOuEditar();
             }
@@ -146,9 +142,9 @@ namespace MovSoft.Forms
 
         private void LimparInputsLocalidade()
         {
-            foreach(TextBox input in pnlMain.Controls.OfType<TextBox>())
+            foreach (TextBox input in pnlMain.Controls.OfType<TextBox>())
             {
-                if(input.TabIndex > 3)
+                if (input.TabIndex > 3)
                 {
                     input.Clear();
                 }

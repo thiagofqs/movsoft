@@ -133,11 +133,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if (inputCep.Text == "" || inputLogradouro.Text == "" || inputNumero.Text == "" || inputBairro.Text == "" || inputCidade.Text == "" || inputBoxUf.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else
+            if(!funcoes.VerificaSeInputEstáVazio(this))
             {
                 CadastrarOuEditar();
             }
@@ -152,10 +148,10 @@ namespace MovSoft.Forms
             inputCidade.Text = cepModel.Localidade;
             inputBoxUf.Text = cepModel.Uf;
         }
-        
+
         private void LimparInputs()
         {
-            foreach(TextBox input in Controls.OfType<TextBox>())
+            foreach (TextBox input in Controls.OfType<TextBox>())
             {
                 input.Clear();
             }
@@ -173,7 +169,7 @@ namespace MovSoft.Forms
                     CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);
                     AtribuirDadosDoCepAosInputs(cepModel);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("CEP inexistente! Por favor, insira um CEP válido e tente novamente.");
                 }

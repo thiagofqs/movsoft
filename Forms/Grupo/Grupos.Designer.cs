@@ -89,7 +89,7 @@
             inputNomeGrupo.Name = "inputNomeGrupo";
             inputNomeGrupo.Size = new Size(204, 27);
             inputNomeGrupo.TabIndex = 7;
-            inputNomeGrupo.Tag = "*Nome do Grupo";
+            inputNomeGrupo.Tag = "Nome do Grupo";
             inputNomeGrupo.KeyPress += inputNomeGrupo_KeyPress;
             // 
             // btnCadastrar

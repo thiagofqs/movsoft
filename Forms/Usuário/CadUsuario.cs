@@ -144,11 +144,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if (inputboxColaborador.Text == "" || inputUsuario.Text == "" || inputboxCargo.Text == "" || inputSenha.Text == "" || inputConfirmarSenha.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else
+            if(!funcoes.VerificaSeInputEstáVazio(pnlContent))
             {
                 CadastrarOuEditar();
             }

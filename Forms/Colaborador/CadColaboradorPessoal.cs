@@ -74,11 +74,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if (inputNome.Text == "" || inputSobrenome.Text == "" || inputboxSexo.Text == "" || inputCpf.Text == "" || inputNascimento.Text == "" || inputEmail.Text == "" || inputCelular.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos obrigatórios!");
-            }
-            else
+            if(!funcoes.VerificaSeInputEstáVazio(this))
             {
                 bool[] validacaoCorreta = new bool[4];
                 validacaoCorreta[0] = funcoes.ValidacaoCPF(inputCpf);
