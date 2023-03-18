@@ -302,6 +302,7 @@
             dataGridViewGrupos.ShowRowErrors = false;
             dataGridViewGrupos.Size = new Size(491, 189);
             dataGridViewGrupos.TabIndex = 20;
+            dataGridViewGrupos.CellClick += dataGridViewGrupos_CellClick;
             // 
             // Grupos
             // 

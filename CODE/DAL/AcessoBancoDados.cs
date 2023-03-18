@@ -76,12 +76,12 @@ namespace MovSoft.CODE.DAL
                     if (match.Success)
                     {
                         string ultimaPalavraEntreAspasSimples = match.Groups[1].Value;
-                        MessageBox.Show($"Esse {match.Groups[1].Value.ToUpper()} já foi cadastrado no sistema!", "Erro ao salvar registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Esse {match.Groups[1].Value.ToUpper()} já foi cadastrado no sistema!", "Erro ao salvar registro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao executar o procedimento");
+                    MessageBox.Show("Erro ao executar o procedimento",null, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             finally

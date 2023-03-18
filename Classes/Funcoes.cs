@@ -3,6 +3,7 @@ using IniParser;
 using MovSoft.CODE.BLL;
 using System.Text.RegularExpressions;
 using MovSoft.Controls;
+using System.Reflection.Metadata.Ecma335;
 
 namespace MovSoft.Classes
 {
@@ -27,7 +28,7 @@ namespace MovSoft.Classes
             }
             else
             {
-                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {childForm.Text}!");
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {childForm.Text}!", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -38,12 +39,12 @@ namespace MovSoft.Classes
             {
                 if (!string.IsNullOrEmpty((string)control.Tag))
                 {
-                    if(control.GetType() == typeof(MaskedTextBox))
+                    if (control.GetType() == typeof(MaskedTextBox))
                     {
                         ((MaskedTextBox)control).TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                        if(control.Text == string.Empty)
+                        if (control.Text == string.Empty)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             verificadores.Add(false);
                         }
                     }
@@ -51,28 +52,28 @@ namespace MovSoft.Classes
                     {
                         if (control.Text == string.Empty)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             verificadores.Add(false);
                         }
                     }
-                    else if(control.GetType() == typeof(ComboBox))
+                    else if (control.GetType() == typeof(ComboBox))
                     {
-                        if(((ComboBox)control).SelectedIndex == -1)
+                        if (((ComboBox)control).SelectedIndex == -1)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             verificadores.Add(false);
                         }
                     }
-                    else if(control.GetType() == typeof(NumericUpDown))
+                    else if (control.GetType() == typeof(NumericUpDown))
                     {
-                        if(((NumericUpDown)control).Value == 0)
+                        if (((NumericUpDown)control).Value == 0)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio");
+                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
             }
-            if(verificadores.Count > 0)
+            if (verificadores.Count > 0)
             {
                 return true;
             }
@@ -86,8 +87,8 @@ namespace MovSoft.Classes
         public bool VerificarPermissao(int nivelPermissao)
         {
             bool podeAcessar;
-            bll.VerificarPermissao((int)Parametros.idCargoUser, nivelPermissao);
-            if (Parametros.permissaoUser == 'S' || Parametros.adminUser == 'S')
+            bll.VerificarPermissao((int)Parametros.idUser, nivelPermissao);
+            if (Parametros.adminUser == 'S' || Parametros.permissaoUser == 'S')
             {
                 podeAcessar = true;
             }
@@ -107,7 +108,7 @@ namespace MovSoft.Classes
             }
             else
             {
-                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {form.Text}!");
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {form.Text}!", "Não há permissão suficiente para continuar o processo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
         static public IniData LerIni()
@@ -235,7 +236,7 @@ namespace MovSoft.Classes
             string? input = inputNascimento.Text;
             if (input.Length < 8)
             {
-                MessageBox.Show("Quantidade de caracteres inválida no campo de Data de Nascimento!");
+                MessageBox.Show("Quantidade de caracteres inválida no campo de Data de Nascimento!", "Número de caracteres inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 inputNascimento.Focus();
                 return false;
             }
@@ -248,7 +249,7 @@ namespace MovSoft.Classes
                 {
                     if (date >= DateTime.Now)
                     {
-                        MessageBox.Show("O ano de nascimento inserido é acima do ano atual!");
+                        MessageBox.Show("O ano de nascimento inserido é acima do ano atual!", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         inputNascimento.Focus();
                         inputNascimento.Clear();
                         return false;
@@ -256,7 +257,7 @@ namespace MovSoft.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Data de nascimento inválida!");
+                    MessageBox.Show("Data de nascimento inválida!", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     inputNascimento.Focus();
                     inputNascimento.Clear();
                     return false;
@@ -272,7 +273,7 @@ namespace MovSoft.Classes
                 Regex regex = new(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
                 if (!regex.IsMatch(input))
                 {
-                    MessageBox.Show("Informe um e-mail válido! Exemplo: 'exemplo@exemplo.com' ou 'exemplo@exemplo.com.br'");
+                    MessageBox.Show("Informe um e-mail válido! Exemplo: 'exemplo@exemplo.com' ou 'exemplo@exemplo.com.br'", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     inputEmail.Focus();
                     inputEmail.Clear();
                     return false;
@@ -289,7 +290,7 @@ namespace MovSoft.Classes
             {
                 if (numeroCelular.Length < 11)
                 {
-                    MessageBox.Show("Quantidade de caracteres inválidos no campo de Celular!");
+                    MessageBox.Show("Quantidade de caracteres inválidos no campo de Celular!", "Número de caracteres inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     inputCelular.Focus();
                     return false;
                 }
@@ -298,7 +299,7 @@ namespace MovSoft.Classes
                     Regex regex = new(@"^[1-9]{2} ?:[2-8]|9[1-9][0-9]{3}[0-9]{4}$");
                     if (!regex.IsMatch(numeroCelular))
                     {
-                        MessageBox.Show("Primeiro dígito incorreto, adicione '9' corretamente no campo de Celular!");
+                        MessageBox.Show("Primeiro dígito incorreto, adicione '9' corretamente no campo de Celular!", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         inputCelular.Focus();
                         inputCelular.Clear();
                         return false;
@@ -313,7 +314,7 @@ namespace MovSoft.Classes
                     bool dddExistente = dddBrasil.Contains(dddInserido);
                     if (dddExistente == false)
                     {
-                        MessageBox.Show("Esse DDD não existe!");
+                        MessageBox.Show("Esse DDD não existe!", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         inputCelular.Focus();
                         inputCelular.Clear();
                         return false;
@@ -332,81 +333,71 @@ namespace MovSoft.Classes
             // Verificar se o cpf tem 11 dígitos
             if (cpf.Length != 11)
             {
-                cpfValido = false;
+                return false;
+                MessageBox.Show("Quantidade de caracteres inválidos no campo CPF", "Número de caracteres inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             // Verificar se é 00000000000 ...., 99999999999
-            if (cpfValido)
+            int n = cpf.Length;
+            for (int i = 1; i < n; i++)
             {
-                int n = cpf.Length;
-                cpfValido = false;
-                for (int i = 1; i < n; i++)
+                if (cpf[i] == cpf[0])
                 {
-                    if (cpf[i] != cpf[0])
-                    {
-                        cpfValido = true;
-                    }
+                    MessageBox.Show($"O número de CPF '{cpf}' é inválido", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
                 }
             }
 
             // Verificar dígito de controle do cpf
-            if (cpfValido)
+            var j = 0;
+            var d1 = 0;
+            var d2 = 0;
+
+            // Validar o primeiro número do dígito de controle
+            for (int i = 10; i > 1; i--)
             {
-                var j = 0;
-                var d1 = 0;
-                var d2 = 0;
-
-                // Validar o primeiro número do dígito de controle
-                for (int i = 10; i > 1; i--)
-                {
-                    d1 += Convert.ToInt32(cpf.Substring(j, 1)) * i;
-                    j++;
-                }
-
-                // Resto da divisão
-                d1 = (d1 * 10) % 11;
-                if (d1 == 10)
-                {
-                    d1 = 0;
-                }
-
-                // Verificar se o primeiro número bateu ---- posição 9 (penúltima)
-                if (d1 != Convert.ToInt32(cpf.Substring(9, 1)))
-                {
-                    cpfValido = false;
-                }
-
-                // Validar o segundo número (dígito) do controle
-                if (cpfValido)
-                {
-                    j = 0;
-                    for (int i = 11; i > 1; i--)
-                    {
-                        d2 += Convert.ToInt32(cpf.Substring(j, 1)) * i;
-                        j++;
-                    }
-
-                    // Resto divisão
-                    d2 = (d2 * 10) % 11;
-                    if (d2 == 10)
-                    {
-                        d2 = 0;
-                    }
-
-                    // Verificar se o segundo número bateu ---- posicao 10 (última)
-                    if (d2 != Convert.ToInt32(cpf.Substring(10, 1)))
-                    {
-                        cpfValido = false;
-                    }
-                }
+                d1 += Convert.ToInt32(cpf.Substring(j, 1)) * i;
+                j++;
             }
-            if (!cpfValido)
+
+            // Resto da divisão
+            d1 = (d1 * 10) % 11;
+            if (d1 == 10)
             {
-                MessageBox.Show("CPF inválido!");
+                d1 = 0;
+            }
+
+            // Verificar se o primeiro número bateu ---- posição 9 (penúltima)
+            if (d1 != Convert.ToInt32(cpf.Substring(9, 1)))
+            {
+                MessageBox.Show($"O número de CPF '{cpf}' é inválido", "Formatação de dados inccorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validar o segundo número (dígito) do controle
+            j = 0;
+            for (int i = 11; i > 1; i--)
+            {
+                d2 += Convert.ToInt32(cpf.Substring(j, 1)) * i;
+                j++;
+            }
+
+            // Resto divisão
+            d2 = (d2 * 10) % 11;
+            if (d2 == 10)
+            {
+                d2 = 0;
+            }
+
+            // Verificar se o segundo número bateu ---- posicao 10 (última)
+            if (d2 != Convert.ToInt32(cpf.Substring(10, 1)))
+            {
+                MessageBox.Show($"O número de CPF '{cpf}' é inválido!", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 inputCpf.Focus();
                 inputCpf.Clear();
+                return false;
             }
-            return cpfValido;
+            return true;
         }
     }
 }

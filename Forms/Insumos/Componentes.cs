@@ -22,26 +22,33 @@ namespace MovSoft.Forms
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (pnlCadastro.Enabled)
+            if (funcoes.VerificarPermissao(4))
             {
-                if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                if (pnlCadastro.Enabled)
                 {
-                    inputNomeComponente.Focus();
+                    if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    {
+                        inputNomeComponente.Focus();
+                    }
+                    else
+                    {
+                        pnlCadastro.Enabled = false;
+                        LimparCampos();
+                        btnCancelar.Enabled = false;
+                    }
                 }
                 else
                 {
-                    pnlCadastro.Enabled = false;
-                    LimparCampos();
-                    btnCancelar.Enabled = false;
+                    dataGridViewComponentes.Enabled = false;
+                    btnCadastrar.Text = "Salvar";
+                    pnlCadastro.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    inputNomeComponente.Focus();
                 }
             }
             else
             {
-                dataGridViewComponentes.Enabled = false;
-                btnCadastrar.Text = "Salvar";
-                pnlCadastro.Enabled = true;
-                btnCancelar.Enabled = true;
-                inputNomeComponente.Focus();
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar componentes", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

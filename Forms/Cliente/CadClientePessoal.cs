@@ -86,7 +86,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if(!funcoes.VerificaSeInputEstáVazio(this))
+            if (!funcoes.VerificaSeInputEstáVazio(this))
             {
                 bool[] validacaoCorreta = new bool[4];
                 validacaoCorreta[0] = funcoes.ValidacaoCPF(inputCpf);

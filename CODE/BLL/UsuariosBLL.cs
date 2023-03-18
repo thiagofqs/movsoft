@@ -34,12 +34,12 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public void VerificarPermissao(int idCargo, int idPermissao)
+        public void VerificarPermissao(int idUsuario, int idPermissao)
         {
             try
             {
                 db.Conectar();
-                string comando = $"call verificarPermissoes({idCargo},{idPermissao})";
+                string comando = $"call verificarPermissoes({idUsuario},{idPermissao})";
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.permissaoUser = char.Parse(dr.GetString(3));
                 dr.Close();

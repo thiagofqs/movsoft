@@ -1,4 +1,5 @@
 ﻿using MovSoft.Classes;
+using System.Diagnostics.Eventing.Reader;
 
 namespace MovSoft.Forms
 {
@@ -35,21 +36,28 @@ namespace MovSoft.Forms
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (pnlCadastro.Enabled)
+            if (funcoes.VerificarPermissao(4))
             {
-                if(!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                if (pnlCadastro.Enabled)
                 {
-                    //CadastrarGrupo();
-                    VoltarAoPadrao();
+                    if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    {
+                        //CadastrarGrupo();
+                        VoltarAoPadrao();
+                    }
+                }
+                else
+                {
+                    dataGridViewEstoque.Enabled = false;
+                    btnCadastrar.Text = "Salvar";
+                    pnlCadastro.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    comboBoxFiltro.Focus();
                 }
             }
             else
             {
-                dataGridViewEstoque.Enabled = false;
-                btnCadastrar.Text = "Salvar";
-                pnlCadastro.Enabled = true;
-                btnCancelar.Enabled = true;
-                comboBoxFiltro.Focus();
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar estoque", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

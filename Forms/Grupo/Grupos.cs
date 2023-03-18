@@ -90,21 +90,28 @@ namespace MovSoft.Forms
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (pnlCadastro.Enabled)
+            if (funcoes.VerificarPermissao(5))
             {
-                if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                if (pnlCadastro.Enabled)
                 {
-                    CadastrarGrupo();
-                    VoltarAoPadrao();
+                    if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    {
+                        CadastrarGrupo();
+                        VoltarAoPadrao();
+                    }
+                }
+                else
+                {
+                    dataGridViewGrupos.Enabled = false;
+                    btnCadastrar.Text = "Salvar";
+                    pnlCadastro.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    inputNomeGrupo.Focus();
                 }
             }
             else
             {
-                dataGridViewGrupos.Enabled = false;
-                btnCadastrar.Text = "Salvar";
-                pnlCadastro.Enabled = true;
-                btnCancelar.Enabled = true;
-                inputNomeGrupo.Focus();
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -148,26 +155,28 @@ namespace MovSoft.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (pnlCadastro.Enabled)
+            if (funcoes.VerificarPermissao(4))
             {
-                if (inputNomeGrupo.Text == "")
+                if (pnlCadastro.Enabled)
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
-                    inputNomeGrupo.Focus();
+                    if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    {
+                        EditarGrupo();
+                        VoltarAoPadrao();
+                    }
                 }
                 else
                 {
-                    EditarGrupo();
-                    VoltarAoPadrao();
+                    btnEditar.Text = "Salvar";
+                    dataGridViewGrupos.Enabled = false;
+                    pnlCadastro.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    inputNomeGrupo.Focus();
                 }
             }
             else
             {
-                btnEditar.Text = "Salvar";
-                dataGridViewGrupos.Enabled = false;
-                pnlCadastro.Enabled = true;
-                btnCancelar.Enabled = true;
-                inputNomeGrupo.Focus();
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
     }
