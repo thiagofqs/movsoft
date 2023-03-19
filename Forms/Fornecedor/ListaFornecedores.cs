@@ -31,7 +31,7 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
-                else if(column.Index == 2)
+                else if (column.Index == 2)
                 {
                     column.HeaderText = "Razão Social";
                 }

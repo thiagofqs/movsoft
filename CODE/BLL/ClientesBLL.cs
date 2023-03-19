@@ -15,7 +15,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_cliente('{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}', 'S')";
+                string comando = $"call cad_cliente('{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}', '{dtoClientes.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -25,13 +25,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable MostrarClientes()
+        public DataTable MostrarClientes(string? filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call clientes('S')");
+                dataTable = db.RetDataTable($"call clientes('{filtro}')");
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_cliente({dtoClientes.Id_cliente},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}', 'S')";
+                string comando = $"call edit_cliente({dtoClientes.Id_cliente},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoClientes.Nome}', '{dtoClientes.Sobrenome}', '{dtoClientes.Data_nasc}', '{dtoClientes.Cpf}', '{dtoClientes.Email}', {dtoClientes.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}', '{dtoClientes.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -91,6 +91,7 @@ namespace MovSoft.CODE.BLL
                 Parametros.nascimentoInputCliente = Parametros.nascimentoInputCliente.Replace("/", "");
                 Parametros.nascimentoInputCliente = Parametros.nascimentoInputCliente.Substring(0,8);
                 Parametros.idCelularCliente = dr.GetInt32(17);
+                Parametros.ClienteAtivo = dr.GetString(18);
             }
             catch (Exception ex)
             {

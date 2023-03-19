@@ -235,12 +235,13 @@
             comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
             comboBoxFiltro.FormattingEnabled = true;
-            comboBoxFiltro.Items.AddRange(new object[] { "Habilitado", "Desabilitado" });
+            comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Habilitado", "Desabilitado" });
             comboBoxFiltro.Location = new Point(606, 324);
             comboBoxFiltro.Margin = new Padding(3, 4, 3, 4);
             comboBoxFiltro.Name = "comboBoxFiltro";
             comboBoxFiltro.Size = new Size(111, 28);
             comboBoxFiltro.TabIndex = 2;
+            comboBoxFiltro.SelectedIndexChanged += comboBoxFiltro_SelectedIndexChanged;
             // 
             // dataGridViewGrupos
             // 
@@ -303,6 +304,7 @@
             dataGridViewGrupos.Size = new Size(491, 189);
             dataGridViewGrupos.TabIndex = 20;
             dataGridViewGrupos.CellClick += dataGridViewGrupos_CellClick;
+            dataGridViewGrupos.CellDoubleClick += dataGridViewGrupos_CellDoubleClick;
             // 
             // Grupos
             // 

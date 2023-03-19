@@ -8,6 +8,7 @@ namespace MovSoft.Forms
         ClientesBLL bll = new();
         Funcoes funcoes = new();
         DataGridViewRow rowData = new();
+        string? filtro = null;
         public ListaClientes()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace MovSoft.Forms
 
         public void CarregarClientes()
         {
-            dataGridView.DataSource = bll.MostrarClientes();
+            dataGridView.DataSource = bll.MostrarClientes(filtro);
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 if (column.Index == 0)
@@ -74,6 +75,23 @@ namespace MovSoft.Forms
                 Parametros.idCliente = int.Parse(rowData.Cells[0].Value.ToString());
                 AbrirCadCliente(true);
             }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxFiltro.SelectedIndex == 0)
+            {
+                filtro = null;
+            }
+            else if(comboBoxFiltro.SelectedIndex == 1)
+            {
+                filtro = "S";
+            }
+            else
+            {
+                filtro = "N";
+            }
+            CarregarClientes();
         }
     }
 }

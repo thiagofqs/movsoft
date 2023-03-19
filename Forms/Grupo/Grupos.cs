@@ -10,7 +10,7 @@ namespace MovSoft.Forms
         GruposBLL bll = new();
         GruposDTO dto = new();
         DataGridViewRow rowData = new();
-
+        string? filtro = null;
         public Grupos()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace MovSoft.Forms
 
         public void CarregarGupos()
         {
-            dataGridViewGrupos.DataSource = bll.MostrarGrupos();
+            dataGridViewGrupos.DataSource = bll.MostrarGrupos(filtro);
             foreach (DataGridViewColumn column in dataGridViewGrupos.Columns)
             {
                 if (column.Index == 0)
@@ -55,11 +55,17 @@ namespace MovSoft.Forms
 
         private void AtribuirDadosDosInputs(bool editar)
         {
+            string ativo = "N";
             if (editar)
             {
                 dto.IdGrupo = (int)Parametros.idGrupo;
             }
+            if (toggleButton1.Checked)
+            {
+                ativo = "S";
+            }
             dto.NomeGrupo = inputNomeGrupo.Text;
+            dto.Ativo = ativo;
         }
 
         private void VoltarAoPadrao()
@@ -137,6 +143,14 @@ namespace MovSoft.Forms
         private void AtribuirDadosAosInputs()
         {
             inputNomeGrupo.Text = Parametros.nomeGrupo;
+            if (Parametros.grupoAtivo == "S")
+            {
+                toggleButton1.Checked = true;
+            }
+            else
+            {
+                toggleButton1.Checked = false;
+            }
         }
 
         private void dataGridViewGrupos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -154,6 +168,50 @@ namespace MovSoft.Forms
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (funcoes.VerificarPermissao(4))
+            {
+                if (pnlCadastro.Enabled)
+                {
+                    if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    {
+                        EditarGrupo();
+                        VoltarAoPadrao();
+                    }
+                }
+                else
+                {
+                    btnEditar.Text = "Salvar";
+                    dataGridViewGrupos.Enabled = false;
+                    pnlCadastro.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    inputNomeGrupo.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxFiltro.SelectedIndex == 0)
+            {
+                filtro = null;
+            }
+            else if (comboBoxFiltro.SelectedIndex == 1)
+            {
+                filtro = "S";
+            }
+            else
+            {
+                filtro = "N";
+            }
+            CarregarGupos();
+        }
+
+        private void dataGridViewGrupos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (funcoes.VerificarPermissao(4))
             {

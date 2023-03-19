@@ -55,8 +55,11 @@ namespace MovSoft.Forms
             dtoEnderecos.Uf = Parametros.uf;
             dtoContatos.Ddd = Parametros.dddCliente;
             dtoContatos.Celular = Parametros.celularCliente;
+            dtoClientes.Ativo = Parametros.ClienteAtivo;
             bllClientes.CadastrarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            ActiveForm.Close();
+            funcoes.limpaInputsDeUmControl(this);
+            VoltarPagina(true);
+            
         }
 
         private void EditarCliente()
@@ -79,8 +82,9 @@ namespace MovSoft.Forms
             dtoEnderecos.Uf = Parametros.uf;
             dtoContatos.Ddd = Parametros.dddCliente;
             dtoContatos.Celular = Parametros.celularCliente;
+            dtoClientes.Ativo = Parametros.ClienteAtivo;
             bllClientes.EditarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            Close();
+            ActiveForm.Close();
             GC.Collect();
         }
 
@@ -183,7 +187,7 @@ namespace MovSoft.Forms
             }
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void VoltarPagina(bool primeiraAbertura)
         {
             AtribuirDadosDosInputs();
             Close();
@@ -193,8 +197,13 @@ namespace MovSoft.Forms
                          select frm;
             if (qrForm != null && qrForm.Count() > 0)
             {
-                ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(false, editarCliente);
+                ((CadCliente)qrForm.First()).AbrirTelaCadClientePessoal(primeiraAbertura, editarCliente);
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            VoltarPagina(false);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

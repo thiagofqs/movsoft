@@ -4,6 +4,7 @@ using MovSoft.CODE.BLL;
 using System.Text.RegularExpressions;
 using MovSoft.Controls;
 using System.Reflection.Metadata.Ecma335;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace MovSoft.Classes
 {
@@ -109,6 +110,20 @@ namespace MovSoft.Classes
             else
             {
                 MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {form.Text}!", "Não há permissão suficiente para continuar o processo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+        public void limpaInputsDeUmControl(Control control)
+        {
+            foreach (Control elemento in control.Controls)
+            {
+                if(elemento.GetType() == typeof(TextBox))
+                {
+                    ((TextBox)elemento).Clear();
+                }
+                else if (elemento.GetType() == typeof(ComboBox))
+                {
+                    ((ComboBox)elemento).SelectedIndex = -1;
+                }
             }
         }
         static public IniData LerIni()
@@ -242,10 +257,18 @@ namespace MovSoft.Classes
             }
             else
             {
-                input = input.Substring(2, 2) + "/" + input.Substring(2, 2) + "/" + input.Substring(4, 4);
+                int dia = int.Parse(input.Substring(0, 2));
+                int mes = int.Parse(input.Substring(2, 2));
+                int ano = int.Parse(input.Substring(4, 4));
+                input = input.Substring(0, 2) + "/" + input.Substring(2, 2) + "/" + input.Substring(4, 4);
                 DateTime date;
-
-                if (DateTime.TryParse(input, out date))
+                if (dia > DateTime.DaysInMonth(ano, mes)){
+                    inputNascimento.Focus();
+                    inputNascimento.Clear();
+                    MessageBox.Show("O dia inserido é maior que a quantidade de dias do mês inserido","Formatação de dados incorreta",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return false;
+                }
+                else if (DateTime.TryParse(input, out date))
                 {
                     if (date >= DateTime.Now)
                     {

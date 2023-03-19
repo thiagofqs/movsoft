@@ -57,6 +57,14 @@ namespace MovSoft.Forms
             Parametros.emailCliente = inputEmail.Text;
             Parametros.dddCliente = inputCelular.Text.Substring(0, 2);
             Parametros.celularCliente = inputCelular.Text.Substring(2, 9);
+            if (toggleButtonAtivo.Checked)
+            {
+                Parametros.ClienteAtivo = "S";
+            }
+            else
+            {
+                Parametros.ClienteAtivo = "N";
+            }
         }
 
         private void AtribuirDadosAosInputs()
@@ -68,6 +76,14 @@ namespace MovSoft.Forms
             inputNascimento.Text = Parametros.nascimentoInputCliente;
             inputEmail.Text = Parametros.emailCliente;
             inputCelular.Text = Parametros.dddCliente + Parametros.celularCliente;
+            if(Parametros.ClienteAtivo == "S")
+            {
+                toggleButtonAtivo.Checked = true;
+            }
+            else
+            {
+                toggleButtonAtivo.Checked = false;
+            }
         }
 
         private void ContinuarCadastro()

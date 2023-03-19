@@ -71,7 +71,7 @@
             comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
             comboBoxFiltro.FormattingEnabled = true;
-            comboBoxFiltro.Items.AddRange(new object[] { "Habilitado", "Desabilitado" });
+            comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Habilitado", "Desabilitado" });
             comboBoxFiltro.Location = new Point(606, 324);
             comboBoxFiltro.Margin = new Padding(3, 4, 3, 4);
             comboBoxFiltro.Name = "comboBoxFiltro";

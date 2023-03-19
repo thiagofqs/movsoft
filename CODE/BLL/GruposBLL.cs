@@ -17,7 +17,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $@"
                 insert into grupos () values
-                (default,'{gruposDTO.NomeGrupo}', 'S')
+                (default,'{gruposDTO.NomeGrupo}', '{gruposDTO.Ativo}')
                 ";
                 db.ExecutarComandoSQL(comando);
             }
@@ -27,15 +27,15 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable MostrarGrupos()
+        public DataTable MostrarGrupos(string? filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                string comando = @"
+                string comando = @$"
                 select id_grupo as 'ID', grupo as 'Grupo' from grupos
-                where grupos.ativo = 'S'
+                where grupos.ativo = if('{filtro}' = '',grupos.ativo,'{filtro}')
                 order by id_grupo asc;
                 ";
                 dataTable = db.RetDataTable(comando);
@@ -75,7 +75,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $@"
                 update grupos
-                set grupo = '{gruposDTO.NomeGrupo}', ativo = 'S'
+                set grupo = '{gruposDTO.NomeGrupo}', ativo = 'N'
                 where id_grupo = {gruposDTO.IdGrupo};
                 ";
                 db.ExecutarComandoSQL(comando);
