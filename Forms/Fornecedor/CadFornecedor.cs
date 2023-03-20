@@ -72,7 +72,8 @@ namespace MovSoft.Forms
             EnderecosDTO.Numero = inputNumero.Text;
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.CadastrarFornecedor(fornecedoresDTO, EnderecosDTO);
-            ActiveForm.Close();
+            funcoes.limpaInputsDeUmControl(pnlMain);
+            funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
         }
 
         private void RemoverMascarasDeTexto()

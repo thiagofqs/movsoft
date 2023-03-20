@@ -45,7 +45,6 @@ namespace MovSoft.Classes
                         ((MaskedTextBox)control).TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                         if (control.Text == string.Empty)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             verificadores.Add(false);
                         }
                     }
@@ -53,7 +52,6 @@ namespace MovSoft.Classes
                     {
                         if (control.Text == string.Empty)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             verificadores.Add(false);
                         }
                     }
@@ -61,7 +59,6 @@ namespace MovSoft.Classes
                     {
                         if (((ComboBox)control).SelectedIndex == -1)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             verificadores.Add(false);
                         }
                     }
@@ -69,13 +66,14 @@ namespace MovSoft.Classes
                     {
                         if (((NumericUpDown)control).Value == 0)
                         {
-                            MessageBox.Show($"O campo \"{control.Tag}\" está vazio", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            verificadores.Add(false);
                         }
                     }
                 }
             }
             if (verificadores.Count > 0)
             {
+                MessageBox.Show($"Preencha todos os campos obrigatórios!", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             return false;
@@ -123,6 +121,14 @@ namespace MovSoft.Classes
                 else if (elemento.GetType() == typeof(ComboBox))
                 {
                     ((ComboBox)elemento).SelectedIndex = -1;
+                }
+                else if(elemento.GetType() == typeof(MaskedTextBox))
+                {
+                    ((MaskedTextBox)elemento).Clear();
+                }
+                else if(elemento.GetType() == typeof(NumericUpDown))
+                {
+                    ((NumericUpDown)elemento).Value = 0;
                 }
             }
         }
@@ -291,6 +297,7 @@ namespace MovSoft.Classes
         public bool ValidacaoEmail(TextBox inputEmail)
         {
             string input = inputEmail.Text;
+            bool numerosRepetidos = true;
             if (input != null)
             {
                 Regex regex = new(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
@@ -347,28 +354,31 @@ namespace MovSoft.Classes
             }
             return false;
         }
-
+        
         public bool ValidacaoCPF(MaskedTextBox inputCpf)
         {
             string cpf = inputCpf.Text;
-            bool cpfValido = true;
-
+            bool numerosRepetidos = true;
             // Verificar se o cpf tem 11 dígitos
             if (cpf.Length != 11)
             {
-                return false;
                 MessageBox.Show("Quantidade de caracteres inválidos no campo CPF", "Número de caracteres inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
 
             // Verificar se é 00000000000 ...., 99999999999
             int n = cpf.Length;
             for (int i = 1; i < n; i++)
             {
-                if (cpf[i] == cpf[0])
+                if (cpf[i] != cpf[0])
                 {
-                    MessageBox.Show($"O número de CPF '{cpf}' é inválido", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+                    numerosRepetidos = false;
                 }
+            }
+            if (numerosRepetidos == true)
+            {
+                MessageBox.Show($"O número de CPF '{cpf}' é inválido", "Formatação de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
 
             // Verificar dígito de controle do cpf

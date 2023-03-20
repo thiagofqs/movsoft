@@ -109,6 +109,8 @@ namespace MovSoft.Forms
                     dtoUsuarios.Id_cargo = dados.idCargo;
                     dtoUsuarios.Id_colaborador = dados.idColaborador;
                     bllUsuarios.CadastrarUsuarios(dtoUsuarios);
+                    funcoes.limpaInputsDeUmControl(pnlContent);
+                    funcoes.PrimeiroInputEmFoco(inputUsuario);
                     AtualizarUsuarios();
                 }
                 else
