@@ -1,5 +1,4 @@
-﻿using K4os.Compression.LZ4.Streams;
-using MovSoft.Classes;
+﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 
 namespace MovSoft.Forms
@@ -84,6 +83,14 @@ namespace MovSoft.Forms
                 filtro = "N";
             }
             CarregarFornecedores();
+        }
+
+        private void inputPesquisarColaborador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                PesquisarFornecedores();
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace MovSoft.Classes
             }
         }
 
-        public bool VerificaSeInputEstáVazio(Control controlComInputs)
+        public bool VerificarSeInputEstaVazio(Control controlComInputs)
         {
             List<bool?> verificadores = new();
             foreach (Control control in controlComInputs.Controls)
@@ -78,10 +78,6 @@ namespace MovSoft.Classes
             }
             return false;
         }
-        public void PrimeiroInputEmFoco(Control input)
-        {
-            input.Focus();
-        }
 
         public bool VerificarPermissao(int nivelPermissao)
         {
@@ -110,7 +106,7 @@ namespace MovSoft.Classes
                 MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para acessar a tela {form.Text}!", "Não há permissão suficiente para continuar o processo", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
-        public void limpaInputsDeUmControl(Control control)
+        public void LimparInputsDeUmControl(Control control)
         {
             foreach (Control elemento in control.Controls)
             {
@@ -235,7 +231,7 @@ namespace MovSoft.Classes
             }
         }
 
-        public string? getApiResult(string url)
+        public string? GetApiResult(string url)
         {
             string? result = null;
             try
@@ -297,7 +293,6 @@ namespace MovSoft.Classes
         public bool ValidacaoEmail(TextBox inputEmail)
         {
             string input = inputEmail.Text;
-            bool numerosRepetidos = true;
             if (input != null)
             {
                 Regex regex = new(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
@@ -355,7 +350,7 @@ namespace MovSoft.Classes
             return false;
         }
         
-        public bool ValidacaoCPF(MaskedTextBox inputCpf)
+        public bool ValidacaoCpf(MaskedTextBox inputCpf)
         {
             string cpf = inputCpf.Text;
             bool numerosRepetidos = true;

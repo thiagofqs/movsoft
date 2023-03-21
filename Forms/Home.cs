@@ -176,7 +176,8 @@ namespace MovSoft
 
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            Vendas frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
 
         private void produtosFinaisToolStripMenuItem_Click(object sender, EventArgs e)
