@@ -8,6 +8,7 @@ namespace MovSoft.Forms
         UsuariosBLL bll = new();
         DataGridViewRow rowData = new();
         Funcoes funcoes = new();
+        string filtro = null;
 
         public ListaUsuarios()
         {
@@ -32,7 +33,7 @@ namespace MovSoft.Forms
 
         public void CarregarUsuarios()
         {
-            dataGridViewUsuarios.DataSource = bll.MostrarUsuarios();
+            dataGridViewUsuarios.DataSource = bll.MostrarUsuarios(filtro);
             foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
             {
                 if (column.Index == 0)
@@ -75,11 +76,26 @@ namespace MovSoft.Forms
             {
                 rowData = dataGridViewUsuarios.Rows[e.RowIndex];
                 Parametros.idUserEdit = int.Parse(rowData.Cells[0].Value.ToString());
-                Parametros.nomeUserEdit = rowData.Cells[1].Value.ToString();
-                Parametros.cargoUserEdit = rowData.Cells[2].Value.ToString();
-                Parametros.colaboradorUserEdit = rowData.Cells[3].Value.ToString();
+                bll.PegarDados((int)Parametros.idUserEdit);
                 AbrirCadUsuario(true);
             }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxFiltro.SelectedIndex == 0)
+            {
+                filtro = null;
+            }
+            else if(comboBoxFiltro.SelectedIndex == 1)
+            {
+                filtro = "S";
+            }
+            else
+            {
+                filtro = "N";
+            }
+            CarregarUsuarios();
         }
     }
 }

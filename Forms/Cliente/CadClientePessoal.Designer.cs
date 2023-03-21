@@ -162,7 +162,7 @@
             inputCpf.PromptChar = ' ';
             inputCpf.Size = new Size(113, 27);
             inputCpf.TabIndex = 3;
-            inputCpf.Tag = "CPF";
+            inputCpf.Tag = "";
             inputCpf.TextAlign = HorizontalAlignment.Center;
             // 
             // inputCelular
@@ -232,13 +232,12 @@
             kryptonLabelCpf.Location = new Point(353, 187);
             kryptonLabelCpf.Margin = new Padding(3, 4, 3, 4);
             kryptonLabelCpf.Name = "kryptonLabelCpf";
-            kryptonLabelCpf.Size = new Size(56, 26);
+            kryptonLabelCpf.Size = new Size(41, 26);
             kryptonLabelCpf.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
             kryptonLabelCpf.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelCpf.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
             kryptonLabelCpf.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelCpf.TabIndex = 3;
-            kryptonLabelCpf.Values.ExtraText = "*";
             kryptonLabelCpf.Values.Text = "CPF";
             // 
             // kryptonLabelNascimento

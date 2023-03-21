@@ -33,14 +33,14 @@ namespace MovSoft.CODE.BLL
             return listaColaboradores;
         }
 
-        public DataTable MostrarColaboradores()
+        public DataTable MostrarColaboradores(string filtro)
         {
             DataTable dataTable = new();
 
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call colaboradores('S')");
+                dataTable = db.RetDataTable($"call colaboradores('{filtro}')");
             }
             catch (Exception ex)
             {
@@ -71,7 +71,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_colaborador('{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}','S')";
+                string comando = $"call cad_colaborador('{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}','{dtoColaboradores.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -86,7 +86,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_colaborador({dtoColaboradores.Id_colaborador},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}','S')";
+                string comando = $"call edit_colaborador({dtoColaboradores.Id_colaborador},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}','{dtoColaboradores.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -114,6 +114,7 @@ namespace MovSoft.CODE.BLL
                 Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Replace("/", "");
                 Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Substring(0, 8);
                 Parametros.idCelularColab = dr.GetInt32(17);
+                Parametros.ColaboradorAtivo = dr.GetString(18);
             }
             catch (Exception ex)
             {
@@ -155,7 +156,6 @@ namespace MovSoft.CODE.BLL
                 {
                     idColaborador = int.Parse(row["ID"].ToString());
                 }
-                MessageBox.Show(nomeCompleto);
             }
             catch(Exception ex ) 
             {

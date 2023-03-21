@@ -133,7 +133,7 @@
             inputPesquisarColaborador.MaxLength = 0;
             inputPesquisarColaborador.Name = "inputPesquisarColaborador";
             inputPesquisarColaborador.PlaceholderText = "Pesquisar";
-            inputPesquisarColaborador.Size = new Size(274, 27);
+            inputPesquisarColaborador.Size = new Size(274, 23);
             inputPesquisarColaborador.TabIndex = 0;
             inputPesquisarColaborador.KeyPress += inputPesquisarColaborador_KeyPress;
             // 
@@ -166,6 +166,7 @@
             comboBoxFiltro.Name = "comboBoxFiltro";
             comboBoxFiltro.Size = new Size(111, 28);
             comboBoxFiltro.TabIndex = 2;
+            comboBoxFiltro.SelectedIndexChanged += comboBoxFiltro_SelectedIndexChanged;
             // 
             // imgFiltro
             // 

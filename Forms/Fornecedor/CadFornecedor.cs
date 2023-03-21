@@ -45,9 +45,11 @@ namespace MovSoft.Forms
 
         private void EditarFornecedor()
         {
+            fornecedoresDTO.Id_fornecedor = (int)Parametros.idFornecedor;
             fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
+            EnderecosDTO.Id_endereco = (int)Parametros.idEndereco;
             EnderecosDTO.Cep = inputCep.Text;
             EnderecosDTO.Uf = inputBoxUf.Text;
             EnderecosDTO.Cidade = inputCidade.Text;
@@ -55,6 +57,7 @@ namespace MovSoft.Forms
             EnderecosDTO.Logradouro = inputLogradouro.Text;
             EnderecosDTO.Numero = inputNumero.Text;
             EnderecosDTO.Complemento = inputComplemento.Text;
+            fornecedoresDTO.Ativo = Parametros.FornecedorAtivo;
             fornecedoresBLL.EditarFornecedor(fornecedoresDTO, EnderecosDTO);
             ActiveForm.Close();
         }
@@ -64,6 +67,7 @@ namespace MovSoft.Forms
             fornecedoresDTO.Nome_fantasia = inputNomeFantasia.Text;
             fornecedoresDTO.Razao_social = inputRazaoSocial.Text;
             fornecedoresDTO.Cnpj = inputCnpj.Text;
+            fornecedoresDTO.Ativo = Parametros.FornecedorAtivo;
             EnderecosDTO.Cep = inputCep.Text;
             EnderecosDTO.Uf = inputBoxUf.Text;
             EnderecosDTO.Cidade = inputCidade.Text;
@@ -94,6 +98,14 @@ namespace MovSoft.Forms
             inputNumero.Text = Parametros.numero;
             inputBairro.Text = Parametros.bairro;
             inputComplemento.Text = Parametros.complemento;
+            if(Parametros.FornecedorAtivo == "S")
+            {
+                toggleButtonAtivo.Checked = true;
+            }
+            else
+            {
+                toggleButtonAtivo.Checked = false;
+            }
         }
 
         private void CadastrarOuEditar()
@@ -131,6 +143,14 @@ namespace MovSoft.Forms
             Parametros.numero = inputNumero.Text;
             Parametros.logradouro = inputLogradouro.Text;
             Parametros.complemento = inputComplemento.Text;
+            if(toggleButtonAtivo.Checked)
+            {
+                Parametros.FornecedorAtivo = "S";
+            }
+            else
+            {
+                Parametros.FornecedorAtivo = "N";
+            }
         }
 
         private void inputCelular_KeyPress(object sender, KeyPressEventArgs e)

@@ -17,7 +17,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $"call cad_fornecedor('{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', " +
                     $"'{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', " +
-                    $"'{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}','S')";
+                    $"'{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}','{dtoFornecedores.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -27,13 +27,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable MostrarFornecedores()
+        public DataTable MostrarFornecedores(string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call fornecedores('S')");
+                dataTable = db.RetDataTable($"call fornecedores('{filtro}')");
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_fornecedor({dtoFornecedores.Id_fornecedor}, {dtoEnderecos.Id_endereco}, '{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}','S')";
+                string comando = $"call edit_fornecedor({dtoFornecedores.Id_fornecedor}, {dtoEnderecos.Id_endereco}, '{dtoFornecedores.Nome_fantasia}', '{dtoFornecedores.Razao_social}', '{dtoFornecedores.Cnpj}', '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}','{dtoFornecedores.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -85,6 +85,7 @@ namespace MovSoft.CODE.BLL
                 Parametros.nomeFantasia = dr.GetString(1);
                 Parametros.razaoSocial = dr.GetString(2);
                 Parametros.cnpj = dr.GetString(3);
+                Parametros.FornecedorAtivo = dr.GetString(12);
             }
             catch (Exception ex)
             {

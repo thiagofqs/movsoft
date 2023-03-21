@@ -56,11 +56,19 @@ namespace MovSoft.CODE.DAL
             try
             {
                 conn.Open();
+                int linhasAfetadas = 0;
                 if (conn.State == ConnectionState.Open)
                 {
                     MySqlCommand comando = new(comandoSql, conn);
-                    comando.ExecuteNonQuery();
-                    MessageBox.Show("Registro salvo com sucesso!");
+                    linhasAfetadas = comando.ExecuteNonQuery();
+                    if(linhasAfetadas > 0)
+                    {
+                        MessageBox.Show("Registro salvo com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao salvar registro!");
+                    }
                 }
                 else
                 {

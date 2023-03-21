@@ -34,7 +34,7 @@ namespace MovSoft.CODE.BLL
             {
                 db.Conectar();
                 string comando = @$"
-                select id_grupo as 'ID', grupo as 'Grupo' from grupos
+                select id_grupo as 'ID', grupo as 'Grupo', ativo as 'Ativo' from grupos
                 where grupos.ativo = if('{filtro}' = '',grupos.ativo,'{filtro}')
                 order by id_grupo asc;
                 ";

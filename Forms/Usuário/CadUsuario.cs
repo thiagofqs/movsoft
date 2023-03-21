@@ -22,6 +22,7 @@ namespace MovSoft.Forms
             public string confirmarSenha;
             public int idCargo;
             public int idColaborador;
+            public string ativo;
         }
         private bool editarUsuario = false;
 
@@ -68,6 +69,14 @@ namespace MovSoft.Forms
             inputUsuario.Text = Parametros.nomeUserEdit;
             inputboxCargo.Text = Parametros.cargoUserEdit;
             inputboxColaborador.Text = Parametros.colaboradorUserEdit;
+            if(Parametros.UserAtivoEdit == "S")
+            {
+                toggleButton1.Checked = true;
+            }
+            else
+            {
+                toggleButton1.Checked = false;
+            }
             inputSenha.Text = "";
             inputConfirmarSenha.Text = "";
         }
@@ -89,6 +98,14 @@ namespace MovSoft.Forms
             dados.senhaUsuario = inputSenha.Text;
             dados.confirmarSenha = inputConfirmarSenha.Text;
             dados.idCargo = inputboxCargo.SelectedIndex + 1;
+            if(toggleButton1.Checked)
+            {
+                dados.ativo = "S";
+            }
+            else
+            {
+                dados.ativo = "N";
+            }
             PegarIdColaboradorPeloNome();
         }
 
@@ -100,7 +117,6 @@ namespace MovSoft.Forms
         private void CadastrarUsuario()
         {
             AtribuirDadosDosInputs();
-            if (dados.senhaUsuario.Length >= 8)
             {
                 if (dados.senhaUsuario == dados.confirmarSenha)
                 {
@@ -108,6 +124,7 @@ namespace MovSoft.Forms
                     dtoUsuarios.Senha = dados.senhaUsuario;
                     dtoUsuarios.Id_cargo = dados.idCargo;
                     dtoUsuarios.Id_colaborador = dados.idColaborador;
+                    dtoUsuarios.Ativo = dados.ativo;
                     bllUsuarios.CadastrarUsuarios(dtoUsuarios);
                     funcoes.limpaInputsDeUmControl(pnlContent);
                     funcoes.PrimeiroInputEmFoco(inputUsuario);
@@ -117,11 +134,6 @@ namespace MovSoft.Forms
                 {
                     MessageBox.Show("Senhas não idênticas!");
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("A senha deve possuir no mínimo 8 caracteres!");
             }
         }
 
@@ -135,6 +147,7 @@ namespace MovSoft.Forms
                 dtoUsuarios.Senha = dados.senhaUsuario;
                 dtoUsuarios.Id_cargo = dados.idCargo;
                 dtoUsuarios.Id_colaborador = dados.idColaborador;
+                dtoUsuarios.Ativo = dados.ativo;
                 bllUsuarios.EditarUsuario(dtoUsuarios);
                 AtualizarUsuarios();
             }

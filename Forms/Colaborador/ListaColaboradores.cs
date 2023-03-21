@@ -9,6 +9,8 @@ namespace MovSoft.Forms
         ColaboradoresBLL bll = new();
         Funcoes funcoes = new();
 
+        string filtro = null;
+
         public ListaColaboradores()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace MovSoft.Forms
 
         public void CarregarColaboradores()
         {
-            dataGridView.DataSource = bll.MostrarColaboradores();
+            dataGridView.DataSource = bll.MostrarColaboradores(filtro);
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 if (column.Index == 0)
@@ -89,6 +91,23 @@ namespace MovSoft.Forms
                 Parametros.idColab = int.Parse(rowData.Cells[0].Value.ToString());
                 AbrirCadColaborador(true);
             }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxFiltro.SelectedIndex == 0)
+            {
+                filtro = null;
+            }
+            else if(comboBoxFiltro.SelectedIndex == 1)
+            {
+                filtro = "S";
+            }
+            else
+            {
+                filtro = "N";
+            }
+            CarregarColaboradores();
         }
     }
 }

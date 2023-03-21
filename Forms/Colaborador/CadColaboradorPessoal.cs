@@ -59,6 +59,14 @@ namespace MovSoft.Forms
             Parametros.emailColab = inputEmail.Text;
             Parametros.dddColab = inputCelular.Text.Substring(0, 2);
             Parametros.celularColab = inputCelular.Text.Substring(2, 9);
+            if(toggleButton1.Checked)
+            {
+                Parametros.ColaboradorAtivo = "S";
+            }
+            else
+            {
+                Parametros.ColaboradorAtivo = "N";
+            }
         }
 
         private void AtribuirDadosAosInputs()
@@ -70,6 +78,14 @@ namespace MovSoft.Forms
             inputNascimento.Text = Parametros.nascimentoInputColab;
             inputEmail.Text = Parametros.emailColab;
             inputCelular.Text = Parametros.dddColab + Parametros.celularColab;
+            if(Parametros.ColaboradorAtivo == "S")
+            {
+                toggleButton1.Checked = true;
+            }
+            else
+            {
+                toggleButton1.Checked = false;
+            }
         }
 
         private void VerificarCampos()

@@ -23,6 +23,7 @@ namespace MovSoft.CODE.BLL
                 Parametros.cargoUser = dr.GetString(3);
                 Parametros.adminUser = char.Parse(dr.GetString(4));
                 Parametros.idCargoUser = dr.GetInt32(5);
+                Parametros.userAtivo = dr.GetString(6);
                 dr.Close();
                 return true;
             }
@@ -56,7 +57,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_usuario('{dto.Nome}','{dto.Senha}',{dto.Id_cargo}, {dto.Id_colaborador},'S')";
+                string comando = $"call cad_usuario('{dto.Nome}','{dto.Senha}',{dto.Id_cargo}, {dto.Id_colaborador},'{dto.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -65,13 +66,13 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
         }
-        public DataTable MostrarUsuarios()
+        public DataTable MostrarUsuarios(string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call usuarios('S')");
+                dataTable = db.RetDataTable($"call usuarios('{filtro}')");
             }
             catch (Exception ex)
             {
@@ -96,12 +97,30 @@ namespace MovSoft.CODE.BLL
             return dataTable;
         }
 
+        public void PegarDados(int idUsuario)
+        {
+            try
+            {
+                db.Conectar();
+                string comando = $"call edit_selec_usuarios({idUsuario})";
+                MySqlDataReader dr = db.RetDataReader(comando);
+                Parametros.nomeUserEdit = dr.GetString(0);
+                Parametros.cargoUserEdit = dr.GetString(1);
+                Parametros.colaboradorUserEdit = dr.GetString(2);
+                Parametros.UserAtivoEdit = dr.GetString(3);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void EditarUsuario(UsuariosDTO dto)
         {
             try
             {
                 db.Conectar();
-                string comando = $"call edit_usuario({dto.Id_usuario}, {dto.Id_colaborador}, {dto.Id_cargo}, '{dto.Nome}','{dto.Senha}','S')";
+                string comando = $"call edit_usuario({dto.Id_usuario}, {dto.Id_colaborador}, {dto.Id_cargo}, '{dto.Nome}','{dto.Senha}','{dto.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)

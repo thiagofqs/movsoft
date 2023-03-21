@@ -76,7 +76,7 @@ namespace MovSoft.Forms
             inputNascimento.Text = Parametros.nascimentoInputCliente;
             inputEmail.Text = Parametros.emailCliente;
             inputCelular.Text = Parametros.dddCliente + Parametros.celularCliente;
-            if(Parametros.ClienteAtivo == "S")
+            if (Parametros.ClienteAtivo == "S")
             {
                 toggleButtonAtivo.Checked = true;
             }

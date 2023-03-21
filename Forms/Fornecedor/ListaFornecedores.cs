@@ -9,6 +9,8 @@ namespace MovSoft.Forms
         DataGridViewRow rowData = new();
         FornecedoresBLL bll = new();
         Funcoes funcoes = new();
+
+        string filtro = null;
         public ListaFornecedores()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace MovSoft.Forms
 
         public void CarregarFornecedores()
         {
-            dataGridView.DataSource = bll.MostrarFornecedores();
+            dataGridView.DataSource = bll.MostrarFornecedores(filtro);
             foreach (DataGridViewColumn column in dataGridView.Columns)
             {
                 if (column.Index == 0)
@@ -52,11 +54,6 @@ namespace MovSoft.Forms
             PesquisarFornecedores();
         }
 
-        private void inputPesquisarColaborador_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            PesquisarFornecedores();
-        }
-
         private void btnCadFornecedores_Click(object sender, EventArgs e)
         {
             AbrirCadFornecedor(false);
@@ -70,6 +67,23 @@ namespace MovSoft.Forms
                 Parametros.idFornecedor = int.Parse(rowData.Cells[0].Value.ToString());
                 AbrirCadFornecedor(true);
             }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxFiltro.SelectedIndex == 0)
+            {
+                filtro = null;
+            }
+            else if(comboBoxFiltro.SelectedIndex == 1)
+            {
+                filtro = "S";
+            }
+            else
+            {
+                filtro = "N";
+            }
+            CarregarFornecedores();
         }
     }
 }

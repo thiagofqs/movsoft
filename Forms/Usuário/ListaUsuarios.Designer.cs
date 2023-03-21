@@ -133,7 +133,7 @@
             inputPesquisarUsuarios.MaxLength = 0;
             inputPesquisarUsuarios.Name = "inputPesquisarUsuarios";
             inputPesquisarUsuarios.PlaceholderText = "Pesquisar";
-            inputPesquisarUsuarios.Size = new Size(274, 27);
+            inputPesquisarUsuarios.Size = new Size(274, 23);
             inputPesquisarUsuarios.TabIndex = 0;
             inputPesquisarUsuarios.KeyPress += inputPesquisarUsuarios_KeyPress;
             // 
@@ -178,6 +178,7 @@
             comboBoxFiltro.Name = "comboBoxFiltro";
             comboBoxFiltro.Size = new Size(111, 28);
             comboBoxFiltro.TabIndex = 2;
+            comboBoxFiltro.SelectedIndexChanged += comboBoxFiltro_SelectedIndexChanged;
             // 
             // ListaUsuarios
             // 

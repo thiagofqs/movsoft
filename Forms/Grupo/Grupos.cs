@@ -1,6 +1,7 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
+using System.Windows.Forms;
 
 namespace MovSoft.Forms
 {
@@ -17,6 +18,12 @@ namespace MovSoft.Forms
             CarregarGupos();
             comboBoxFiltro.SelectedIndex = 0;
             funcoes.CentralizarHorizontalmente(this, pnlCadastro);
+            DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn = new();
+            dataGridViewCheckBoxColumn.HeaderText = "Ativo";
+            dataGridViewCheckBoxColumn.Name = "Ativo";
+            dataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
+            dataGridViewGrupos.Columns.Add(dataGridViewCheckBoxColumn);
+
         }
 
         public void CarregarGupos()
@@ -28,9 +35,21 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
+                else if(column.Index == 3)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
                 else
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                if(comboBoxFiltro.SelectedIndex != 0 && column.Index == 3)
+                {
+                    column.Visible = false;
+                }
+                else if(column.Index == 3)
+                {
+                    column.Visible = true;
                 }
             }
         }
@@ -55,17 +74,19 @@ namespace MovSoft.Forms
 
         private void AtribuirDadosDosInputs(bool editar)
         {
-            string ativo = "N";
             if (editar)
             {
                 dto.IdGrupo = (int)Parametros.idGrupo;
             }
             if (toggleButton1.Checked)
             {
-                ativo = "S";
+                dto.Ativo = "S";
+            }
+            else
+            {
+                dto.Ativo = "N";
             }
             dto.NomeGrupo = inputNomeGrupo.Text;
-            dto.Ativo = ativo;
         }
 
         private void VoltarAoPadrao()
@@ -235,6 +256,24 @@ namespace MovSoft.Forms
             else
             {
                 MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+
+        private void dataGridViewGrupos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dataGridViewGrupos.Columns[2].Visible = false;
+            if (dataGridViewGrupos.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                string cellValue = dataGridViewGrupos.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+
+                if (cellValue == "S")
+                {
+                    e.Value = true;
+                }
+                else
+                {
+                    e.Value = false;
+                }
             }
         }
     }

@@ -305,6 +305,7 @@
             dataGridViewGrupos.TabIndex = 20;
             dataGridViewGrupos.CellClick += dataGridViewGrupos_CellClick;
             dataGridViewGrupos.CellDoubleClick += dataGridViewGrupos_CellDoubleClick;
+            dataGridViewGrupos.CellFormatting += dataGridViewGrupos_CellFormatting;
             // 
             // Grupos
             // 

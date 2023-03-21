@@ -10,6 +10,7 @@
         public static char? adminUser { get; set; }
         public static int? idCargoUser { get; set; }
         public static char? permissaoUser { get; set; }
+        public static string userAtivo { get; set; }
 
         //Dados dos Colaboradores Editar/Cadastro
         public static int? idColab { get; set; }
@@ -63,7 +64,7 @@
         public static string? nomeUserEdit { get; set; }
         public static string? cargoUserEdit { get; set; }
         public static string? colaboradorUserEdit { get; set; }
-        public static string UserAtivo { get; set; }
+        public static string UserAtivoEdit { get; set; }
 
         //Dados Grupo Editar/Cadastro
 

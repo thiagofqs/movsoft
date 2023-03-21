@@ -9,7 +9,7 @@ namespace MovSoft
     {
         Thread tr;
         UsuariosBLL bll = new();
-
+        Funcoes funcoes = new();
         public Login()
         {
             InitializeComponent();
@@ -25,26 +25,26 @@ namespace MovSoft
 
         private void Logar()
         {
-            if (inputUsuario.Text == "" || inputSenha.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos de login!");
-            }
-            else
+            if(!funcoes.VerificaSeInputEstáVazio(pnlLogin))
             {
                 string usuarioDigitado = inputUsuario.Text;
                 string senhaDigitada = inputSenha.Text;
                 Parametros parametros = new();
                 bool logado = bll.Login(usuarioDigitado);
-                if (Parametros.senhaUser == senhaDigitada)
+                if(Parametros.userAtivo == "N")
+                {
+                    MessageBox.Show($"O usuário '{inputUsuario.Text}' está desativado!","Falha de autenticação",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                else if (Parametros.senhaUser == senhaDigitada)
                 {
                     Close();
                     tr = new(AbrirJanelaHome);
                     tr.SetApartmentState(ApartmentState.STA);
                     tr.Start();
                 }
-                else if (logado)
+                else
                 {
-                    MessageBox.Show("Senha incorreta!");
+                    MessageBox.Show("Usuario e/ou Senha incorreta!","Falha de autenticação",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
         }

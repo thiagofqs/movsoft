@@ -49,7 +49,7 @@ namespace MovSoft.Forms
             }
         }
 
-        private void CadastrarColaborador()
+        private async void CadastrarColaborador()
         {
             dtoColaboradores.Nome = Parametros.nomeColab;
             dtoColaboradores.Sobrenome = Parametros.sobrenomeColab;
@@ -57,6 +57,7 @@ namespace MovSoft.Forms
             dtoColaboradores.Cpf = Parametros.cpfColab;
             dtoColaboradores.Data_nasc = Parametros.nascimentoColab;
             dtoColaboradores.Email = Parametros.emailColab;
+            dtoColaboradores.Ativo = Parametros.ColaboradorAtivo;
             dtoEnderecos.Cep = Parametros.cep;
             dtoEnderecos.Logradouro = Parametros.logradouro;
             dtoEnderecos.Numero = Parametros.numero;
@@ -82,6 +83,7 @@ namespace MovSoft.Forms
             dtoColaboradores.Cpf = Parametros.cpfColab;
             dtoColaboradores.Data_nasc = Parametros.nascimentoColab;
             dtoColaboradores.Email = Parametros.emailColab;
+            dtoColaboradores.Ativo = Parametros.ColaboradorAtivo;
             dtoEnderecos.Cep = Parametros.cep;
             dtoEnderecos.Logradouro = Parametros.logradouro;
             dtoEnderecos.Numero = Parametros.numero;
