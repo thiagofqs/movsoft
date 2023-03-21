@@ -121,7 +121,9 @@
             dataGridViewUsuarios.ShowRowErrors = false;
             dataGridViewUsuarios.Size = new Size(641, 428);
             dataGridViewUsuarios.TabIndex = 4;
+            dataGridViewUsuarios.CellContentClick += dataGridView_CellContentClick;
             dataGridViewUsuarios.CellDoubleClick += dataGridViewUsuarios_CellDoubleClick;
+            dataGridViewUsuarios.CellFormatting += dataGridView_CellFormatting;
             // 
             // inputPesquisarUsuarios
             // 

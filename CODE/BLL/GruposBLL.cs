@@ -75,7 +75,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $@"
                 update grupos
-                set grupo = '{gruposDTO.NomeGrupo}', ativo = 'N'
+                set grupo = '{gruposDTO.NomeGrupo}', ativo = '{gruposDTO.Ativo}'
                 where id_grupo = {gruposDTO.IdGrupo};
                 ";
                 db.ExecutarComandoSQL(comando);

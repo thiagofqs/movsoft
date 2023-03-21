@@ -116,7 +116,9 @@
             dataGridView.ShowRowErrors = false;
             dataGridView.Size = new Size(641, 428);
             dataGridView.TabIndex = 4;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
             dataGridView.CellDoubleClick += dataGridView_CellDoubleClick;
+            dataGridView.CellFormatting += dataGridView_CellFormatting;
             // 
             // btnCadFornecedores
             // 

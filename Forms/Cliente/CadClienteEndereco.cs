@@ -57,10 +57,9 @@ namespace MovSoft.Forms
             dtoContatos.Celular = Parametros.celularCliente;
             dtoClientes.Ativo = Parametros.ClienteAtivo;
             bllClientes.CadastrarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            AtualizarClientes();
             funcoes.limpaInputsDeUmControl(this);
             VoltarPagina(true);
-            
+            AtualizarClientes();
         }
 
         private void EditarCliente()
@@ -85,9 +84,9 @@ namespace MovSoft.Forms
             dtoContatos.Celular = Parametros.celularCliente;
             dtoClientes.Ativo = Parametros.ClienteAtivo;
             bllClientes.EditarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            AtualizarClientes();
             ActiveForm.Close();
             GC.Collect();
+            AtualizarClientes();
         }
 
         private void AtualizarClientes()

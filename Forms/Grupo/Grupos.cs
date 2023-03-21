@@ -11,6 +11,7 @@ namespace MovSoft.Forms
         GruposBLL bll = new();
         GruposDTO dto = new();
         DataGridViewRow rowData = new();
+        GeralBLL bllGeral = new();
         string? filtro = null;
         public Grupos()
         {
@@ -18,11 +19,7 @@ namespace MovSoft.Forms
             CarregarGupos();
             comboBoxFiltro.SelectedIndex = 0;
             funcoes.CentralizarHorizontalmente(this, pnlCadastro);
-            DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn = new();
-            dataGridViewCheckBoxColumn.HeaderText = "Ativo";
-            dataGridViewCheckBoxColumn.Name = "Ativo";
-            dataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
-            dataGridViewGrupos.Columns.Add(dataGridViewCheckBoxColumn);
+            funcoes.CriarColunaComCheckbox(dataGridViewGrupos);
 
         }
 
@@ -35,7 +32,7 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
-                else if(column.Index == 3)
+                else if (column.Index == 3)
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 }
@@ -43,11 +40,11 @@ namespace MovSoft.Forms
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-                if(comboBoxFiltro.SelectedIndex != 0 && column.Index == 3)
+                if (comboBoxFiltro.SelectedIndex != 0 && column.Index == 3)
                 {
                     column.Visible = false;
                 }
-                else if(column.Index == 3)
+                else if (column.Index == 3)
                 {
                     column.Visible = true;
                 }
@@ -274,6 +271,26 @@ namespace MovSoft.Forms
                 {
                     e.Value = false;
                 }
+            }
+        }
+
+        private void dataGridViewGrupos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                rowData = dataGridViewGrupos.Rows[e.RowIndex];
+
+                DataGridViewCheckBoxCell chk = dataGridViewGrupos.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    string valor = chk.Value.ToString();
+                    if (valor == "S")
+                    {
+                        bllGeral.AtivarDesetivar("grupos","id_grupo",int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    }
+                    else
+                    {
+                        bllGeral.AtivarDesetivar("grupos","id_grupo",int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    }
+                    CarregarGupos();
             }
         }
     }

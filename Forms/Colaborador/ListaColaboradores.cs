@@ -8,6 +8,7 @@ namespace MovSoft.Forms
         DataGridViewRow rowData = new();
         ColaboradoresBLL bll = new();
         Funcoes funcoes = new();
+        GeralBLL bllGeral = new();
 
         string filtro = null;
 
@@ -17,6 +18,7 @@ namespace MovSoft.Forms
             CarregarColaboradores();
             funcoes.dataGridView_AplicarCellFormatting(dataGridView);
             comboBoxFiltro.SelectedIndex = 0;
+            funcoes.CriarColunaComCheckbox(dataGridView);
         }
 
         private void AbrirCadColaborador(bool editarColaborador)
@@ -34,9 +36,21 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
+                else if (column.Index == 8)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
                 else
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                if (comboBoxFiltro.SelectedIndex != 0 && column.Index == 8)
+                {
+                    column.Visible = false;
+                }
+                else if (column.Index == 8)
+                {
+                    column.Visible = true;
                 }
             }
         }
@@ -53,6 +67,20 @@ namespace MovSoft.Forms
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            dataGridView.Columns[7].Visible = false;
+            if (dataGridView.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                string cellValue = dataGridView.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+
+                if (cellValue == "S")
+                {
+                    e.Value = true;
+                }
+                else
+                {
+                    e.Value = false;
+                }
+            }
             if (e.ColumnIndex == 3)
             {
                 e.Value = funcoes.GridViewMascaraCPF(e.Value.ToString());
@@ -62,6 +90,26 @@ namespace MovSoft.Forms
             {
                 e.Value = funcoes.GridViewMascaraCelular(e.Value.ToString());
                 e.FormattingApplied = true;
+            }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+
+                DataGridViewCheckBoxCell chk = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                string valor = chk.Value.ToString();
+                if (valor == "S")
+                {
+                    bllGeral.AtivarDesetivar("colaboradores", "id_colaborador", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                }
+                else
+                {
+                    bllGeral.AtivarDesetivar("colaboradores", "id_colaborador", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                }
+                CarregarColaboradores();
             }
         }
 
@@ -95,11 +143,11 @@ namespace MovSoft.Forms
 
         private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxFiltro.SelectedIndex == 0)
+            if (comboBoxFiltro.SelectedIndex == 0)
             {
                 filtro = null;
             }
-            else if(comboBoxFiltro.SelectedIndex == 1)
+            else if (comboBoxFiltro.SelectedIndex == 1)
             {
                 filtro = "S";
             }
@@ -109,5 +157,7 @@ namespace MovSoft.Forms
             }
             CarregarColaboradores();
         }
+
+
     }
 }

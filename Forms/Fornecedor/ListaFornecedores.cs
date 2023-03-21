@@ -9,15 +9,15 @@ namespace MovSoft.Forms
         DataGridViewRow rowData = new();
         FornecedoresBLL bll = new();
         Funcoes funcoes = new();
-
+        GeralBLL bllGeral = new();
         string filtro = null;
         public ListaFornecedores()
         {
             InitializeComponent();
             CarregarFornecedores();
             comboBoxFiltro.SelectedIndex = 0;
+            funcoes.CriarColunaComCheckbox(dataGridView);
         }
-
         private void AbrirCadFornecedor(bool editarFornecedor)
         {
             CadFornecedor frm = new(editarFornecedor);
@@ -37,9 +37,21 @@ namespace MovSoft.Forms
                 {
                     column.HeaderText = "Razão Social";
                 }
+                else if(column.Index == 6)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
                 else
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                if(comboBoxFiltro.SelectedIndex != 0 && column.Index == 6)
+                {
+                    column.Visible = false;
+                }
+                else if(column.Index == 6)
+                {
+                    column.Visible = true;
                 }
             }
         }
@@ -71,11 +83,11 @@ namespace MovSoft.Forms
 
         private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxFiltro.SelectedIndex == 0)
+            if (comboBoxFiltro.SelectedIndex == 0)
             {
                 filtro = null;
             }
-            else if(comboBoxFiltro.SelectedIndex == 1)
+            else if (comboBoxFiltro.SelectedIndex == 1)
             {
                 filtro = "S";
             }
@@ -84,6 +96,44 @@ namespace MovSoft.Forms
                 filtro = "N";
             }
             CarregarFornecedores();
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dataGridView.Columns[5].Visible = false;
+            if (dataGridView.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                string cellValue = dataGridView.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+
+                if (cellValue == "S")
+                {
+                    e.Value = true;
+                }
+                else
+                {
+                    e.Value = false;
+                }
+            }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 6)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+
+                DataGridViewCheckBoxCell chk = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                string valor = chk.Value.ToString();
+                if (valor == "S")
+                {
+                    bllGeral.AtivarDesetivar("fornecedores","id_fornecedor",int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                }
+                else
+                {
+                    bllGeral.AtivarDesetivar("fornecedores","id_fornecedor",int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                }
+                CarregarFornecedores();
+            }
         }
     }
 }

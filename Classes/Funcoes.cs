@@ -33,6 +33,17 @@ namespace MovSoft.Classes
             }
         }
 
+        public void CriarColunaComCheckbox(DataGridView gridview)
+        {
+            DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn = new();
+            dataGridViewCheckBoxColumn.HeaderText = "Ativo";
+            dataGridViewCheckBoxColumn.Name = "Ativo";
+            dataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
+            dataGridViewCheckBoxColumn.TrueValue = 'S';
+            dataGridViewCheckBoxColumn.FalseValue = 'N';
+            gridview.Columns.Add(dataGridViewCheckBoxColumn);
+        }
+
         public bool VerificaSeInputEstáVazio(Control controlComInputs)
         {
             List<bool?> verificadores = new();

@@ -1,5 +1,6 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
+using System.Windows.Forms;
 
 namespace MovSoft.Forms
 {
@@ -8,6 +9,8 @@ namespace MovSoft.Forms
         UsuariosBLL bll = new();
         DataGridViewRow rowData = new();
         Funcoes funcoes = new();
+        GeralBLL bllGeral = new();
+
         string filtro = null;
 
         public ListaUsuarios()
@@ -15,6 +18,7 @@ namespace MovSoft.Forms
             InitializeComponent();
             CarregarUsuarios();
             comboBoxFiltro.SelectedIndex = 0;
+            funcoes.CriarColunaComCheckbox(dataGridViewUsuarios);
         }
 
         private void AbrirCadUsuario(bool editarUsuario)
@@ -40,9 +44,21 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
+                else if (column.Index == 4)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
                 else
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                if (comboBoxFiltro.SelectedIndex != 0 && column.Index == 5)
+                {
+                    column.Visible = false;
+                }
+                else if (column.Index == 5)
+                {
+                    column.Visible = true;
                 }
             }
         }
@@ -83,11 +99,11 @@ namespace MovSoft.Forms
 
         private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxFiltro.SelectedIndex == 0)
+            if (comboBoxFiltro.SelectedIndex == 0)
             {
                 filtro = null;
             }
-            else if(comboBoxFiltro.SelectedIndex == 1)
+            else if (comboBoxFiltro.SelectedIndex == 1)
             {
                 filtro = "S";
             }
@@ -96,6 +112,44 @@ namespace MovSoft.Forms
                 filtro = "N";
             }
             CarregarUsuarios();
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            dataGridViewUsuarios.Columns[4].Visible = false;
+            if (dataGridViewUsuarios.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                string cellValue = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+
+                if (cellValue == "S")
+                {
+                    e.Value = true;
+                }
+                else
+                {
+                    e.Value = false;
+                }
+            }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                rowData = dataGridViewUsuarios.Rows[e.RowIndex];
+
+                DataGridViewCheckBoxCell chk = dataGridViewUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                string valor = chk.Value.ToString();
+                if (valor == "S")
+                {
+                    bllGeral.AtivarDesetivar("usuarios", "id_usuario", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                }
+                else
+                {
+                    bllGeral.AtivarDesetivar("usuarios", "id_usuario", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                }
+                CarregarUsuarios();
+            }
         }
     }
 }
