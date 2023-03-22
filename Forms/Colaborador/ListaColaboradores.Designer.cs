@@ -57,7 +57,7 @@
             btnCadColaboradores.Name = "btnCadColaboradores";
             btnCadColaboradores.Size = new Size(251, 45);
             btnCadColaboradores.TabIndex = 5;
-            btnCadColaboradores.Text = "Cadastrar Colaboradores";
+            btnCadColaboradores.Text = "Cadastrar Colaborador";
             btnCadColaboradores.UseVisualStyleBackColor = false;
             btnCadColaboradores.Click += btnCadColaboradores_Click;
             // 
@@ -135,7 +135,7 @@
             inputPesquisarColaborador.MaxLength = 0;
             inputPesquisarColaborador.Name = "inputPesquisarColaborador";
             inputPesquisarColaborador.PlaceholderText = "Pesquisar";
-            inputPesquisarColaborador.Size = new Size(274, 23);
+            inputPesquisarColaborador.Size = new Size(274, 27);
             inputPesquisarColaborador.TabIndex = 0;
             inputPesquisarColaborador.KeyPress += inputPesquisarColaborador_KeyPress;
             // 

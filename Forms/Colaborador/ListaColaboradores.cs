@@ -36,9 +36,13 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
-                else if (column.Index == 8)
+                else if (column.Name == "AtivoCheckBox")
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
+                else if (column.Name == "Ativo")
+                {
+                    column.Visible = false;
                 }
                 else
                 {
@@ -57,6 +61,7 @@ namespace MovSoft.Forms
 
         private void PesquisarColaboradores()
         {
+            comboBoxFiltro.SelectedIndex = 0;
             dataGridView.DataSource = bll.ProcurarColaboradores(inputPesquisarColaborador.Text);
         }
 
@@ -67,10 +72,9 @@ namespace MovSoft.Forms
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dataGridView.Columns[7].Visible = false;
             if (dataGridView.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
-                string cellValue = dataGridView.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+                string cellValue = dataGridView.Rows[e.RowIndex].Cells["AtivoCheckBox"].Value.ToString();
 
                 if (cellValue == "S")
                 {
@@ -95,7 +99,7 @@ namespace MovSoft.Forms
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 8)
+            if (dataGridView.Columns[e.RowIndex].Name == "AtivoCheckBox")
             {
                 rowData = dataGridView.Rows[e.RowIndex];
 

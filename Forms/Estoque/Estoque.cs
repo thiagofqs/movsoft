@@ -1,5 +1,4 @@
 ﻿using MovSoft.Classes;
-using System.Diagnostics.Eventing.Reader;
 
 namespace MovSoft.Forms
 {
@@ -40,7 +39,7 @@ namespace MovSoft.Forms
             {
                 if (pnlCadastro.Enabled)
                 {
-                    if (!funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
                     {
                         //CadastrarGrupo();
                         VoltarAoPadrao();

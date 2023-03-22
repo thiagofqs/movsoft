@@ -18,7 +18,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            funcoes.PrimeiroInputEmFoco(inputCep);
+            inputCep.Focus();
             funcoes.AjustarSelectorDosMaskedTextBox(this);
             if (!primeiraAbertura)
             {
@@ -57,7 +57,7 @@ namespace MovSoft.Forms
             dtoContatos.Celular = Parametros.celularCliente;
             dtoClientes.Ativo = Parametros.ClienteAtivo;
             bllClientes.CadastrarCliente(dtoClientes, dtoEnderecos, dtoContatos);
-            funcoes.limpaInputsDeUmControl(this);
+            funcoes.LimparInputsDeUmControl(this);
             VoltarPagina(true);
             AtualizarClientes();
         }
@@ -136,7 +136,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if(!funcoes.VerificaSeInputEstáVazio(this))
+            if(!funcoes.VerificarSeInputEstaVazio(this))
             {
                 CadastrarOuEditar();
             }
@@ -166,7 +166,7 @@ namespace MovSoft.Forms
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? resultado = await Task.Run(() => funcoes.getApiResult(url));
+                string? resultado = await Task.Run(() => funcoes.GetApiResult(url));
                 try
                 {
                     CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);

@@ -13,9 +13,8 @@ namespace MovSoft
         public Login()
         {
             InitializeComponent();
-            ActiveControl = inputUsuario;
-            bool iniExiste;
-            iniExiste = File.Exists(Parametros.Dir);
+            //ActiveControl = inputUsuario;
+            bool iniExiste = File.Exists(Parametros.Dir);
             if (!iniExiste)
             {
                 CriarIni();
@@ -25,7 +24,7 @@ namespace MovSoft
 
         private void Logar()
         {
-            if(!funcoes.VerificaSeInputEstáVazio(pnlLogin))
+            if(!funcoes.VerificarSeInputEstaVazio(pnlLogin))
             {
                 string usuarioDigitado = inputUsuario.Text;
                 string senhaDigitada = inputSenha.Text;
@@ -33,7 +32,7 @@ namespace MovSoft
                 bool logado = bll.Login(usuarioDigitado);
                 if(Parametros.userAtivo == "N")
                 {
-                    MessageBox.Show($"O usuário '{inputUsuario.Text}' está desativado!","Falha de autenticação",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show($"O usuário '{inputUsuario.Text}' está desativado!", "Falha de autenticação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (Parametros.senhaUser == senhaDigitada)
                 {
@@ -42,9 +41,9 @@ namespace MovSoft
                     tr.SetApartmentState(ApartmentState.STA);
                     tr.Start();
                 }
-                else
+                else if(logado)
                 {
-                    MessageBox.Show("Usuario e/ou Senha incorreta!","Falha de autenticação",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Usuário e/ou senha incorreta!", "Falha de autenticação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

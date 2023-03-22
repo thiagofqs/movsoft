@@ -1,5 +1,4 @@
-﻿using K4os.Compression.LZ4.Streams;
-using MovSoft.Classes;
+﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 
 namespace MovSoft.Forms
@@ -37,9 +36,13 @@ namespace MovSoft.Forms
                 {
                     column.HeaderText = "Razão Social";
                 }
-                else if(column.Index == 6)
+                else if(column.Name == "AtivoCheckBox")
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
+                else if(column.Name == "Ativo")
+                {
+                    column.Visible = false;
                 }
                 else
                 {
@@ -58,6 +61,7 @@ namespace MovSoft.Forms
 
         private void PesquisarFornecedores()
         {
+            comboBoxFiltro.SelectedIndex = 0;
             dataGridView.DataSource = bll.ProcurarFornecedores(inputPesquisarColaborador.Text);
         }
 
@@ -97,13 +101,11 @@ namespace MovSoft.Forms
             }
             CarregarFornecedores();
         }
-
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dataGridView.Columns[5].Visible = false;
             if (dataGridView.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
-                string cellValue = dataGridView.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+                string cellValue = dataGridView.Rows[e.RowIndex].Cells["AtivoCheckBox"].Value.ToString();
 
                 if (cellValue == "S")
                 {
@@ -118,7 +120,7 @@ namespace MovSoft.Forms
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (dataGridView.Columns[e.RowIndex].Name == "AtivoCheckBox")
             {
                 rowData = dataGridView.Rows[e.RowIndex];
 
@@ -126,13 +128,20 @@ namespace MovSoft.Forms
                 string valor = chk.Value.ToString();
                 if (valor == "S")
                 {
-                    bllGeral.AtivarDesetivar("fornecedores","id_fornecedor",int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    bllGeral.AtivarDesetivar("fornecedores", "id_fornecedor", int.Parse(rowData.Cells[0].Value.ToString()), "N");
                 }
                 else
                 {
-                    bllGeral.AtivarDesetivar("fornecedores","id_fornecedor",int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    bllGeral.AtivarDesetivar("fornecedores", "id_fornecedor", int.Parse(rowData.Cells[0].Value.ToString()), "S");
                 }
                 CarregarFornecedores();
+            }
+        }
+        private void inputPesquisarColaborador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                PesquisarFornecedores();
             }
         }
     }

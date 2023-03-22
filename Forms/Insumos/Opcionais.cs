@@ -17,6 +17,7 @@ namespace MovSoft.Forms
         {
             inputNomeOpcionais.Text = "";
             numericUpDownOpcionais.Text = "";
+            toggleButtonAtivo.Checked = true;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace MovSoft.Forms
             {
                 if (pnlCadastro.Enabled)
                 {
-                    if (funcoes.VerificaSeInputEstáVazio(pnlCadastro))
+                    if (funcoes.VerificarSeInputEstaVazio(pnlCadastro))
                     {
                         inputNomeOpcionais.Focus();
                     }

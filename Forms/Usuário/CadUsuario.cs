@@ -31,7 +31,7 @@ namespace MovSoft.Forms
             InitializeComponent();
             ListarColaboradores();
             ListarCargos();
-            funcoes.PrimeiroInputEmFoco(inputboxColaborador);
+            inputboxColaborador.Focus();
             if (Parametros.editarUser == true)
             {
                 editarUsuario = true;
@@ -126,8 +126,8 @@ namespace MovSoft.Forms
                     dtoUsuarios.Id_colaborador = dados.idColaborador;
                     dtoUsuarios.Ativo = dados.ativo;
                     bllUsuarios.CadastrarUsuarios(dtoUsuarios);
-                    funcoes.limpaInputsDeUmControl(pnlContent);
-                    funcoes.PrimeiroInputEmFoco(inputUsuario);
+                    funcoes.LimparInputsDeUmControl(pnlContent);
+                    inputboxColaborador.Focus();
                     AtualizarUsuarios();
                 }
                 else
@@ -159,7 +159,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if(!funcoes.VerificaSeInputEstáVazio(pnlContent))
+            if(!funcoes.VerificarSeInputEstaVazio(pnlContent))
             {
                 CadastrarOuEditar();
             }

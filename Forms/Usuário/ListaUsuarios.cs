@@ -17,8 +17,8 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             CarregarUsuarios();
-            comboBoxFiltro.SelectedIndex = 0;
             funcoes.CriarColunaComCheckbox(dataGridViewUsuarios);
+            comboBoxFiltro.SelectedIndex = 0;
         }
 
         private void AbrirCadUsuario(bool editarUsuario)
@@ -38,15 +38,24 @@ namespace MovSoft.Forms
         public void CarregarUsuarios()
         {
             dataGridViewUsuarios.DataSource = bll.MostrarUsuarios(filtro);
+            FormatarGridView();
+        }
+
+        private void FormatarGridView()
+        {
             foreach (DataGridViewColumn column in dataGridViewUsuarios.Columns)
             {
                 if (column.Index == 0)
                 {
                     column.Width = 50;
                 }
-                else if (column.Index == 4)
+                else if (column.Name == "AtivoCheckBox")
                 {
-                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                }
+                else if(column.Name == "Ativo")
+                {
+                    column.Visible = false;
                 }
                 else
                 {
@@ -65,7 +74,9 @@ namespace MovSoft.Forms
 
         private void PesquisarUsuarios()
         {
+            comboBoxFiltro.SelectedIndex = 0;
             dataGridViewUsuarios.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text);
+            FormatarGridView();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -116,28 +127,29 @@ namespace MovSoft.Forms
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dataGridViewUsuarios.Columns[4].Visible = false;
             if (dataGridViewUsuarios.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
-                string cellValue = dataGridViewUsuarios.Rows[e.RowIndex].Cells["Ativo"].Value.ToString();
+                if(e.Value != null)
+                {
+                    string cellValue = dataGridViewUsuarios.Rows[e.RowIndex].Cells["AtivoCheckBox"].Value.ToString();
 
-                if (cellValue == "S")
-                {
-                    e.Value = true;
-                }
-                else
-                {
-                    e.Value = false;
+                    if (cellValue == "S")
+                    {
+                        e.Value = true;
+                    }
+                    else
+                    {
+                        e.Value = false;
+                    }
                 }
             }
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (dataGridViewUsuarios.Columns[e.RowIndex].Name == "AtivoCheckBox")
             {
                 rowData = dataGridViewUsuarios.Rows[e.RowIndex];
-
                 DataGridViewCheckBoxCell chk = dataGridViewUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                 string valor = chk.Value.ToString();
                 if (valor == "S")

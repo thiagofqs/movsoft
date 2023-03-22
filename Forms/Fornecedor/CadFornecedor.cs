@@ -16,14 +16,15 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
+            inputNomeFantasia.Focus();
             funcoes.AjustarSelectorDosMaskedTextBox(pnlMain);
             if (editar)
             {
                 editarFornecedor = true;
                 fornecedoresBLL.PegarDados((int)Parametros.idFornecedor);
                 fornecedoresBLL.PegarEndereco((int)Parametros.idFornecedor);
-                txtTitulo.Text = "Editar Fornecedor 1/2";
+                txtTitulo.Text = "Editar Fornecedor";
+                btnCadastrar.Text = "Salvar";
                 AtribuirDadosAosInputs();
             }
             else
@@ -76,8 +77,8 @@ namespace MovSoft.Forms
             EnderecosDTO.Numero = inputNumero.Text;
             EnderecosDTO.Complemento = inputComplemento.Text;
             fornecedoresBLL.CadastrarFornecedor(fornecedoresDTO, EnderecosDTO);
-            funcoes.limpaInputsDeUmControl(pnlMain);
-            funcoes.PrimeiroInputEmFoco(inputNomeFantasia);
+            funcoes.LimparInputsDeUmControl(pnlMain);
+            inputNomeFantasia.Focus();
         }
 
         private void RemoverMascarasDeTexto()
@@ -125,7 +126,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if(!funcoes.VerificaSeInputEstáVazio(pnlMain))
+            if(!funcoes.VerificarSeInputEstaVazio(pnlMain))
             {
                 CadastrarOuEditar();
             }
@@ -150,14 +151,6 @@ namespace MovSoft.Forms
             else
             {
                 Parametros.FornecedorAtivo = "N";
-            }
-        }
-
-        private void inputCelular_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                VerificarCampos();
             }
         }
 
@@ -189,7 +182,7 @@ namespace MovSoft.Forms
             if (!string.IsNullOrWhiteSpace(inputCep.Text.Trim()))
             {
                 string url = $"https://viacep.com.br/ws/{inputCep.Text}/json/";
-                string? resultado = await Task.Run(() => funcoes.getApiResult(url));
+                string? resultado = await Task.Run(() => funcoes.GetApiResult(url));
                 try
                 {
                     CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);
@@ -227,14 +220,6 @@ namespace MovSoft.Forms
         private void toggleButton_KeyPress(object sender, KeyPressEventArgs e)
         {
             VerificarCampos();
-        }
-
-        private void inputBoxUf_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                VerificarCampos();
-            }
         }
 
         private void inputCep_Leave(object sender, EventArgs e)

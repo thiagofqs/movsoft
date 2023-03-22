@@ -41,7 +41,7 @@
             btnEditar = new Button();
             pnlCadastro = new Panel();
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
-            toggleButton1 = new Controls.ToggleButton();
+            toggleButtonAtivo = new Controls.ToggleButton();
             kryptonLabelNome = new Krypton.Toolkit.KryptonLabel();
             imgFiltro = new PictureBox();
             comboBoxFiltro = new ComboBox();
@@ -156,7 +156,7 @@
             pnlCadastro.BackColor = Color.FromArgb(114, 101, 75);
             pnlCadastro.BorderStyle = BorderStyle.Fixed3D;
             pnlCadastro.Controls.Add(kryptonLabel1);
-            pnlCadastro.Controls.Add(toggleButton1);
+            pnlCadastro.Controls.Add(toggleButtonAtivo);
             pnlCadastro.Controls.Add(kryptonLabelNome);
             pnlCadastro.Controls.Add(inputNomeGrupo);
             pnlCadastro.Enabled = false;
@@ -181,26 +181,26 @@
             kryptonLabel1.Values.ExtraText = "*";
             kryptonLabel1.Values.Text = "Ativo";
             // 
-            // toggleButton1
+            // toggleButtonAtivo
             // 
-            toggleButton1.AutoSize = true;
-            toggleButton1.BackColor = Color.Transparent;
-            toggleButton1.Checked = true;
-            toggleButton1.CheckState = CheckState.Checked;
-            toggleButton1.Cursor = Cursors.Hand;
-            toggleButton1.FocusToggleColor = Color.Gold;
-            toggleButton1.Location = new Point(254, 55);
-            toggleButton1.Margin = new Padding(3, 4, 3, 4);
-            toggleButton1.MinimumSize = new Size(51, 31);
-            toggleButton1.Name = "toggleButton1";
-            toggleButton1.OffBackColor = Color.Gray;
-            toggleButton1.OffToggleColor = Color.Gainsboro;
-            toggleButton1.OnBackColor = Color.FromArgb(0, 133, 132);
-            toggleButton1.OnToggleColor = Color.WhiteSmoke;
-            toggleButton1.Size = new Size(51, 31);
-            toggleButton1.TabIndex = 10;
-            toggleButton1.Tag = "";
-            toggleButton1.UseVisualStyleBackColor = false;
+            toggleButtonAtivo.AutoSize = true;
+            toggleButtonAtivo.BackColor = Color.Transparent;
+            toggleButtonAtivo.Checked = true;
+            toggleButtonAtivo.CheckState = CheckState.Checked;
+            toggleButtonAtivo.Cursor = Cursors.Hand;
+            toggleButtonAtivo.FocusToggleColor = Color.Gold;
+            toggleButtonAtivo.Location = new Point(254, 55);
+            toggleButtonAtivo.Margin = new Padding(3, 4, 3, 4);
+            toggleButtonAtivo.MinimumSize = new Size(51, 31);
+            toggleButtonAtivo.Name = "toggleButtonAtivo";
+            toggleButtonAtivo.OffBackColor = Color.Gray;
+            toggleButtonAtivo.OffToggleColor = Color.Gainsboro;
+            toggleButtonAtivo.OnBackColor = Color.FromArgb(0, 133, 132);
+            toggleButtonAtivo.OnToggleColor = Color.WhiteSmoke;
+            toggleButtonAtivo.Size = new Size(51, 31);
+            toggleButtonAtivo.TabIndex = 10;
+            toggleButtonAtivo.Tag = "";
+            toggleButtonAtivo.UseVisualStyleBackColor = false;
             // 
             // kryptonLabelNome
             // 
@@ -348,7 +348,7 @@
         private PictureBox imgFiltro;
         private ComboBox comboBoxFiltro;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
-        private Controls.ToggleButton toggleButton1;
+        private Controls.ToggleButton toggleButtonAtivo;
         private Krypton.Toolkit.KryptonLabel kryptonLabelNome;
         private DataGridView dataGridViewGrupos;
     }

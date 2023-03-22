@@ -13,7 +13,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             RemoverMascarasDeTexto();
-            funcoes.PrimeiroInputEmFoco(inputNome);
+            inputNome.Focus();
             funcoes.AjustarSelectorDosMaskedTextBox(this);
             if (!primeiraAbertura)
             {
@@ -102,10 +102,10 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if (!funcoes.VerificaSeInputEstáVazio(this))
+            if (!funcoes.VerificarSeInputEstaVazio(this))
             {
                 bool[] validacaoCorreta = new bool[4];
-                validacaoCorreta[0] = funcoes.ValidacaoCPF(inputCpf);
+                validacaoCorreta[0] = funcoes.ValidacaoCpf(inputCpf);
                 validacaoCorreta[1] = funcoes.ValidacaoDataNascimento(inputNascimento);
                 validacaoCorreta[2] = funcoes.ValidacaoEmail(inputEmail);
                 validacaoCorreta[3] = funcoes.ValidacaoTelefone(inputCelular);
