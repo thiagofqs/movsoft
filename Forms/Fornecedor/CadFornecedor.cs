@@ -111,16 +111,19 @@ namespace MovSoft.Forms
 
         private void CadastrarOuEditar()
         {
-            AtribuirDadosDosInputs();
-            if (editarFornecedor)
+            if (funcoes.IsCnpj(inputCnpj))
             {
-                EditarFornecedor();
-                AtualizarFornecedores();
-            }
-            else if (!editarFornecedor)
-            {
-                CadastrarFornecedor();
-                AtualizarFornecedores();
+                AtribuirDadosDosInputs();
+                if (editarFornecedor)
+                {
+                    EditarFornecedor();
+                    AtualizarFornecedores();
+                }
+                else if (!editarFornecedor)
+                {
+                    CadastrarFornecedor();
+                    AtualizarFornecedores();
+                }
             }
         }
 

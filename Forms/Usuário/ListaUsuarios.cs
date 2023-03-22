@@ -147,7 +147,7 @@ namespace MovSoft.Forms
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewUsuarios.Columns[e.RowIndex].Name == "AtivoCheckBox")
+            if (dataGridViewUsuarios.Columns[e.ColumnIndex].Name == "AtivoCheckBox")
             {
                 rowData = dataGridViewUsuarios.Rows[e.RowIndex];
                 DataGridViewCheckBoxCell chk = dataGridViewUsuarios.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;

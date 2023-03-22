@@ -436,5 +436,60 @@ namespace MovSoft.Classes
             }
             return true;
         }
+
+        public bool IsCnpj(MaskedTextBox inputCnpj)
+        {
+            string cnpj = inputCnpj.Text;
+            //52238461000109 - retorna falso sendo um cnpj verdadeiro
+
+            int[] multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int soma;
+            int resto;
+            string digito;
+
+            if (cnpj.Length != 14)
+            {
+                MessageBox.Show("CNPJ numero caracteres incorreto");
+                return false;
+            }
+            soma = 0;
+            for (int i = 0; i < 12; i++)
+            {
+                soma += int.Parse(cnpj[i].ToString()) * multiplicador1[i];
+            }
+            resto = (soma % 11);
+            if (resto < 2)
+            {
+                resto = 0;
+            }
+            else
+            {
+                resto = 11 - resto;
+            }
+            digito = resto.ToString();
+            soma = 0;
+            for (int i = 0; i < 13; i++)
+            {
+                soma += int.Parse(cnpj[i].ToString()) * multiplicador2[i];
+            }
+            resto = (soma % 11);
+            if (resto < 2)
+            {
+                resto = 0;
+            }
+            else
+            {
+                resto = 11 - resto;
+            }
+            digito += resto.ToString();
+            if (cnpj.EndsWith(digito))
+            {
+                MessageBox.Show("Funcionou!");
+                return true;
+            }
+            MessageBox.Show("CNPJ inválido!");
+            return false;
+        }
     }
 }
