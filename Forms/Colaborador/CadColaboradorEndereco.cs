@@ -217,9 +217,12 @@ namespace MovSoft.Forms
             }
         }
 
-        private void inputCep_Leave(object sender, EventArgs e)
+        private void inputComplemento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            VerificarCep();
+            if (e.KeyChar == 13)
+            {
+                VerificarCampos();
+            }
         }
     }
 }

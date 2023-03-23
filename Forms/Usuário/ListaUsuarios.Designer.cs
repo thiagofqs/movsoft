@@ -61,7 +61,7 @@
             this.btnCadUsuario.Click += new System.EventHandler(this.btnCadUsuario_Click);
             // 
             // dataGridViewUsuarios
-            //
+            // 
             this.dataGridViewUsuarios.AllowUserToAddRows = false;
             this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
             this.dataGridViewUsuarios.AllowUserToResizeColumns = false;
@@ -121,9 +121,9 @@
             this.dataGridViewUsuarios.ShowRowErrors = false;
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(561, 321);
             this.dataGridViewUsuarios.TabIndex = 4;
-            dataGridViewUsuarios.CellContentClick += dataGridView_CellContentClick;
-            dataGridViewUsuarios.CellDoubleClick += dataGridViewUsuarios_CellDoubleClick;
-            dataGridViewUsuarios.CellFormatting += dataGridView_CellFormatting;
+            this.dataGridViewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            this.dataGridViewUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuarios_CellDoubleClick);
+            this.dataGridViewUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             // 
             // inputPesquisarUsuarios
             // 

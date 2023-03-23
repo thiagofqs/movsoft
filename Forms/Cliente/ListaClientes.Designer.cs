@@ -117,9 +117,9 @@
             this.dataGridView.ShowRowErrors = false;
             this.dataGridView.Size = new System.Drawing.Size(561, 321);
             this.dataGridView.TabIndex = 4;
-            dataGridView.CellContentClick += dataGridView_CellContentClick;
-            dataGridView.CellDoubleClick += dataGridView_CellDoubleClick;
-            dataGridView.CellFormatting += dataGridView_CellFormatting;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             // 
             // btnCadClientes
             // 

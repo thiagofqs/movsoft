@@ -107,7 +107,7 @@
             this.inputCep.Size = new System.Drawing.Size(100, 23);
             this.inputCep.TabIndex = 0;
             this.inputCep.Tag = "CEP";
-            this.inputCep.Leave += new System.EventHandler(this.inputCep_Leave);
+            this.inputCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputCep_KeyPress);
             // 
             // inputNumero
             // 

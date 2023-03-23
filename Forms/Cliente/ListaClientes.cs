@@ -14,7 +14,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             CarregarClientes();
-            funcoes.dataGridView_AplicarCellFormatting(dataGridView);
+            funcoes.dataGridViewColaboradoresClientes_AplicarCellFormatting(dataGridView);
             comboBoxFiltro.SelectedIndex = 0;
             funcoes.CriarColunaComCheckbox(dataGridView);
         }

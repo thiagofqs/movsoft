@@ -84,6 +84,7 @@
             this.inputComplemento.Name = "inputComplemento";
             this.inputComplemento.Size = new System.Drawing.Size(154, 23);
             this.inputComplemento.TabIndex = 4;
+            this.inputComplemento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputComplemento_KeyPress);
             // 
             // inputBoxUf
             // 
@@ -229,6 +230,7 @@
             this.btnPesquisarCep.TabIndex = 1;
             this.btnPesquisarCep.TabStop = false;
             this.btnPesquisarCep.UseVisualStyleBackColor = false;
+            this.btnPesquisarCep.Click += new System.EventHandler(this.btnPesquisarCep_Click);
             // 
             // kryptonLabelCep
             // 

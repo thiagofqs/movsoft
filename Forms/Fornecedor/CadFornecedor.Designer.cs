@@ -307,7 +307,6 @@
             this.inputCep.TabIndex = 3;
             this.inputCep.Tag = "CEP";
             this.inputCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputCep_KeyPress);
-            this.inputCep.Leave += new System.EventHandler(this.inputCep_Leave);
             // 
             // inputCnpj
             // 

@@ -16,7 +16,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             CarregarColaboradores();
-            funcoes.dataGridView_AplicarCellFormatting(dataGridView);
+            funcoes.dataGridViewColaboradoresClientes_AplicarCellFormatting(dataGridView);
             comboBoxFiltro.SelectedIndex = 0;
             funcoes.CriarColunaComCheckbox(dataGridView);
         }
@@ -84,16 +84,6 @@ namespace MovSoft.Forms
                 {
                     e.Value = false;
                 }
-            }
-            if (e.ColumnIndex == 3)
-            {
-                e.Value = funcoes.GridViewMascaraCPF(e.Value.ToString());
-                e.FormattingApplied = true;
-            }
-            if (e.ColumnIndex == 2)
-            {
-                e.Value = funcoes.GridViewMascaraCelular(e.Value.ToString());
-                e.FormattingApplied = true;
             }
         }
 

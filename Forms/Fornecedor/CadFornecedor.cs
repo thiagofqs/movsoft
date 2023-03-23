@@ -224,10 +224,5 @@ namespace MovSoft.Forms
         {
             VerificarCampos();
         }
-
-        private void inputCep_Leave(object sender, EventArgs e)
-        {
-            VerificarCep();
-        }
     }
 }

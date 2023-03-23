@@ -145,12 +145,13 @@ namespace MovSoft.Classes
             return data;
         }
 
+        public string GridViewMascaraCNPJ(string valor)
+        {
+            return valor.Insert(2, ".").Insert(6, ".").Insert(10, "/").Insert(15, "-");
+        }
+
         public string GridViewMascaraCPF(string valor)
         {
-            if (valor == "")
-            {
-                return valor;
-            }
             return valor.Insert(3, ".").Insert(7, ".").Insert(11, "-");
         }
 
@@ -181,7 +182,7 @@ namespace MovSoft.Classes
             controlCentralizado.Top = (controlDeReferencia.Height - controlCentralizado.Height) / 2;
         }
 
-        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dataGridViewColaboradoresClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 3)
             {
@@ -195,9 +196,23 @@ namespace MovSoft.Classes
             }
         }
 
-        public void dataGridView_AplicarCellFormatting(DataGridView dataGridView)
+        private void dataGridViewFornecedores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            dataGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridView_CellFormatting);
+            if(e.ColumnIndex == 3)
+            {
+                e.Value = GridViewMascaraCNPJ(e.Value.ToString());
+                e.FormattingApplied = true;
+            }
+        }
+
+        public void dataGridViewFornecedores_AplicarCellFormatting(DataGridView dataGridView)
+        {
+            dataGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridViewFornecedores_CellFormatting);
+        }
+
+        public void dataGridViewColaboradoresClientes_AplicarCellFormatting(DataGridView dataGridView)
+        {
+            dataGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridViewColaboradoresClientes_CellFormatting);
         }
 
         private void AbrirJanelaLogin()

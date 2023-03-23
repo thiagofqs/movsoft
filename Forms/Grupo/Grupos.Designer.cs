@@ -60,6 +60,7 @@
             this.inputPesquisar.PlaceholderText = "Pesquisar";
             this.inputPesquisar.Size = new System.Drawing.Size(240, 23);
             this.inputPesquisar.TabIndex = 0;
+            this.inputPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputPesquisarGrupos_KeyPress);
             // 
             // btnPesquisar
             // 
@@ -75,6 +76,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(23, 23);
             this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // inputNomeGrupo
             // 
@@ -85,6 +87,7 @@
             this.inputNomeGrupo.Size = new System.Drawing.Size(179, 23);
             this.inputNomeGrupo.TabIndex = 7;
             this.inputNomeGrupo.Tag = "Nome do Grupo";
+            this.inputNomeGrupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputNomeGrupo_KeyPress);
             // 
             // btnCadastrar
             // 
@@ -102,6 +105,7 @@
             this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnCancelar
             // 
@@ -120,6 +124,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -138,6 +143,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // pnlCadastro
             // 
@@ -226,6 +232,7 @@
             this.comboBoxFiltro.Name = "comboBoxFiltro";
             this.comboBoxFiltro.Size = new System.Drawing.Size(98, 23);
             this.comboBoxFiltro.TabIndex = 2;
+            this.comboBoxFiltro.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltro_SelectedIndexChanged);
             // 
             // dataGridViewGrupos
             // 

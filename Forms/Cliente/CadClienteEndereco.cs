@@ -222,15 +222,5 @@ namespace MovSoft.Forms
         {
             VerificarCep();
         }
-
-        private void inputBoxUf_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            VerificarCampos();
-        }
-
-        private void inputCep_Leave(object sender, EventArgs e)
-        {
-            VerificarCep();
-        }
     }
 }
