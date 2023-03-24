@@ -444,6 +444,7 @@
             this.Controls.Add(this.pnlHome);
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.MainMenuStrip = this.menu;
+            this.MaximizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovSoft - Página Inicial";

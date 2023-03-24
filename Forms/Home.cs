@@ -59,6 +59,17 @@ namespace MovSoft
             }
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCLBUTTONDBLCLK = 0x00A3;
+            if (m.Msg == WM_NCLBUTTONDBLCLK)
+            {
+                // Impede que o double click na borda do Form maximize a janela
+                return;
+            }
+            base.WndProc(ref m);
+        }
+
         public Home()
         {
             InitializeComponent();
