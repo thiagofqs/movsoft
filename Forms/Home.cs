@@ -1,5 +1,4 @@
 using MovSoft.Classes;
-using MovSoft.CODE.BLL;
 using MovSoft.Forms;
 
 namespace MovSoft
@@ -155,17 +154,17 @@ namespace MovSoft
 
         private void ensaiosProvisaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void financasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void painelDeControleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,12 +187,12 @@ namespace MovSoft
 
         private void analiseDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void processosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void opcionaisToolStripMenuItem_Click(object sender, EventArgs e)

@@ -23,7 +23,6 @@ namespace MovSoft.Classes
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
                 pnlMain.Controls.Add(childForm);
-                //pnlMain.Tag = childForm;
                 childForm.BringToFront();
                 childForm.Show();
             }

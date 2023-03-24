@@ -69,7 +69,7 @@ namespace MovSoft.CODE.BLL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao editar fornecedor!");
+                MessageBox.Show("Erro ao editar registro!");
                 MessageBox.Show(ex.Message);
             }
         }

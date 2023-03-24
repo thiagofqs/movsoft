@@ -64,6 +64,7 @@ namespace MovSoft.CODE.BLL
             }
             catch(Exception ex)
             {
+                MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
         }
@@ -82,6 +83,7 @@ namespace MovSoft.CODE.BLL
             }
             catch (Exception ex)
             {
+                MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
         }

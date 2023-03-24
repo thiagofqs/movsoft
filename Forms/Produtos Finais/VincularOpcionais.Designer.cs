@@ -83,6 +83,7 @@
             this.btnVincular.TabIndex = 2;
             this.btnVincular.Text = "Vincular";
             this.btnVincular.UseVisualStyleBackColor = false;
+            this.btnVincular.Click += new System.EventHandler(this.btnVincular_Click);
             // 
             // checkedListBox
             // 

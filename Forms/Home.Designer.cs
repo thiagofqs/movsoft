@@ -199,7 +199,7 @@
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.usuariosToolStripMenuItem.Text = "Usuários";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -208,7 +208,7 @@
             this.colaboradoresToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.colaboradoresToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
             this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
             // 
@@ -267,7 +267,7 @@
             this.gruposToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.gruposToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.gruposToolStripMenuItem.Name = "gruposToolStripMenuItem";
-            this.gruposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gruposToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.gruposToolStripMenuItem.Text = "Grupos";
             this.gruposToolStripMenuItem.Click += new System.EventHandler(this.gruposToolStripMenuItem_Click);
             // 
@@ -279,7 +279,7 @@
             this.opcionaisToolStripMenuItem});
             this.insumosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.insumosToolStripMenuItem.Text = "Insumos";
             // 
             // componentesToolStripMenuItem
@@ -287,7 +287,7 @@
             this.componentesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.componentesToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.componentesToolStripMenuItem.Name = "componentesToolStripMenuItem";
-            this.componentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.componentesToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.componentesToolStripMenuItem.Text = "Componentes";
             this.componentesToolStripMenuItem.Click += new System.EventHandler(this.componentesToolStripMenuItem_Click);
             // 
@@ -296,7 +296,7 @@
             this.opcionaisToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.opcionaisToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.opcionaisToolStripMenuItem.Name = "opcionaisToolStripMenuItem";
-            this.opcionaisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opcionaisToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.opcionaisToolStripMenuItem.Text = "Opcionais";
             this.opcionaisToolStripMenuItem.Click += new System.EventHandler(this.opcionaisToolStripMenuItem_Click);
             // 
@@ -305,7 +305,7 @@
             this.produtosFinaisToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.produtosFinaisToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.produtosFinaisToolStripMenuItem.Name = "produtosFinaisToolStripMenuItem";
-            this.produtosFinaisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.produtosFinaisToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.produtosFinaisToolStripMenuItem.Text = "Produtos finais";
             this.produtosFinaisToolStripMenuItem.Click += new System.EventHandler(this.produtosFinaisToolStripMenuItem_Click);
             // 
@@ -314,7 +314,7 @@
             this.processosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.processosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.processosToolStripMenuItem.Name = "processosToolStripMenuItem";
-            this.processosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.processosToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.processosToolStripMenuItem.Text = "Processos";
             this.processosToolStripMenuItem.Click += new System.EventHandler(this.processosToolStripMenuItem_Click);
             // 
@@ -338,7 +338,7 @@
             this.estoqueToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.estoqueToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.estoqueToolStripMenuItem.Text = "Estoque";
             this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
             // 
@@ -347,7 +347,7 @@
             this.vendaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.vendaToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.vendaToolStripMenuItem.Text = "Venda";
             this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
             // 
@@ -373,32 +373,36 @@
             this.ensaiosProvisaoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.ensaiosProvisaoToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ensaiosProvisaoToolStripMenuItem.Name = "ensaiosProvisaoToolStripMenuItem";
-            this.ensaiosProvisaoToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.ensaiosProvisaoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ensaiosProvisaoToolStripMenuItem.Text = "Ensaios/Provisão";
+            this.ensaiosProvisaoToolStripMenuItem.Click += new System.EventHandler(this.ensaiosProvisaoToolStripMenuItem_Click);
             // 
             // financasToolStripMenuItem
             // 
             this.financasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.financasToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.financasToolStripMenuItem.Name = "financasToolStripMenuItem";
-            this.financasToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.financasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.financasToolStripMenuItem.Text = "Finanças";
+            this.financasToolStripMenuItem.Click += new System.EventHandler(this.financasToolStripMenuItem_Click);
             // 
             // analiseDeDadosToolStripMenuItem
             // 
             this.analiseDeDadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.analiseDeDadosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.analiseDeDadosToolStripMenuItem.Name = "analiseDeDadosToolStripMenuItem";
-            this.analiseDeDadosToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.analiseDeDadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.analiseDeDadosToolStripMenuItem.Text = "Análise de dados";
+            this.analiseDeDadosToolStripMenuItem.Click += new System.EventHandler(this.analiseDeDadosToolStripMenuItem_Click);
             // 
             // painelDeControleToolStripMenuItem
             // 
             this.painelDeControleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.painelDeControleToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.painelDeControleToolStripMenuItem.Name = "painelDeControleToolStripMenuItem";
-            this.painelDeControleToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.painelDeControleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.painelDeControleToolStripMenuItem.Text = "Painel de controle";
+            this.painelDeControleToolStripMenuItem.Click += new System.EventHandler(this.painelDeControleToolStripMenuItem_Click);
             // 
             // menuSaida
             // 

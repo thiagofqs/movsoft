@@ -72,6 +72,13 @@
         public static string? nomeGrupo { get; set; }
         public static string? grupoAtivo { get; set; }
 
+        //Dados Componente Editar/Cadastro
+
+        public static int? idComponente { get; set; }
+        public static string? nomeComponente { get; set; }
+        public static string? unidadeMedidaComponente { get; set; }
+        public static string? componenteAtivo { get; set; }
+
         //Controle de Formularios
         public static bool? editarUser { get; set; }
 

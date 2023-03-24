@@ -42,15 +42,15 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dataGridViewComponentes = new System.Windows.Forms.DataGridView();
             this.pnlCadastro = new System.Windows.Forms.Panel();
             this.toggleButtonAtivo = new MovSoft.Controls.ToggleButton();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabelUnidadeDeMedida = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabelNome = new Krypton.Toolkit.KryptonLabel();
+            this.dataGridViewComponentes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).BeginInit();
             this.pnlCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).BeginInit();
             this.SuspendLayout();
             // 
             // inputPesquisar
@@ -78,6 +78,7 @@
             this.comboBoxFiltro.Name = "comboBoxFiltro";
             this.comboBoxFiltro.Size = new System.Drawing.Size(98, 23);
             this.comboBoxFiltro.TabIndex = 2;
+            this.comboBoxFiltro.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltro_SelectedIndexChanged);
             // 
             // imgFiltro
             // 
@@ -193,69 +194,6 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // dataGridViewComponentes
-            // 
-            this.dataGridViewComponentes.AllowUserToAddRows = false;
-            this.dataGridViewComponentes.AllowUserToDeleteRows = false;
-            this.dataGridViewComponentes.AllowUserToResizeColumns = false;
-            this.dataGridViewComponentes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewComponentes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewComponentes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewComponentes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridViewComponentes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewComponentes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewComponentes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewComponentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewComponentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewComponentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewComponentes.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewComponentes.EnableHeadersVisualStyles = false;
-            this.dataGridViewComponentes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.dataGridViewComponentes.Location = new System.Drawing.Point(198, 272);
-            this.dataGridViewComponentes.Name = "dataGridViewComponentes";
-            this.dataGridViewComponentes.ReadOnly = true;
-            this.dataGridViewComponentes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewComponentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewComponentes.RowHeadersVisible = false;
-            this.dataGridViewComponentes.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridViewComponentes.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewComponentes.RowTemplate.Height = 25;
-            this.dataGridViewComponentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewComponentes.ShowCellErrors = false;
-            this.dataGridViewComponentes.ShowCellToolTips = false;
-            this.dataGridViewComponentes.ShowEditingIcon = false;
-            this.dataGridViewComponentes.ShowRowErrors = false;
-            this.dataGridViewComponentes.Size = new System.Drawing.Size(430, 142);
-            this.dataGridViewComponentes.TabIndex = 22;
-            this.dataGridViewComponentes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComponentes_CellDoubleClick);
-            // 
             // pnlCadastro
             // 
             this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
@@ -331,14 +269,80 @@
             this.kryptonLabelNome.Values.ExtraText = "*";
             this.kryptonLabelNome.Values.Text = "Nome do componente";
             // 
+            // dataGridViewComponentes
+            // 
+            this.dataGridViewComponentes.AllowUserToAddRows = false;
+            this.dataGridViewComponentes.AllowUserToDeleteRows = false;
+            this.dataGridViewComponentes.AllowUserToResizeColumns = false;
+            this.dataGridViewComponentes.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dataGridViewComponentes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewComponentes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewComponentes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridViewComponentes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewComponentes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewComponentes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewComponentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewComponentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewComponentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewComponentes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewComponentes.EnableHeadersVisualStyles = false;
+            this.dataGridViewComponentes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.dataGridViewComponentes.Location = new System.Drawing.Point(198, 274);
+            this.dataGridViewComponentes.Name = "dataGridViewComponentes";
+            this.dataGridViewComponentes.ReadOnly = true;
+            this.dataGridViewComponentes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewComponentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewComponentes.RowHeadersVisible = false;
+            this.dataGridViewComponentes.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dataGridViewComponentes.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewComponentes.RowTemplate.Height = 25;
+            this.dataGridViewComponentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewComponentes.ShowCellErrors = false;
+            this.dataGridViewComponentes.ShowCellToolTips = false;
+            this.dataGridViewComponentes.ShowEditingIcon = false;
+            this.dataGridViewComponentes.ShowRowErrors = false;
+            this.dataGridViewComponentes.Size = new System.Drawing.Size(430, 142);
+            this.dataGridViewComponentes.TabIndex = 25;
+            this.dataGridViewComponentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComponentes_CellClick);
+            this.dataGridViewComponentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            this.dataGridViewComponentes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComponentes_CellDoubleClick);
+            this.dataGridViewComponentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
+            // 
             // Componentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(930, 503);
-            this.Controls.Add(this.pnlCadastro);
             this.Controls.Add(this.dataGridViewComponentes);
+            this.Controls.Add(this.pnlCadastro);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
@@ -351,9 +355,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovSoft - Lista de Insumos";
             ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).EndInit();
             this.pnlCadastro.ResumeLayout(false);
             this.pnlCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComponentes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,7 +375,6 @@
         private Button btnCadastrar;
         private Button btnEditar;
         private Button btnCancelar;
-        private DataGridView dataGridViewComponentes;
         private Panel pnlCadastro;
         private Krypton.Toolkit.KryptonLabel kryptonLabelNome;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
@@ -379,5 +382,6 @@
         private Controls.ToggleButton toggleButtonAtivo;
         private Label txtObg3;
         private Label txtUnidadeDeMedida;
+        private DataGridView dataGridViewComponentes;
     }
 }

@@ -9,22 +9,22 @@
 
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Opção indisponível!");
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
