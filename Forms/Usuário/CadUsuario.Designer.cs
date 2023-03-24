@@ -80,7 +80,7 @@
             this.toggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toggleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.toggleButton1.FocusToggleColor = System.Drawing.Color.Gold;
-            this.toggleButton1.Location = new System.Drawing.Point(442, 99);
+            this.toggleButton1.Location = new System.Drawing.Point(482, 196);
             this.toggleButton1.MinimumSize = new System.Drawing.Size(45, 23);
             this.toggleButton1.Name = "toggleButton1";
             this.toggleButton1.OffBackColor = System.Drawing.Color.Gray;
@@ -88,82 +88,82 @@
             this.toggleButton1.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
             this.toggleButton1.OnToggleColor = System.Drawing.Color.WhiteSmoke;
             this.toggleButton1.Size = new System.Drawing.Size(45, 23);
-            this.toggleButton1.TabIndex = 1;
+            this.toggleButton1.TabIndex = 5;
             this.toggleButton1.UseVisualStyleBackColor = false;
             // 
             // kryptonLabelConfirmarSenha
             // 
             this.kryptonLabelConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabelConfirmarSenha.Location = new System.Drawing.Point(390, 197);
+            this.kryptonLabelConfirmarSenha.Location = new System.Drawing.Point(307, 169);
             this.kryptonLabelConfirmarSenha.Name = "kryptonLabelConfirmarSenha";
             this.kryptonLabelConfirmarSenha.Size = new System.Drawing.Size(127, 21);
             this.kryptonLabelConfirmarSenha.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.kryptonLabelConfirmarSenha.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelConfirmarSenha.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelConfirmarSenha.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelConfirmarSenha.TabIndex = 5;
+            this.kryptonLabelConfirmarSenha.TabIndex = 4;
             this.kryptonLabelConfirmarSenha.Values.ExtraText = "*";
             this.kryptonLabelConfirmarSenha.Values.Text = "Confirmar senha";
             // 
             // kryptonLabelSenha
             // 
             this.kryptonLabelSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabelSenha.Location = new System.Drawing.Point(191, 197);
+            this.kryptonLabelSenha.Location = new System.Drawing.Point(126, 169);
             this.kryptonLabelSenha.Name = "kryptonLabelSenha";
             this.kryptonLabelSenha.Size = new System.Drawing.Size(61, 21);
             this.kryptonLabelSenha.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.kryptonLabelSenha.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelSenha.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelSenha.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelSenha.TabIndex = 4;
+            this.kryptonLabelSenha.TabIndex = 3;
             this.kryptonLabelSenha.Values.ExtraText = "*";
             this.kryptonLabelSenha.Values.Text = "Senha";
             // 
             // kryptonLabelCargo
             // 
             this.kryptonLabelCargo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabelCargo.Location = new System.Drawing.Point(390, 137);
+            this.kryptonLabelCargo.Location = new System.Drawing.Point(482, 107);
             this.kryptonLabelCargo.Name = "kryptonLabelCargo";
             this.kryptonLabelCargo.Size = new System.Drawing.Size(60, 21);
             this.kryptonLabelCargo.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.kryptonLabelCargo.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelCargo.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelCargo.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelCargo.TabIndex = 3;
+            this.kryptonLabelCargo.TabIndex = 2;
             this.kryptonLabelCargo.Values.ExtraText = "*";
             this.kryptonLabelCargo.Values.Text = "Cargo";
             // 
             // kryptonLabelUsuario
             // 
             this.kryptonLabelUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabelUsuario.Location = new System.Drawing.Point(191, 137);
+            this.kryptonLabelUsuario.Location = new System.Drawing.Point(305, 107);
             this.kryptonLabelUsuario.Name = "kryptonLabelUsuario";
             this.kryptonLabelUsuario.Size = new System.Drawing.Size(71, 21);
             this.kryptonLabelUsuario.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.kryptonLabelUsuario.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelUsuario.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelUsuario.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelUsuario.TabIndex = 2;
+            this.kryptonLabelUsuario.TabIndex = 1;
             this.kryptonLabelUsuario.Values.ExtraText = "*";
             this.kryptonLabelUsuario.Values.Text = "Usuário";
             // 
             // kryptonLabelAtivo
             // 
             this.kryptonLabelAtivo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabelAtivo.Location = new System.Drawing.Point(442, 73);
+            this.kryptonLabelAtivo.Location = new System.Drawing.Point(482, 170);
             this.kryptonLabelAtivo.Name = "kryptonLabelAtivo";
             this.kryptonLabelAtivo.Size = new System.Drawing.Size(45, 21);
             this.kryptonLabelAtivo.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
             this.kryptonLabelAtivo.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelAtivo.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelAtivo.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelAtivo.TabIndex = 1;
+            this.kryptonLabelAtivo.TabIndex = 5;
             this.kryptonLabelAtivo.Values.Text = "Ativo";
             // 
             // kryptonLabelColaborador
             // 
             this.kryptonLabelColaborador.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.kryptonLabelColaborador.Location = new System.Drawing.Point(191, 73);
+            this.kryptonLabelColaborador.Location = new System.Drawing.Point(124, 105);
             this.kryptonLabelColaborador.Name = "kryptonLabelColaborador";
             this.kryptonLabelColaborador.Size = new System.Drawing.Size(101, 21);
             this.kryptonLabelColaborador.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
@@ -182,7 +182,7 @@
             this.inputboxColaborador.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputboxColaborador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputboxColaborador.FormattingEnabled = true;
-            this.inputboxColaborador.Location = new System.Drawing.Point(192, 99);
+            this.inputboxColaborador.Location = new System.Drawing.Point(125, 131);
             this.inputboxColaborador.Name = "inputboxColaborador";
             this.inputboxColaborador.Size = new System.Drawing.Size(153, 23);
             this.inputboxColaborador.TabIndex = 0;
@@ -225,10 +225,10 @@
             this.inputboxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inputboxCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.inputboxCargo.FormattingEnabled = true;
-            this.inputboxCargo.Location = new System.Drawing.Point(392, 161);
+            this.inputboxCargo.Location = new System.Drawing.Point(484, 131);
             this.inputboxCargo.Name = "inputboxCargo";
             this.inputboxCargo.Size = new System.Drawing.Size(153, 23);
-            this.inputboxCargo.TabIndex = 3;
+            this.inputboxCargo.TabIndex = 2;
             this.inputboxCargo.Tag = "Cargo";
             // 
             // inputConfirmarSenha
@@ -236,11 +236,11 @@
             this.inputConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputConfirmarSenha.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputConfirmarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputConfirmarSenha.Location = new System.Drawing.Point(391, 224);
+            this.inputConfirmarSenha.Location = new System.Drawing.Point(308, 196);
             this.inputConfirmarSenha.MaxLength = 20;
             this.inputConfirmarSenha.Name = "inputConfirmarSenha";
             this.inputConfirmarSenha.Size = new System.Drawing.Size(154, 23);
-            this.inputConfirmarSenha.TabIndex = 5;
+            this.inputConfirmarSenha.TabIndex = 4;
             this.inputConfirmarSenha.Tag = "Confirmar Senha";
             this.inputConfirmarSenha.UseSystemPasswordChar = true;
             this.inputConfirmarSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputConfirmarSenha_KeyPress);
@@ -250,11 +250,11 @@
             this.inputSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputSenha.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputSenha.Location = new System.Drawing.Point(191, 224);
+            this.inputSenha.Location = new System.Drawing.Point(126, 196);
             this.inputSenha.MaxLength = 20;
             this.inputSenha.Name = "inputSenha";
             this.inputSenha.Size = new System.Drawing.Size(154, 23);
-            this.inputSenha.TabIndex = 4;
+            this.inputSenha.TabIndex = 3;
             this.inputSenha.Tag = "Senha";
             this.inputSenha.UseSystemPasswordChar = true;
             // 
@@ -263,11 +263,11 @@
             this.inputUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inputUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.inputUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputUsuario.Location = new System.Drawing.Point(191, 161);
+            this.inputUsuario.Location = new System.Drawing.Point(305, 131);
             this.inputUsuario.MaxLength = 20;
             this.inputUsuario.Name = "inputUsuario";
             this.inputUsuario.Size = new System.Drawing.Size(154, 23);
-            this.inputUsuario.TabIndex = 2;
+            this.inputUsuario.TabIndex = 1;
             this.inputUsuario.Tag = "Usuário";
             // 
             // CadUsuario

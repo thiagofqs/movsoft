@@ -114,13 +114,13 @@ namespace MovSoft.Forms
         private void btnVincularComponentes_Click(object sender, EventArgs e)
         {
             VincularComponentes frm = new();
-            funcoes.AbrirForms(frm, 2);
+            funcoes.AbrirForms(frm, 2, 1);
         }
 
         private void btnVincularOpcionais_Click(object sender, EventArgs e)
         {
             VincularOpcionais frm = new();
-            funcoes.AbrirForms(frm, 2);
+            funcoes.AbrirForms(frm, 2, 1);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

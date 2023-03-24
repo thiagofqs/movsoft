@@ -132,5 +132,11 @@ namespace MovSoft.Forms
                 AtribuirDadosAosInputs();*/
             }
         }
+
+        private void btnAdicionarOpcoes_Click(object sender, EventArgs e)
+        {
+            Opcoes frm = new();
+            funcoes.AbrirForms(frm, 2, 1);
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dataGridViewOpcionais = new System.Windows.Forms.DataGridView();
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.btnAdicionarOpcoes = new System.Windows.Forms.Button();
             this.toggleButtonAtivo = new MovSoft.Controls.ToggleButton();
             this.kryptonLabelAtivo = new Krypton.Toolkit.KryptonLabel();
             this.kryptonLabelQuantidade = new Krypton.Toolkit.KryptonLabel();
@@ -209,7 +210,7 @@
             this.dataGridViewOpcionais.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewOpcionais.EnableHeadersVisualStyles = false;
             this.dataGridViewOpcionais.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.dataGridViewOpcionais.Location = new System.Drawing.Point(198, 272);
+            this.dataGridViewOpcionais.Location = new System.Drawing.Point(198, 274);
             this.dataGridViewOpcionais.Name = "dataGridViewOpcionais";
             this.dataGridViewOpcionais.ReadOnly = true;
             this.dataGridViewOpcionais.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -238,8 +239,10 @@
             // 
             // pnlCadastro
             // 
+            this.pnlCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.pnlCadastro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCadastro.Controls.Add(this.btnAdicionarOpcoes);
             this.pnlCadastro.Controls.Add(this.toggleButtonAtivo);
             this.pnlCadastro.Controls.Add(this.kryptonLabelAtivo);
             this.pnlCadastro.Controls.Add(this.kryptonLabelQuantidade);
@@ -252,6 +255,24 @@
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(561, 162);
             this.pnlCadastro.TabIndex = 10;
+            // 
+            // btnAdicionarOpcoes
+            // 
+            this.btnAdicionarOpcoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdicionarOpcoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
+            this.btnAdicionarOpcoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarOpcoes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
+            this.btnAdicionarOpcoes.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarOpcoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarOpcoes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarOpcoes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdicionarOpcoes.Location = new System.Drawing.Point(418, 56);
+            this.btnAdicionarOpcoes.Name = "btnAdicionarOpcoes";
+            this.btnAdicionarOpcoes.Size = new System.Drawing.Size(96, 48);
+            this.btnAdicionarOpcoes.TabIndex = 11;
+            this.btnAdicionarOpcoes.Text = "Adicionar Opções";
+            this.btnAdicionarOpcoes.UseVisualStyleBackColor = false;
+            this.btnAdicionarOpcoes.Click += new System.EventHandler(this.btnAdicionarOpcoes_Click);
             // 
             // toggleButtonAtivo
             // 
@@ -276,13 +297,11 @@
             // 
             this.kryptonLabelAtivo.Location = new System.Drawing.Point(146, 79);
             this.kryptonLabelAtivo.Name = "kryptonLabelAtivo";
-            this.kryptonLabelAtivo.Size = new System.Drawing.Size(57, 21);
-            this.kryptonLabelAtivo.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabelAtivo.Size = new System.Drawing.Size(45, 21);
             this.kryptonLabelAtivo.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelAtivo.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelAtivo.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelAtivo.TabIndex = 10;
-            this.kryptonLabelAtivo.Values.ExtraText = "*";
             this.kryptonLabelAtivo.Values.Text = "Ativo";
             // 
             // kryptonLabelQuantidade
@@ -371,5 +390,6 @@
         private Krypton.Toolkit.KryptonLabel kryptonLabelQuantidade;
         private Krypton.Toolkit.KryptonLabel kryptonLabelNome;
         private Controls.ToggleButton toggleButtonAtivo;
+        private Button btnAdicionarOpcoes;
     }
 }

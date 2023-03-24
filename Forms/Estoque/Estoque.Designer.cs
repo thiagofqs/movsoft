@@ -86,7 +86,7 @@
             // 
             // kryptonLabelAtivo
             // 
-            this.kryptonLabelAtivo.Location = new System.Drawing.Point(317, 80);
+            this.kryptonLabelAtivo.Location = new System.Drawing.Point(280, 79);
             this.kryptonLabelAtivo.Name = "kryptonLabelAtivo";
             this.kryptonLabelAtivo.Size = new System.Drawing.Size(45, 21);
             this.kryptonLabelAtivo.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
@@ -104,7 +104,7 @@
             this.toggleButtonAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toggleButtonAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.toggleButtonAtivo.FocusToggleColor = System.Drawing.Color.Gold;
-            this.toggleButtonAtivo.Location = new System.Drawing.Point(317, 107);
+            this.toggleButtonAtivo.Location = new System.Drawing.Point(280, 106);
             this.toggleButtonAtivo.MinimumSize = new System.Drawing.Size(45, 23);
             this.toggleButtonAtivo.Name = "toggleButtonAtivo";
             this.toggleButtonAtivo.OffBackColor = System.Drawing.Color.Gray;

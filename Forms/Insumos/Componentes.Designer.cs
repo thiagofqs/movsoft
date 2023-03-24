@@ -125,7 +125,7 @@
             this.comboBoxUnidadeDeMedida.Location = new System.Drawing.Point(12, 106);
             this.comboBoxUnidadeDeMedida.Name = "comboBoxUnidadeDeMedida";
             this.comboBoxUnidadeDeMedida.Size = new System.Drawing.Size(127, 23);
-            this.comboBoxUnidadeDeMedida.TabIndex = 10;
+            this.comboBoxUnidadeDeMedida.TabIndex = 9;
             this.comboBoxUnidadeDeMedida.Tag = "Unidade de Medida";
             // 
             // inputNomeComponente
@@ -196,6 +196,7 @@
             // 
             // pnlCadastro
             // 
+            this.pnlCadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.pnlCadastro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCadastro.Controls.Add(this.toggleButtonAtivo);
@@ -227,20 +228,18 @@
             this.toggleButtonAtivo.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
             this.toggleButtonAtivo.OnToggleColor = System.Drawing.Color.WhiteSmoke;
             this.toggleButtonAtivo.Size = new System.Drawing.Size(45, 23);
-            this.toggleButtonAtivo.TabIndex = 11;
+            this.toggleButtonAtivo.TabIndex = 10;
             this.toggleButtonAtivo.UseVisualStyleBackColor = false;
             // 
             // kryptonLabel1
             // 
             this.kryptonLabel1.Location = new System.Drawing.Point(198, 79);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(57, 21);
-            this.kryptonLabel1.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
+            this.kryptonLabel1.Size = new System.Drawing.Size(45, 21);
             this.kryptonLabel1.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabel1.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabel1.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabel1.TabIndex = 11;
-            this.kryptonLabel1.Values.ExtraText = "*";
+            this.kryptonLabel1.TabIndex = 10;
             this.kryptonLabel1.Values.Text = "Ativo";
             // 
             // kryptonLabelUnidadeDeMedida
@@ -252,7 +251,7 @@
             this.kryptonLabelUnidadeDeMedida.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.kryptonLabelUnidadeDeMedida.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
             this.kryptonLabelUnidadeDeMedida.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelUnidadeDeMedida.TabIndex = 10;
+            this.kryptonLabelUnidadeDeMedida.TabIndex = 9;
             this.kryptonLabelUnidadeDeMedida.Values.ExtraText = "*";
             this.kryptonLabelUnidadeDeMedida.Values.Text = "Unidade de medida";
             // 

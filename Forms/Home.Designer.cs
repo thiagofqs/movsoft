@@ -80,7 +80,7 @@
             // 
             this.pnlMain.Controls.Add(this.txtMovSoft);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.pnlMain.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.pnlMain.Location = new System.Drawing.Point(0, 97);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(930, 503);
@@ -373,7 +373,7 @@
             this.ensaiosProvisaoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.ensaiosProvisaoToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ensaiosProvisaoToolStripMenuItem.Name = "ensaiosProvisaoToolStripMenuItem";
-            this.ensaiosProvisaoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ensaiosProvisaoToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.ensaiosProvisaoToolStripMenuItem.Text = "Ensaios/Provisão";
             this.ensaiosProvisaoToolStripMenuItem.Click += new System.EventHandler(this.ensaiosProvisaoToolStripMenuItem_Click);
             // 
@@ -382,7 +382,7 @@
             this.financasToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.financasToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.financasToolStripMenuItem.Name = "financasToolStripMenuItem";
-            this.financasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.financasToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.financasToolStripMenuItem.Text = "Finanças";
             this.financasToolStripMenuItem.Click += new System.EventHandler(this.financasToolStripMenuItem_Click);
             // 
@@ -391,7 +391,7 @@
             this.analiseDeDadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.analiseDeDadosToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.analiseDeDadosToolStripMenuItem.Name = "analiseDeDadosToolStripMenuItem";
-            this.analiseDeDadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.analiseDeDadosToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.analiseDeDadosToolStripMenuItem.Text = "Análise de dados";
             this.analiseDeDadosToolStripMenuItem.Click += new System.EventHandler(this.analiseDeDadosToolStripMenuItem_Click);
             // 
@@ -400,7 +400,7 @@
             this.painelDeControleToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
             this.painelDeControleToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.painelDeControleToolStripMenuItem.Name = "painelDeControleToolStripMenuItem";
-            this.painelDeControleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.painelDeControleToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
             this.painelDeControleToolStripMenuItem.Text = "Painel de controle";
             this.painelDeControleToolStripMenuItem.Click += new System.EventHandler(this.painelDeControleToolStripMenuItem_Click);
             // 
@@ -442,7 +442,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(930, 600);
             this.Controls.Add(this.pnlHome);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.MainMenuStrip = this.menu;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

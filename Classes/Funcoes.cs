@@ -2,9 +2,6 @@
 using IniParser;
 using MovSoft.CODE.BLL;
 using System.Text.RegularExpressions;
-using MovSoft.Controls;
-using System.Reflection.Metadata.Ecma335;
-using System.DirectoryServices.ActiveDirectory;
 
 namespace MovSoft.Classes
 {
@@ -102,12 +99,19 @@ namespace MovSoft.Classes
             return podeAcessar;
         }
 
-        public void AbrirForms(Form form, int nivelPermissao)
+        public void AbrirForms(Form form, int nivelPermissao, int modoDeAbertura = 0)
         {
             bool podeAcessar = VerificarPermissao(nivelPermissao);
             if (podeAcessar)
             {
-                form.Show();
+                if(modoDeAbertura == 0)
+                {
+                    form.Show();
+                }
+                else if(modoDeAbertura == 1)
+                {
+                    form.ShowDialog();
+                }
             }
             else
             {
