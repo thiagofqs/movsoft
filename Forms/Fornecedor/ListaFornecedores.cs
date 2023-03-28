@@ -36,6 +36,7 @@ namespace MovSoft.Forms
                 else if (column.Index == 2)
                 {
                     column.HeaderText = "Razão Social";
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
                 else if(column.Name == "AtivoCheckBox")
                 {
