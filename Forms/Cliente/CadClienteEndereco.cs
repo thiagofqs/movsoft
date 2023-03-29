@@ -132,6 +132,9 @@ namespace MovSoft.Forms
             {
                 EditarCliente();
             }
+            inputBairro.Enabled = false;
+            inputCidade.Enabled = false;
+            inputBoxUf.Enabled = false;
         }
 
         private void VerificarCampos()
@@ -170,6 +173,9 @@ namespace MovSoft.Forms
                 try
                 {
                     CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);
+                    _ = cepModel.Bairro == "" ? inputBairro.Enabled = true : inputBairro.Enabled = false;
+                    _ = cepModel.Localidade == "" ? inputCidade.Enabled = true : inputCidade.Enabled = false;
+                    _ = cepModel.Uf == "" ? inputBoxUf.Enabled = true : inputBoxUf.Enabled = false;
                     AtribuirDadosDoCepAosInputs(cepModel);
                 }
                 catch (Exception ex)

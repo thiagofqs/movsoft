@@ -122,7 +122,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if(!funcoes.VerificarSeInputEstaVazio(this))
+            if (!funcoes.VerificarSeInputEstaVazio(this))
             {
                 CadastrarOuEditar();
             }
@@ -139,6 +139,9 @@ namespace MovSoft.Forms
             {
                 EditarColaborador();
             }
+            inputBairro.Enabled = false;
+            inputCidade.Enabled = false;
+            inputBoxUf.Enabled = false;
         }
 
         private void AtribuirDadosDoCepAosInputs(CepModel cepModel)
@@ -169,6 +172,9 @@ namespace MovSoft.Forms
                 try
                 {
                     CepModel cepModel = JsonConvert.DeserializeObject<CepModel>(resultado);
+                    _ = cepModel.Bairro == "" ? inputBairro.Enabled = true : inputBairro.Enabled = false;
+                    _ = cepModel.Localidade == "" ? inputCidade.Enabled = true : inputCidade.Enabled = false;
+                    _ = cepModel.Uf == "" ? inputBoxUf.Enabled = true : inputBoxUf.Enabled = false;
                     AtribuirDadosDoCepAosInputs(cepModel);
                 }
                 catch (Exception ex)
