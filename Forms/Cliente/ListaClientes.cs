@@ -119,11 +119,11 @@ namespace MovSoft.Forms
                 string valor = chk.Value.ToString();
                 if (valor == "S")
                 {
-                    bllGeral.AtivarDesetivar("clientes", "id_cliente", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    bllGeral.AtivarDesativar("clientes", "id_cliente", int.Parse(rowData.Cells[0].Value.ToString()), "N");
                 }
                 else
                 {
-                    bllGeral.AtivarDesetivar("clientes", "id_cliente", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    bllGeral.AtivarDesativar("clientes", "id_cliente", int.Parse(rowData.Cells[0].Value.ToString()), "S");
                 }
                 CarregarClientes();
             }

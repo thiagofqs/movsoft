@@ -130,11 +130,11 @@ namespace MovSoft.Forms
                 string valor = chk.Value.ToString();
                 if (valor == "S")
                 {
-                    bllGeral.AtivarDesetivar("fornecedores", "id_fornecedor", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    bllGeral.AtivarDesativar("fornecedores", "id_fornecedor", int.Parse(rowData.Cells[0].Value.ToString()), "N");
                 }
                 else
                 {
-                    bllGeral.AtivarDesetivar("fornecedores", "id_fornecedor", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    bllGeral.AtivarDesativar("fornecedores", "id_fornecedor", int.Parse(rowData.Cells[0].Value.ToString()), "S");
                 }
                 CarregarFornecedores();
             }

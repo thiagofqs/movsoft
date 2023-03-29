@@ -1,7 +1,6 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
-using System.Windows.Forms;
 
 namespace MovSoft.Forms
 {
@@ -45,11 +44,11 @@ namespace MovSoft.Forms
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-                if (comboBoxFiltro.SelectedIndex != 0 && column.Index == 3)
+                if (comboBoxFiltro.SelectedIndex != 0 && column.Name == "AtivoCheckBox")
                 {
                     column.Visible = false;
                 }
-                else if (column.Index == 3)
+                else if (column.Name == "AtivoCheckBox")
                 {
                     column.Visible = true;
                 }
@@ -250,29 +249,32 @@ namespace MovSoft.Forms
 
         private void dataGridViewGrupos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (funcoes.VerificarPermissao(4))
+            if (e.RowIndex > -1)
             {
-                if (pnlCadastro.Enabled)
+                if (funcoes.VerificarPermissao(4))
                 {
-                    if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
+                    if (pnlCadastro.Enabled)
                     {
-                        EditarGrupo();
-                        VoltarAoPadrao();
+                        if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
+                        {
+                            EditarGrupo();
+                            VoltarAoPadrao();
+                        }
+                    }
+                    else
+                    {
+                        cadastrarOuEditar = 'E';
+                        btnEditar.Text = "Salvar";
+                        dataGridViewGrupos.Enabled = false;
+                        pnlCadastro.Enabled = true;
+                        btnCancelar.Enabled = true;
+                        inputNomeGrupo.Focus();
                     }
                 }
                 else
                 {
-                    cadastrarOuEditar = 'E';
-                    btnEditar.Text = "Salvar";
-                    dataGridViewGrupos.Enabled = false;
-                    pnlCadastro.Enabled = true;
-                    btnCancelar.Enabled = true;
-                    inputNomeGrupo.Focus();
+                    MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
-            }
-            else
-            {
-                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -281,7 +283,6 @@ namespace MovSoft.Forms
             if (dataGridViewGrupos.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
                 string cellValue = dataGridViewGrupos.Rows[e.RowIndex].Cells["AtivoCheckBox"].Value.ToString();
-
                 if (cellValue == "S")
                 {
                     e.Value = true;
@@ -302,11 +303,11 @@ namespace MovSoft.Forms
                 string valor = chk.Value.ToString();
                 if (valor == "S")
                 {
-                    bllGeral.AtivarDesetivar("grupos", "id_grupo", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    bllGeral.AtivarDesativar("grupos", "id_grupo", int.Parse(rowData.Cells[0].Value.ToString()), "N");
                 }
                 else
                 {
-                    bllGeral.AtivarDesetivar("grupos", "id_grupo", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    bllGeral.AtivarDesativar("grupos", "id_grupo", int.Parse(rowData.Cells[0].Value.ToString()), "S");
                 }
                 CarregarGrupos();
             }

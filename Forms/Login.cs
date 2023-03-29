@@ -10,12 +10,10 @@ namespace MovSoft
         Thread tr;
         UsuariosBLL bll = new();
         Funcoes funcoes = new();
-        ProdutoCompostoBLL teste = new();
         public Login()
         {
             InitializeComponent();
             //ActiveControl = inputUsuario;
-            teste.MostrarComponentesDoProduto(1);
             bool iniExiste = File.Exists(Parametros.Dir);
             if (!iniExiste)
             {

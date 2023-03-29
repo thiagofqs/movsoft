@@ -1,10 +1,4 @@
 ﻿using MovSoft.CODE.DAL;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MovSoft.CODE.BLL
 {
@@ -12,7 +6,7 @@ namespace MovSoft.CODE.BLL
     {
         AcessoBancoDados db = new();
 
-        public void AtivarDesetivar(string tabela,string campo,int idGrupo, string ativo)
+        public void AtivarDesativar(string tabela,string campo,int idGrupo, string ativo)
         {
             try
             {

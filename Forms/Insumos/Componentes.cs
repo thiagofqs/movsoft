@@ -11,7 +11,6 @@ namespace MovSoft.Forms
         ComponentesDTO dto = new();
         DataGridViewRow rowData = new();
         GeralBLL bllGeral = new();
-
         string? filtro = null;
         char cadastrarOuEditar; //Cadastrar = 'C' | Editar = 'E'
 
@@ -194,7 +193,7 @@ namespace MovSoft.Forms
         {
             inputNomeComponente.Text = Parametros.nomeComponente;
             comboBoxUnidadeDeMedida.Text = Parametros.unidadeMedidaComponente;
-            if(Parametros.componenteAtivo == "S")
+            if (Parametros.componenteAtivo == "S")
             {
                 toggleButtonAtivo.Checked = true;
             }
@@ -235,11 +234,11 @@ namespace MovSoft.Forms
                 string valor = chk.Value.ToString();
                 if (valor == "S")
                 {
-                    bllGeral.AtivarDesetivar("componentes", "id_componente", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    bllGeral.AtivarDesativar("componentes", "id_componente", int.Parse(rowData.Cells[0].Value.ToString()), "N");
                 }
                 else
                 {
-                    bllGeral.AtivarDesetivar("componentes", "id_componente", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    bllGeral.AtivarDesativar("componentes", "id_componente", int.Parse(rowData.Cells[0].Value.ToString()), "S");
                 }
                 CarregarComponentes();
             }

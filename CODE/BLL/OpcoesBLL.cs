@@ -2,12 +2,7 @@
 using MovSoft.CODE.DAL;
 using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MovSoft.CODE.BLL
 {
@@ -19,7 +14,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $@"call cad_opcoes('{opcoesDTO.Opcoao}',{opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}',{opcoesDTO.IdOpcional},'{opcoesDTO.Ativo}');";
+                string comando = $@"call cad_opcoes('{opcoesDTO.Opcao}',{opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}',{opcoesDTO.IdOpcional},'{opcoesDTO.Ativo}');";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -28,15 +23,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable MostrarComponentes(string? filtro)
+        public DataTable MostrarOpcoes(int? idOpcional, string? filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                string comando = $@"call opcoes(
-                '{filtro}'
-                );";
+                string comando = $@"call opcoes('{filtro}', {idOpcional});";
                 dataTable = db.RetDataTable(comando);
             }
             catch (Exception ex)
@@ -55,7 +48,7 @@ namespace MovSoft.CODE.BLL
                 string comando = $@"call edit_selec_opcoes({idOpcao});";
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.idOpcao = dr.GetInt32(0);
-                Parametros.opcao = dr.GetString(1);
+                Parametros.nomeOpcao = dr.GetString(1);
                 Parametros.precoOpcao = dr.GetFloat(2);
                 Parametros.unidadeMedidaOpcao = dr.GetString(3);
                 Parametros.opcaoAtivo = dr.GetString(4);
@@ -73,7 +66,7 @@ namespace MovSoft.CODE.BLL
             {
                 db.Conectar();
                 string comando = $@"call edit_opcao(
-                {opcoesDTO.IdOpcao}, '{opcoesDTO.Opcoao}',
+                {opcoesDTO.IdOpcao}, '{opcoesDTO.Opcao}',
                 {opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}','{opcoesDTO.Ativo}'
                 );";
                 db.ExecutarComandoSQL(comando);

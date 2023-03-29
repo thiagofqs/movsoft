@@ -10,7 +10,7 @@ namespace MovSoft.CODE.BLL
     {
         AcessoBancoDados db = new();
 
-        public void CadastrarOpcionais(OpcionaisDTO opcionaisDTO)
+        public void CadastrarOpcional(OpcionaisDTO opcionaisDTO)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace MovSoft.CODE.BLL
                 string comando = $@"call edit_selec_opcionais({idOpcional});";
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.idOpcional = dr.GetInt32(0);
-                Parametros.opcional = dr.GetString(1);
+                Parametros.nomeOpcional = dr.GetString(1);
                 Parametros.quantidadeMarcacoes = dr.GetInt32(2);
                 Parametros.opcionalAtivo = dr.GetString(3);
             }

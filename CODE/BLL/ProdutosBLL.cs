@@ -2,12 +2,7 @@
 using MovSoft.CODE.DAL;
 using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MovSoft.CODE.BLL
 {
@@ -57,7 +52,7 @@ namespace MovSoft.CODE.BLL
                 string comando = $@"call edit_selec_produtos({idProduto});";
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.idProduto = dr.GetInt32(0);
-                Parametros.produto = dr.GetString(1);
+                Parametros.nomeProduto = dr.GetString(1);
                 Parametros.idGrupoProduto = dr.GetInt32(2);
                 Parametros.precoProduto = dr.GetFloat(3);
                 Parametros.produtoAtivo = dr.GetString(4);

@@ -154,11 +154,11 @@ namespace MovSoft.Forms
                 string valor = chk.Value.ToString();
                 if (valor == "S")
                 {
-                    bllGeral.AtivarDesetivar("usuarios", "id_usuario", int.Parse(rowData.Cells[0].Value.ToString()), "N");
+                    bllGeral.AtivarDesativar("usuarios", "id_usuario", int.Parse(rowData.Cells[0].Value.ToString()), "N");
                 }
                 else
                 {
-                    bllGeral.AtivarDesetivar("usuarios", "id_usuario", int.Parse(rowData.Cells[0].Value.ToString()), "S");
+                    bllGeral.AtivarDesativar("usuarios", "id_usuario", int.Parse(rowData.Cells[0].Value.ToString()), "S");
                 }
                 CarregarUsuarios();
             }

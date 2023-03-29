@@ -82,14 +82,14 @@
         //Dados Opcionais Editar/Cadastro
 
         public static int? idOpcional { get; set; }
-        public static string? opcional { get; set; }
+        public static string? nomeOpcional { get; set; }
         public static int? quantidadeMarcacoes { get; set; }
         public static string? opcionalAtivo { get; set; }
 
         //Dados Opções Editar/Cadastro
 
         public static int? idOpcao { get; set; }
-        public static string? opcao { get; set; }
+        public static string? nomeOpcao { get; set; }
         public static float? precoOpcao { get; set; }
         public static string? unidadeMedidaOpcao { get; set; }
         public static string? opcaoAtivo { get; set; }
@@ -97,7 +97,7 @@
         //Dados Produtos Editar/Cadastro
 
         public static int? idProduto { get; set; }
-        public static string produto { get; set; }
+        public static string nomeProduto { get; set; }
         public static float? precoProduto { get; set; }
         public static int? idGrupoProduto { get; set; }
         public static string? produtoAtivo { get; set; }
