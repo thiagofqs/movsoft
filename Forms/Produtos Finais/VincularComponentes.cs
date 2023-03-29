@@ -11,5 +11,9 @@
         {
             MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+        private void MostrarComponentesDisponiveis()
+        {
+            checkedListBox.DataBindings;
+        }
     }
 }

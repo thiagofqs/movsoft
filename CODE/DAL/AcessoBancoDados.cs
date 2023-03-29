@@ -51,7 +51,7 @@ namespace MovSoft.CODE.DAL
             }
         }
 
-        public void ExecutarComandoSQL(string comandoSql)
+        public void ExecutarComandoSQL(string comandoSql, bool multiplasInsercoes = false)
         {
             try
             {
@@ -61,11 +61,11 @@ namespace MovSoft.CODE.DAL
                 {
                     MySqlCommand comando = new(comandoSql, conn);
                     linhasAfetadas = comando.ExecuteNonQuery();
-                    if(linhasAfetadas > 0)
+                    if(linhasAfetadas > 0 && !multiplasInsercoes)
                     {
                         MessageBox.Show("Registro salvo com sucesso!");
                     }
-                    else
+                    else if(linhasAfetadas == 0)
                     {
                         MessageBox.Show("Erro ao salvar registro!");
                     }

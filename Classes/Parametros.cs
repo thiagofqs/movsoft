@@ -79,6 +79,43 @@
         public static string? unidadeMedidaComponente { get; set; }
         public static string? componenteAtivo { get; set; }
 
+        //Dados Opcionais Editar/Cadastro
+
+        public static int? idOpcional { get; set; }
+        public static string? opcional { get; set; }
+        public static int? quantidadeMarcacoes { get; set; }
+        public static string? opcionalAtivo { get; set; }
+
+        //Dados Opções Editar/Cadastro
+
+        public static int? idOpcao { get; set; }
+        public static string? opcao { get; set; }
+        public static float? precoOpcao { get; set; }
+        public static string? unidadeMedidaOpcao { get; set; }
+        public static string? opcaoAtivo { get; set; }
+
+        //Dados Produtos Editar/Cadastro
+
+        public static int? idProduto { get; set; }
+        public static string produto { get; set; }
+        public static float? precoProduto { get; set; }
+        public static int? idGrupoProduto { get; set; }
+        public static string? produtoAtivo { get; set; }
+
+        //Dados Produtos Compostos Editar/Cadastro
+        //Componentes
+        public static List<int?> idComponenteProdutoComposto = new();
+        public static List<string?> componenteProdutoComposto = new();
+        public static List<float> qtdComponenteProdutoComposto = new();
+        public static List<string?> unidadeMedidaComponenteProdutoComposto = new();
+        //Opcionais
+        public static List<int?> idOpcionalProdutoComposto = new();
+        public static List<string?> opcionalProdutoComposto = new();
+        public static List<string?> opcaoProdutoComposto = new();
+        public static List<int?> qtdMarcacoesOpcionalProdutoComposto = new();
+        public static List<string?> opcoesProdutoComposto = new();
+        public static List<float?> precoOpcaoProdutoComposto = new();
+
         //Controle de Formularios
         public static bool? editarUser { get; set; }
 
