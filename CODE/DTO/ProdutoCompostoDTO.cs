@@ -2,14 +2,12 @@
 {
     internal class ProdutoCompostoDTO
     {
-        private List<int> idProduto;
-        private List<int> idComponente;
-        private List<int> idOpcional;
-        private List<float> qtdComponente;
+        private int idProduto;
+        private List<string> componente;
+        private List<string> opcional;
 
-        public List<int> IdProduto { get => idProduto; set => idProduto = value; }
-        public List<int> IdComponente { get => idComponente; set => idComponente = value; }
-        public List<int> IdOpcional { get => idOpcional; set => idOpcional = value; }
-        public List<float> QtdComponente { get => qtdComponente; set => qtdComponente = value; }
+        public int IdProduto { get => idProduto; set => idProduto = value; }
+        public List<string> Componente { get => componente; set => componente = value; }
+        public List<string> Opcional { get => opcional; set => opcional = value; }
     }
 }

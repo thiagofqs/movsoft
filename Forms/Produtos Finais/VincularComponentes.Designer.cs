@@ -33,74 +33,13 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            dataGridViewVincularComponentes = new DataGridView();
             checkedListBox = new CheckedListBox();
             btnVincular = new Button();
             btnPesquisar = new Button();
             txtTitulo = new Label();
+            dataGridViewVincularComponentes = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridViewVincularComponentes).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridViewVincularComponentes
-            // 
-            dataGridViewVincularComponentes.AllowUserToAddRows = false;
-            dataGridViewVincularComponentes.AllowUserToDeleteRows = false;
-            dataGridViewVincularComponentes.AllowUserToResizeColumns = false;
-            dataGridViewVincularComponentes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewVincularComponentes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewVincularComponentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewVincularComponentes.BackgroundColor = Color.WhiteSmoke;
-            dataGridViewVincularComponentes.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewVincularComponentes.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewVincularComponentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(56, 56, 56);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewVincularComponentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewVincularComponentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewVincularComponentes.Cursor = Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridViewVincularComponentes.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewVincularComponentes.EnableHeadersVisualStyles = false;
-            dataGridViewVincularComponentes.GridColor = Color.FromArgb(56, 56, 56);
-            dataGridViewVincularComponentes.Location = new Point(226, 257);
-            dataGridViewVincularComponentes.Margin = new Padding(3, 4, 3, 4);
-            dataGridViewVincularComponentes.Name = "dataGridViewVincularComponentes";
-            dataGridViewVincularComponentes.ReadOnly = true;
-            dataGridViewVincularComponentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(56, 56, 56);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewVincularComponentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewVincularComponentes.RowHeadersVisible = false;
-            dataGridViewVincularComponentes.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
-            dataGridViewVincularComponentes.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewVincularComponentes.RowTemplate.Height = 25;
-            dataGridViewVincularComponentes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewVincularComponentes.ShowCellErrors = false;
-            dataGridViewVincularComponentes.ShowCellToolTips = false;
-            dataGridViewVincularComponentes.ShowEditingIcon = false;
-            dataGridViewVincularComponentes.ShowRowErrors = false;
-            dataGridViewVincularComponentes.Size = new Size(653, 256);
-            dataGridViewVincularComponentes.TabIndex = 3;
             // 
             // checkedListBox
             // 
@@ -164,17 +103,83 @@
             txtTitulo.TabIndex = 0;
             txtTitulo.Text = "Vincular Componentes";
             // 
+            // dataGridViewVincularComponentes
+            // 
+            dataGridViewVincularComponentes.AllowUserToAddRows = false;
+            dataGridViewVincularComponentes.AllowUserToDeleteRows = false;
+            dataGridViewVincularComponentes.AllowUserToResizeColumns = false;
+            dataGridViewVincularComponentes.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewVincularComponentes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewVincularComponentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewVincularComponentes.BackgroundColor = Color.WhiteSmoke;
+            dataGridViewVincularComponentes.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewVincularComponentes.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewVincularComponentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewVincularComponentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewVincularComponentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewVincularComponentes.Cursor = Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridViewVincularComponentes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewVincularComponentes.EnableHeadersVisualStyles = false;
+            dataGridViewVincularComponentes.GridColor = Color.FromArgb(56, 56, 56);
+            dataGridViewVincularComponentes.Location = new Point(226, 257);
+            dataGridViewVincularComponentes.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewVincularComponentes.Name = "dataGridViewVincularComponentes";
+            dataGridViewVincularComponentes.ReadOnly = true;
+            dataGridViewVincularComponentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewVincularComponentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewVincularComponentes.RowHeadersVisible = false;
+            dataGridViewVincularComponentes.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewVincularComponentes.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewVincularComponentes.RowTemplate.DefaultCellStyle.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewVincularComponentes.RowTemplate.Height = 25;
+            dataGridViewVincularComponentes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewVincularComponentes.ShowCellErrors = false;
+            dataGridViewVincularComponentes.ShowCellToolTips = false;
+            dataGridViewVincularComponentes.ShowEditingIcon = false;
+            dataGridViewVincularComponentes.ShowRowErrors = false;
+            dataGridViewVincularComponentes.Size = new Size(653, 256);
+            dataGridViewVincularComponentes.TabIndex = 21;
+            dataGridViewVincularComponentes.CellContentClick += dataGridViewVincularComponentes_CellContentClick;
+            dataGridViewVincularComponentes.CellEndEdit += dataGridViewVincularComponentes_CellEndEdit;
+            dataGridViewVincularComponentes.CellFormatting += dataGridViewVincularComponentes_CellFormatting;
+            // 
             // VincularComponentes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(56, 56, 56);
             ClientSize = new Size(1045, 619);
+            Controls.Add(dataGridViewVincularComponentes);
             Controls.Add(txtTitulo);
             Controls.Add(btnPesquisar);
             Controls.Add(btnVincular);
             Controls.Add(checkedListBox);
-            Controls.Add(dataGridViewVincularComponentes);
             ForeColor = Color.WhiteSmoke;
             Margin = new Padding(3, 4, 3, 4);
             Name = "VincularComponentes";
@@ -186,11 +191,10 @@
         }
 
         #endregion
-
-        private DataGridView dataGridViewVincularComponentes;
         private CheckedListBox checkedListBox;
         private Button btnVincular;
         private Button btnPesquisar;
         private Label txtTitulo;
+        private DataGridView dataGridViewVincularComponentes;
     }
 }

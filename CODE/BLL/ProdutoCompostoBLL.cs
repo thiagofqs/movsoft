@@ -1,4 +1,5 @@
-﻿using MovSoft.Classes;
+﻿using Google.Protobuf.Collections;
+using MovSoft.Classes;
 using MovSoft.CODE.DAL;
 using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
@@ -15,10 +16,10 @@ namespace MovSoft.CODE.BLL
             db.Conectar();
             try
             {
-                for(int i = 0; i < produtoCompostoDTO.IdComponente.Count;  i++)
+                for(int i = 0; i < produtoCompostoDTO.Componente.Count;  i++)
                 {
-                    string comando = $@"call vincular_componentes({produtoCompostoDTO.IdProduto[i]},{produtoCompostoDTO.IdComponente[i]},{produtoCompostoDTO.QtdComponente[i]});";
-                    db.ExecutarComandoSQL(comando,true);
+                    string comando = $@"call vincular_componentes({produtoCompostoDTO.IdProduto},'{produtoCompostoDTO.Componente[i]}', 1);";
+                    db.ExecutarComandoSQL(comando, true);
                 }
             }
             catch (Exception ex)
@@ -57,9 +58,9 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                for(int i = 0; i < produtoCompostoDTO.IdOpcional.Count; i++)
+                for(int i = 0; i < produtoCompostoDTO.Opcional.Count; i++)
                 {
-                    string comando = $@"call vincular_opcionais({produtoCompostoDTO.IdProduto[i]},{produtoCompostoDTO.IdOpcional[i]});";
+                    string comando = $@"call vincular_opcionais({produtoCompostoDTO.IdProduto},{produtoCompostoDTO.Opcional[i]});";
                     db.ExecutarComandoSQL(comando,true);
                 }
             }
@@ -93,7 +94,7 @@ namespace MovSoft.CODE.BLL
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message); 
             }
             return dataTable;
         }
@@ -155,6 +156,27 @@ namespace MovSoft.CODE.BLL
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public MapField<string?,bool?> ComponentesDisponiveis(int idProduto)
+        {
+            MapField<string?, bool?> componentes = new();
+            try
+            {
+                db.Conectar();
+                string comando = $@"call componentes_disponiveis({idProduto})";
+                MySqlDataReader dr = db.RetDataReader(comando);
+                do
+                {
+                    componentes.Add(dr.GetString(0), dr.GetBoolean(1));
+                }
+                while (dr.Read());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return componentes;
         }
     }
 }
