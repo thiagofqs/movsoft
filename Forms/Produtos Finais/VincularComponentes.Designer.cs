@@ -75,8 +75,7 @@
             dataGridViewVincularComponentes.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewVincularComponentes.EnableHeadersVisualStyles = false;
             dataGridViewVincularComponentes.GridColor = Color.FromArgb(56, 56, 56);
-            dataGridViewVincularComponentes.Location = new Point(226, 257);
-            dataGridViewVincularComponentes.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewVincularComponentes.Location = new Point(198, 193);
             dataGridViewVincularComponentes.Name = "dataGridViewVincularComponentes";
             dataGridViewVincularComponentes.ReadOnly = true;
             dataGridViewVincularComponentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -99,7 +98,7 @@
             dataGridViewVincularComponentes.ShowCellToolTips = false;
             dataGridViewVincularComponentes.ShowEditingIcon = false;
             dataGridViewVincularComponentes.ShowRowErrors = false;
-            dataGridViewVincularComponentes.Size = new Size(653, 256);
+            dataGridViewVincularComponentes.Size = new Size(571, 192);
             dataGridViewVincularComponentes.TabIndex = 3;
             // 
             // checkedListBox
@@ -110,11 +109,11 @@
             checkedListBox.ColumnWidth = 150;
             checkedListBox.ForeColor = Color.FromArgb(56, 56, 56);
             checkedListBox.FormattingEnabled = true;
-            checkedListBox.Location = new Point(226, 99);
-            checkedListBox.Margin = new Padding(3, 4, 3, 4);
+            checkedListBox.Items.AddRange(new object[] { "Componente 1", "Componente 2", "Componente 3", "Componente 4", "Componente 5", "Componente 6", "Componente 7", "Componente 8", "Componente 9", "Componente 10" });
+            checkedListBox.Location = new Point(198, 74);
             checkedListBox.MultiColumn = true;
             checkedListBox.Name = "checkedListBox";
-            checkedListBox.Size = new Size(652, 136);
+            checkedListBox.Size = new Size(571, 112);
             checkedListBox.TabIndex = 0;
             // 
             // btnVincular
@@ -127,10 +126,9 @@
             btnVincular.FlatStyle = FlatStyle.Flat;
             btnVincular.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnVincular.ForeColor = Color.WhiteSmoke;
-            btnVincular.Location = new Point(736, 521);
-            btnVincular.Margin = new Padding(3, 4, 3, 4);
+            btnVincular.Location = new Point(644, 391);
             btnVincular.Name = "btnVincular";
-            btnVincular.Size = new Size(143, 45);
+            btnVincular.Size = new Size(125, 34);
             btnVincular.TabIndex = 2;
             btnVincular.Text = "Vincular";
             btnVincular.UseVisualStyleBackColor = false;
@@ -146,10 +144,9 @@
             btnPesquisar.FlatAppearance.BorderSize = 0;
             btnPesquisar.FlatStyle = FlatStyle.Flat;
             btnPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
-            btnPesquisar.Location = new Point(886, 99);
-            btnPesquisar.Margin = new Padding(3, 4, 3, 4);
+            btnPesquisar.Location = new Point(775, 74);
             btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(34, 40);
+            btnPesquisar.Size = new Size(30, 30);
             btnPesquisar.TabIndex = 1;
             btnPesquisar.UseVisualStyleBackColor = false;
             // 
@@ -158,25 +155,24 @@
             txtTitulo.Anchor = AnchorStyles.Top;
             txtTitulo.AutoSize = true;
             txtTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            txtTitulo.Location = new Point(394, 28);
+            txtTitulo.Location = new Point(345, 21);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(336, 41);
+            txtTitulo.Size = new Size(274, 32);
             txtTitulo.TabIndex = 0;
             txtTitulo.Text = "Vincular Componentes";
             // 
             // VincularComponentes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(56, 56, 56);
-            ClientSize = new Size(1045, 619);
+            ClientSize = new Size(914, 464);
             Controls.Add(txtTitulo);
             Controls.Add(btnPesquisar);
             Controls.Add(btnVincular);
             Controls.Add(checkedListBox);
             Controls.Add(dataGridViewVincularComponentes);
             ForeColor = Color.WhiteSmoke;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "VincularComponentes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MovSoft - Vincular Componentes";

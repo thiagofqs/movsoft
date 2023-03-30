@@ -23,7 +23,7 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable MostrarOpcoes(int? idOpcional, string? filtro)
+        public DataTable MostrarOpcoes(string? filtro, int? idOpcional)
         {
             DataTable dataTable = new();
             try

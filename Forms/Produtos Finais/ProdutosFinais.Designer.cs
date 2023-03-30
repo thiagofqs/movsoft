@@ -28,420 +28,440 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControlProdutos = new System.Windows.Forms.TabControl();
-            this.Geral = new System.Windows.Forms.TabPage();
-            this.kryptonCheckBoxControlarEstoque = new Krypton.Toolkit.KryptonCheckBox();
-            this.kryptonLabelAtivo = new Krypton.Toolkit.KryptonLabel();
-            this.toggleButtonAtivo = new MovSoft.Controls.ToggleButton();
-            this.kryptonLabelNomeProduto = new Krypton.Toolkit.KryptonLabel();
-            this.btnVincularOpcionais = new System.Windows.Forms.Button();
-            this.btnVincularComponentes = new System.Windows.Forms.Button();
-            this.inputNomeProduto = new System.Windows.Forms.TextBox();
-            this.Preco = new System.Windows.Forms.TabPage();
-            this.comboBoxUnidadeDeMedida = new System.Windows.Forms.ComboBox();
-            this.kryptonLabelPreco = new Krypton.Toolkit.KryptonLabel();
-            this.kryptonLabelDescricao = new Krypton.Toolkit.KryptonLabel();
-            this.numericUpDownPreco = new System.Windows.Forms.NumericUpDown();
-            this.dataGridViewProdutosFinais = new System.Windows.Forms.DataGridView();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.imgFiltro = new System.Windows.Forms.PictureBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
-            this.inputPesquisar = new System.Windows.Forms.TextBox();
-            this.tabControlProdutos.SuspendLayout();
-            this.Geral.SuspendLayout();
-            this.Preco.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosFinais)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            tabControlProdutos = new TabControl();
+            Geral = new TabPage();
+            kryptonCheckBoxControlarEstoque = new Krypton.Toolkit.KryptonCheckBox();
+            kryptonLabelAtivo = new Krypton.Toolkit.KryptonLabel();
+            toggleButtonAtivo = new Controls.ToggleButton();
+            kryptonLabelNomeProduto = new Krypton.Toolkit.KryptonLabel();
+            btnVincularOpcionais = new Button();
+            btnVincularComponentes = new Button();
+            inputNomeProduto = new TextBox();
+            Preco = new TabPage();
+            comboBoxUnidadeDeMedida = new ComboBox();
+            kryptonLabelPreco = new Krypton.Toolkit.KryptonLabel();
+            kryptonLabelDescricao = new Krypton.Toolkit.KryptonLabel();
+            numericUpDownPreco = new NumericUpDown();
+            dataGridViewProdutosFinais = new DataGridView();
+            btnEditar = new Button();
+            btnCancelar = new Button();
+            btnCadastrar = new Button();
+            imgFiltro = new PictureBox();
+            btnPesquisar = new Button();
+            comboBoxFiltro = new ComboBox();
+            inputPesquisar = new TextBox();
+            tabControlProdutos.SuspendLayout();
+            Geral.SuspendLayout();
+            Preco.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPreco).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutosFinais).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgFiltro).BeginInit();
+            SuspendLayout();
             // 
             // tabControlProdutos
             // 
-            this.tabControlProdutos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tabControlProdutos.Controls.Add(this.Geral);
-            this.tabControlProdutos.Controls.Add(this.Preco);
-            this.tabControlProdutos.Enabled = false;
-            this.tabControlProdutos.Location = new System.Drawing.Point(198, 36);
-            this.tabControlProdutos.Name = "tabControlProdutos";
-            this.tabControlProdutos.SelectedIndex = 0;
-            this.tabControlProdutos.Size = new System.Drawing.Size(561, 162);
-            this.tabControlProdutos.TabIndex = 0;
+            tabControlProdutos.Anchor = AnchorStyles.Top;
+            tabControlProdutos.Controls.Add(Geral);
+            tabControlProdutos.Controls.Add(Preco);
+            tabControlProdutos.Enabled = false;
+            tabControlProdutos.Location = new Point(198, 36);
+            tabControlProdutos.Name = "tabControlProdutos";
+            tabControlProdutos.SelectedIndex = 0;
+            tabControlProdutos.Size = new Size(561, 162);
+            tabControlProdutos.TabIndex = 0;
             // 
             // Geral
             // 
-            this.Geral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.Geral.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Geral.Controls.Add(this.kryptonCheckBoxControlarEstoque);
-            this.Geral.Controls.Add(this.kryptonLabelAtivo);
-            this.Geral.Controls.Add(this.toggleButtonAtivo);
-            this.Geral.Controls.Add(this.kryptonLabelNomeProduto);
-            this.Geral.Controls.Add(this.btnVincularOpcionais);
-            this.Geral.Controls.Add(this.btnVincularComponentes);
-            this.Geral.Controls.Add(this.inputNomeProduto);
-            this.Geral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.Geral.Location = new System.Drawing.Point(4, 24);
-            this.Geral.Name = "Geral";
-            this.Geral.Padding = new System.Windows.Forms.Padding(3);
-            this.Geral.Size = new System.Drawing.Size(553, 134);
-            this.Geral.TabIndex = 0;
-            this.Geral.Text = "Geral";
+            Geral.BackColor = Color.FromArgb(114, 101, 75);
+            Geral.BorderStyle = BorderStyle.Fixed3D;
+            Geral.Controls.Add(kryptonCheckBoxControlarEstoque);
+            Geral.Controls.Add(kryptonLabelAtivo);
+            Geral.Controls.Add(toggleButtonAtivo);
+            Geral.Controls.Add(kryptonLabelNomeProduto);
+            Geral.Controls.Add(btnVincularOpcionais);
+            Geral.Controls.Add(btnVincularComponentes);
+            Geral.Controls.Add(inputNomeProduto);
+            Geral.ForeColor = Color.FromArgb(56, 56, 56);
+            Geral.Location = new Point(4, 24);
+            Geral.Name = "Geral";
+            Geral.Padding = new Padding(3);
+            Geral.Size = new Size(553, 134);
+            Geral.TabIndex = 0;
+            Geral.Text = "Geral";
             // 
             // kryptonCheckBoxControlarEstoque
             // 
-            this.kryptonCheckBoxControlarEstoque.Location = new System.Drawing.Point(12, 82);
-            this.kryptonCheckBoxControlarEstoque.Name = "kryptonCheckBoxControlarEstoque";
-            this.kryptonCheckBoxControlarEstoque.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonCheckBoxControlarEstoque.Size = new System.Drawing.Size(137, 23);
-            this.kryptonCheckBoxControlarEstoque.StateDisabled.LongText.Color1 = System.Drawing.Color.DarkGray;
-            this.kryptonCheckBoxControlarEstoque.StateDisabled.ShortText.Color1 = System.Drawing.Color.DarkGray;
-            this.kryptonCheckBoxControlarEstoque.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonCheckBoxControlarEstoque.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonCheckBoxControlarEstoque.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonCheckBoxControlarEstoque.TabIndex = 10;
-            this.kryptonCheckBoxControlarEstoque.Values.Text = "Controlar estoque";
+            kryptonCheckBoxControlarEstoque.Location = new Point(12, 82);
+            kryptonCheckBoxControlarEstoque.Name = "kryptonCheckBoxControlarEstoque";
+            kryptonCheckBoxControlarEstoque.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kryptonCheckBoxControlarEstoque.Size = new Size(137, 23);
+            kryptonCheckBoxControlarEstoque.StateDisabled.LongText.Color1 = Color.DarkGray;
+            kryptonCheckBoxControlarEstoque.StateDisabled.ShortText.Color1 = Color.DarkGray;
+            kryptonCheckBoxControlarEstoque.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonCheckBoxControlarEstoque.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonCheckBoxControlarEstoque.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonCheckBoxControlarEstoque.TabIndex = 10;
+            kryptonCheckBoxControlarEstoque.Values.Text = "Controlar estoque";
             // 
             // kryptonLabelAtivo
             // 
-            this.kryptonLabelAtivo.Location = new System.Drawing.Point(218, 9);
-            this.kryptonLabelAtivo.Name = "kryptonLabelAtivo";
-            this.kryptonLabelAtivo.Size = new System.Drawing.Size(45, 21);
-            this.kryptonLabelAtivo.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelAtivo.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonLabelAtivo.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelAtivo.TabIndex = 9;
-            this.kryptonLabelAtivo.Values.Text = "Ativo";
+            kryptonLabelAtivo.Location = new Point(218, 9);
+            kryptonLabelAtivo.Name = "kryptonLabelAtivo";
+            kryptonLabelAtivo.Size = new Size(45, 21);
+            kryptonLabelAtivo.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelAtivo.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonLabelAtivo.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelAtivo.TabIndex = 9;
+            kryptonLabelAtivo.Values.Text = "Ativo";
             // 
             // toggleButtonAtivo
             // 
-            this.toggleButtonAtivo.AutoSize = true;
-            this.toggleButtonAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.toggleButtonAtivo.Checked = true;
-            this.toggleButtonAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toggleButtonAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.toggleButtonAtivo.FocusToggleColor = System.Drawing.Color.Gold;
-            this.toggleButtonAtivo.Location = new System.Drawing.Point(218, 36);
-            this.toggleButtonAtivo.MinimumSize = new System.Drawing.Size(45, 23);
-            this.toggleButtonAtivo.Name = "toggleButtonAtivo";
-            this.toggleButtonAtivo.OffBackColor = System.Drawing.Color.Gray;
-            this.toggleButtonAtivo.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.toggleButtonAtivo.OnBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.toggleButtonAtivo.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.toggleButtonAtivo.Size = new System.Drawing.Size(45, 23);
-            this.toggleButtonAtivo.TabIndex = 9;
-            this.toggleButtonAtivo.UseVisualStyleBackColor = false;
+            toggleButtonAtivo.AutoSize = true;
+            toggleButtonAtivo.BackColor = Color.Transparent;
+            toggleButtonAtivo.Checked = true;
+            toggleButtonAtivo.CheckState = CheckState.Checked;
+            toggleButtonAtivo.Cursor = Cursors.Hand;
+            toggleButtonAtivo.FocusToggleColor = Color.Gold;
+            toggleButtonAtivo.Location = new Point(218, 36);
+            toggleButtonAtivo.MinimumSize = new Size(45, 23);
+            toggleButtonAtivo.Name = "toggleButtonAtivo";
+            toggleButtonAtivo.OffBackColor = Color.Gray;
+            toggleButtonAtivo.OffToggleColor = Color.Gainsboro;
+            toggleButtonAtivo.OnBackColor = Color.FromArgb(0, 133, 132);
+            toggleButtonAtivo.OnToggleColor = Color.WhiteSmoke;
+            toggleButtonAtivo.Size = new Size(45, 23);
+            toggleButtonAtivo.TabIndex = 9;
+            toggleButtonAtivo.UseVisualStyleBackColor = false;
             // 
             // kryptonLabelNomeProduto
             // 
-            this.kryptonLabelNomeProduto.Location = new System.Drawing.Point(12, 9);
-            this.kryptonLabelNomeProduto.Name = "kryptonLabelNomeProduto";
-            this.kryptonLabelNomeProduto.Size = new System.Drawing.Size(137, 21);
-            this.kryptonLabelNomeProduto.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.kryptonLabelNomeProduto.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelNomeProduto.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonLabelNomeProduto.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelNomeProduto.TabIndex = 8;
-            this.kryptonLabelNomeProduto.Values.ExtraText = "*";
-            this.kryptonLabelNomeProduto.Values.Text = "Nome do produto";
+            kryptonLabelNomeProduto.Location = new Point(12, 9);
+            kryptonLabelNomeProduto.Name = "kryptonLabelNomeProduto";
+            kryptonLabelNomeProduto.Size = new Size(137, 21);
+            kryptonLabelNomeProduto.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
+            kryptonLabelNomeProduto.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelNomeProduto.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonLabelNomeProduto.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelNomeProduto.TabIndex = 8;
+            kryptonLabelNomeProduto.Values.ExtraText = "*";
+            kryptonLabelNomeProduto.Values.Text = "Nome do produto";
             // 
             // btnVincularOpcionais
             // 
-            this.btnVincularOpcionais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnVincularOpcionais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVincularOpcionais.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnVincularOpcionais.FlatAppearance.BorderSize = 0;
-            this.btnVincularOpcionais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVincularOpcionais.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVincularOpcionais.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnVincularOpcionais.Location = new System.Drawing.Point(430, 67);
-            this.btnVincularOpcionais.Name = "btnVincularOpcionais";
-            this.btnVincularOpcionais.Size = new System.Drawing.Size(96, 48);
-            this.btnVincularOpcionais.TabIndex = 12;
-            this.btnVincularOpcionais.Text = "Vincular Opcionais";
-            this.btnVincularOpcionais.UseVisualStyleBackColor = false;
-            this.btnVincularOpcionais.Click += new System.EventHandler(this.btnVincularOpcionais_Click);
+            btnVincularOpcionais.BackColor = Color.FromArgb(0, 133, 132);
+            btnVincularOpcionais.Cursor = Cursors.Hand;
+            btnVincularOpcionais.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            btnVincularOpcionais.FlatAppearance.BorderSize = 0;
+            btnVincularOpcionais.FlatStyle = FlatStyle.Flat;
+            btnVincularOpcionais.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVincularOpcionais.ForeColor = Color.WhiteSmoke;
+            btnVincularOpcionais.Location = new Point(430, 67);
+            btnVincularOpcionais.Name = "btnVincularOpcionais";
+            btnVincularOpcionais.Size = new Size(96, 48);
+            btnVincularOpcionais.TabIndex = 12;
+            btnVincularOpcionais.Text = "Vincular Opcionais";
+            btnVincularOpcionais.UseVisualStyleBackColor = false;
+            btnVincularOpcionais.Click += btnVincularOpcionais_Click;
             // 
             // btnVincularComponentes
             // 
-            this.btnVincularComponentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnVincularComponentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVincularComponentes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnVincularComponentes.FlatAppearance.BorderSize = 0;
-            this.btnVincularComponentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVincularComponentes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnVincularComponentes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnVincularComponentes.Location = new System.Drawing.Point(430, 9);
-            this.btnVincularComponentes.Name = "btnVincularComponentes";
-            this.btnVincularComponentes.Size = new System.Drawing.Size(96, 48);
-            this.btnVincularComponentes.TabIndex = 11;
-            this.btnVincularComponentes.Text = "Vincular Componentes";
-            this.btnVincularComponentes.UseVisualStyleBackColor = false;
-            this.btnVincularComponentes.Click += new System.EventHandler(this.btnVincularComponentes_Click);
+            btnVincularComponentes.BackColor = Color.FromArgb(0, 133, 132);
+            btnVincularComponentes.Cursor = Cursors.Hand;
+            btnVincularComponentes.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            btnVincularComponentes.FlatAppearance.BorderSize = 0;
+            btnVincularComponentes.FlatStyle = FlatStyle.Flat;
+            btnVincularComponentes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVincularComponentes.ForeColor = Color.WhiteSmoke;
+            btnVincularComponentes.Location = new Point(430, 9);
+            btnVincularComponentes.Name = "btnVincularComponentes";
+            btnVincularComponentes.Size = new Size(96, 48);
+            btnVincularComponentes.TabIndex = 11;
+            btnVincularComponentes.Text = "Vincular Componentes";
+            btnVincularComponentes.UseVisualStyleBackColor = false;
+            btnVincularComponentes.Click += btnVincularComponentes_Click;
             // 
             // inputNomeProduto
             // 
-            this.inputNomeProduto.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputNomeProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputNomeProduto.Location = new System.Drawing.Point(12, 36);
-            this.inputNomeProduto.Name = "inputNomeProduto";
-            this.inputNomeProduto.Size = new System.Drawing.Size(179, 23);
-            this.inputNomeProduto.TabIndex = 8;
-            this.inputNomeProduto.Tag = "Nome do Produto";
-            this.inputNomeProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputNomeProduto_KeyPress);
+            inputNomeProduto.BackColor = Color.WhiteSmoke;
+            inputNomeProduto.ForeColor = Color.FromArgb(56, 56, 56);
+            inputNomeProduto.Location = new Point(12, 36);
+            inputNomeProduto.Name = "inputNomeProduto";
+            inputNomeProduto.Size = new Size(179, 23);
+            inputNomeProduto.TabIndex = 8;
+            inputNomeProduto.Tag = "Nome do Produto";
             // 
             // Preco
             // 
-            this.Preco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(101)))), ((int)(((byte)(75)))));
-            this.Preco.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Preco.Controls.Add(this.comboBoxUnidadeDeMedida);
-            this.Preco.Controls.Add(this.kryptonLabelPreco);
-            this.Preco.Controls.Add(this.kryptonLabelDescricao);
-            this.Preco.Controls.Add(this.numericUpDownPreco);
-            this.Preco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.Preco.Location = new System.Drawing.Point(4, 24);
-            this.Preco.Name = "Preco";
-            this.Preco.Padding = new System.Windows.Forms.Padding(3);
-            this.Preco.Size = new System.Drawing.Size(553, 134);
-            this.Preco.TabIndex = 1;
-            this.Preco.Text = "Preço";
+            Preco.BackColor = Color.FromArgb(114, 101, 75);
+            Preco.BorderStyle = BorderStyle.Fixed3D;
+            Preco.Controls.Add(comboBoxUnidadeDeMedida);
+            Preco.Controls.Add(kryptonLabelPreco);
+            Preco.Controls.Add(kryptonLabelDescricao);
+            Preco.Controls.Add(numericUpDownPreco);
+            Preco.ForeColor = Color.FromArgb(56, 56, 56);
+            Preco.Location = new Point(4, 24);
+            Preco.Name = "Preco";
+            Preco.Padding = new Padding(3);
+            Preco.Size = new Size(553, 134);
+            Preco.TabIndex = 1;
+            Preco.Text = "Preço";
             // 
             // comboBoxUnidadeDeMedida
             // 
-            this.comboBoxUnidadeDeMedida.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxUnidadeDeMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUnidadeDeMedida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.comboBoxUnidadeDeMedida.FormattingEnabled = true;
-            this.comboBoxUnidadeDeMedida.Items.AddRange(new object[] {
-            "Unidade (un)",
-            "Metro (m)",
-            "Milímetro (mm)",
-            "Litro (L)",
-            "Mililitro (mL)",
-            "Quilograma (kg)",
-            "Grama (g)",
-            "Miligrama (mg)"});
-            this.comboBoxUnidadeDeMedida.Location = new System.Drawing.Point(12, 36);
-            this.comboBoxUnidadeDeMedida.Name = "comboBoxUnidadeDeMedida";
-            this.comboBoxUnidadeDeMedida.Size = new System.Drawing.Size(127, 23);
-            this.comboBoxUnidadeDeMedida.TabIndex = 11;
-            this.comboBoxUnidadeDeMedida.Tag = "Unidade de Medida";
+            comboBoxUnidadeDeMedida.BackColor = Color.WhiteSmoke;
+            comboBoxUnidadeDeMedida.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxUnidadeDeMedida.ForeColor = Color.FromArgb(56, 56, 56);
+            comboBoxUnidadeDeMedida.FormattingEnabled = true;
+            comboBoxUnidadeDeMedida.Items.AddRange(new object[] { "Unidade (un)", "Metro (m)", "Milímetro (mm)", "Litro (L)", "Mililitro (mL)", "Quilograma (kg)", "Grama (g)", "Miligrama (mg)" });
+            comboBoxUnidadeDeMedida.Location = new Point(12, 36);
+            comboBoxUnidadeDeMedida.Name = "comboBoxUnidadeDeMedida";
+            comboBoxUnidadeDeMedida.Size = new Size(127, 23);
+            comboBoxUnidadeDeMedida.TabIndex = 11;
+            comboBoxUnidadeDeMedida.Tag = "Unidade de Medida";
             // 
             // kryptonLabelPreco
             // 
-            this.kryptonLabelPreco.Location = new System.Drawing.Point(12, 69);
-            this.kryptonLabelPreco.Name = "kryptonLabelPreco";
-            this.kryptonLabelPreco.Size = new System.Drawing.Size(58, 21);
-            this.kryptonLabelPreco.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.kryptonLabelPreco.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelPreco.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonLabelPreco.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelPreco.TabIndex = 9;
-            this.kryptonLabelPreco.Values.ExtraText = "*";
-            this.kryptonLabelPreco.Values.Text = "Preço";
+            kryptonLabelPreco.Location = new Point(12, 69);
+            kryptonLabelPreco.Name = "kryptonLabelPreco";
+            kryptonLabelPreco.Size = new Size(58, 21);
+            kryptonLabelPreco.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
+            kryptonLabelPreco.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelPreco.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonLabelPreco.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelPreco.TabIndex = 9;
+            kryptonLabelPreco.Values.ExtraText = "*";
+            kryptonLabelPreco.Values.Text = "Preço";
             // 
             // kryptonLabelDescricao
             // 
-            this.kryptonLabelDescricao.Location = new System.Drawing.Point(12, 9);
-            this.kryptonLabelDescricao.Name = "kryptonLabelDescricao";
-            this.kryptonLabelDescricao.Size = new System.Drawing.Size(145, 21);
-            this.kryptonLabelDescricao.StateNormal.LongText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(51)))), ((int)(((byte)(56)))));
-            this.kryptonLabelDescricao.StateNormal.LongText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelDescricao.StateNormal.ShortText.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonLabelDescricao.StateNormal.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.kryptonLabelDescricao.TabIndex = 8;
-            this.kryptonLabelDescricao.Tag = "Descrição";
-            this.kryptonLabelDescricao.Values.ExtraText = "*";
-            this.kryptonLabelDescricao.Values.Text = "Unidade de medida";
+            kryptonLabelDescricao.Location = new Point(12, 9);
+            kryptonLabelDescricao.Name = "kryptonLabelDescricao";
+            kryptonLabelDescricao.Size = new Size(145, 21);
+            kryptonLabelDescricao.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
+            kryptonLabelDescricao.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelDescricao.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonLabelDescricao.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelDescricao.TabIndex = 8;
+            kryptonLabelDescricao.Tag = "Descrição";
+            kryptonLabelDescricao.Values.ExtraText = "*";
+            kryptonLabelDescricao.Values.Text = "Unidade de medida";
             // 
             // numericUpDownPreco
             // 
-            this.numericUpDownPreco.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.numericUpDownPreco.DecimalPlaces = 2;
-            this.numericUpDownPreco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.numericUpDownPreco.Location = new System.Drawing.Point(12, 96);
-            this.numericUpDownPreco.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.numericUpDownPreco.Name = "numericUpDownPreco";
-            this.numericUpDownPreco.Size = new System.Drawing.Size(106, 23);
-            this.numericUpDownPreco.TabIndex = 9;
-            this.numericUpDownPreco.Tag = "Preço";
-            this.numericUpDownPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDownPreco_KeyPress);
+            numericUpDownPreco.BackColor = Color.WhiteSmoke;
+            numericUpDownPreco.DecimalPlaces = 2;
+            numericUpDownPreco.ForeColor = Color.FromArgb(56, 56, 56);
+            numericUpDownPreco.Location = new Point(12, 96);
+            numericUpDownPreco.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
+            numericUpDownPreco.Name = "numericUpDownPreco";
+            numericUpDownPreco.Size = new Size(106, 23);
+            numericUpDownPreco.TabIndex = 9;
+            numericUpDownPreco.Tag = "Preço";
             // 
             // dataGridViewProdutosFinais
             // 
-            this.dataGridViewProdutosFinais.AllowUserToAddRows = false;
-            this.dataGridViewProdutosFinais.AllowUserToDeleteRows = false;
-            this.dataGridViewProdutosFinais.AllowUserToResizeColumns = false;
-            this.dataGridViewProdutosFinais.AllowUserToResizeRows = false;
-            this.dataGridViewProdutosFinais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProdutosFinais.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridViewProdutosFinais.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewProdutosFinais.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewProdutosFinais.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridViewProdutosFinais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProdutosFinais.EnableHeadersVisualStyles = false;
-            this.dataGridViewProdutosFinais.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.dataGridViewProdutosFinais.Location = new System.Drawing.Point(198, 272);
-            this.dataGridViewProdutosFinais.Name = "dataGridViewProdutosFinais";
-            this.dataGridViewProdutosFinais.ReadOnly = true;
-            this.dataGridViewProdutosFinais.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridViewProdutosFinais.RowHeadersVisible = false;
-            this.dataGridViewProdutosFinais.RowHeadersWidth = 51;
-            this.dataGridViewProdutosFinais.RowTemplate.Height = 25;
-            this.dataGridViewProdutosFinais.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProdutosFinais.ShowCellErrors = false;
-            this.dataGridViewProdutosFinais.ShowCellToolTips = false;
-            this.dataGridViewProdutosFinais.ShowEditingIcon = false;
-            this.dataGridViewProdutosFinais.ShowRowErrors = false;
-            this.dataGridViewProdutosFinais.Size = new System.Drawing.Size(430, 142);
-            this.dataGridViewProdutosFinais.TabIndex = 1;
+            dataGridViewProdutosFinais.AllowUserToAddRows = false;
+            dataGridViewProdutosFinais.AllowUserToDeleteRows = false;
+            dataGridViewProdutosFinais.AllowUserToResizeColumns = false;
+            dataGridViewProdutosFinais.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewProdutosFinais.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewProdutosFinais.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProdutosFinais.BackgroundColor = Color.WhiteSmoke;
+            dataGridViewProdutosFinais.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewProdutosFinais.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewProdutosFinais.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewProdutosFinais.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewProdutosFinais.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProdutosFinais.Cursor = Cursors.Hand;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataGridViewProdutosFinais.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewProdutosFinais.EnableHeadersVisualStyles = false;
+            dataGridViewProdutosFinais.GridColor = Color.FromArgb(56, 56, 56);
+            dataGridViewProdutosFinais.Location = new Point(198, 272);
+            dataGridViewProdutosFinais.Name = "dataGridViewProdutosFinais";
+            dataGridViewProdutosFinais.ReadOnly = true;
+            dataGridViewProdutosFinais.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewProdutosFinais.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewProdutosFinais.RowHeadersVisible = false;
+            dataGridViewProdutosFinais.RowHeadersWidth = 51;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewProdutosFinais.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewProdutosFinais.RowTemplate.Height = 25;
+            dataGridViewProdutosFinais.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewProdutosFinais.ShowCellErrors = false;
+            dataGridViewProdutosFinais.ShowCellToolTips = false;
+            dataGridViewProdutosFinais.ShowEditingIcon = false;
+            dataGridViewProdutosFinais.ShowRowErrors = false;
+            dataGridViewProdutosFinais.Size = new Size(430, 142);
+            dataGridViewProdutosFinais.TabIndex = 1;
+            dataGridViewProdutosFinais.CellClick += dataGridViewProdutosFinais_CellClick;
+            dataGridViewProdutosFinais.CellContentClick += dataGridViewProdutosFinais_CellContentClick;
+            dataGridViewProdutosFinais.CellDoubleClick += dataGridViewProdutosFinais_CellDoubleClick;
+            dataGridViewProdutosFinais.CellFormatting += dataGridViewProdutosFinais_CellFormatting;
             // 
             // btnEditar
             // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.Enabled = false;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditar.Location = new System.Drawing.Point(634, 312);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(125, 34);
-            this.btnEditar.TabIndex = 7;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.BackColor = Color.FromArgb(0, 133, 132);
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.Enabled = false;
+            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditar.ForeColor = Color.WhiteSmoke;
+            btnEditar.Location = new Point(634, 312);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(125, 34);
+            btnEditar.TabIndex = 7;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancelar.Location = new System.Drawing.Point(634, 352);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(125, 34);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.FromArgb(0, 133, 132);
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.Enabled = false;
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.ForeColor = Color.WhiteSmoke;
+            btnCancelar.Location = new Point(634, 352);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(125, 34);
+            btnCancelar.TabIndex = 8;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadastrar.Location = new System.Drawing.Point(634, 272);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(125, 34);
-            this.btnCadastrar.TabIndex = 6;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            btnCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCadastrar.BackColor = Color.FromArgb(0, 133, 132);
+            btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderColor = Color.FromArgb(0, 133, 132);
+            btnCadastrar.FlatAppearance.BorderSize = 0;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCadastrar.ForeColor = Color.WhiteSmoke;
+            btnCadastrar.Location = new Point(634, 272);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(125, 34);
+            btnCadastrar.TabIndex = 6;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // imgFiltro
             // 
-            this.imgFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.imgFiltro.BackgroundImage = global::MovSoft.Properties.Resources.icon_filter;
-            this.imgFiltro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgFiltro.Location = new System.Drawing.Point(501, 243);
-            this.imgFiltro.Name = "imgFiltro";
-            this.imgFiltro.Size = new System.Drawing.Size(23, 23);
-            this.imgFiltro.TabIndex = 25;
-            this.imgFiltro.TabStop = false;
+            imgFiltro.BackColor = Color.Transparent;
+            imgFiltro.BackgroundImage = Properties.Resources.icon_filter;
+            imgFiltro.BackgroundImageLayout = ImageLayout.Zoom;
+            imgFiltro.Location = new Point(501, 243);
+            imgFiltro.Name = "imgFiltro";
+            imgFiltro.Size = new Size(23, 23);
+            imgFiltro.TabIndex = 25;
+            imgFiltro.TabStop = false;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.BackgroundImage = global::MovSoft.Properties.Resources.icon_search;
-            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisar.FlatAppearance.BorderSize = 0;
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.btnPesquisar.Location = new System.Drawing.Point(444, 243);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(23, 23);
-            this.btnPesquisar.TabIndex = 23;
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            btnPesquisar.BackColor = Color.Transparent;
+            btnPesquisar.BackgroundImage = Properties.Resources.icon_search;
+            btnPesquisar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPesquisar.Cursor = Cursors.Hand;
+            btnPesquisar.FlatAppearance.BorderSize = 0;
+            btnPesquisar.FlatStyle = FlatStyle.Flat;
+            btnPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
+            btnPesquisar.Location = new Point(444, 243);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(23, 23);
+            btnPesquisar.TabIndex = 23;
+            btnPesquisar.UseVisualStyleBackColor = false;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // comboBoxFiltro
             // 
-            this.comboBoxFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.comboBoxFiltro.FormattingEnabled = true;
-            this.comboBoxFiltro.Items.AddRange(new object[] {
-            "Todos",
-            "Habilitado",
-            "Desabilitado"});
-            this.comboBoxFiltro.Location = new System.Drawing.Point(530, 243);
-            this.comboBoxFiltro.Name = "comboBoxFiltro";
-            this.comboBoxFiltro.Size = new System.Drawing.Size(98, 23);
-            this.comboBoxFiltro.TabIndex = 24;
+            comboBoxFiltro.BackColor = Color.WhiteSmoke;
+            comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
+            comboBoxFiltro.FormattingEnabled = true;
+            comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Habilitado", "Desabilitado" });
+            comboBoxFiltro.Location = new Point(530, 243);
+            comboBoxFiltro.Name = "comboBoxFiltro";
+            comboBoxFiltro.Size = new Size(98, 23);
+            comboBoxFiltro.TabIndex = 24;
+            comboBoxFiltro.SelectedIndexChanged += comboBoxFiltro_SelectedIndexChanged;
             // 
             // inputPesquisar
             // 
-            this.inputPesquisar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputPesquisar.Location = new System.Drawing.Point(198, 243);
-            this.inputPesquisar.Name = "inputPesquisar";
-            this.inputPesquisar.PlaceholderText = "Pesquisar";
-            this.inputPesquisar.Size = new System.Drawing.Size(240, 23);
-            this.inputPesquisar.TabIndex = 22;
-            this.inputPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputPesquisar_KeyPress);
+            inputPesquisar.BackColor = Color.WhiteSmoke;
+            inputPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
+            inputPesquisar.Location = new Point(198, 243);
+            inputPesquisar.Name = "inputPesquisar";
+            inputPesquisar.PlaceholderText = "Pesquisar";
+            inputPesquisar.Size = new Size(240, 23);
+            inputPesquisar.TabIndex = 22;
+            inputPesquisar.KeyPress += inputPesquisar_KeyPress;
             // 
             // ProdutosFinais
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(930, 503);
-            this.Controls.Add(this.imgFiltro);
-            this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.comboBoxFiltro);
-            this.Controls.Add(this.inputPesquisar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.dataGridViewProdutosFinais);
-            this.Controls.Add(this.tabControlProdutos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProdutosFinais";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produtos Finais";
-            this.tabControlProdutos.ResumeLayout(false);
-            this.Geral.ResumeLayout(false);
-            this.Geral.PerformLayout();
-            this.Preco.ResumeLayout(false);
-            this.Preco.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPreco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdutosFinais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(56, 56, 56);
+            ClientSize = new Size(930, 503);
+            Controls.Add(imgFiltro);
+            Controls.Add(btnPesquisar);
+            Controls.Add(comboBoxFiltro);
+            Controls.Add(inputPesquisar);
+            Controls.Add(btnEditar);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnCadastrar);
+            Controls.Add(dataGridViewProdutosFinais);
+            Controls.Add(tabControlProdutos);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ProdutosFinais";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Produtos Finais";
+            tabControlProdutos.ResumeLayout(false);
+            Geral.ResumeLayout(false);
+            Geral.PerformLayout();
+            Preco.ResumeLayout(false);
+            Preco.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownPreco).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutosFinais).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgFiltro).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

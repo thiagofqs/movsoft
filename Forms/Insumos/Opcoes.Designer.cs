@@ -48,6 +48,8 @@
             btnPesquisar = new Button();
             comboBoxFiltro = new ComboBox();
             inputPesquisar = new TextBox();
+            kryptonLabelUnidadeDeMedida = new Krypton.Toolkit.KryptonLabel();
+            comboBoxUnidadeDeMedida = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOpcoes).BeginInit();
             pnlCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownPreco).BeginInit();
@@ -123,7 +125,9 @@
             pnlCadastro.Anchor = AnchorStyles.Top;
             pnlCadastro.BackColor = Color.FromArgb(114, 101, 75);
             pnlCadastro.BorderStyle = BorderStyle.Fixed3D;
+            pnlCadastro.Controls.Add(kryptonLabelUnidadeDeMedida);
             pnlCadastro.Controls.Add(kryptonLabelPreco);
+            pnlCadastro.Controls.Add(comboBoxUnidadeDeMedida);
             pnlCadastro.Controls.Add(numericUpDownPreco);
             pnlCadastro.Controls.Add(toggleButtonAtivo);
             pnlCadastro.Controls.Add(kryptonLabel1);
@@ -145,7 +149,7 @@
             kryptonLabelPreco.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelPreco.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
             kryptonLabelPreco.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            kryptonLabelPreco.TabIndex = 9;
+            kryptonLabelPreco.TabIndex = 10;
             kryptonLabelPreco.Values.ExtraText = "*";
             kryptonLabelPreco.Values.Text = "Preço";
             // 
@@ -158,7 +162,7 @@
             numericUpDownPreco.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numericUpDownPreco.Name = "numericUpDownPreco";
             numericUpDownPreco.Size = new Size(106, 23);
-            numericUpDownPreco.TabIndex = 9;
+            numericUpDownPreco.TabIndex = 10;
             numericUpDownPreco.Tag = "Preço";
             // 
             // toggleButtonAtivo
@@ -177,7 +181,7 @@
             toggleButtonAtivo.OnBackColor = Color.FromArgb(0, 133, 132);
             toggleButtonAtivo.OnToggleColor = Color.WhiteSmoke;
             toggleButtonAtivo.Size = new Size(45, 23);
-            toggleButtonAtivo.TabIndex = 10;
+            toggleButtonAtivo.TabIndex = 11;
             toggleButtonAtivo.UseVisualStyleBackColor = false;
             // 
             // kryptonLabel1
@@ -188,7 +192,7 @@
             kryptonLabel1.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabel1.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
             kryptonLabel1.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            kryptonLabel1.TabIndex = 10;
+            kryptonLabel1.TabIndex = 11;
             kryptonLabel1.Values.Text = "Ativo";
             // 
             // kryptonLabelNome
@@ -321,6 +325,32 @@
             inputPesquisar.TabIndex = 0;
             inputPesquisar.KeyPress += inputPesquisar_KeyPress;
             // 
+            // kryptonLabelUnidadeDeMedida
+            // 
+            kryptonLabelUnidadeDeMedida.Location = new Point(220, 14);
+            kryptonLabelUnidadeDeMedida.Name = "kryptonLabelUnidadeDeMedida";
+            kryptonLabelUnidadeDeMedida.Size = new Size(145, 21);
+            kryptonLabelUnidadeDeMedida.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
+            kryptonLabelUnidadeDeMedida.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelUnidadeDeMedida.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonLabelUnidadeDeMedida.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonLabelUnidadeDeMedida.TabIndex = 9;
+            kryptonLabelUnidadeDeMedida.Values.ExtraText = "*";
+            kryptonLabelUnidadeDeMedida.Values.Text = "Unidade de medida";
+            // 
+            // comboBoxUnidadeDeMedida
+            // 
+            comboBoxUnidadeDeMedida.BackColor = Color.WhiteSmoke;
+            comboBoxUnidadeDeMedida.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxUnidadeDeMedida.ForeColor = Color.FromArgb(56, 56, 56);
+            comboBoxUnidadeDeMedida.FormattingEnabled = true;
+            comboBoxUnidadeDeMedida.Items.AddRange(new object[] { "Unidade (un)", "Metro (m)", "Milímetro (mm)", "Litro (L)", "Mililitro (mL)", "Quilograma (kg)", "Grama (g)", "Miligrama (mg)" });
+            comboBoxUnidadeDeMedida.Location = new Point(220, 41);
+            comboBoxUnidadeDeMedida.Name = "comboBoxUnidadeDeMedida";
+            comboBoxUnidadeDeMedida.Size = new Size(127, 23);
+            comboBoxUnidadeDeMedida.TabIndex = 9;
+            comboBoxUnidadeDeMedida.Tag = "Unidade de Medida";
+            // 
             // Opcoes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -366,5 +396,7 @@
         private TextBox inputPesquisar;
         private Krypton.Toolkit.KryptonLabel kryptonLabelPreco;
         private NumericUpDown numericUpDownPreco;
+        private Krypton.Toolkit.KryptonLabel kryptonLabelUnidadeDeMedida;
+        private ComboBox comboBoxUnidadeDeMedida;
     }
 }

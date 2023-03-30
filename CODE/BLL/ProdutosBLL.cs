@@ -25,14 +25,14 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable MostrarProdutos(string? filtro)
+        public DataTable MostrarProdutos(string? filtro, string? grupo)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
                 string comando = $@"call produtos(
-                '{filtro}'
+                '{filtro}', '{grupo}'
                 );";
                 dataTable = db.RetDataTable(comando);
             }

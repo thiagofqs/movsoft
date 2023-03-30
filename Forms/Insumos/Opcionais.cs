@@ -69,13 +69,13 @@ namespace MovSoft.Forms
             {
                 dto.Ativo = "N";
             }
-            dto.Opcional = inputNomeOpcionais.Text;
+            dto.Opcional = inputNomeOpcional.Text;
             dto.QuantidadeMarcacoes = (int)numericUpDownOpcionais.Value;
         }
 
         private void AtribuirDadosAosInputs()
         {
-            inputNomeOpcionais.Text = Parametros.nomeOpcional;
+            inputNomeOpcional.Text = Parametros.nomeOpcional;
             numericUpDownOpcionais.Value = (int)Parametros.quantidadeMarcacoes;
             if (Parametros.opcionalAtivo == "S")
             {
@@ -109,8 +109,8 @@ namespace MovSoft.Forms
 
         private void LimparCampos()
         {
-            inputNomeOpcionais.Text = "";
-            numericUpDownOpcionais.Text = "";
+            inputNomeOpcional.Text = "";
+            numericUpDownOpcionais.Text = "0";
             toggleButtonAtivo.Checked = true;
         }
 
@@ -133,7 +133,7 @@ namespace MovSoft.Forms
                     btnCadastrar.Text = "Salvar";
                     pnlCadastro.Enabled = true;
                     btnCancelar.Enabled = true;
-                    inputNomeOpcionais.Focus();
+                    inputNomeOpcional.Focus();
                 }
             }
             else
@@ -191,7 +191,7 @@ namespace MovSoft.Forms
                     dataGridViewOpcionais.Enabled = false;
                     pnlCadastro.Enabled = true;
                     btnCancelar.Enabled = true;
-                    inputNomeOpcionais.Focus();
+                    inputNomeOpcional.Focus();
                 }
             }
             else
@@ -221,7 +221,7 @@ namespace MovSoft.Forms
                         dataGridViewOpcionais.Enabled = false;
                         pnlCadastro.Enabled = true;
                         btnCancelar.Enabled = true;
-                        inputNomeOpcionais.Focus();
+                        inputNomeOpcional.Focus();
                     }
                 }
                 else
