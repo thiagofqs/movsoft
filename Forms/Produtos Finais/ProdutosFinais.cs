@@ -157,6 +157,7 @@ namespace MovSoft.Forms
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             VoltarAoPadrao();
+            Parametros.idProduto = null;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -299,8 +300,15 @@ namespace MovSoft.Forms
 
         private void btnVincularComponentes_Click(object sender, EventArgs e)
         {
-            VincularComponentes frm = new((int)Parametros.idProduto);
-            funcoes.AbrirForms(frm, 2, 1);
+            if(Parametros.idProduto.HasValue)
+            {
+                VincularComponentes frm = new((int)Parametros.idProduto);
+                funcoes.AbrirForms(frm, 2, 1);
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto primeiro","Sem referencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
 
         private void btnVincularOpcionais_Click(object sender, EventArgs e)

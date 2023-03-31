@@ -72,12 +72,15 @@ namespace MovSoft.Forms
 
         private void dataGridViewVincularComponentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Realmete deseja remover esse componente desse produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir" && result == DialogResult.OK)
-            {
-                rowData = dataGridViewVincularComponentes.Rows[e.RowIndex];
-                produtoCompostoBLL.DesvincularComponentes(1, int.Parse(rowData.Cells["ID"].Value.ToString()));
-                ComponentesDoProduto(idProdutoGlobal);
+            if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir")
+            {                
+                DialogResult result = MessageBox.Show("Realmete deseja remover esse componente desse produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if(result == DialogResult.OK)
+                {
+                    rowData = dataGridViewVincularComponentes.Rows[e.RowIndex];
+                    produtoCompostoBLL.DesvincularComponentes(1, int.Parse(rowData.Cells["ID"].Value.ToString()));
+                    ComponentesDoProduto(idProdutoGlobal);
+                }
             }
         }
 
@@ -92,7 +95,7 @@ namespace MovSoft.Forms
         private void VincularComponente()
         {
             ProdutoCompostoDTO produtoCompostoDTO = new();
-            produtoCompostoDTO.IdProduto = 1;
+            produtoCompostoDTO.IdProduto = idProdutoGlobal;
             produtoCompostoDTO.Componente = checkedListBox.CheckedItems.Cast<string>().ToList();
             produtoCompostoBLL.VincularComponentes(produtoCompostoDTO);
             ComponentesDoProduto(idProdutoGlobal);
