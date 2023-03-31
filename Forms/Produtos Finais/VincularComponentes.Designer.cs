@@ -71,9 +71,9 @@
             btnVincular.Name = "btnVincular";
             btnVincular.Size = new Size(143, 45);
             btnVincular.TabIndex = 2;
-            btnVincular.Text = "Vincular";
+            btnVincular.Text = "Fechar";
             btnVincular.UseVisualStyleBackColor = false;
-            btnVincular.Click += btnVincular_Click;
+            btnVincular.Click += btnVincular_Click_1;
             // 
             // btnPesquisar
             // 
@@ -91,6 +91,7 @@
             btnPesquisar.Size = new Size(34, 40);
             btnPesquisar.TabIndex = 1;
             btnPesquisar.UseVisualStyleBackColor = false;
+            btnPesquisar.Click += btnVincular_Click;
             // 
             // txtTitulo
             // 
@@ -137,8 +138,8 @@
             dataGridViewVincularComponentes.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewVincularComponentes.EnableHeadersVisualStyles = false;
             dataGridViewVincularComponentes.GridColor = Color.FromArgb(56, 56, 56);
-            dataGridViewVincularComponentes.Location = new Point(226, 257);
-            dataGridViewVincularComponentes.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewVincularComponentes.Location = new Point(226, 334);
+            dataGridViewVincularComponentes.Margin = new Padding(3, 5, 3, 5);
             dataGridViewVincularComponentes.Name = "dataGridViewVincularComponentes";
             dataGridViewVincularComponentes.ReadOnly = true;
             dataGridViewVincularComponentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -163,7 +164,7 @@
             dataGridViewVincularComponentes.ShowCellToolTips = false;
             dataGridViewVincularComponentes.ShowEditingIcon = false;
             dataGridViewVincularComponentes.ShowRowErrors = false;
-            dataGridViewVincularComponentes.Size = new Size(653, 256);
+            dataGridViewVincularComponentes.Size = new Size(653, 178);
             dataGridViewVincularComponentes.TabIndex = 21;
             dataGridViewVincularComponentes.CellContentClick += dataGridViewVincularComponentes_CellContentClick;
             dataGridViewVincularComponentes.CellEndEdit += dataGridViewVincularComponentes_CellEndEdit;

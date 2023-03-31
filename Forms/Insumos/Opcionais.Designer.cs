@@ -37,7 +37,7 @@
             comboBoxFiltro = new ComboBox();
             imgFiltro = new PictureBox();
             btnPesquisar = new Button();
-            inputNomeOpcionais = new TextBox();
+            inputNomeOpcional = new TextBox();
             btnCadastrar = new Button();
             btnEditar = new Button();
             btnCancelar = new Button();
@@ -106,15 +106,15 @@
             btnPesquisar.UseVisualStyleBackColor = false;
             btnPesquisar.Click += btnPesquisar_Click;
             // 
-            // inputNomeOpcionais
+            // inputNomeOpcional
             // 
-            inputNomeOpcionais.BackColor = Color.WhiteSmoke;
-            inputNomeOpcionais.ForeColor = Color.FromArgb(56, 56, 56);
-            inputNomeOpcionais.Location = new Point(12, 41);
-            inputNomeOpcionais.Name = "inputNomeOpcionais";
-            inputNomeOpcionais.Size = new Size(179, 23);
-            inputNomeOpcionais.TabIndex = 8;
-            inputNomeOpcionais.Tag = "Nome do Opcional";
+            inputNomeOpcional.BackColor = Color.WhiteSmoke;
+            inputNomeOpcional.ForeColor = Color.FromArgb(56, 56, 56);
+            inputNomeOpcional.Location = new Point(12, 41);
+            inputNomeOpcional.Name = "inputNomeOpcional";
+            inputNomeOpcional.Size = new Size(179, 23);
+            inputNomeOpcional.TabIndex = 8;
+            inputNomeOpcional.Tag = "Nome do Opcional";
             // 
             // btnCadastrar
             // 
@@ -221,6 +221,7 @@
             dataGridViewOpcionais.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(56, 56, 56);
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
             dataGridViewOpcionais.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewOpcionais.RowTemplate.Height = 25;
@@ -247,7 +248,7 @@
             pnlCadastro.Controls.Add(kryptonLabelQuantidade);
             pnlCadastro.Controls.Add(kryptonLabelNome);
             pnlCadastro.Controls.Add(numericUpDownOpcionais);
-            pnlCadastro.Controls.Add(inputNomeOpcionais);
+            pnlCadastro.Controls.Add(inputNomeOpcional);
             pnlCadastro.Enabled = false;
             pnlCadastro.ForeColor = Color.FromArgb(56, 56, 56);
             pnlCadastro.Location = new Point(198, 36);
@@ -374,7 +375,7 @@
         private PictureBox imgFiltro;
         private Button btnPesquisar;
         private Button btnCadastrar;
-        private TextBox inputNomeOpcionais;
+        private TextBox inputNomeOpcional;
         private Button btnEditar;
         private Button btnCancelar;
         private DataGridView dataGridViewOpcionais;

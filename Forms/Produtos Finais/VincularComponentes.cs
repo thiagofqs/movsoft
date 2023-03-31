@@ -11,12 +11,13 @@ namespace MovSoft.Forms
     {
         ProdutoCompostoBLL produtoCompostoBLL = new();
         DataGridViewRow rowData = new();
-        public VincularComponentes()
+        int idProdutoGlobal;
+        public VincularComponentes(int idProduto)
         {
             InitializeComponent();
-            ComponentesDisponiveis();
-            ComponentesDoProduto();
-
+            ComponentesDisponiveis(idProduto);
+            ComponentesDoProduto(idProduto);
+            idProdutoGlobal = idProduto;
             DataGridViewColumn column = new();
             column.CellTemplate = new DataGridViewTextBoxCell();
             column.Name = "Excluir";
@@ -32,20 +33,20 @@ namespace MovSoft.Forms
             VincularComponente();
         }
 
-        private void ComponentesDisponiveis()
+        private void ComponentesDisponiveis(int idProduto)
         {
             MapField<string?, bool?> componentes = new();
-            componentes = produtoCompostoBLL.ComponentesDisponiveis(1);
+            componentes = produtoCompostoBLL.ComponentesDisponiveis(idProduto);
             for (int i = 0; i < componentes.Count; i++)
             {
                 checkedListBox.Items.Add(componentes.Keys.ElementAt(i), (bool)componentes.Values.ElementAt(i));
             }
         }
 
-        private void ComponentesDoProduto()
+        private void ComponentesDoProduto(int idProduto)
         {
             dataGridViewVincularComponentes.ReadOnly = false;
-            dataGridViewVincularComponentes.DataSource = produtoCompostoBLL.MostrarComponentesDoProdutoGridView(1);
+            dataGridViewVincularComponentes.DataSource = produtoCompostoBLL.MostrarComponentesDoProdutoGridView(idProduto);
             dataGridViewVincularComponentes.Columns["Quantidade"].ReadOnly = false;
             dataGridViewVincularComponentes.Columns["Quantidade"].DefaultCellStyle.Format = "N3";
             foreach (DataGridViewColumn column in dataGridViewVincularComponentes.Columns)
@@ -71,11 +72,12 @@ namespace MovSoft.Forms
 
         private void dataGridViewVincularComponentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir")
+            DialogResult result = MessageBox.Show("Realmete deseja remover esse componente desse produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir" && result == DialogResult.OK)
             {
                 rowData = dataGridViewVincularComponentes.Rows[e.RowIndex];
                 produtoCompostoBLL.DesvincularComponentes(1, int.Parse(rowData.Cells["ID"].Value.ToString()));
-                ComponentesDoProduto();
+                ComponentesDoProduto(idProdutoGlobal);
             }
         }
 
@@ -93,20 +95,25 @@ namespace MovSoft.Forms
             produtoCompostoDTO.IdProduto = 1;
             produtoCompostoDTO.Componente = checkedListBox.CheckedItems.Cast<string>().ToList();
             produtoCompostoBLL.VincularComponentes(produtoCompostoDTO);
-            ComponentesDoProduto();
+            ComponentesDoProduto(idProdutoGlobal);
         }
 
         private void dataGridViewVincularComponentes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Deseja realmente alterar a quantidade desse componente no produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Deseja realmente alterar a quantidade desse componente no produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
-                produtoCompostoBLL.EditarQuantidadeComponenteNoProduto(1,int.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells["ID"].Value.ToString()), float.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                produtoCompostoBLL.EditarQuantidadeComponenteNoProduto(1, int.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells["ID"].Value.ToString()), float.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
             }
             else
             {
-                ComponentesDoProduto();
+                ComponentesDoProduto(idProdutoGlobal);
             }
+        }
+
+        private void btnVincular_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -13,10 +13,11 @@ namespace MovSoft.Forms
         GeralBLL bllGeral = new();
         string? filtro = null;
         char cadastrarOuEditar; //Cadastrar = 'C' | Editar = 'E'
-
-        public Opcoes()
+        int idOpcionalGlobal;
+        public Opcoes(int idOpcional)
         {
             InitializeComponent();
+            idOpcionalGlobal = idOpcional;
             CarregarOpcoes();
             comboBoxFiltro.SelectedIndex = 0;
             funcoes.CentralizarHorizontalmente(this, pnlCadastro);
@@ -25,7 +26,10 @@ namespace MovSoft.Forms
 
         public void CarregarOpcoes()
         {
-            dataGridViewOpcoes.DataSource = bll.MostrarOpcoes(Parametros.idOpcional, filtro);
+            dataGridViewOpcoes.DataSource = bll.MostrarOpcoes(filtro, idOpcionalGlobal);
+            dataGridViewOpcoes.Columns[1].HeaderText = "Opção";
+            dataGridViewOpcoes.Columns[3].HeaderText = "Preço";
+            dataGridViewOpcoes.Columns[3].DefaultCellStyle.Format = "C";
             foreach (DataGridViewColumn column in dataGridViewOpcoes.Columns)
             {
                 if (column.Index == 0)
@@ -34,11 +38,15 @@ namespace MovSoft.Forms
                 }
                 else if (column.Name == "AtivoCheckBox")
                 {
-                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
                 }
                 else if (column.Name == "Ativo")
                 {
                     column.Visible = false;
+                }
+                else if (column.Index == 3)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
                 }
                 else
                 {
@@ -94,14 +102,18 @@ namespace MovSoft.Forms
             {
                 dto.Ativo = "N";
             }
+            dto.IdOpcional = idOpcionalGlobal;
             dto.Opcao = inputNomeOpcao.Text;
+            dto.UnidadeMedida = comboBoxUnidadeDeMedida.Text;
+            dto.Preco = (float)numericUpDownPreco.Value;
         }
 
         private void AtribuirDadosAosInputs()
         {
             inputNomeOpcao.Text = Parametros.nomeOpcao;
+            comboBoxUnidadeDeMedida.Text = Parametros.unidadeMedidaComponente;
             numericUpDownPreco.Value = (decimal)Parametros.precoOpcao;
-            if (Parametros.grupoAtivo == "S")
+            if (Parametros.opcaoAtivo == "S")
             {
                 toggleButtonAtivo.Checked = true;
             }
@@ -177,7 +189,7 @@ namespace MovSoft.Forms
             }
             else
             {
-                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para editar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para editar opções", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -224,7 +236,7 @@ namespace MovSoft.Forms
                 btnCancelar.Enabled = true;
                 rowData = dataGridViewOpcoes.Rows[e.RowIndex];
                 Parametros.idOpcao = int.Parse(rowData.Cells[0].Value.ToString());
-                bll.PegarDados((int)Parametros.idGrupo);
+                bll.PegarDados((int)Parametros.idOpcao);
                 AtribuirDadosAosInputs();
             }
         }
@@ -271,10 +283,6 @@ namespace MovSoft.Forms
                         btnCancelar.Enabled = true;
                         inputNomeOpcao.Focus();
                     }
-                }
-                else
-                {
-                    MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar opção", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
         }
