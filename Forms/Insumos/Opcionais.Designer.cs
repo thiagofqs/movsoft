@@ -239,7 +239,7 @@
             // 
             // pnlCadastro
             // 
-            pnlCadastro.Anchor = AnchorStyles.Top;
+            pnlCadastro.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlCadastro.BackColor = Color.FromArgb(114, 101, 75);
             pnlCadastro.BorderStyle = BorderStyle.Fixed3D;
             pnlCadastro.Controls.Add(btnAdicionarOpcoes);

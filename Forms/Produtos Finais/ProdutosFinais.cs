@@ -20,7 +20,7 @@ namespace MovSoft.Forms
             CarregarProdutos();
             comboBoxFiltro.SelectedIndex = 0;
             comboBoxUnidadeDeMedida.SelectedIndex = 0;
-            funcoes.CentralizarHorizontalmente(this, tabControlProdutos);
+            funcoes.CentralizarHorizontalmente(this, pnlCadastro);
             funcoes.CriarColunaComCheckbox(dataGridViewProdutosFinais);
         }
 
@@ -76,7 +76,7 @@ namespace MovSoft.Forms
             btnCadastrar.Text = "Cadastrar";
             btnEditar.Text = "Editar";
             dataGridViewProdutosFinais.Enabled = true;
-            tabControlProdutos.Enabled = false;
+            pnlCadastro.Enabled = false;
             LimparCampos();
             btnCadastrar.Enabled = true;
             btnEditar.Enabled = false;
@@ -96,6 +96,9 @@ namespace MovSoft.Forms
             {
                 dto.Ativo = "N";
             }
+            dto.Produto = inputNomeProduto.Text;
+            dto.
+            dto.Preco = (float)numericUpDownPreco.Value;
         }
 
         private void AtribuirDadosAosInputs()
@@ -130,9 +133,9 @@ namespace MovSoft.Forms
         {
             if (funcoes.VerificarPermissao(5))
             {
-                if (tabControlProdutos.Enabled)
+                if (pnlCadastro.Enabled)
                 {
-                    if (!funcoes.VerificarSeInputEstaVazio(tabControlProdutos))
+                    if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
                     {
                         CadastrarProduto();
                         VoltarAoPadrao();
@@ -143,7 +146,7 @@ namespace MovSoft.Forms
                     cadastrarOuEditar = 'C';
                     dataGridViewProdutosFinais.Enabled = false;
                     btnCadastrar.Text = "Salvar";
-                    tabControlProdutos.Enabled = true;
+                    pnlCadastro.Enabled = true;
                     btnCancelar.Enabled = true;
                     inputNomeProduto.Focus();
                 }
@@ -164,9 +167,9 @@ namespace MovSoft.Forms
         {
             if (funcoes.VerificarPermissao(4))
             {
-                if (tabControlProdutos.Enabled)
+                if (pnlCadastro.Enabled)
                 {
-                    if (!funcoes.VerificarSeInputEstaVazio(tabControlProdutos))
+                    if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
                     {
                         EditarProduto();
                         VoltarAoPadrao();
@@ -177,7 +180,7 @@ namespace MovSoft.Forms
                     cadastrarOuEditar = 'E';
                     btnEditar.Text = "Salvar";
                     dataGridViewProdutosFinais.Enabled = false;
-                    tabControlProdutos.Enabled = true;
+                    pnlCadastro.Enabled = true;
                     btnCancelar.Enabled = true;
                     inputNomeProduto.Focus();
                 }
@@ -256,9 +259,9 @@ namespace MovSoft.Forms
             {
                 if (funcoes.VerificarPermissao(4))
                 {
-                    if (tabControlProdutos.Enabled)
+                    if (pnlCadastro.Enabled)
                     {
-                        if (!funcoes.VerificarSeInputEstaVazio(tabControlProdutos))
+                        if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
                         {
                             EditarProduto();
                             VoltarAoPadrao();
@@ -269,7 +272,7 @@ namespace MovSoft.Forms
                         cadastrarOuEditar = 'E';
                         btnEditar.Text = "Salvar";
                         dataGridViewProdutosFinais.Enabled = false;
-                        tabControlProdutos.Enabled = true;
+                        pnlCadastro.Enabled = true;
                         btnCancelar.Enabled = true;
                         inputNomeProduto.Focus();
                     }
@@ -300,14 +303,14 @@ namespace MovSoft.Forms
 
         private void btnVincularComponentes_Click(object sender, EventArgs e)
         {
-            if(Parametros.idProduto.HasValue)
+            if (Parametros.idProduto.HasValue)
             {
                 VincularComponentes frm = new((int)Parametros.idProduto);
                 funcoes.AbrirForms(frm, 2, 1);
             }
             else
             {
-                MessageBox.Show("Selecione um produto primeiro","Sem referencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Selecione um produto primeiro", "Sem referencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
