@@ -18,14 +18,16 @@ namespace MovSoft.Forms
             ComponentesDisponiveis(idProduto);
             ComponentesDoProduto(idProduto);
             idProdutoGlobal = idProduto;
-            DataGridViewColumn column = new();
-            column.CellTemplate = new DataGridViewTextBoxCell();
-            column.Name = "Excluir";
-            column.ValueType = typeof(string);
-            column.HeaderText = "Excluir";
-            dataGridViewVincularComponentes.Columns.Add(column);
-            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn.Name = "Excluir";
+            imageColumn.HeaderText = "";
+            imageColumn.Image = Properties.Resources.icon_delete;
+            imageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dataGridViewVincularComponentes.Columns.Add(imageColumn);
+            dataGridViewVincularComponentes.ShowEditingIcon = true;
         }
+
 
         private void btnVincular_Click(object sender, EventArgs e)
         {
@@ -35,6 +37,7 @@ namespace MovSoft.Forms
 
         private void ComponentesDisponiveis(int idProduto)
         {
+            checkedListBox.Items.Clear();
             MapField<string?, bool?> componentes = new();
             componentes = produtoCompostoBLL.ComponentesDisponiveis(idProduto);
             for (int i = 0; i < componentes.Count; i++)
@@ -61,7 +64,7 @@ namespace MovSoft.Forms
                 }
                 else if (column.Name == "Excluir")
                 {
-                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 }
                 else
                 {
@@ -73,22 +76,32 @@ namespace MovSoft.Forms
         private void dataGridViewVincularComponentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir")
-            {                
-                DialogResult result = MessageBox.Show("Realmete deseja remover esse componente desse produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if(result == DialogResult.OK)
-                {
-                    rowData = dataGridViewVincularComponentes.Rows[e.RowIndex];
-                    produtoCompostoBLL.DesvincularComponentes(1, int.Parse(rowData.Cells["ID"].Value.ToString()));
-                    ComponentesDoProduto(idProdutoGlobal);
-                }
-            }
-        }
-
-        private void dataGridViewVincularComponentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir")
             {
-                e.Value = "0";
+                if (e.RowIndex == -1)
+                {
+                    DialogResult result = MessageBox.Show("Realmete deseja remover todos os componentes do produto?", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        foreach (DataGridViewRow row in dataGridViewVincularComponentes.Rows)
+                        {
+                            rowData = dataGridViewVincularComponentes.Rows[row.Index];
+                            produtoCompostoBLL.DesvincularComponentes(idProdutoGlobal, int.Parse(rowData.Cells["ID"].Value.ToString()), true);
+                        }
+                        ComponentesDoProduto(idProdutoGlobal);
+                        ComponentesDisponiveis(idProdutoGlobal);
+                    }
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Realmete deseja remover esse componente desse produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        rowData = dataGridViewVincularComponentes.Rows[e.RowIndex];
+                        produtoCompostoBLL.DesvincularComponentes(idProdutoGlobal, int.Parse(rowData.Cells["ID"].Value.ToString()));
+                        ComponentesDoProduto(idProdutoGlobal);
+                        ComponentesDisponiveis(idProdutoGlobal);
+                    }
+                }
             }
         }
 
@@ -99,24 +112,47 @@ namespace MovSoft.Forms
             produtoCompostoDTO.Componente = checkedListBox.CheckedItems.Cast<string>().ToList();
             produtoCompostoBLL.VincularComponentes(produtoCompostoDTO);
             ComponentesDoProduto(idProdutoGlobal);
+            dataGridViewVincularComponentes.CurrentCell = dataGridViewVincularComponentes.Rows[dataGridViewVincularComponentes.Rows.Count - 1].Cells[0];
         }
 
         private void dataGridViewVincularComponentes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DialogResult result = MessageBox.Show("Deseja realmente alterar a quantidade desse componente no produto", "Confirmação de Alteração", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
             if (result == DialogResult.OK)
             {
-                produtoCompostoBLL.EditarQuantidadeComponenteNoProduto(1, int.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells["ID"].Value.ToString()), float.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                BeginInvoke(new MethodInvoker(() =>
+                {
+                    produtoCompostoBLL.EditarQuantidadeComponenteNoProduto(idProdutoGlobal, int.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells["ID"].Value.ToString()), float.Parse(dataGridViewVincularComponentes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                }));
             }
             else
             {
-                ComponentesDoProduto(idProdutoGlobal);
+                BeginInvoke(new MethodInvoker(() =>
+                {
+                    ComponentesDoProduto(idProdutoGlobal);
+                }));
             }
         }
 
         private void btnVincular_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dataGridViewVincularComponentes_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (dataGridViewVincularComponentes.Columns[e.ColumnIndex].Name == "Excluir" && e.RowIndex == -1) // Header da Coluna
+            {
+                e.PaintBackground(e.CellBounds, true);
+                Image image = Properties.Resources.icon_delete_azul;
+                int padding = -1;
+                Rectangle rect = new Rectangle(e.CellBounds.X + padding, e.CellBounds.Y + padding, e.CellBounds.Height - (2 * padding), e.CellBounds.Height - (2 *
+                    padding));
+                e.Graphics.DrawImage(image, rect);
+                e.PaintContent(e.CellBounds);
+                e.Handled = true;
+            }
         }
     }
 }

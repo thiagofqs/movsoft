@@ -1,4 +1,6 @@
-﻿namespace MovSoft.Forms
+﻿using Krypton.Toolkit;
+
+namespace MovSoft.Forms
 {
     partial class VincularComponentes
     {
@@ -136,6 +138,7 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridViewVincularComponentes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewVincularComponentes.EditMode = DataGridViewEditMode.EditOnEnter;
             dataGridViewVincularComponentes.EnableHeadersVisualStyles = false;
             dataGridViewVincularComponentes.GridColor = Color.FromArgb(56, 56, 56);
             dataGridViewVincularComponentes.Location = new Point(226, 334);
@@ -166,9 +169,9 @@
             dataGridViewVincularComponentes.ShowRowErrors = false;
             dataGridViewVincularComponentes.Size = new Size(653, 178);
             dataGridViewVincularComponentes.TabIndex = 21;
-            dataGridViewVincularComponentes.CellContentClick += dataGridViewVincularComponentes_CellContentClick;
+            dataGridViewVincularComponentes.CellClick += dataGridViewVincularComponentes_CellContentClick;
             dataGridViewVincularComponentes.CellEndEdit += dataGridViewVincularComponentes_CellEndEdit;
-            dataGridViewVincularComponentes.CellFormatting += dataGridViewVincularComponentes_CellFormatting;
+            dataGridViewVincularComponentes.CellPainting += dataGridViewVincularComponentes_CellPainting;
             // 
             // VincularComponentes
             // 

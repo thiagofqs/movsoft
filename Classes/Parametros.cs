@@ -77,6 +77,7 @@
         public static int? idComponente { get; set; }
         public static string? nomeComponente { get; set; }
         public static string? unidadeMedidaComponente { get; set; }
+        public static bool? controlaEstoqueComponente { get; set; }
         public static string? componenteAtivo { get; set; }
 
         //Dados Opcionais Editar/Cadastro
@@ -92,6 +93,7 @@
         public static string? nomeOpcao { get; set; }
         public static float? precoOpcao { get; set; }
         public static string? unidadeMedidaOpcao { get; set; }
+        public static bool? controlaEstoqueOpcao { get; set; }
         public static string? opcaoAtivo { get; set; }
 
         //Dados Produtos Editar/Cadastro
@@ -99,7 +101,8 @@
         public static int? idProduto { get; set; }
         public static string nomeProduto { get; set; }
         public static float? precoProduto { get; set; }
-        public static int? idGrupoProduto { get; set; }
+        public static string? grupoProduto { get; set; }
+        public static bool? controlaEstoqueProduto { get; set; }
         public static string? produtoAtivo { get; set; }
 
         //Dados Produtos Compostos Editar/Cadastro

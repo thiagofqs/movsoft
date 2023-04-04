@@ -15,7 +15,7 @@ namespace MovSoft.CODE.BLL
             {
                 db.Conectar();
                 string comando = $@"call cad_produtos(
-                '{produtosDTO.Produto}',{produtosDTO.Preco},{produtosDTO.Id_grupo},'{produtosDTO.Ativo}'
+                '{produtosDTO.Produto}',{produtosDTO.Preco},'{produtosDTO.Grupo}',{produtosDTO.ControlaEstoque},'{produtosDTO.Ativo}'
                 );";
                 db.ExecutarComandoSQL(comando);
             }
@@ -53,9 +53,10 @@ namespace MovSoft.CODE.BLL
                 MySqlDataReader dr = db.RetDataReader(comando);
                 Parametros.idProduto = dr.GetInt32(0);
                 Parametros.nomeProduto = dr.GetString(1);
-                Parametros.idGrupoProduto = dr.GetInt32(2);
+                Parametros.grupoProduto = dr.GetString(2);
                 Parametros.precoProduto = dr.GetFloat(3);
-                Parametros.produtoAtivo = dr.GetString(4);
+                Parametros.controlaEstoqueProduto = dr.GetBoolean(4);
+                Parametros.produtoAtivo = dr.GetString(5);
             }
             catch (Exception ex)
             {
@@ -69,9 +70,9 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $@"call edit_componente(
+                string comando = $@"call edit_produto(
                 {produtosDTO.Id_produto},'{produtosDTO.Produto}',
-                {produtosDTO.Preco},{produtosDTO.Id_grupo},'{produtosDTO.Ativo}'
+                {produtosDTO.Preco},'{produtosDTO.Grupo}',{produtosDTO.ControlaEstoque},'{produtosDTO.Ativo}'
                 );";
                 db.ExecutarComandoSQL(comando);
             }
@@ -82,13 +83,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable PesquisarProdutos(string pesquisa)
+        public DataTable PesquisarProdutos(string pesquisa, string grupo,string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable(@$"call pesquisarProdutos('{pesquisa}');");
+                dataTable = db.RetDataTable(@$"call procurarProdutos('{pesquisa}','{grupo}','{filtro}');");
             }
             catch (Exception ex)
             {

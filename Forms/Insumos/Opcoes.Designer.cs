@@ -35,6 +35,7 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             dataGridViewOpcoes = new DataGridView();
             pnlCadastro = new Panel();
+            kryptonCheckBoxControlarEstoque = new Krypton.Toolkit.KryptonCheckBox();
             kryptonLabelUnidadeDeMedida = new Krypton.Toolkit.KryptonLabel();
             kryptonLabelPreco = new Krypton.Toolkit.KryptonLabel();
             comboBoxUnidadeDeMedida = new ComboBox();
@@ -106,6 +107,7 @@
             dataGridViewOpcoes.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(56, 56, 56);
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
             dataGridViewOpcoes.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewOpcoes.RowTemplate.Height = 25;
@@ -126,6 +128,7 @@
             pnlCadastro.Anchor = AnchorStyles.Top;
             pnlCadastro.BackColor = Color.FromArgb(114, 101, 75);
             pnlCadastro.BorderStyle = BorderStyle.Fixed3D;
+            pnlCadastro.Controls.Add(kryptonCheckBoxControlarEstoque);
             pnlCadastro.Controls.Add(kryptonLabelUnidadeDeMedida);
             pnlCadastro.Controls.Add(kryptonLabelPreco);
             pnlCadastro.Controls.Add(comboBoxUnidadeDeMedida);
@@ -141,6 +144,21 @@
             pnlCadastro.Name = "pnlCadastro";
             pnlCadastro.Size = new Size(641, 215);
             pnlCadastro.TabIndex = 7;
+            // 
+            // kryptonCheckBoxControlarEstoque
+            // 
+            kryptonCheckBoxControlarEstoque.Location = new Point(163, 147);
+            kryptonCheckBoxControlarEstoque.Margin = new Padding(3, 4, 3, 4);
+            kryptonCheckBoxControlarEstoque.Name = "kryptonCheckBoxControlarEstoque";
+            kryptonCheckBoxControlarEstoque.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kryptonCheckBoxControlarEstoque.Size = new Size(170, 28);
+            kryptonCheckBoxControlarEstoque.StateDisabled.LongText.Color1 = Color.DarkGray;
+            kryptonCheckBoxControlarEstoque.StateDisabled.ShortText.Color1 = Color.DarkGray;
+            kryptonCheckBoxControlarEstoque.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonCheckBoxControlarEstoque.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
+            kryptonCheckBoxControlarEstoque.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            kryptonCheckBoxControlarEstoque.TabIndex = 33;
+            kryptonCheckBoxControlarEstoque.Values.Text = "Controlar estoque";
             // 
             // kryptonLabelUnidadeDeMedida
             // 
@@ -204,7 +222,7 @@
             toggleButtonAtivo.CheckState = CheckState.Checked;
             toggleButtonAtivo.Cursor = Cursors.Hand;
             toggleButtonAtivo.FocusToggleColor = Color.Gold;
-            toggleButtonAtivo.Location = new Point(167, 148);
+            toggleButtonAtivo.Location = new Point(345, 148);
             toggleButtonAtivo.Margin = new Padding(3, 4, 3, 4);
             toggleButtonAtivo.MinimumSize = new Size(51, 31);
             toggleButtonAtivo.Name = "toggleButtonAtivo";
@@ -218,7 +236,7 @@
             // 
             // kryptonLabel1
             // 
-            kryptonLabel1.Location = new Point(167, 112);
+            kryptonLabel1.Location = new Point(345, 112);
             kryptonLabel1.Margin = new Padding(3, 4, 3, 4);
             kryptonLabel1.Name = "kryptonLabel1";
             kryptonLabel1.Size = new Size(54, 26);
@@ -415,5 +433,6 @@
         private NumericUpDown numericUpDownPreco;
         private Krypton.Toolkit.KryptonLabel kryptonLabelUnidadeDeMedida;
         private ComboBox comboBoxUnidadeDeMedida;
+        private Krypton.Toolkit.KryptonCheckBox kryptonCheckBoxControlarEstoque;
     }
 }

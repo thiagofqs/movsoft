@@ -81,13 +81,13 @@ namespace MovSoft.CODE.BLL
             }
             return dataTable;
         }
-        public DataTable ProcurarUsuarios(string pesquisa)
+        public DataTable ProcurarUsuarios(string pesquisa, string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable($"call procurarUsuarios('{pesquisa}')");
+                dataTable = db.RetDataTable($"call procurarUsuarios('{pesquisa}','{filtro}')");
             }
             catch (Exception ex)
             {

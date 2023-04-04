@@ -80,13 +80,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable PesquisarOpcional(string pesquisa)
+        public DataTable PesquisarOpcional(string pesquisa, string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable(@$"call procurarOpcionais('{pesquisa}');");
+                dataTable = db.RetDataTable(@$"call procurarOpcionais('{pesquisa}','{filtro}');");
             }
             catch (Exception ex)
             {

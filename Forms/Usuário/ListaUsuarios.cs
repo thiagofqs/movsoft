@@ -74,8 +74,7 @@ namespace MovSoft.Forms
 
         private void PesquisarUsuarios()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridViewUsuarios.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text);
+            dataGridViewUsuarios.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text,filtro);
             FormatarGridView();
         }
 

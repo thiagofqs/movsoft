@@ -8,6 +8,7 @@
         private string unidadeMedida;
         private string ativo;
         private int idOpcional;
+        private bool controlaEstoque;
 
         public int IdOpcao { get => idOpcao; set => idOpcao = value; }
         public string Opcao { get => opcao; set => opcao = value; }
@@ -15,5 +16,6 @@
         public string UnidadeMedida { get => unidadeMedida; set => unidadeMedida = value; }
         public string Ativo { get => ativo; set => ativo = value; }
         public int IdOpcional { get => idOpcional; set => idOpcional = value; }
+        public bool ControlaEstoque { get => controlaEstoque; set => controlaEstoque = value; }
     }
 }

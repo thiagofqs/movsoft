@@ -27,8 +27,7 @@ namespace MovSoft.Forms
 
         private void PesquisarClientes()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridView.DataSource = bll.ProcurarClientes(inputPesquisarClientes.Text);
+            dataGridView.DataSource = bll.ProcurarClientes(inputPesquisarClientes.Text,filtro);
         }
 
         public void CarregarClientes()

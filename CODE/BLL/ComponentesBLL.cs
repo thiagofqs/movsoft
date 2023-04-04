@@ -16,7 +16,7 @@ namespace MovSoft.CODE.BLL
             {
                 db.Conectar();
                 string comando = $@"call cad_componentes(
-                '{componentesDTO.NomeComponente}', '{componentesDTO.UnidadeMedida}', '{componentesDTO.Ativo}'
+                '{componentesDTO.NomeComponente}', '{componentesDTO.UnidadeMedida}', {componentesDTO.ControlaEstoque},'{componentesDTO.Ativo}'
                 );";
                 db.ExecutarComandoSQL(comando);
             }
@@ -55,7 +55,8 @@ namespace MovSoft.CODE.BLL
                 Parametros.idComponente = dr.GetInt32(0);
                 Parametros.nomeComponente = dr.GetString(1);
                 Parametros.unidadeMedidaComponente = dr.GetString(2);
-                Parametros.componenteAtivo = dr.GetString(3);
+                Parametros.controlaEstoqueComponente = dr.GetBoolean(3);
+                Parametros.componenteAtivo = dr.GetString(4);
             }
             catch (Exception ex)
             {
@@ -71,7 +72,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $@"call edit_componente(
                 {componentesDTO.IdComponente}, '{componentesDTO.NomeComponente}',
-                '{componentesDTO.UnidadeMedida}', '{componentesDTO.Ativo}'
+                '{componentesDTO.UnidadeMedida}', {componentesDTO.ControlaEstoque},'{componentesDTO.Ativo}'
                 );";
                 db.ExecutarComandoSQL(comando);
             }
@@ -82,13 +83,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable PesquisarComponente(string pesquisa)
+        public DataTable PesquisarComponente(string pesquisa,string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable(@$"call procurarComponentes('{pesquisa}');");
+                dataTable = db.RetDataTable(@$"call procurarComponentes('{pesquisa}','{filtro}');");
             }
             catch (Exception ex)
             {

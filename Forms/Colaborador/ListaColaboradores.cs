@@ -61,8 +61,7 @@ namespace MovSoft.Forms
 
         private void PesquisarColaboradores()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridView.DataSource = bll.ProcurarColaboradores(inputPesquisarColaborador.Text);
+            dataGridView.DataSource = bll.ProcurarColaboradores(inputPesquisarColaborador.Text, filtro);
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

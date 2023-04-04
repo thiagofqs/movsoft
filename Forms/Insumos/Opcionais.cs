@@ -19,6 +19,7 @@ namespace MovSoft.Forms
             InitializeComponent();
             CarregarOpcionais();
             comboBoxFiltro.SelectedIndex = 0;
+            btnCadastrar.Focus();
             funcoes.CentralizarHorizontalmente(this, pnlCadastro);
             funcoes.CriarColunaComCheckbox(dataGridViewOpcionais);
         }
@@ -93,6 +94,7 @@ namespace MovSoft.Forms
             AtribuirDadosDosInputs(false);
             bll.CadastrarOpcional(dto);
             CarregarOpcionais();
+            dataGridViewOpcionais.CurrentCell = dataGridViewOpcionais.Rows[dataGridViewOpcionais.Rows.Count - 1].Cells[0];
         }
 
         private void EditarOpcional()
@@ -104,8 +106,7 @@ namespace MovSoft.Forms
 
         private void PesquisarOpcionais()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridViewOpcionais.DataSource = bll.PesquisarOpcional(inputPesquisar.Text);
+            dataGridViewOpcionais.DataSource = bll.PesquisarOpcional(inputPesquisar.Text,filtro);
         }
 
         private void LimparCampos()
@@ -116,6 +117,11 @@ namespace MovSoft.Forms
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            VerificacoesPreCadastro();
+        }
+
+        private void VerificacoesPreCadastro()
         {
             if (funcoes.VerificarPermissao(4))
             {
@@ -146,6 +152,7 @@ namespace MovSoft.Forms
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             VoltarAoPadrao();
+            Parametros.idOpcional = null;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -174,6 +181,11 @@ namespace MovSoft.Forms
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
+        {
+            VerificacoesPreEdicao();
+        }
+
+        private void VerificacoesPreEdicao()
         {
             if (funcoes.VerificarPermissao(5))
             {
@@ -205,50 +217,25 @@ namespace MovSoft.Forms
         {
             if (e.RowIndex > -1)
             {
-                if (funcoes.VerificarPermissao(4))
-                {
-                    if (pnlCadastro.Enabled)
-                    {
-                        if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
-                        {
-                            EditarOpcional();
-                            VoltarAoPadrao();
-                        }
-                    }
-                    else
-                    {
-                        cadastrarOuEditar = 'E';
-                        btnEditar.Text = "Salvar";
-                        dataGridViewOpcionais.Enabled = false;
-                        pnlCadastro.Enabled = true;
-                        btnCancelar.Enabled = true;
-                        inputNomeOpcional.Focus();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar grupos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
+                VerificacoesPreEdicao();
             }
         }
 
         private void btnAdicionarOpcoes_Click(object sender, EventArgs e)
         {
-            Opcoes frm = new((int)Parametros.idOpcional);
-            funcoes.AbrirForms(frm, 2, 1);
-        }
-
-        private void dataGridViewOpcionais_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1)
+            if (cadastrarOuEditar == 'C')
             {
-                btnCadastrar.Enabled = false;
-                btnEditar.Enabled = true;
-                btnCancelar.Enabled = true;
-                rowData = dataGridViewOpcionais.Rows[e.RowIndex];
-                Parametros.idGrupo = int.Parse(rowData.Cells[0].Value.ToString());
-                bll.PegarDados((int)Parametros.idGrupo);
-                AtribuirDadosAosInputs();
+                VerificacoesPreCadastro();
+            }
+            else
+            {
+                VerificacoesPreEdicao();
+            }
+            if (Parametros.idOpcional.HasValue)
+            {
+                Opcoes frm = new((int)Parametros.idOpcional);
+                funcoes.AbrirForms(frm, 2, 1);
+                CarregarOpcionais();
             }
         }
 
@@ -302,6 +289,23 @@ namespace MovSoft.Forms
                 filtro = "N";
             }
             CarregarOpcionais();
+        }
+
+        private void dataGridViewOpcionais_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewOpcionais.Focused)
+            {
+                if (e.RowIndex > -1)
+                {
+                    btnCadastrar.Enabled = false;
+                    btnEditar.Enabled = true;
+                    btnCancelar.Enabled = true;
+                    rowData = dataGridViewOpcionais.Rows[e.RowIndex];
+                    Parametros.idOpcional = int.Parse(rowData.Cells[0].Value.ToString());
+                    bll.PegarDados((int)Parametros.idOpcional);
+                    AtribuirDadosAosInputs();
+                }
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ namespace MovSoft.Forms
         {
             InitializeComponent();
             CarregarGrupos();
+            dataGridViewGrupos.AutoGenerateColumns = false;
             comboBoxFiltro.SelectedIndex = 0;
             funcoes.CentralizarHorizontalmente(this, pnlCadastro);
             funcoes.CriarColunaComCheckbox(dataGridViewGrupos);
@@ -57,8 +58,7 @@ namespace MovSoft.Forms
 
         private void PesquisarGrupos()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridViewGrupos.DataSource = bll.PesquisarGrupo(inputPesquisar.Text);
+            dataGridViewGrupos.DataSource = bll.PesquisarGrupo(inputPesquisar.Text, filtro);
         }
 
         private void inputPesquisarGrupos_KeyPress(object sender, KeyPressEventArgs e)

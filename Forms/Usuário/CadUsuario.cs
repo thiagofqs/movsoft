@@ -2,6 +2,7 @@
 using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
+using System.ComponentModel;
 
 namespace MovSoft.Forms
 {
@@ -55,6 +56,16 @@ namespace MovSoft.Forms
             }
         }
 
+        private void comboBox1_Validating(object sender, CancelEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (!string.IsNullOrEmpty(comboBox.Text) && !comboBox.Items.Contains(comboBox.Text))
+            {
+                MessageBox.Show("O colaborador inserido não existe!", "Entrada de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Cancel = true;
+            }
+        }
+
         private void ListarCargos()
         {
             List<string> lista = bllCargos.Cargos();
@@ -69,7 +80,7 @@ namespace MovSoft.Forms
             inputUsuario.Text = Parametros.nomeUserEdit;
             inputboxCargo.Text = Parametros.cargoUserEdit;
             inputboxColaborador.Text = Parametros.colaboradorUserEdit;
-            if(Parametros.UserAtivoEdit == "S")
+            if (Parametros.UserAtivoEdit == "S")
             {
                 toggleButton1.Checked = true;
             }
@@ -98,7 +109,7 @@ namespace MovSoft.Forms
             dados.senhaUsuario = inputSenha.Text;
             dados.confirmarSenha = inputConfirmarSenha.Text;
             dados.idCargo = inputboxCargo.SelectedIndex + 1;
-            if(toggleButton1.Checked)
+            if (toggleButton1.Checked)
             {
                 dados.ativo = "S";
             }
@@ -159,7 +170,7 @@ namespace MovSoft.Forms
 
         private void VerificarCampos()
         {
-            if(!funcoes.VerificarSeInputEstaVazio(pnlContent))
+            if (!funcoes.VerificarSeInputEstaVazio(pnlContent))
             {
                 CadastrarOuEditar();
             }

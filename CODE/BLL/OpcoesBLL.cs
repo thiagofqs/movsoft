@@ -14,7 +14,7 @@ namespace MovSoft.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $@"call cad_opcoes('{opcoesDTO.Opcao}',{opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}',{opcoesDTO.IdOpcional},'{opcoesDTO.Ativo}');";
+                string comando = $@"call cad_opcoes('{opcoesDTO.Opcao}',{opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}',{opcoesDTO.IdOpcional},{opcoesDTO.ControlaEstoque},'{opcoesDTO.Ativo}');";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -51,7 +51,8 @@ namespace MovSoft.CODE.BLL
                 Parametros.nomeOpcao = dr.GetString(1);
                 Parametros.precoOpcao = dr.GetFloat(2);
                 Parametros.unidadeMedidaOpcao = dr.GetString(3);
-                Parametros.opcaoAtivo = dr.GetString(4);
+                Parametros.controlaEstoqueOpcao = dr.GetBoolean(4);
+                Parametros.opcaoAtivo = dr.GetString(5);
             }
             catch (Exception ex)
             {
@@ -67,7 +68,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 string comando = $@"call edit_opcao(
                 {opcoesDTO.IdOpcao}, '{opcoesDTO.Opcao}',
-                {opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}','{opcoesDTO.Ativo}'
+                {opcoesDTO.Preco},'{opcoesDTO.UnidadeMedida}',{opcoesDTO.ControlaEstoque},'{opcoesDTO.Ativo}'
                 );";
                 db.ExecutarComandoSQL(comando);
             }
@@ -78,13 +79,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable PesquisarOpcao(string pesquisa)
+        public DataTable PesquisarOpcao(string pesquisa, string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable(@$"call procurarOpcoes('{pesquisa}');");
+                dataTable = db.RetDataTable(@$"call procurarOpcoes('{pesquisa}','{filtro}');");
             }
             catch (Exception ex)
             {

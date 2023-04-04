@@ -1,6 +1,10 @@
 ﻿using MovSoft.Classes;
 using MovSoft.CODE.BLL;
 using MovSoft.CODE.DTO;
+using Mysqlx.Resultset;
+using System.ComponentModel;
+using System.Data;
+using System.Windows.Forms;
 
 namespace MovSoft.Forms
 {
@@ -8,10 +12,12 @@ namespace MovSoft.Forms
     {
         Funcoes funcoes = new();
         ProdutosBLL bll = new();
+        GruposBLL gruposBLL = new();
         ProdutosDTO dto = new();
         DataGridViewRow rowData = new();
         GeralBLL bllGeral = new();
         string? filtro = null;
+        string? filtroGrupo = null;
         char cadastrarOuEditar; //Cadastrar = 'C' | Editar = 'E'
 
         public ProdutosFinais()
@@ -19,14 +25,27 @@ namespace MovSoft.Forms
             InitializeComponent();
             CarregarProdutos();
             comboBoxFiltro.SelectedIndex = 0;
-            comboBoxUnidadeDeMedida.SelectedIndex = 0;
+            comboBoxFiltroGrupo.SelectedIndex = 0;
             funcoes.CentralizarHorizontalmente(this, pnlCadastro);
             funcoes.CriarColunaComCheckbox(dataGridViewProdutosFinais);
+            MostrarGruposAtivos();
+        }
+
+        private void MostrarGruposAtivos()
+        {
+            DataTable dataTable = new();
+            dataTable = gruposBLL.MostrarGrupos("S");
+            foreach (DataRow row in dataTable.Rows)
+            {
+                comboBoxGrupo.Items.Add(row.ItemArray[1].ToString());
+                comboBoxGrupo.AutoCompleteCustomSource.Add(row.ItemArray[1].ToString());
+                comboBoxFiltroGrupo.Items.Add(row.ItemArray[1].ToString());
+            }
         }
 
         public void CarregarProdutos()
         {
-            dataGridViewProdutosFinais.DataSource = bll.MostrarProdutos(filtro, Parametros.nomeGrupo);
+            dataGridViewProdutosFinais.DataSource = bll.MostrarProdutos(filtro, filtroGrupo);
             dataGridViewProdutosFinais.Columns[3].HeaderText = "Preço";
             dataGridViewProdutosFinais.Columns[3].DefaultCellStyle.Format = "C";
             foreach (DataGridViewColumn column in dataGridViewProdutosFinais.Columns)
@@ -60,8 +79,7 @@ namespace MovSoft.Forms
 
         private void PesquisarProdutos()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridViewProdutosFinais.DataSource = bll.PesquisarProdutos(inputPesquisar.Text);
+            dataGridViewProdutosFinais.DataSource = bll.PesquisarProdutos(inputPesquisar.Text,filtroGrupo,filtro);
         }
 
         private void LimparCampos()
@@ -75,6 +93,8 @@ namespace MovSoft.Forms
         {
             btnCadastrar.Text = "Cadastrar";
             btnEditar.Text = "Editar";
+            comboBoxGrupo.SelectedIndex = -1;
+            kryptonCheckBoxControlarEstoque.Checked = false;
             dataGridViewProdutosFinais.Enabled = true;
             pnlCadastro.Enabled = false;
             LimparCampos();
@@ -97,7 +117,8 @@ namespace MovSoft.Forms
                 dto.Ativo = "N";
             }
             dto.Produto = inputNomeProduto.Text;
-            dto.
+            dto.Grupo = comboBoxGrupo.Text;
+            dto.ControlaEstoque = kryptonCheckBoxControlarEstoque.Checked;
             dto.Preco = (float)numericUpDownPreco.Value;
         }
 
@@ -105,6 +126,8 @@ namespace MovSoft.Forms
         {
             inputNomeProduto.Text = Parametros.nomeProduto;
             numericUpDownPreco.Value = (decimal)Parametros.precoProduto;
+            kryptonCheckBoxControlarEstoque.Checked = (bool)Parametros.controlaEstoqueProduto;
+            comboBoxGrupo.Text = Parametros.grupoProduto;
             if (Parametros.produtoAtivo == "S")
             {
                 toggleButtonAtivo.Checked = true;
@@ -120,16 +143,16 @@ namespace MovSoft.Forms
             AtribuirDadosDosInputs(false);
             bll.CadastrarProdutos(dto);
             CarregarProdutos();
+            dataGridViewProdutosFinais.CurrentCell = dataGridViewProdutosFinais.Rows[dataGridViewProdutosFinais.Rows.Count - 1].Cells[0];
         }
 
         private void EditarProduto()
         {
             AtribuirDadosDosInputs(true);
             bll.EditarProduto(dto);
-            CarregarProdutos();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void verificacoesPreCadastro()
         {
             if (funcoes.VerificarPermissao(5))
             {
@@ -157,13 +180,18 @@ namespace MovSoft.Forms
             }
         }
 
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            verificacoesPreCadastro();
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             VoltarAoPadrao();
             Parametros.idProduto = null;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void VerificacoesPreEdicao()
         {
             if (funcoes.VerificarPermissao(4))
             {
@@ -173,6 +201,10 @@ namespace MovSoft.Forms
                     {
                         EditarProduto();
                         VoltarAoPadrao();
+                    }
+                    else
+                    {
+                        Parametros.idProduto = null;
                     }
                 }
                 else
@@ -189,6 +221,11 @@ namespace MovSoft.Forms
             {
                 MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para editar produtos", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            VerificacoesPreEdicao();
         }
 
         private void inputPesquisar_KeyPress(object sender, KeyPressEventArgs e)
@@ -303,21 +340,72 @@ namespace MovSoft.Forms
 
         private void btnVincularComponentes_Click(object sender, EventArgs e)
         {
+            if (cadastrarOuEditar == 'C')
+            {
+                verificacoesPreCadastro();
+            }
+            else
+            {
+                VerificacoesPreEdicao();
+            }
             if (Parametros.idProduto.HasValue)
             {
                 VincularComponentes frm = new((int)Parametros.idProduto);
                 funcoes.AbrirForms(frm, 2, 1);
-            }
-            else
-            {
-                MessageBox.Show("Selecione um produto primeiro", "Sem referencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregarProdutos();
             }
         }
 
         private void btnVincularOpcionais_Click(object sender, EventArgs e)
         {
-            VincularOpcionais frm = new();
-            funcoes.AbrirForms(frm, 2, 1);
+            if(cadastrarOuEditar == 'C')
+            {
+                verificacoesPreCadastro();
+            }
+            else
+            {
+                VerificacoesPreEdicao();
+            }
+            if (Parametros.idProduto.HasValue)
+            {
+                VincularOpcionais frm = new((int)Parametros.idProduto);
+                funcoes.AbrirForms(frm, 2, 1);
+                CarregarProdutos();
+            }
+        }
+
+        private void comboBox1_Validating(object sender, CancelEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (!string.IsNullOrEmpty(comboBox.Text) && !comboBox.Items.Contains(comboBox.Text))
+            {
+                MessageBox.Show("O grupo inserido não existe", "Entrada de dados incorreta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Cancel = true;
+            }
+        }
+
+        private void comboBoxFiltroGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxFiltroGrupo.SelectedIndex == 0)
+            {
+                filtroGrupo = "";
+            }
+            else
+            {
+                filtroGrupo = comboBoxFiltroGrupo.Text;
+            }
+            CarregarProdutos();
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            // Verifica se o item placeholder está presente na lista de itens
+            if (comboBoxFiltroGrupo.Items.Contains("Grupos"))
+            {
+                // Remove o item placeholder
+                comboBoxFiltroGrupo.Items.Remove("Grupos");
+                comboBoxFiltroGrupo.SelectedIndex = 0;
+            }
         }
     }
 }

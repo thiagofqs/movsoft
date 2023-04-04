@@ -110,8 +110,7 @@ namespace MovSoft.Forms
 
         private void PesquisarComponentes()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridViewComponentes.DataSource = bll.PesquisarComponente(inputPesquisar.Text);
+            dataGridViewComponentes.DataSource = bll.PesquisarComponente(inputPesquisar.Text,filtro);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -148,6 +147,7 @@ namespace MovSoft.Forms
             }
             dto.NomeComponente = inputNomeComponente.Text;
             dto.UnidadeMedida = comboBoxUnidadeDeMedida.Text;
+            dto.ControlaEstoque = kryptonCheckBoxControlarEstoque.Checked;
         }
 
         private void CadastrarComponente()
@@ -193,6 +193,7 @@ namespace MovSoft.Forms
         {
             inputNomeComponente.Text = Parametros.nomeComponente;
             comboBoxUnidadeDeMedida.Text = Parametros.unidadeMedidaComponente;
+            kryptonCheckBoxControlarEstoque.Checked = (bool)Parametros.controlaEstoqueComponente;
             if (Parametros.componenteAtivo == "S")
             {
                 toggleButtonAtivo.Checked = true;
@@ -246,6 +247,18 @@ namespace MovSoft.Forms
 
         private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBoxFiltro.SelectedIndex == 0)
+            {
+                filtro = null;
+            }
+            else if (comboBoxFiltro.SelectedIndex == 1)
+            {
+                filtro = "S";
+            }
+            else
+            {
+                filtro = "N";
+            }
             CarregarComponentes();
         }
 

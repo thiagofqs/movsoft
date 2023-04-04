@@ -88,7 +88,7 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public DataTable PesquisarGrupo(string pesquisa)
+        public DataTable PesquisarGrupo(string pesquisa,string filtro)
         {
             DataTable dataTable = new();
             try
@@ -96,7 +96,8 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 dataTable = db.RetDataTable(@$"
                 select id_grupo as 'ID', grupo as 'Grupo' from grupos
-                where id_grupo = '{pesquisa}' or grupo like concat('%', '{pesquisa}', '%');
+                where (id_grupo = '{pesquisa}' or grupo like concat('%', '{pesquisa}', '%'))
+                and grupos.ativo = if('{filtro}' = '',grupos.ativo,'{filtro}');
                 ");
             }
             catch(Exception ex)

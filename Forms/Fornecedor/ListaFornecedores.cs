@@ -63,8 +63,7 @@ namespace MovSoft.Forms
 
         private void PesquisarFornecedores()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridView.DataSource = bll.ProcurarFornecedores(inputPesquisarColaborador.Text);
+            dataGridView.DataSource = bll.ProcurarFornecedores(inputPesquisarColaborador.Text, filtro);
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

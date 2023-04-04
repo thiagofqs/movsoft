@@ -65,8 +65,7 @@ namespace MovSoft.Forms
 
         private void PesquisarOpcoes()
         {
-            comboBoxFiltro.SelectedIndex = 0;
-            dataGridViewOpcoes.DataSource = bll.PesquisarOpcao(inputPesquisar.Text);
+            dataGridViewOpcoes.DataSource = bll.PesquisarOpcao(inputPesquisar.Text,filtro);
         }
 
         private void LimparCampos()
@@ -105,6 +104,7 @@ namespace MovSoft.Forms
             dto.IdOpcional = idOpcionalGlobal;
             dto.Opcao = inputNomeOpcao.Text;
             dto.UnidadeMedida = comboBoxUnidadeDeMedida.Text;
+            dto.ControlaEstoque = kryptonCheckBoxControlarEstoque.Checked;
             dto.Preco = (float)numericUpDownPreco.Value;
         }
 
@@ -113,6 +113,7 @@ namespace MovSoft.Forms
             inputNomeOpcao.Text = Parametros.nomeOpcao;
             comboBoxUnidadeDeMedida.Text = Parametros.unidadeMedidaComponente;
             numericUpDownPreco.Value = (decimal)Parametros.precoOpcao;
+            kryptonCheckBoxControlarEstoque.Checked = (bool)Parametros.controlaEstoqueOpcao;
             if (Parametros.opcaoAtivo == "S")
             {
                 toggleButtonAtivo.Checked = true;

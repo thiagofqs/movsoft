@@ -27,13 +27,13 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
         }
-        public void DesvincularComponentes(int idProduto,int idComponente)
+        public void DesvincularComponentes(int idProduto,int idComponente, bool multiplaQuery = false)
         {
             db.Conectar();
             try
             {
                 string comando = $@"call desvincular_componentes({idProduto},{idComponente});";
-                db.ExecutarComandoSQL(comando);
+                db.ExecutarComandoSQL(comando,multiplaQuery);
             }
             catch(Exception ex)
             {
@@ -60,7 +60,7 @@ namespace MovSoft.CODE.BLL
                 db.Conectar();
                 for(int i = 0; i < produtoCompostoDTO.Opcional.Count; i++)
                 {
-                    string comando = $@"call vincular_opcionais({produtoCompostoDTO.IdProduto},{produtoCompostoDTO.Opcional[i]});";
+                    string comando = $@"call vincular_opcionais({produtoCompostoDTO.IdProduto},'{produtoCompostoDTO.Opcional[i]}');";
                     db.ExecutarComandoSQL(comando,true);
                 }
             }
@@ -70,13 +70,13 @@ namespace MovSoft.CODE.BLL
             }
         }
 
-        public void DesvincularOpcionais(int idProduto,int idOpcional)
+        public void DesvincularOpcionais(int idProduto,int idOpcional, bool mutilpasQuerys = false)
         {
             try
             {
                 db.Conectar();
                 string comando = $@"call desvincular_opcionais({idProduto},{idOpcional})";
-                db.ExecutarComandoSQL(comando);
+                db.ExecutarComandoSQL(comando,mutilpasQuerys);
             }
             catch (Exception ex)
             {
@@ -105,6 +105,7 @@ namespace MovSoft.CODE.BLL
             {
                 db.Conectar();
                 string comando = $@"call opcionaisDoProduto({idProduto});";
+                dataTable = db.RetDataTable(comando);
             }
             catch(Exception ex)
             {
@@ -177,6 +178,27 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
             return componentes;
+        }
+
+        public MapField<string?, bool?> OpcionaisDisponiveis(int idProduto)
+        {
+            MapField<string?, bool?> opcionais = new();
+            try
+            {
+                db.Conectar();
+                string comando = $@"call opcionais_disponiveis({idProduto})";
+                MySqlDataReader dr = db.RetDataReader(comando);
+                do
+                {
+                    opcionais.Add(dr.GetString(0), dr.GetBoolean(1));
+                }
+                while (dr.Read());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return opcionais;
         }
     }
 }
