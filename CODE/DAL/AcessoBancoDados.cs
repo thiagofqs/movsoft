@@ -51,6 +51,14 @@ namespace MovSoft.CODE.DAL
             }
         }
 
+        public void FecharConexao()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
         public void ExecutarComandoSQL(string comandoSql, bool multiplasInsercoes = false)
         {
             try

@@ -116,5 +116,26 @@ namespace MovSoft.CODE.BLL
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        public List<string> FornecedoresAtivo()
+        {
+            List<string> fornecedores = new();
+            try
+            {
+                db.Conectar();
+                string comando = "select nome_fantasia from fornecedores where ativo = 'S'";
+                MySqlDataReader dr = db.RetDataReader(comando);
+                do
+                {
+                    fornecedores.Add(dr.GetString(0));
+                }
+                while (dr.Read());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return fornecedores;
+        }
     }
 }

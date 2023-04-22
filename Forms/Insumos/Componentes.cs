@@ -110,7 +110,7 @@ namespace MovSoft.Forms
 
         private void PesquisarComponentes()
         {
-            dataGridViewComponentes.DataSource = bll.PesquisarComponente(inputPesquisar.Text,filtro);
+            dataGridViewComponentes.DataSource = bll.PesquisarComponente(inputPesquisar.Text, filtro);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

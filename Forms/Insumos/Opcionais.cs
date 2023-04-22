@@ -61,7 +61,7 @@ namespace MovSoft.Forms
         {
             if (editar)
             {
-                dto.IdOpcional = (int)Parametros.idGrupo;
+                dto.IdOpcional = (int)Parametros.idOpcional;
             }
             if (toggleButtonAtivo.Checked)
             {
@@ -106,7 +106,7 @@ namespace MovSoft.Forms
 
         private void PesquisarOpcionais()
         {
-            dataGridViewOpcionais.DataSource = bll.PesquisarOpcional(inputPesquisar.Text,filtro);
+            dataGridViewOpcionais.DataSource = bll.PesquisarOpcional(inputPesquisar.Text, filtro);
         }
 
         private void LimparCampos()
@@ -293,7 +293,7 @@ namespace MovSoft.Forms
 
         private void dataGridViewOpcionais_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridViewOpcionais.Focused)
+            if (dataGridViewOpcionais.Focused)
             {
                 if (e.RowIndex > -1)
                 {

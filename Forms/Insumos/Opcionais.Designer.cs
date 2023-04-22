@@ -1,4 +1,6 @@
-﻿namespace MovSoft.Forms
+﻿using System.Windows.Forms;
+
+namespace MovSoft.Forms
 {
     partial class Opcionais
     {
@@ -59,11 +61,10 @@
             // 
             inputPesquisar.BackColor = Color.WhiteSmoke;
             inputPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
-            inputPesquisar.Location = new Point(226, 324);
-            inputPesquisar.Margin = new Padding(3, 4, 3, 4);
+            inputPesquisar.Location = new Point(198, 243);
             inputPesquisar.Name = "inputPesquisar";
             inputPesquisar.PlaceholderText = "Pesquisar";
-            inputPesquisar.Size = new Size(274, 27);
+            inputPesquisar.Size = new Size(240, 23);
             inputPesquisar.TabIndex = 0;
             inputPesquisar.KeyPress += inputPesquisar_KeyPress;
             // 
@@ -74,10 +75,9 @@
             comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
             comboBoxFiltro.FormattingEnabled = true;
             comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Habilitado", "Desabilitado" });
-            comboBoxFiltro.Location = new Point(606, 324);
-            comboBoxFiltro.Margin = new Padding(3, 4, 3, 4);
+            comboBoxFiltro.Location = new Point(530, 243);
             comboBoxFiltro.Name = "comboBoxFiltro";
-            comboBoxFiltro.Size = new Size(111, 28);
+            comboBoxFiltro.Size = new Size(108, 23);
             comboBoxFiltro.TabIndex = 2;
             comboBoxFiltro.SelectedIndexChanged += comboBoxFiltro_SelectedIndexChanged;
             // 
@@ -86,10 +86,9 @@
             imgFiltro.BackColor = Color.Transparent;
             imgFiltro.BackgroundImage = Properties.Resources.icon_filter;
             imgFiltro.BackgroundImageLayout = ImageLayout.Zoom;
-            imgFiltro.Location = new Point(573, 324);
-            imgFiltro.Margin = new Padding(3, 4, 3, 4);
+            imgFiltro.Location = new Point(501, 243);
             imgFiltro.Name = "imgFiltro";
-            imgFiltro.Size = new Size(26, 31);
+            imgFiltro.Size = new Size(23, 23);
             imgFiltro.TabIndex = 21;
             imgFiltro.TabStop = false;
             // 
@@ -102,10 +101,9 @@
             btnPesquisar.FlatAppearance.BorderSize = 0;
             btnPesquisar.FlatStyle = FlatStyle.Flat;
             btnPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
-            btnPesquisar.Location = new Point(507, 324);
-            btnPesquisar.Margin = new Padding(3, 4, 3, 4);
+            btnPesquisar.Location = new Point(444, 243);
             btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(26, 31);
+            btnPesquisar.Size = new Size(23, 23);
             btnPesquisar.TabIndex = 1;
             btnPesquisar.UseVisualStyleBackColor = false;
             btnPesquisar.Click += btnPesquisar_Click;
@@ -114,10 +112,9 @@
             // 
             inputNomeOpcional.BackColor = Color.WhiteSmoke;
             inputNomeOpcional.ForeColor = Color.FromArgb(56, 56, 56);
-            inputNomeOpcional.Location = new Point(14, 55);
-            inputNomeOpcional.Margin = new Padding(3, 4, 3, 4);
+            inputNomeOpcional.Location = new Point(12, 41);
             inputNomeOpcional.Name = "inputNomeOpcional";
-            inputNomeOpcional.Size = new Size(204, 27);
+            inputNomeOpcional.Size = new Size(179, 23);
             inputNomeOpcional.TabIndex = 8;
             inputNomeOpcional.Tag = "Nome do Opcional";
             // 
@@ -131,10 +128,9 @@
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCadastrar.ForeColor = Color.WhiteSmoke;
-            btnCadastrar.Location = new Point(725, 365);
-            btnCadastrar.Margin = new Padding(3, 4, 3, 4);
+            btnCadastrar.Location = new Point(634, 274);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(143, 45);
+            btnCadastrar.Size = new Size(125, 34);
             btnCadastrar.TabIndex = 3;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -151,10 +147,9 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditar.ForeColor = Color.WhiteSmoke;
-            btnEditar.Location = new Point(725, 419);
-            btnEditar.Margin = new Padding(3, 4, 3, 4);
+            btnEditar.Location = new Point(634, 314);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(143, 45);
+            btnEditar.Size = new Size(125, 34);
             btnEditar.TabIndex = 4;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -171,10 +166,9 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = Color.WhiteSmoke;
-            btnCancelar.Location = new Point(725, 472);
-            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Location = new Point(634, 354);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(143, 45);
+            btnCancelar.Size = new Size(125, 34);
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -194,10 +188,9 @@
             pnlCadastro.Controls.Add(inputNomeOpcional);
             pnlCadastro.Enabled = false;
             pnlCadastro.ForeColor = Color.FromArgb(56, 56, 56);
-            pnlCadastro.Location = new Point(226, 48);
-            pnlCadastro.Margin = new Padding(3, 4, 3, 4);
+            pnlCadastro.Location = new Point(198, 36);
             pnlCadastro.Name = "pnlCadastro";
-            pnlCadastro.Size = new Size(641, 215);
+            pnlCadastro.Size = new Size(561, 162);
             pnlCadastro.TabIndex = 10;
             // 
             // btnAdicionarOpcoes
@@ -210,10 +203,9 @@
             btnAdicionarOpcoes.FlatStyle = FlatStyle.Flat;
             btnAdicionarOpcoes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdicionarOpcoes.ForeColor = Color.WhiteSmoke;
-            btnAdicionarOpcoes.Location = new Point(478, 75);
-            btnAdicionarOpcoes.Margin = new Padding(3, 4, 3, 4);
+            btnAdicionarOpcoes.Location = new Point(418, 56);
             btnAdicionarOpcoes.Name = "btnAdicionarOpcoes";
-            btnAdicionarOpcoes.Size = new Size(110, 64);
+            btnAdicionarOpcoes.Size = new Size(96, 48);
             btnAdicionarOpcoes.TabIndex = 11;
             btnAdicionarOpcoes.Text = "Adicionar Opções";
             btnAdicionarOpcoes.UseVisualStyleBackColor = false;
@@ -227,24 +219,22 @@
             toggleButtonAtivo.CheckState = CheckState.Checked;
             toggleButtonAtivo.Cursor = Cursors.Hand;
             toggleButtonAtivo.FocusToggleColor = Color.Gold;
-            toggleButtonAtivo.Location = new Point(167, 141);
-            toggleButtonAtivo.Margin = new Padding(3, 4, 3, 4);
-            toggleButtonAtivo.MinimumSize = new Size(51, 31);
+            toggleButtonAtivo.Location = new Point(146, 106);
+            toggleButtonAtivo.MinimumSize = new Size(45, 23);
             toggleButtonAtivo.Name = "toggleButtonAtivo";
             toggleButtonAtivo.OffBackColor = Color.Gray;
             toggleButtonAtivo.OffToggleColor = Color.Gainsboro;
             toggleButtonAtivo.OnBackColor = Color.FromArgb(0, 133, 132);
             toggleButtonAtivo.OnToggleColor = Color.WhiteSmoke;
-            toggleButtonAtivo.Size = new Size(51, 31);
+            toggleButtonAtivo.Size = new Size(45, 23);
             toggleButtonAtivo.TabIndex = 10;
             toggleButtonAtivo.UseVisualStyleBackColor = false;
             // 
             // kryptonLabelAtivo
             // 
-            kryptonLabelAtivo.Location = new Point(167, 105);
-            kryptonLabelAtivo.Margin = new Padding(3, 4, 3, 4);
+            kryptonLabelAtivo.Location = new Point(146, 79);
             kryptonLabelAtivo.Name = "kryptonLabelAtivo";
-            kryptonLabelAtivo.Size = new Size(54, 26);
+            kryptonLabelAtivo.Size = new Size(45, 21);
             kryptonLabelAtivo.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelAtivo.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
             kryptonLabelAtivo.StateNormal.ShortText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -253,10 +243,9 @@
             // 
             // kryptonLabelQuantidade
             // 
-            kryptonLabelQuantidade.Location = new Point(14, 105);
-            kryptonLabelQuantidade.Margin = new Padding(3, 4, 3, 4);
+            kryptonLabelQuantidade.Location = new Point(12, 79);
             kryptonLabelQuantidade.Name = "kryptonLabelQuantidade";
-            kryptonLabelQuantidade.Size = new Size(119, 26);
+            kryptonLabelQuantidade.Size = new Size(96, 21);
             kryptonLabelQuantidade.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
             kryptonLabelQuantidade.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelQuantidade.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
@@ -267,10 +256,9 @@
             // 
             // kryptonLabelNome
             // 
-            kryptonLabelNome.Location = new Point(14, 19);
-            kryptonLabelNome.Margin = new Padding(3, 4, 3, 4);
+            kryptonLabelNome.Location = new Point(12, 14);
             kryptonLabelNome.Name = "kryptonLabelNome";
-            kryptonLabelNome.Size = new Size(172, 26);
+            kryptonLabelNome.Size = new Size(139, 21);
             kryptonLabelNome.StateNormal.LongText.Color1 = Color.FromArgb(255, 51, 56);
             kryptonLabelNome.StateNormal.LongText.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             kryptonLabelNome.StateNormal.ShortText.Color1 = Color.WhiteSmoke;
@@ -283,11 +271,10 @@
             // 
             numericUpDownOpcionais.BackColor = Color.WhiteSmoke;
             numericUpDownOpcionais.ForeColor = Color.FromArgb(56, 56, 56);
-            numericUpDownOpcionais.Location = new Point(14, 141);
-            numericUpDownOpcionais.Margin = new Padding(3, 4, 3, 4);
+            numericUpDownOpcionais.Location = new Point(12, 106);
             numericUpDownOpcionais.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
             numericUpDownOpcionais.Name = "numericUpDownOpcionais";
-            numericUpDownOpcionais.Size = new Size(121, 27);
+            numericUpDownOpcionais.Size = new Size(106, 23);
             numericUpDownOpcionais.TabIndex = 9;
             numericUpDownOpcionais.Tag = "Quantiade";
             // 
@@ -324,8 +311,7 @@
             dataGridViewOpcionais.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewOpcionais.EnableHeadersVisualStyles = false;
             dataGridViewOpcionais.GridColor = Color.FromArgb(56, 56, 56);
-            dataGridViewOpcionais.Location = new Point(226, 365);
-            dataGridViewOpcionais.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewOpcionais.Location = new Point(198, 274);
             dataGridViewOpcionais.Name = "dataGridViewOpcionais";
             dataGridViewOpcionais.ReadOnly = true;
             dataGridViewOpcionais.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -349,7 +335,7 @@
             dataGridViewOpcionais.ShowCellToolTips = false;
             dataGridViewOpcionais.ShowEditingIcon = false;
             dataGridViewOpcionais.ShowRowErrors = false;
-            dataGridViewOpcionais.Size = new Size(491, 189);
+            dataGridViewOpcionais.Size = new Size(430, 142);
             dataGridViewOpcionais.TabIndex = 22;
             dataGridViewOpcionais.CellContentClick += dataGridViewOpcionais_CellContentClick;
             dataGridViewOpcionais.CellContentDoubleClick += dataGridViewOpcionais_CellDoubleClick;
@@ -358,24 +344,24 @@
             // 
             // Opcionais
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(56, 56, 56);
-            ClientSize = new Size(1063, 671);
-            Controls.Add(dataGridViewOpcionais);
+            ClientSize = new Size(930, 503);
             Controls.Add(pnlCadastro);
-            Controls.Add(btnEditar);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnCadastrar);
             Controls.Add(imgFiltro);
             Controls.Add(btnPesquisar);
             Controls.Add(comboBoxFiltro);
             Controls.Add(inputPesquisar);
+            Controls.Add(btnEditar);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnCadastrar);
+            Controls.Add(dataGridViewOpcionais);
+            ForeColor = Color.WhiteSmoke;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Opcionais";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MovSoft - Lista de Insumos";
+            Text = "Produtos Finais";
             ((System.ComponentModel.ISupportInitialize)imgFiltro).EndInit();
             pnlCadastro.ResumeLayout(false);
             pnlCadastro.PerformLayout();

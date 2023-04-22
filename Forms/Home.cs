@@ -1,5 +1,6 @@
 using MovSoft.Classes;
 using MovSoft.Forms;
+using MovSoft.Forms.Estoque;
 
 namespace MovSoft
 {
@@ -8,6 +9,7 @@ namespace MovSoft
         Funcoes funcoes = new();
         private Form activeForm;
         private EventHandler CursorHandChanger, CursorDefaultChanger;
+        public Panel PnlMain { get { return pnlMain; } }
 
         public class ownColorTable : ProfessionalColorTable
         {
@@ -178,16 +180,9 @@ namespace MovSoft
             MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Estoque frm = new();
-            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
-        }
-
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Vendas frm = new();
-            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+            MessageBox.Show("Essa opção está indisponível no momento!", "Opção indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void produtosFinaisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -209,6 +204,24 @@ namespace MovSoft
         private void opcionaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Opcionais frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
+        private void estoqueToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Estoque frm = new();
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
+        private void entradaSaídaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoricoEstoque frm = new(true);
+            funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
+        }
+
+        public void abrirHistoricoEstoque(bool novoLancamentoEstoque)
+        {
+            HistoricoEstoque frm = new(novoLancamentoEstoque);
             funcoes.OpenChildForm(frm, activeForm, pnlMain, 4);
         }
     }

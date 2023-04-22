@@ -79,7 +79,7 @@ namespace MovSoft.Forms
 
         private void PesquisarProdutos()
         {
-            dataGridViewProdutosFinais.DataSource = bll.PesquisarProdutos(inputPesquisar.Text,filtroGrupo,filtro);
+            dataGridViewProdutosFinais.DataSource = bll.PesquisarProdutos(inputPesquisar.Text, filtroGrupo, filtro);
         }
 
         private void LimparCampos()
@@ -358,7 +358,7 @@ namespace MovSoft.Forms
 
         private void btnVincularOpcionais_Click(object sender, EventArgs e)
         {
-            if(cadastrarOuEditar == 'C')
+            if (cadastrarOuEditar == 'C')
             {
                 verificacoesPreCadastro();
             }

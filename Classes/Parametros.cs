@@ -118,6 +118,8 @@
         public static List<int?> qtdMarcacoesOpcionalProdutoComposto = new();
         public static List<string?> opcoesProdutoComposto = new();
         public static List<float?> precoOpcaoProdutoComposto = new();
+        //Estoque
+        public static string? tipoItem { get; set; }
 
         //Controle de Formularios
         public static bool? editarUser { get; set; }

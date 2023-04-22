@@ -69,9 +69,10 @@ namespace MovSoft.Classes
                     }
                     else if (control.GetType() == typeof(NumericUpDown))
                     {
-                        if (((NumericUpDown)control).Value == 0)
+                        if (((NumericUpDown)control).Value <= 0)
                         {
                             verificadores.Add(false);
+                            MessageBox.Show($"O campo {control.Tag} não pode ser menor ou igual a 0", "Entrada de dados vazia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
@@ -271,7 +272,7 @@ namespace MovSoft.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, $" | Erro ao conectar em {url} ({MessageBoxButtons.OK} {MessageBoxIcon.Error})");
+                MessageBox.Show($" Não foi possivel se comunicar com o servidor. Por favor, verifique a sua conexão com a interenet","Falha na conexão",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             return result;
         }

@@ -28,182 +28,176 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.inputPesquisarClientes = new System.Windows.Forms.TextBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.btnCadClientes = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.imgFiltro = new System.Windows.Forms.PictureBox();
-            this.comboBoxFiltro = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            inputPesquisarClientes = new TextBox();
+            dataGridView = new DataGridView();
+            btnCadClientes = new Button();
+            btnPesquisar = new Button();
+            imgFiltro = new PictureBox();
+            comboBoxFiltro = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgFiltro).BeginInit();
+            SuspendLayout();
             // 
             // inputPesquisarClientes
             // 
-            this.inputPesquisarClientes.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.inputPesquisarClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.inputPesquisarClientes.Location = new System.Drawing.Point(198, 66);
-            this.inputPesquisarClientes.MaximumSize = new System.Drawing.Size(240, 23);
-            this.inputPesquisarClientes.MaxLength = 0;
-            this.inputPesquisarClientes.Name = "inputPesquisarClientes";
-            this.inputPesquisarClientes.PlaceholderText = "Pesquisar";
-            this.inputPesquisarClientes.Size = new System.Drawing.Size(240, 23);
-            this.inputPesquisarClientes.TabIndex = 0;
-            this.inputPesquisarClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputPesquisarClientes_KeyPress);
+            inputPesquisarClientes.BackColor = Color.WhiteSmoke;
+            inputPesquisarClientes.ForeColor = Color.FromArgb(56, 56, 56);
+            inputPesquisarClientes.Location = new Point(198, 66);
+            inputPesquisarClientes.MaximumSize = new Size(240, 23);
+            inputPesquisarClientes.MaxLength = 0;
+            inputPesquisarClientes.Name = "inputPesquisarClientes";
+            inputPesquisarClientes.PlaceholderText = "Pesquisar";
+            inputPesquisarClientes.Size = new Size(240, 23);
+            inputPesquisarClientes.TabIndex = 0;
+            inputPesquisarClientes.KeyPress += inputPesquisarClientes_KeyPress;
             // 
             // dataGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView.EnableHeadersVisualStyles = false;
-            this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.dataGridView.Location = new System.Drawing.Point(198, 95);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView.RowTemplate.Height = 25;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.ShowCellErrors = false;
-            this.dataGridView.ShowCellToolTips = false;
-            this.dataGridView.ShowEditingIcon = false;
-            this.dataGridView.ShowRowErrors = false;
-            this.dataGridView.Size = new System.Drawing.Size(561, 321);
-            this.dataGridView.TabIndex = 4;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
-            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
-            this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.AllowUserToResizeColumns = false;
+            dataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView.BackgroundColor = Color.WhiteSmoke;
+            dataGridView.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Cursor = Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(56, 56, 56);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.GridColor = Color.FromArgb(56, 56, 56);
+            dataGridView.Location = new Point(198, 95);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ButtonShadow;
+            dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridView.RowTemplate.Height = 25;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.ShowCellErrors = false;
+            dataGridView.ShowCellToolTips = false;
+            dataGridView.ShowEditingIcon = false;
+            dataGridView.ShowRowErrors = false;
+            dataGridView.Size = new Size(561, 321);
+            dataGridView.TabIndex = 4;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
+            dataGridView.CellDoubleClick += dataGridView_CellDoubleClick;
+            dataGridView.CellFormatting += dataGridView_CellFormatting;
             // 
             // btnCadClientes
             // 
-            this.btnCadClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(133)))), ((int)(((byte)(132)))));
-            this.btnCadClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadClientes.FlatAppearance.BorderSize = 0;
-            this.btnCadClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCadClientes.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCadClientes.Location = new System.Drawing.Point(576, 422);
-            this.btnCadClientes.MaximumSize = new System.Drawing.Size(214, 34);
-            this.btnCadClientes.Name = "btnCadClientes";
-            this.btnCadClientes.Size = new System.Drawing.Size(183, 34);
-            this.btnCadClientes.TabIndex = 5;
-            this.btnCadClientes.Text = "Cadastrar Cliente";
-            this.btnCadClientes.UseVisualStyleBackColor = false;
-            this.btnCadClientes.Click += new System.EventHandler(this.btnCadClientes_Click);
+            btnCadClientes.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCadClientes.BackColor = Color.FromArgb(0, 133, 132);
+            btnCadClientes.Cursor = Cursors.Hand;
+            btnCadClientes.FlatAppearance.BorderSize = 0;
+            btnCadClientes.FlatStyle = FlatStyle.Flat;
+            btnCadClientes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCadClientes.ForeColor = Color.WhiteSmoke;
+            btnCadClientes.Location = new Point(576, 422);
+            btnCadClientes.MaximumSize = new Size(214, 34);
+            btnCadClientes.Name = "btnCadClientes";
+            btnCadClientes.Size = new Size(183, 34);
+            btnCadClientes.TabIndex = 5;
+            btnCadClientes.Text = "Cadastrar Cliente";
+            btnCadClientes.UseVisualStyleBackColor = false;
+            btnCadClientes.Click += btnCadClientes_Click;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.BackgroundImage = global::MovSoft.Properties.Resources.icon_search;
-            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisar.FlatAppearance.BorderSize = 0;
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Location = new System.Drawing.Point(444, 66);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(23, 23);
-            this.btnPesquisar.TabIndex = 1;
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            btnPesquisar.BackColor = Color.Transparent;
+            btnPesquisar.BackgroundImage = Properties.Resources.icon_search;
+            btnPesquisar.BackgroundImageLayout = ImageLayout.Zoom;
+            btnPesquisar.Cursor = Cursors.Hand;
+            btnPesquisar.FlatAppearance.BorderSize = 0;
+            btnPesquisar.FlatStyle = FlatStyle.Flat;
+            btnPesquisar.Location = new Point(444, 66);
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.Size = new Size(23, 23);
+            btnPesquisar.TabIndex = 1;
+            btnPesquisar.UseVisualStyleBackColor = false;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // imgFiltro
             // 
-            this.imgFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.imgFiltro.BackgroundImage = global::MovSoft.Properties.Resources.icon_filter;
-            this.imgFiltro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.imgFiltro.Location = new System.Drawing.Point(501, 66);
-            this.imgFiltro.Name = "imgFiltro";
-            this.imgFiltro.Size = new System.Drawing.Size(23, 23);
-            this.imgFiltro.TabIndex = 11;
-            this.imgFiltro.TabStop = false;
+            imgFiltro.BackColor = Color.Transparent;
+            imgFiltro.BackgroundImage = Properties.Resources.icon_filter;
+            imgFiltro.BackgroundImageLayout = ImageLayout.Zoom;
+            imgFiltro.Location = new Point(501, 66);
+            imgFiltro.Name = "imgFiltro";
+            imgFiltro.Size = new Size(23, 23);
+            imgFiltro.TabIndex = 11;
+            imgFiltro.TabStop = false;
             // 
             // comboBoxFiltro
             // 
-            this.comboBoxFiltro.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBoxFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.comboBoxFiltro.FormattingEnabled = true;
-            this.comboBoxFiltro.Items.AddRange(new object[] {
-            "Todos",
-            "Habilitado",
-            "Desabilitado"});
-            this.comboBoxFiltro.Location = new System.Drawing.Point(530, 66);
-            this.comboBoxFiltro.Name = "comboBoxFiltro";
-            this.comboBoxFiltro.Size = new System.Drawing.Size(98, 23);
-            this.comboBoxFiltro.TabIndex = 2;
-            this.comboBoxFiltro.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltro_SelectedIndexChanged);
+            comboBoxFiltro.BackColor = Color.WhiteSmoke;
+            comboBoxFiltro.Cursor = Cursors.Hand;
+            comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFiltro.ForeColor = Color.FromArgb(56, 56, 56);
+            comboBoxFiltro.FormattingEnabled = true;
+            comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Habilitado", "Desabilitado" });
+            comboBoxFiltro.Location = new Point(530, 66);
+            comboBoxFiltro.Name = "comboBoxFiltro";
+            comboBoxFiltro.Size = new Size(108, 23);
+            comboBoxFiltro.TabIndex = 2;
+            comboBoxFiltro.SelectedIndexChanged += comboBoxFiltro_SelectedIndexChanged;
             // 
             // ListaClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(930, 503);
-            this.Controls.Add(this.imgFiltro);
-            this.Controls.Add(this.comboBoxFiltro);
-            this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.inputPesquisarClientes);
-            this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.btnCadClientes);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ListaClientes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MovSoft - Lista de Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFiltro)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(56, 56, 56);
+            ClientSize = new Size(930, 503);
+            Controls.Add(imgFiltro);
+            Controls.Add(comboBoxFiltro);
+            Controls.Add(btnPesquisar);
+            Controls.Add(inputPesquisarClientes);
+            Controls.Add(dataGridView);
+            Controls.Add(btnCadClientes);
+            ForeColor = Color.FromArgb(56, 56, 56);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "ListaClientes";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MovSoft - Lista de Clientes";
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgFiltro).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

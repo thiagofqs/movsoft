@@ -38,11 +38,11 @@ namespace MovSoft.Forms
                     column.HeaderText = "Razão Social";
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-                else if(column.Name == "AtivoCheckBox")
+                else if (column.Name == "AtivoCheckBox")
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 }
-                else if(column.Name == "Ativo")
+                else if (column.Name == "Ativo")
                 {
                     column.Visible = false;
                 }
@@ -50,11 +50,11 @@ namespace MovSoft.Forms
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-                if(comboBoxFiltro.SelectedIndex != 0 && column.Index == 6)
+                if (comboBoxFiltro.SelectedIndex != 0 && column.Index == 6)
                 {
                     column.Visible = false;
                 }
-                else if(column.Index == 6)
+                else if (column.Index == 6)
                 {
                     column.Visible = true;
                 }

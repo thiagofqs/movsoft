@@ -27,7 +27,7 @@ namespace MovSoft.Forms
 
         private void PesquisarClientes()
         {
-            dataGridView.DataSource = bll.ProcurarClientes(inputPesquisarClientes.Text,filtro);
+            dataGridView.DataSource = bll.ProcurarClientes(inputPesquisarClientes.Text, filtro);
         }
 
         public void CarregarClientes()
@@ -39,11 +39,11 @@ namespace MovSoft.Forms
                 {
                     column.Width = 50;
                 }
-                else if(column.Name == "AtivoCheckBox")
+                else if (column.Name == "AtivoCheckBox")
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 }
-                else if(column.Name == "Ativo")
+                else if (column.Name == "Ativo")
                 {
                     column.Visible = false;
                 }
@@ -51,7 +51,7 @@ namespace MovSoft.Forms
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-                if(comboBoxFiltro.SelectedIndex != 0 && column.Index == 9)
+                if (comboBoxFiltro.SelectedIndex != 0 && column.Index == 9)
                 {
                     column.Visible = false;
                 }

@@ -53,7 +53,7 @@ namespace MovSoft.Forms
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 }
-                else if(column.Name == "Ativo")
+                else if (column.Name == "Ativo")
                 {
                     column.Visible = false;
                 }
@@ -74,7 +74,7 @@ namespace MovSoft.Forms
 
         private void PesquisarUsuarios()
         {
-            dataGridViewUsuarios.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text,filtro);
+            dataGridViewUsuarios.DataSource = bll.ProcurarUsuarios(inputPesquisarUsuarios.Text, filtro);
             FormatarGridView();
         }
 
@@ -128,7 +128,7 @@ namespace MovSoft.Forms
         {
             if (dataGridViewUsuarios.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
             {
-                if(e.Value != null)
+                if (e.Value != null)
                 {
                     string cellValue = dataGridViewUsuarios.Rows[e.RowIndex].Cells["AtivoCheckBox"].Value.ToString();
 

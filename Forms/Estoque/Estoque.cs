@@ -1,93 +1,99 @@
 ﻿using MovSoft.Classes;
+using MovSoft.CODE.BLL;
 
-namespace MovSoft.Forms
+namespace MovSoft.Forms.Estoque
 {
     public partial class Estoque : Form
     {
+        DataGridViewRow rowData = new();
+        EstoqueBLL bll = new();
         Funcoes funcoes = new();
+
+        string filtro = null;
+
         public Estoque()
         {
             InitializeComponent();
+            VerSaldoEstoque();
             comboBoxFiltro.SelectedIndex = 0;
-            funcoes.CentralizarHorizontalmente(this, pnlCadastro);
         }
 
-        private void LimparCampos()
+        private void abrirHistoricoEstoque(bool lancarEstoqueNovo)
         {
-            comboBoxFiltro.Text = "";
-            comboBoxProduto.Text = "";
-            comboBoxMovimento.Text = "";
-            numericUpDownQuantidade.Text = "0";
-            numericUpCusto.Text = "0";
-        }
-
-        private void VoltarAoPadrao()
-        {
-            btnCadastrar.Text = "Cadastrar";
-            btnEditar.Text = "Editar";
-            dataGridViewEstoque.Enabled = true;
-            pnlCadastro.Enabled = false;
-            LimparCampos();
-            btnCadastrar.Enabled = true;
-            btnEditar.Enabled = false;
-            btnCancelar.Enabled = false;
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            if (funcoes.VerificarPermissao(4))
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is Home
+                         select frm;
+            if (qrForm != null && qrForm.Count() > 0)
             {
-                if (pnlCadastro.Enabled)
+                ((Home)qrForm.First()).abrirHistoricoEstoque(lancarEstoqueNovo);
+            }
+        }
+
+        public void VerSaldoEstoque()
+        {
+            dataGridView.DataSource = bll.mostrarSaldo(filtro);
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (column.Index == 0)
                 {
-                    if (!funcoes.VerificarSeInputEstaVazio(pnlCadastro))
-                    {
-                        //CadastrarGrupo();
-                        VoltarAoPadrao();
-                    }
+                    column.Width = 50;
+                }
+                else if (column.Name == "Opcao")
+                {
+                    column.HeaderText = "Opção";
                 }
                 else
                 {
-                    dataGridViewEstoque.Enabled = false;
-                    btnCadastrar.Text = "Salvar";
-                    pnlCadastro.Enabled = true;
-                    btnCancelar.Enabled = true;
-                    comboBoxFiltro.Focus();
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
-            }
-            else
-            {
-                MessageBox.Show($"O cargo {Parametros.cargoUser} não tem permissão para cadastrar estoque", "Não há permissão suficiente para continuar", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void PesquisarEstoque()
         {
-            if (pnlCadastro.Enabled)
+            dataGridView.DataSource = bll.pesquisarSaldo(comboBoxFiltro.Text.Substring(0, 1), inputPesquisarColaborador.Text);
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            VerSaldoEstoque();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarEstoque();
+        }
+
+        private void inputPesquisarColaborador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
             {
-                if (comboBoxFiltro.Text == "" || comboBoxProduto.Text == "" || comboBoxMovimento.Text == "" || numericUpDownQuantidade.Text == "" || numericUpCusto.Text == "")
-                {
-                    MessageBox.Show("Preencha todos os campos obrigatórios!");
-                    comboBoxFiltro.Focus();
-                }
-                else
-                {
-                    //EditarGrupo();
-                    VoltarAoPadrao();
-                }
-            }
-            else
-            {
-                btnEditar.Text = "Salvar";
-                dataGridViewEstoque.Enabled = false;
-                pnlCadastro.Enabled = true;
-                btnCancelar.Enabled = true;
-                comboBoxFiltro.Focus();
+                PesquisarEstoque();
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCadColaboradores_Click(object sender, EventArgs e)
         {
-            VoltarAoPadrao();
+            abrirHistoricoEstoque(true);
         }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                rowData = dataGridView.Rows[e.RowIndex];
+                Parametros.nomeProduto = rowData.Cells[1].Value.ToString();
+                Parametros.tipoItem = comboBoxFiltro.Text;
+                abrirHistoricoEstoque(false);
+            }
+        }
+
+        private void comboBoxFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtro = comboBoxFiltro.Text.Substring(0, 1);
+            VerSaldoEstoque();
+        }
+
+
     }
 }

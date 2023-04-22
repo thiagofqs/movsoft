@@ -51,11 +51,10 @@ namespace MovSoft.Forms
             checkedListBox.ColumnWidth = 150;
             checkedListBox.ForeColor = Color.FromArgb(56, 56, 56);
             checkedListBox.FormattingEnabled = true;
-            checkedListBox.Location = new Point(226, 99);
-            checkedListBox.Margin = new Padding(3, 4, 3, 4);
+            checkedListBox.Location = new Point(198, 74);
             checkedListBox.MultiColumn = true;
             checkedListBox.Name = "checkedListBox";
-            checkedListBox.Size = new Size(652, 136);
+            checkedListBox.Size = new Size(571, 94);
             checkedListBox.TabIndex = 0;
             // 
             // btnVincular
@@ -68,10 +67,9 @@ namespace MovSoft.Forms
             btnVincular.FlatStyle = FlatStyle.Flat;
             btnVincular.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnVincular.ForeColor = Color.WhiteSmoke;
-            btnVincular.Location = new Point(736, 521);
-            btnVincular.Margin = new Padding(3, 4, 3, 4);
+            btnVincular.Location = new Point(644, 391);
             btnVincular.Name = "btnVincular";
-            btnVincular.Size = new Size(143, 45);
+            btnVincular.Size = new Size(125, 34);
             btnVincular.TabIndex = 2;
             btnVincular.Text = "Fechar";
             btnVincular.UseVisualStyleBackColor = false;
@@ -87,10 +85,9 @@ namespace MovSoft.Forms
             btnPesquisar.FlatAppearance.BorderSize = 0;
             btnPesquisar.FlatStyle = FlatStyle.Flat;
             btnPesquisar.ForeColor = Color.FromArgb(56, 56, 56);
-            btnPesquisar.Location = new Point(886, 99);
-            btnPesquisar.Margin = new Padding(3, 4, 3, 4);
+            btnPesquisar.Location = new Point(775, 74);
             btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(34, 40);
+            btnPesquisar.Size = new Size(30, 30);
             btnPesquisar.TabIndex = 1;
             btnPesquisar.UseVisualStyleBackColor = false;
             btnPesquisar.Click += btnVincular_Click;
@@ -100,9 +97,9 @@ namespace MovSoft.Forms
             txtTitulo.Anchor = AnchorStyles.Top;
             txtTitulo.AutoSize = true;
             txtTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            txtTitulo.Location = new Point(394, 28);
+            txtTitulo.Location = new Point(345, 21);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(336, 41);
+            txtTitulo.Size = new Size(274, 32);
             txtTitulo.TabIndex = 0;
             txtTitulo.Text = "Vincular Componentes";
             // 
@@ -138,11 +135,10 @@ namespace MovSoft.Forms
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridViewVincularComponentes.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewVincularComponentes.EditMode = DataGridViewEditMode.EditOnEnter;
             dataGridViewVincularComponentes.EnableHeadersVisualStyles = false;
             dataGridViewVincularComponentes.GridColor = Color.FromArgb(56, 56, 56);
-            dataGridViewVincularComponentes.Location = new Point(226, 334);
-            dataGridViewVincularComponentes.Margin = new Padding(3, 5, 3, 5);
+            dataGridViewVincularComponentes.Location = new Point(198, 250);
+            dataGridViewVincularComponentes.Margin = new Padding(3, 4, 3, 4);
             dataGridViewVincularComponentes.Name = "dataGridViewVincularComponentes";
             dataGridViewVincularComponentes.ReadOnly = true;
             dataGridViewVincularComponentes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -167,7 +163,7 @@ namespace MovSoft.Forms
             dataGridViewVincularComponentes.ShowCellToolTips = false;
             dataGridViewVincularComponentes.ShowEditingIcon = false;
             dataGridViewVincularComponentes.ShowRowErrors = false;
-            dataGridViewVincularComponentes.Size = new Size(653, 178);
+            dataGridViewVincularComponentes.Size = new Size(571, 134);
             dataGridViewVincularComponentes.TabIndex = 21;
             dataGridViewVincularComponentes.CellClick += dataGridViewVincularComponentes_CellContentClick;
             dataGridViewVincularComponentes.CellEndEdit += dataGridViewVincularComponentes_CellEndEdit;
@@ -175,17 +171,16 @@ namespace MovSoft.Forms
             // 
             // VincularComponentes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(56, 56, 56);
-            ClientSize = new Size(1045, 619);
+            ClientSize = new Size(914, 464);
             Controls.Add(dataGridViewVincularComponentes);
             Controls.Add(txtTitulo);
             Controls.Add(btnPesquisar);
             Controls.Add(btnVincular);
             Controls.Add(checkedListBox);
             ForeColor = Color.WhiteSmoke;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "VincularComponentes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MovSoft - Vincular Componentes";
