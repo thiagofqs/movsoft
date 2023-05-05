@@ -1,3 +1,5 @@
+using MovSoft.Forms;
+
 namespace MovSoft
 {
     internal static class Program

@@ -1,71 +1,115 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
+using IniParser.Model;
+using MovSoft.Classes;
+using System.Text.RegularExpressions;
 
-namespace CRUD.CODE.DAL
+namespace MovSoft.CODE.DAL
 {
-	class AcessoBancoDados
-	{
-		private MySqlConnection conn;
-		private DataTable data;
-		private MySqlDataAdapter da;
-		private MySqlDataReader dr;
-		private MySqlCommandBuilder cb;
+    class AcessoBancoDados
+    {
+        private IniData iniData;
+        private MySqlConnection conn;
+        private DataTable data;
+        private MySqlDataAdapter da;
+        private MySqlDataReader dr;
+        private MySqlCommandBuilder cb;
 
-		private string server = "127.0.0.1";
-		private string user = "root";
-		private string database = "tcc_moveleira";
-		private string port = "3306";
-		private string password = "root";
+        private string server = "127.0.0.1";
+        private string user = "root";
+        private string database = "movsoft";
+        private string port = "3305";
+        private string password = "root";
 
-		public void Conectar()
-		{
-			string connStr = string.Format("server={0}; User Id={1}; database={2}; port={3}; password={4}; pooling=false", server, user, database, port, password);
-			try
-			{
-				conn?.Close();
-				conn = new(connStr);
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Não foi possível realizar a conexão!");
-				MessageBox.Show(ex.ToString());
-			}
-			finally
-			{
-				conn.Close();
-			}
-		}
+        private async void GetIniData()
+        {
+            iniData = Funcoes.LerIni();
+            server = iniData["DataBase"]["DB_Server"];
+            user = iniData["DataBase"]["DB_Username"];
+            database = iniData["DataBase"]["DB_Database"];
+            port = iniData["DataBase"]["DB_Port"];
+            password = iniData["DataBase"]["DB_Password"];
+        }
 
-		public void ExecutarComandoSQL(string comandoSql)
-		{
-			try
-			{
-				conn.Open();
-				if (conn.State == ConnectionState.Open)
-				{
-					MySqlCommand comando = new(comandoSql, conn);
-					comando.ExecuteNonQuery();
-                    MessageBox.Show("Registro Criado Com Sucesso!");
+        public void Conectar()
+        {
+            GetIniData();
+            string connStr = string.Format("server={0}; User Id={1}; database={2}; port={3}; password={4}; pooling=false", server, user, database, port, password);
+            try
+            {
+                conn?.Close();
+                conn = new(connStr);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível realizar a conexão!");
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void FecharConexao()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        public void ExecutarComandoSQL(string comandoSql, bool multiplasInsercoes = false)
+        {
+            try
+            {
+                conn.Open();
+                int linhasAfetadas = 0;
+                if (conn.State == ConnectionState.Open)
+                {
+                    MySqlCommand comando = new(comandoSql, conn);
+                    linhasAfetadas = comando.ExecuteNonQuery();
+                    if(linhasAfetadas > 0 && !multiplasInsercoes)
+                    {
+                        MessageBox.Show("Registro salvo com sucesso!");
+                    }
+                    else if(linhasAfetadas == 0)
+                    {
+                        MessageBox.Show("Erro ao salvar registro!");
+                    }
                 }
-				else
-				{
-					MessageBox.Show("Conexão não foi aberta, impossível executar o comando SQL!");
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Erro ao executar comando SQL!");
-				MessageBox.Show(ex.ToString());
-			}
-			finally
-			{
-				conn.Close();
-			}
-		}
+                else
+                {
+                    MessageBox.Show("Conexão não foi aberta, impossível executar o comando SQL!");
+                }
+            }
+            catch (Exception ex)
+            { 
+                if(((MySqlException)ex).ErrorCode == -2147467259)
+                {
+                    string padrao = @"'([^']*)'\s*?$";
+                    Match match = Regex.Match(ex.Message, padrao);
+                    if (match.Success)
+                    {
+                        string ultimaPalavraEntreAspasSimples = match.Groups[1].Value;
+                        MessageBox.Show($"Esse {match.Groups[1].Value.ToUpper()} já foi cadastrado no sistema!", "Erro ao salvar registro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao executar o procedimento",null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
-		public DataTable RetDataTable(string sql)
-		{
-			conn.Open();
+        public DataTable RetDataTable(string sql)
+        {
+            conn.Open();
             data = new();
             da = new(sql, conn);
             cb = new(da);
@@ -73,13 +117,13 @@ namespace CRUD.CODE.DAL
             return data;
         }
 
-		public MySqlDataReader RetDataReader(string sql)
-		{
+        public MySqlDataReader RetDataReader(string sql)
+        {
             conn.Open();
             MySqlCommand comando = new(sql, conn);
             dr = comando.ExecuteReader();
             dr.Read();
             return dr;
         }
-	}
+    }
 }

@@ -1,56 +1,48 @@
 ﻿using System.Data;
-using CRUD.CODE.DAL;
-using CRUD.CODE.DTO;
+using MovSoft.Classes;
+using MovSoft.CODE.DAL;
+using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
 
-namespace CRUD.CODE.BLL
+namespace MovSoft.CODE.BLL
 {
     class UsuariosBLL
     {
         AcessoBancoDados db = new();
-        public struct Usuario
-        {
-            public int idUsuario;
-            public string nome;
-            public string senha;
-            public string cargo;
-            public char admin;
-            public int idCargo;
-        }
-        private char permissao;
 
-        public Usuario Login(string usuarioDigitado)
+        public bool Login(string usuarioDigitado)
         {
-            Usuario usuario = new();
             try
             {
                 db.Conectar();
                 string comando = $"call login('{usuarioDigitado}')";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                usuario.idUsuario = dr.GetInt32(0);
-                usuario.nome = dr.GetString(1);
-                usuario.senha = dr.GetString(2);
-                usuario.cargo = dr.GetString(3);
-                usuario.admin = char.Parse(dr.GetString(4));
-                usuario.idCargo = dr.GetInt32(5);
+                Parametros.idUser = dr.GetInt32(0);
+                Parametros.nomeUser = dr.GetString(1);
+                Parametros.senhaUser = dr.GetString(2);
+                Parametros.cargoUser = dr.GetString(3);
+                Parametros.adminUser = char.Parse(dr.GetString(4));
+                Parametros.idCargoUser = dr.GetInt32(5);
+                Parametros.userAtivo = dr.GetString(6);
                 dr.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
+                return false;
             }
-            return usuario;
         }
 
-        public char VerificarPermissao(int idCargo, int idPermissao)
+        public void VerificarPermissao(int idUsuario, int idPermissao)
         {
             try
             {
                 db.Conectar();
-                string comando = $"call verificarPermissoes({idCargo},{idPermissao})";
+                string comando = $"call verificarPermissoes({idUsuario},{idPermissao})";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                permissao = char.Parse(dr.GetString(3));
+                Parametros.permissaoUser = char.Parse(dr.GetString(3));
                 dr.Close();
             }
             catch (Exception ex)
@@ -58,7 +50,6 @@ namespace CRUD.CODE.BLL
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
-            return permissao;
         }
 
         public void CadastrarUsuarios(UsuariosDTO dto)
@@ -66,7 +57,7 @@ namespace CRUD.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_usuarios('{dto.Nome}','{dto.Senha}',{dto.Id_cargo}, {dto.Id_colaborador})";
+                string comando = $"call cad_usuario('{dto.Nome}','{dto.Senha}',{dto.Id_cargo}, {dto.Id_colaborador},'{dto.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -75,13 +66,13 @@ namespace CRUD.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
         }
-        public DataTable MostrarUsuarios()
+        public DataTable MostrarUsuarios(string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call usuarios()");
+                dataTable = db.RetDataTable($"call usuarios('{filtro}')");
             }
             catch (Exception ex)
             {
@@ -90,13 +81,13 @@ namespace CRUD.CODE.BLL
             }
             return dataTable;
         }
-        public DataTable ProcurarUsuarios(string pesquisa)
+        public DataTable ProcurarUsuarios(string pesquisa, string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable($"call procurarUsuarios('{pesquisa}')");
+                dataTable = db.RetDataTable($"call procurarUsuarios('{pesquisa}','{filtro}')");
             }
             catch (Exception ex)
             {
@@ -106,12 +97,30 @@ namespace CRUD.CODE.BLL
             return dataTable;
         }
 
+        public void PegarDados(int idUsuario)
+        {
+            try
+            {
+                db.Conectar();
+                string comando = $"call edit_selec_usuarios({idUsuario})";
+                MySqlDataReader dr = db.RetDataReader(comando);
+                Parametros.nomeUserEdit = dr.GetString(0);
+                Parametros.cargoUserEdit = dr.GetString(1);
+                Parametros.colaboradorUserEdit = dr.GetString(2);
+                Parametros.UserAtivoEdit = dr.GetString(3);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public void EditarUsuario(UsuariosDTO dto)
         {
             try
             {
                 db.Conectar();
-                string comando = $"call edit_usuario({dto.Id_usuario}, {dto.Id_colaborador}, {dto.Id_cargo}, '{dto.Nome}','{dto.Senha}')";
+                string comando = $"call edit_usuario({dto.Id_usuario}, {dto.Id_colaborador}, {dto.Id_cargo}, '{dto.Nome}','{dto.Senha}','{dto.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)

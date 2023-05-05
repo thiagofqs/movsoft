@@ -1,15 +1,14 @@
 ﻿using System.Data;
-using CRUD.CODE.DAL;
-using CRUD.CODE.DTO;
+using MovSoft.CODE.DAL;
+using MovSoft.CODE.DTO;
 using MySql.Data.MySqlClient;
-using MovSoft;
+using MovSoft.Classes;
+using Google.Protobuf.Collections;
 
-namespace CRUD.CODE.BLL
+namespace MovSoft.CODE.BLL
 {
     class ColaboradoresBLL
     {
-        CadColaboradorEndereco.Endereco endereco = new();
-        CadColaboradorPessoal.Dados dados = new();
         AcessoBancoDados db = new();
         public List<string> Colaboradores()
         {
@@ -18,9 +17,9 @@ namespace CRUD.CODE.BLL
             {
                 DataTable dataTable = new();
                 db.Conectar();
-                string comando = $"call colaboradores()";
+                string comando = $"call colaboradores('S')";
                 dataTable = db.RetDataTable(comando);
-                foreach(DataRow dataRow in dataTable.Rows )
+                foreach (DataRow dataRow in dataTable.Rows)
                 {
                     string content = dataRow["Nome Completo"].ToString();
                     listaColaboradores.Add(content);
@@ -34,31 +33,31 @@ namespace CRUD.CODE.BLL
             return listaColaboradores;
         }
 
-        public DataTable MostrarColaboradores()
+        public DataTable MostrarColaboradores(string filtro)
         {
-            DataTable dataTable = new DataTable();
+            DataTable dataTable = new();
 
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable("call colaboradores()");
+                dataTable = db.RetDataTable($"call colaboradores('{filtro}')");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
-            
+
             return dataTable;
         }
 
-        public DataTable ProcurarColaboradores(string pesquisa)
+        public DataTable ProcurarColaboradores(string pesquisa,string filtro)
         {
             DataTable dataTable = new();
             try
             {
                 db.Conectar();
-                dataTable = db.RetDataTable($"call procurarColaboradores('{pesquisa}')");
+                dataTable = db.RetDataTable($"call procurarColaboradores('{pesquisa}','{filtro}')");
             }
             catch (Exception ex)
             {
@@ -72,13 +71,14 @@ namespace CRUD.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call cad_colaborador('{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
+                string comando = $"call cad_colaborador('{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}','{dtoColaboradores.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao cadastrar colaborador!");
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.HResult.ToString());
             }
         }
         public void EditarColaborador(ColaboradoresDTO dtoColaboradores, EnderecosDTO dtoEnderecos, ContatosDTO dtoContatos)
@@ -86,7 +86,7 @@ namespace CRUD.CODE.BLL
             try
             {
                 db.Conectar();
-                string comando = $"call edit_colaborador({dtoColaboradores.Id_colaborador},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Estado}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}')";
+                string comando = $"call edit_colaborador({dtoColaboradores.Id_colaborador},{dtoEnderecos.Id_endereco},{dtoContatos.Id_celular},'{dtoColaboradores.Nome}', '{dtoColaboradores.Sobrenome}', '{dtoColaboradores.Data_nasc}', '{dtoColaboradores.Cpf}', '{dtoColaboradores.Email}', {dtoColaboradores.Id_sexo}, '{dtoEnderecos.Uf}', '{dtoEnderecos.Cidade}', '{dtoEnderecos.Bairro}', '{dtoEnderecos.Logradouro}', '{dtoEnderecos.Cep}', '{dtoEnderecos.Complemento}', '{dtoEnderecos.Numero}', '{dtoContatos.Ddd}', '{dtoContatos.Celular}','{dtoColaboradores.Ativo}')";
                 db.ExecutarComandoSQL(comando);
             }
             catch (Exception ex)
@@ -95,56 +95,96 @@ namespace CRUD.CODE.BLL
                 MessageBox.Show(ex.Message);
             }
         }
-        public CadColaboradorPessoal.Dados PegarDados(int idColaborador)
+        public void PegarDados(int idColaborador)
         {
             try
             {
                 db.Conectar();
                 string comando = $"call edit_selec_colaboradores({idColaborador})";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                dados.idColaborador = dr.GetInt32(0);
-                dados.nome = dr.GetString(1);
-                dados.sobrenome = dr.GetString(2);
-                dados.ddd = dr.GetString(3);
-                dados.celular = dr.GetString(4);
-                dados.cpf = dr.GetString(5);
-                dados.nascimentoInput = dr.GetString(6);
-                dados.idSexo = dr.GetInt32(7);
-                dados.email = dr.GetString(8);
-                dados.nascimentoInput = dados.nascimentoInput.Replace("/", "");
-                dados.nascimentoInput = dados.nascimentoInput.Substring(0,8);
-                dados.idCelular = dr.GetInt32(17);
+                Parametros.idColab = dr.GetInt32(0);
+                Parametros.nomeColab = dr.GetString(1);
+                Parametros.sobrenomeColab = dr.GetString(2);
+                Parametros.dddColab = dr.GetString(3);
+                Parametros.celularColab = dr.GetString(4);
+                Parametros.cpfColab = dr.GetString(5);
+                Parametros.nascimentoInputColab = dr.GetString(6);
+                Parametros.idSexoColab = dr.GetInt32(7);
+                Parametros.emailColab = dr.GetString(8);
+                Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Replace("/", "");
+                Parametros.nascimentoInputColab = Parametros.nascimentoInputColab.Substring(0, 8);
+                Parametros.idCelularColab = dr.GetInt32(17);
+                Parametros.ColaboradorAtivo = dr.GetString(18);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.Message);
             }
-            return dados;
         }
 
-        public CadColaboradorEndereco.Endereco PegarEndereco(int idColaborador)
+        public List<string> ColaboradoresSemUsuarioVinculado()
+        {
+            List<string> colaboradores = new();
+            try
+            {
+                db.Conectar();
+                string comando = "call colaboradoresSemUsuarioVinculado()";
+                DataTable dataTable = db.RetDataTable(comando);
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    colaboradores.Add(row["Colaborador"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return colaboradores;
+        }
+
+        public int PegarIdPeloNome(string nomeCompleto)
+        {
+            int idColaborador = 0;
+            try
+            {
+                DataTable dataTable = new();
+                db.Conectar();
+                string comando = $"select id_colaborador as 'ID' from colaboradores where Concat(nome,' ',sobrenome) = '{nomeCompleto}' limit 1";
+                dataTable = db.RetDataTable(comando);
+                foreach(DataRow row in dataTable.Rows)
+                {
+                    idColaborador = int.Parse(row["ID"].ToString());
+                }
+            }
+            catch(Exception ex ) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return idColaborador;
+        }
+
+        public void PegarEndereco(int idColaborador)
         {
             try
             {
                 db.Conectar();
                 string comando = $"call edit_selec_colaboradores({idColaborador})";
                 MySqlDataReader dr = db.RetDataReader(comando);
-                endereco.idEndereco = dr.GetInt32(9);
-                endereco.uf = dr.GetString(10);
-                endereco.cidade = dr.GetString(11);
-                endereco.bairro = dr.GetString(12);
-                endereco.logradouro = dr.GetString(13);
-                endereco.cep = dr.GetString(14);
-                endereco.complemento = dr.GetString(15);
-                endereco.numero = dr.GetString(16);
+                Parametros.idEndereco = dr.GetInt32(9);
+                Parametros.uf = dr.GetString(10);
+                Parametros.cidade = dr.GetString(11);
+                Parametros.bairro = dr.GetString(12);
+                Parametros.logradouro = dr.GetString(13);
+                Parametros.cep = dr.GetString(14);
+                Parametros.complemento = dr.GetString(15);
+                Parametros.numero = dr.GetString(16);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar registro!");
                 MessageBox.Show(ex.ToString());
             }
-            return endereco;
         }
 
     }

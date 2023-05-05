@@ -1,4 +1,4 @@
-﻿namespace CRUD.CODE.DTO
+﻿namespace MovSoft.CODE.DTO
 {
     class ColaboradoresDTO
     {
@@ -11,6 +11,7 @@
         private string email;
         private int id_sexo;
         private string id_endereco;
+        private string ativo;
 
         public int Id_colaborador { get => id_colaborador; set => id_colaborador = value; }
         public string Nome { get => nome; set => nome = value; }
@@ -21,5 +22,6 @@
         public string Email { get => email; set => email = value; }
         public int Id_sexo { get => id_sexo; set => id_sexo = value; }
         public string Id_endereco { get => id_endereco; set => id_endereco = value; }
+        public string Ativo { get => ativo; set => ativo = value; }
     }
 }
