@@ -84,7 +84,7 @@ namespace MovSoft.CODE.DAL
                 }
             }
             catch (Exception ex)
-            { 
+            {
                 if(((MySqlException)ex).ErrorCode == -2147467259)
                 {
                     string padrao = @"'([^']*)'\s*?$";
